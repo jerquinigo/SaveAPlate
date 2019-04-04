@@ -40,3 +40,24 @@ column name | data type | details
 ------------|-----------|-----------
 id          | Integer   | SERIAL PRIMARY KEY
 client_id   | Integer   | References Clients(id)
+
+## Business Hours
+
+column name | data type | details
+------------|-----------|-----------
+id          | Integer   | SERIAL PRIMARY KEY
+vendor_id   | Integer   | References vendors(id)
+monday_start| Varchar   | NOT NULL
+monday_end  | Varchar   | NOT NULL
+tuesday_start | Varchar | NOT NULL
+tuesday_end | Varchar   | NOT NULL
+wednesday_start | Varchar | NOT NULL
+wednesday_end | Varchar | NOT NULL
+thursday_start | Varchar | NOT NULL
+thursday_end | Varchar  | NOT NULL
+friday_start | Varchar  | NOT NULL
+friday_end   | Varchar  | NOT NULL
+saturday_start | Varchar | NOT NULL
+saturday_end | Varchar  | NOT NULL
+sunday_start | Varchar  | NOT NULL
+sunday_end   | Varchar  | NOT NULL
