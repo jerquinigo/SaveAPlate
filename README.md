@@ -24,7 +24,7 @@ signup/login as a vendor or client
 - [API Endpoints](./DOCS/API_ENDPOINTS/API_ENDPOINTS.md)
 - [Database](./DOCS/Database/schema.md)
 - [Frontend Routes](./DOCS/FrontendRoutes/frontendRoutes.md)
-- [React Component Hierarchy](./DOCS/reactComponentHierarchy.md)
+- [React Component Hierarchy](./DOCS/reactComponents.md)
 - [Sample State](./DOCS/SampleState/SampleState.md)
 
 ## Implementation (Sprint) Timeline
