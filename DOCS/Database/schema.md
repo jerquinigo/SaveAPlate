@@ -5,7 +5,7 @@ column name | data type | details
 id          | Integer   | SERIAL PRIMARY KEY
 email       | Varchar   | UNIQUE NOT NULL
 password_digest | Text  | NOT NULL
-name        | Varchar   | NOT NULL
+name        | Varchar   | UNIQUE NOT NULL
 address_field | Text    | NOT NULL
 body        | Text      |
 telephone_number | Varchar | NOT NULL
@@ -19,7 +19,7 @@ column name | data type | details
 id          | Integer   | SERIAL PRIMARY KEY
 email       | Varchar   | NOT NULL
 password_digest | Text  | NOT NULL
-name        | Varchar   | NOT NULL
+name        | Varchar   | UNIQUE NOT NULL
 address_field | Text    | NOT NULL
 client_certificate | Varchar | NOT NULL
 
