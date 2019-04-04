@@ -20,12 +20,12 @@ signup/login as a vendor or client
 
 ---
 
-- [View Wireframes](../DOCS/Wireframes)
-- [API Endpoints](../DOCS/API_ENDPOINTS/API_ENDPOINTS.md)
-- [Database](../DOCS/Database/schema.md)
-- [Frontend Routes](../DOCS/FrontendRoutes/frontendRoutes.md)
-- [React Component Hierarchy](../DOCS/reactComponentHierarchy.md)
-- [Sample State](../DOCS/SampleState/SampleState.md)
+- [View Wireframes](./DOCS/Wireframes)
+- [API Endpoints](./DOCS/API_ENDPOINTS/API_ENDPOINTS.md)
+- [Database](./DOCS/Database/schema.md)
+- [Frontend Routes](./DOCS/FrontendRoutes/frontendRoutes.md)
+- [React Component Hierarchy](./DOCS/reactComponentHierarchy.md)
+- [Sample State](./DOCS/SampleState/SampleState.md)
 
 ## Implementation (Sprint) Timeline
 
