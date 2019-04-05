@@ -27,7 +27,6 @@ signup/login as a vendor or client
 - [React Component Hierarchy](./DOCS/ReactComponentHierarchy/reactComponents.md)
 - [Sample State](./DOCS/SampleState/SampleState.md)
 
-
 ## Implementation (Sprint) Timeline
 
 ---
