@@ -34,6 +34,7 @@ isClaimed   | Boolean  | Default False NOT NULL
 vendor_id   | Integer  | References Vendor(id)
 set_time    | datetime | NOT NULL
 
+
 ## Favorites
 
 column name | data type | details
