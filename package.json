@@ -1,0 +1,24 @@
+{
+  "name": "SaveAPlate",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --kill-others \"cd frontend && npm start\" \"cd backend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerquinigo/SaveAPlate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerquinigo/SaveAPlate/issues"
+  },
+  "homepage": "https://github.com/jerquinigo/SaveAPlate#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
