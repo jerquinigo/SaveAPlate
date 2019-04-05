@@ -64,7 +64,15 @@ CREATE TABLE business_hours
 );
 
 INSERT INTO vendors
-    (email, password_digest, name, address_field, body, telephone_number, employee_id_number)
+    (
+    email,
+    password_digest,
+    name,
+    address_field,
+    body,
+    telephone_number,
+    employee_id_number
+    )
 VALUES
     (
         'kingsterrace@email.com',
