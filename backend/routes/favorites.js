@@ -4,7 +4,6 @@ const {
   getAllFavorites,
   getAllFavoritesById,
   createFavorite,
-  updateFavorite,
   deleteFavorite
 } = require("../db/queries/favoriteQueries.js");
 
@@ -12,7 +11,6 @@ const {
 router.get('/', getAllFavorites);
 router.get('/:id', getAllFavoritesById);
 router.post('/', createFavorite);
-router.patch('/:id', updateFavorite);
 router.delete('/:id', deleteFavorite);
 
 

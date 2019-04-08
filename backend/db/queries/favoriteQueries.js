@@ -50,25 +50,6 @@ createFavorite = (req,res,next) => {
 }
 
 
-updateFavorite = (req,res,next) => {
-  db.none("UPDATE favorites SET client_id=${client_id}, vendor_id=${vendor_id} WHERE id=${id}",
-  {
-    client_id: req.body.client_id,
-    vendor_id: req.body.vendor_id,
-    id: req.params.id
-  }
-)
-.then(()=> {
-  res.status(200).json({
-    status: "success",
-    message: "updated current Favorite"
-  })
-})
-.catch(err => {
-  return next(err)
-})
-}
-
 
 deleteFavorite = (req,res,next) => {
   let favoriteId = parseInt(req.params.id)
@@ -94,6 +75,5 @@ module.exports = {
   getAllFavorites,
   getAllFavoritesById,
   createFavorite,
-  updateFavorite,
   deleteFavorite
 }
