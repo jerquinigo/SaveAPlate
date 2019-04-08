@@ -30,7 +30,7 @@ getSingleClientById = (req,res,next) => {
 }
 
 createNewClient = (req,res,next) => {
-    db.one(
+    db.none(
         'INSERT INTO clients (email, password_digest, name, address_field, client_certificate) VALUES (${email}, ${password_digest}, ${name}, ${address_field}, ${client_certificate}) RETURNING name', {
             email: req.body.email,
             password_digest: req.body.password_digest,
