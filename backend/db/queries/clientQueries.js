@@ -1,5 +1,7 @@
 const {db} = require('../index.js')
 
+const authHelpers = require("../../auth/helpers");
+
 getAllClients = (req,res,next) => {
     db.any('SELECT * FROM clients')
     .then(clients => {
@@ -30,10 +32,11 @@ getSingleClientById = (req,res,next) => {
 }
 
 createNewClient = (req,res,next) => {
-    db.none(
+  const hash = authHelpers.createHash(req.body.password_digest);
+    db.one(
         'INSERT INTO clients (email, password_digest, name, address_field, client_certificate) VALUES (${email}, ${password_digest}, ${name}, ${address_field}, ${client_certificate}) RETURNING name', {
             email: req.body.email,
-            password_digest: req.body.password_digest,
+            password_digest: hash,
             name: req.body.name,
             address_field: req.body.address_field,
             client_certificate: req.body.client_certificate
@@ -44,8 +47,32 @@ createNewClient = (req,res,next) => {
         })
     })
     .catch(err => {
+      console.log(err);
         return next(err)
     })
+}
+
+function logoutClient(req, res, next) {
+  req.logout();
+  res.status(200).send("log out success");
+}
+//changing this for a diff method
+function loginClient(req, res) {
+  res.json(req.user)
+  // ).catch(err => {
+  //   console.log(err)
+  // })
+}
+
+function isLoggedIn(req, res) {
+  console.log(req.user, "isLoggedIn req.user");
+  if (req.user) {
+    console.log(req.user, "req.user")
+    res.json({ email: req.user });
+  } else {
+    console.log(req.user, "ELSE req.user")
+    res.json({ email: null });
+  }
 }
 
 
@@ -93,5 +120,9 @@ module.exports = {
   getSingleClientById,
   createNewClient,
   updateClient,
-  deleteClient
+  deleteClient,
+  logoutClient,
+  loginClient,
+  isLoggedIn
+
 };

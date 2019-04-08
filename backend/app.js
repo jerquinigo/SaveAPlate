@@ -3,11 +3,12 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-
+const passport = require("passport");
 var indexRouter = require("./routes/index");
 let vendorRouter = require("./routes/vendors.js");
 let clientRouter = require("./routes/clients.js");
 let foodItemRouter = require("./routes/foodItems.js");
+const session = require("express-session")
 
 let business_hoursRouter = require('./routes/business_hours.js')
 
@@ -25,6 +26,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    secret: "save_a_plate",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/", indexRouter);
 
