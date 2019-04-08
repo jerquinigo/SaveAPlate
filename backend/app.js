@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 let vendorRouter = require('./routes/vendors.js')
 let clientRouter = require('./routes/clients.js')
+let favoriteRouter = require('./routes/favorites.js')
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use('/', indexRouter);
 
 app.use("/api/vendors", vendorRouter);
 app.use("/api/clients", clientRouter);
+app.use("/api/favorites", favoriteRouter);
 
 
 // catch 404 and forward to error handler
