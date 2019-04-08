@@ -1,7 +1,7 @@
 const {db} = require('../index.js')
 
 const getAllVendors = (req,res,next) => {
-    db.any('SELECT * FROM vendors ')
+    db.any('SELECT * FROM vendors')
         .then(vendors => {
             res.status(200).json({
                 status: "Success!",
@@ -34,12 +34,12 @@ const getOneVendorById = (req,res,next) => {
 const createVendor = (req,res,next) => {
     db.one(
       'INSERT INTO vendors (email, password_digest,name, address_field, body, telephone_number, employee_id_number) VALUES (${email}, ${password_digest},${name}, ${address_field}, ${body}, ${telephone_number}, ${employee_id_number}) RETURNING name', {
-            email: req.body.email, 
+            email: req.body.email,
             password_digest: req.body.password_digest,
             name: req.body.name,
-            address_field: req.body.address_field, 
-            body: req.body.body, 
-            telephone_number: req.body.telephone_number, 
+            address_field: req.body.address_field,
+            body: req.body.body,
+            telephone_number: req.body.telephone_number,
             employee_id_number: Number(req.body.employee_id_number)
       }
     ).then(() => {

@@ -1,7 +1,7 @@
 const {db} = require('../index.js')
 
 getAllClients = (req,res,next) => {
-    db.any("SELECT * FROM clients")
+    db.any('SELECT * FROM clients')
     .then(clients => {
         res.status(200).json({
             status: "success",
@@ -16,7 +16,7 @@ getAllClients = (req,res,next) => {
 
 getSingleClientById = (req,res,next) => {
     let clientId = parseInt(req.params.id)
-    db.one("SELECT * FROM clients WHERE id=$1", [clientId])
+    db.one('SELECT * FROM clients WHERE id=$1', [clientId])
     .then(client => {
         res.status(200).json({
             status: "sucess",
@@ -36,7 +36,7 @@ createNewClient = (req,res,next) => {
             password_digest: req.body.password_digest,
             name: req.body.name,
             address_field: req.body.address_field,
-           client_certificate: req.body.client_certificate
+            client_certificate: req.body.client_certificate
         }
     ).then(() => {
         res.status(200).json({
@@ -51,7 +51,7 @@ createNewClient = (req,res,next) => {
 
 
 updateClient = (req,res,next) => {
-    db.none(
+    db.one(
       "UPDATE clients SET email=${email}, password_digest=${password_digest}, name=${name}, address_field=${address_field}, client_certificate=${client_certificate}",
       {
           email: req.body.email,
