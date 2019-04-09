@@ -92,3 +92,9 @@ signup/login as a vendor or client
 - Finish up incomplete tasks
 - Testing
 - Brainstorm demo ideas
+
+## Team
+
+<img src="https://avatars3.githubusercontent.com/u/43793502?s=400&v=4" width="100"> | <img src="https://avatars2.githubusercontent.com/u/43793569?s=460&v=4" width="100"> | <img src="https://avatars1.githubusercontent.com/u/41707636?s=460&v=4" width="100"> | <img src="https://avatars1.githubusercontent.com/u/22200791?s=460&v=4" width="100">
+--- | --- | --- | ---
+[Wynter Reid](https://github.com/wynterreid) | [Jonathan Erquinigo](https://github.com/jerquinigo) | [Deyvi Ortiz](https://github.com/SurgamSurgam) | [Andrew Kil](https://github.com/Andrew-Kil)
