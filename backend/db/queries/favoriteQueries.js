@@ -1,6 +1,6 @@
 const { db } = require("../index.js");
 
-getAllClientFavorites = (req, res, next) => {
+getAllFavorites = (req, res, next) => {
   db.any(
     "SELECT DISTINCT users.id AS client_id, users.email, users.password_digest, users.type, users.address_field AS address, users.telephone_number AS telephone, users.client_certificate AS certificate FROM favorites JOIN users ON favorites.client_id = users.id ORDER BY client_id"
   )
@@ -16,7 +16,7 @@ getAllClientFavorites = (req, res, next) => {
     });
 };
 
-getAllFavoritesById = (req, res, next) => {
+getAllFavoritesByUserId = (req, res, next) => {
   const favoritesId = parseInt(req.params.id);
   db.any(
     "SELECT DISTINCT users.id AS client_id, users.email, users.password_digest, users.type, users.address_field AS address, users.telephone_number AS telephone, users.client_certificate AS certificate FROM favorites JOIN users ON favorites.client_id = users.id WHERE favorites.client_id = $1 ORDER BY client_id",
@@ -70,8 +70,8 @@ deleteFavorite = (req, res, next) => {
 };
 
 module.exports = {
-  getAllClientFavorites,
-  getAllFavoritesById,
+  getAllFavorites,
+  getAllFavoritesByUserId,
   createFavorite,
   deleteFavorite
 };
