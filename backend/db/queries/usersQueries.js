@@ -75,19 +75,39 @@ createUser = (req,res,next) => {
 }
 
 updateUser = (req,res,next) => {
-  const hash = authHelpers.createHash(req.body.password_digest);
-  let user_id = Number(req.params.id)
-  db.none('UPDATE users SET name=${name}, email=${email}, password_digest=${password_digest}, address_field=${address_field}, body=${body}, telephone_number=${telephone_number}, ein=${ein}, client_certificate=${client_certificate} WHERE id=${id}',  {
-    id: user_id,
-    name : req.body.name,
-    email : req.body.email,
-    password_digest : hash,
-    address_field:req.body.address_field,
-    body:req.body.body || null,
-    telephone_number:req.body.telephone_number || null,
-    ein:req.body.ein || null,
-    client_certificate:req.body.client_certificate || null
-  })
+  // const hash = authHelpers.createHash(req.body.password_digest);
+  let queryStringArray = [];
+  let bodyKeys = Object.keys(req.body);
+  bodyKeys.forEach(key => {
+    queryStringArray.push(key + "=${" + key + "}");
+  });
+
+  let queryString = queryStringArray.join(",");
+
+  if (req.body.name && req.body.name.toLowerCase() === 'null') {
+    req.body.name = null;
+  }
+  if (req.body.email && req.body.email.toLowerCase() === 'null') {
+    req.body.email = null;
+  }
+  if (req.body.address_field && req.body.address_field.toLowerCase() === 'null') {
+    req.body.address_field = null;
+  }
+  if (req.body.body && req.body.body.toLowerCase() === 'null') {
+    req.body.body = null;
+  }
+  if (req.body.telephone_number && req.body.telephone_number.toLowerCase() === 'null') {
+    req.body.telephone_number = null;
+  }
+  if (req.body.ein === 'null') {
+    req.body.ein = null;
+  }
+  if (req.body.client_certificate && req.body.client_certificate.toLowerCase() === 'null') {
+    req.body.client_certificate = null;
+  }
+
+
+  db.none('UPDATE users SET ' + queryString + ' WHERE id=' + Number(req.params.id), req.body)
   .then(() => {
     res.status(200).json({
     status: "success",
