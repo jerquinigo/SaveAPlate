@@ -23,6 +23,7 @@ CREATE TABLE food_items
     quantity INT NOT NULL,
     name VARCHAR NOT NULL,
     is_claimed BOOLEAN DEFAULT FALSE NOT NULL,
+    client_id INT REFERENCES users(id) DEFAULT NULL,
     vendor_id INT REFERENCES users(id),
     set_time VARCHAR NOT NULL
 );
@@ -216,7 +217,6 @@ INSERT INTO food_items
     (
     quantity,
     name,
-    is_claimed,
     vendor_id,
     set_time
     )
@@ -224,49 +224,42 @@ VALUES
     (
         5,
         'Chicken',
-        TRUE,
         1,
         '18:30'
     ),
     (
         10,
         'Broccoli',
-        TRUE,
         2,
         '18:00'
     ),
     (
         15,
         'Tuna',
-        FALSE,
         3,
         '18:00'
     ),
     (
         20,
         'Eggs',
-        FALSE,
         4,
         '19:00'
     ),
     (
         25,
         'Salad',
-        TRUE,
         5,
         '17:00'
     ),
     (
         2,
         'Potatoes',
-        FALSE,
         6,
         '17:30'
     ),
     (
         25,
         'Shrimp',
-        TRUE,
         7,
         '17:00'
     );
