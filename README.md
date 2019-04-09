@@ -1,6 +1,12 @@
-# Save A Plate
+![sap_logo](https://user-images.githubusercontent.com/22200791/55772723-73a18600-5a5b-11e9-9080-bc5f715a1778.png)
 
 ---
+
+## Design Docs
+
+---
+[Wiki](https://github.com/jerquinigo/SaveAPlate/wiki)
+
 
 ## Minimum Viable Product
 
@@ -15,17 +21,6 @@ signup/login as a vendor or client
 - Able to locate nearby donations
 - Delete account
 - Able to edit account info
-
-## Design Docs
-
----
-
-- [View Wireframes](./DOCS/Wireframes)
-- [API Endpoints](./DOCS/API_ENDPOINTS/API_ENDPOINTS.md)
-- [Database](./DOCS/Database/schema.md)
-- [Frontend Routes](./DOCS/FrontendRoutes/frontendRoutes.md)
-- [React Component Hierarchy](./DOCS/ReactComponentHierarchy/reactComponents.md)
-- [Sample State](./DOCS/SampleState/SampleState.md)
 
 ## Implementation (Sprint) Timeline
 
