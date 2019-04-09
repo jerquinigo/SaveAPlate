@@ -9,7 +9,7 @@ const options = {usernameField:"email", passwordField:"password_digest"}
 
 passport.use(
   new LocalStrategy(options,(email, password_digest, done) => {
-    db.one("SELECT * FROM clients WHERE email = ${email}", {
+    db.one("SELECT * FROM users WHERE email = ${email}", {
       email: email
     })
       .then(user => {
@@ -17,7 +17,7 @@ passport.use(
           return done(null, false);
         } else {
           // console.log(user, "this is user");
-          return done(null, user);
+          return done(null, {email:user.email, id: user.id, address_field:user.address_field, name: user.name, type:user.type});
         }
       })
       .catch(err => {

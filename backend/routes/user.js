@@ -8,8 +8,17 @@ getAllVendors,
 getAllClients,
 updateUser,
 deleteUser,
-getSingleUser
+getSingleUser,
+logoutUser,
+loginUser,
+isLoggedIn
 } = require("../db/queries/usersQueries.js");
+
+
+router.post("/login", passport.authenticate("local", {}), loginUser);
+router.post("/isLoggedIn", isLoggedIn);
+router.post("/logout", loginRequired, logoutUser);
+
 
 router.get('/', getAllUsers)
 router.get('/vendors', getAllVendors)
