@@ -115,11 +115,28 @@ deleteUser = (req,res,next) => {
   })
 }
 
+getSingleUser = (req,res,next) => {
+  let user_id = Number(req.params.id)
+  db.any('SELECT * FROM users WHERE id=$1', [user_id])
+    .then(user => {
+      res.status(200).json({
+      status: "success",
+      data: user,
+      message: "you have a single user"
+    })
+  })
+  .catch(err => {
+    console.log(err);
+      return next(err)
+  })
+}
+
 module.exports= {
   getAllUsers,
   getAllVendors,
   getAllClients,
   createUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  getSingleUser
 }
