@@ -4,12 +4,14 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const passport = require("passport");
+const session = require("express-session")
+
 var indexRouter = require("./routes/index");
 let foodItemRouter = require("./routes/foodItems.js");
-const session = require("express-session")
 let business_hoursRouter = require('./routes/business_hours.js')
 let favoriteRouter = require('./routes/favorites.js')
 let userRouter =  require('./routes/user.js')
+let sessionRouter = require('./routes/sessions.js')
 
 
 var app = express();
@@ -40,7 +42,7 @@ app.use("/api/users", userRouter)
 app.use("/api/fooditems", foodItemRouter);
 app.use("/api/business_hours", business_hoursRouter);
 app.use("/api/favorites", favoriteRouter);
-
+app.use("/api/sessions", sessionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

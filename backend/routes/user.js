@@ -1,15 +1,17 @@
 var express = require("express");
 var router = express.Router();
-const passport = require("../auth/local");
-const { loginRequired } = require("../auth/helpers");
+
 const {
 getAllUsers,
 getAllVendors,
 getAllClients,
 updateUser,
 deleteUser,
-getSingleUser
+getSingleUser,
 } = require("../db/queries/usersQueries.js");
+
+
+
 
 router.get('/', getAllUsers)
 router.get('/vendors', getAllVendors)
