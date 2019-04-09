@@ -5,14 +5,11 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const passport = require("passport");
 var indexRouter = require("./routes/index");
-let vendorRouter = require("./routes/vendors.js");
-let clientRouter = require("./routes/clients.js");
 let foodItemRouter = require("./routes/foodItems.js");
 const session = require("express-session")
-
 let business_hoursRouter = require('./routes/business_hours.js')
-
 let favoriteRouter = require('./routes/favorites.js')
+let userRouter =  require('./routes/user.js')
 
 
 var app = express();
@@ -39,9 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-
-app.use("/api/vendors", vendorRouter);
-app.use("/api/clients", clientRouter);
+app.use("/api/users", userRouter)
 app.use("/api/fooditems", foodItemRouter);
 app.use("/api/business_hours", business_hoursRouter);
 app.use("/api/favorites", favoriteRouter);
