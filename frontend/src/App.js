@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar.jsx";
+import NavBar from "./components/NavBar/NavBar.jsx";
+import Welcome from "./components/Welcome/Welcome.jsx";
 
 class App extends Component {
   render() {
@@ -10,8 +11,8 @@ class App extends Component {
         <NavBar />
         <div className="main-section">
           <Switch>
-            {/* <Route exact path="/welcome" component={Welcome} />
-            <Route exact path="/" component={Feed} />
+            <Route exact path="/welcome" component={Welcome} />
+            {/* <Route exact path="/" component={Feed} />
             <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>
