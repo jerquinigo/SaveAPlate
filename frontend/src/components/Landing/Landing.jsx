@@ -10,10 +10,10 @@ export default function Landing() {
           <h1>Mission Statement</h1>
         </div>
         <p className="mission-statement-p-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
-          modi dolorem debitis cum harum deserunt. Similique, inventore saepe
-          doloremque, consequuntur minima magnam accusantium placeat
-          necessitatibus, delectus quam accusamus. Assumenda, rem!
+        To provide food service businesses with a way to reduce food waste and become resourceful for organizations that demonstrates a need in their surrounding community.
+        To feed New yorkers that lack funds for the basic necessity of food.
+        A way for donating business will receive tax-deductions along with decreased garbage disposal charges.
+        We know we’ve succeeded when the yearly rate of New Yorkers that face hunger declines.  
         </p>
       </div>
       <div className="login-container">
