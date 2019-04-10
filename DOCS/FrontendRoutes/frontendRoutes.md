@@ -9,10 +9,8 @@
 * Route - ‘/resources’
 
 ## Authentication
-* Route - ‘/vendor/signup’
-* Route - ‘/vendor/login’
-* Route - ‘/client/signup’
-* Route - ‘/client/login’
+* Route - ‘/user/signup’
+* Route - ‘/user/login’
 
 ## Feed
 * Route - ‘/’
