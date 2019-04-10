@@ -86,15 +86,24 @@ foodItemClaimStatus = (req, res, next) => {
 };
 
 updateFoodItem = (req, res, next) => {
+  let queryStringArray = [];
+  let bodyKeys = Object.keys(req.body);
+  bodyKeys.forEach(key => {
+    queryStringArray.push(key + "=${" + key + "}");
+  });
+  let queryString = queryStringArray.join(",");
+  if (req.body.quantity === "null") {
+    req.body.quantity = null;
+  }
+  if (req.body.name && req.body.name.toLowerCase() === "null") {
+    req.body.name = null;
+  }
+  if (req.body.set_time && req.body.set_time.toLowerCase() === "null") {
+    req.body.set_time = null;
+  }
+
   db.none(
-    "UPDATE food_items SET quantity=${quantity}, name=${name}, set_time=${set_time} WHERE id=${id}",
-    {
-      quantity: parseInt(req.body.quantity),
-      name: req.body.name,
-      set_time: req.body.set_time,
-      id: parseInt(req.params.id)
-    }
-  )
+    'UPDATE food_items SET ' + queryString + ' WHERE id=' + Number(req.params.id), req.body)
     .then(() => {
       res.status(200).json({
         status: "success",
