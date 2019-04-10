@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import TestingContainer from './containers/TestingContainer.js'
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
+        <TestingContainer />
         <div className="main-section">
           <Switch>
             {/* <Route exact path="/welcome" component={Welcome} />
