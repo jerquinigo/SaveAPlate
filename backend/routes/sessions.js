@@ -6,7 +6,7 @@ const {loginUser, isLoggedIn, logoutUser} = require("../db/queries/sessionsQueri
 
 
 router.post("/login", passport.authenticate("local", {}), loginUser);
-router.post("/isLoggedIn", isLoggedIn);
+router.get("/isLoggedIn", isLoggedIn);
 router.post("/logout", loginRequired, logoutUser);
 
 
