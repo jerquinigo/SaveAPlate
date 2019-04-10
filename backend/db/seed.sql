@@ -211,6 +211,30 @@ VALUES
         null,
         null,
         'http://lorempixel.com/640/480/abstract'
+    ),
+
+    (
+      'clienttester',
+      'clientdemo@test.com',
+      '$2a$10$uGQ7hFBmCmovvfe47NM37uFBCUQHuxUOP2R130IQQeuuS16.KIo8q',
+      2,
+      '47-10 Austell Place Long Island City queens ny ',
+      null,
+      null,
+      null,
+      'http://lorempixel.com/640/480/abstract'
+    ),
+
+    (
+      'vendortester',
+      'vendordemo@test.com',
+      '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
+      1,
+      '47-10 Austell Place Long Island City queens ny ',
+      null,
+      null,
+      null,
+      null
     );
 
 INSERT INTO food_items
