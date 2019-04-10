@@ -2,96 +2,55 @@
 
 ---
 
-## Design Docs
+# TL;DR
 
 ---
-[Wiki](https://github.com/jerquinigo/SaveAPlate/wiki)
 
+Save a Plate is a full stack web application that allows vendors to list food items, which would go to waste if left unrescued, and allows non-profit organizations to claim & pickup the food.
+
+---
+
+Wireframes
+========
+<center>
+  <table>
+    <tr>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Home%20Page.png"><img width="120" alt="chdemko" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Home%20Page.png"></a></td>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Feed.png"><img width="120" alt="chendaniely" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Feed.png"></a></td>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Vendor%20View%20-%20Vendor%20Profile.png"><img width="120" alt="lauragift21" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Vendor%20View%20-%20Vendor%20Profile.png"></a></td>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Vendor%20View%20-%20Vendor%20Profile%20-%20Add%20Item%20Form.png"><img width="120" alt="maracuja-juice" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Vendor%20View%20-%20Vendor%20Profile%20-%20Add%20Item%20Form.png"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20Profile.png"><img width="120" alt="marisbotero" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20Profile.png"></a></td>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20View%20-%20Vendor%20Profile.png"><img width="120" alt="nordes" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20View%20-%20Vendor%20Profile.png"></a></td>
+      <td><a href="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20Profile%20-%20Edit%20Profile%20-%20Form.png"><img width="120" alt="ppapadeas" src="https://raw.githubusercontent.com/jerquinigo/SaveAPlate/master/DOCS/Wireframes/Client%20Profile%20-%20Edit%20Profile%20-%20Form.png"></a></td>
+    </tr>
+  </table>
+</center>
 
 ## Minimum Viable Product
 
 ---
 
-Save a Plate is a web app built using React/Redux, Express, SQL, CSS/HTML. At a minimum, the site will be able to
-signup/login as a vendor or client
-
+Save a Plate is a web app built using **P**ostgres, **E**xpress, **R**eact, **N**ode, Redux, HTML & CSS. At a minimum, the user should be:
+- Able to signup/login as a vendor or client
 - Able to post food donations
 - Able to claim food donations
+- Able to unclaim food donations
 - Able to favorite a vendor
 - Able to locate nearby donations
-- Delete account
+- Able to delete account
 - Able to edit account info
-
-## Implementation (Sprint) Timeline
 
 ---
 
-## Sprint 1 - Week 1
+## Design Docs
 
-- Client/vendor tables, queries, & routes
-- Homepage
-- Welcome/Feed NavBar
-- User authentication
-  - Client
-    - Signup
-      - https://compliancegov.zendesk.com/hc/en-us/articles/212102057-What-documentation-is-required-to-prove-nonprofit-status-
-    - Login
-  - Vendor
-    - Signup
-      - File reader (tax form)
-    - Login
-- Plan out components for frontend
-  - Boilerplate for redux
-- CSS (responsive design)
-  - CSS reset (body, headers)
-  - Home page
-  - Login page
-  - Signup page
-  - Decide on color scheme / theme
+---
 
-## Sprint 2 - Week 2
+Visit our [Wiki](https://github.com/jerquinigo/SaveAPlate/wiki)
 
-- Backend
-  - Food items tables, queries, & routes
-  - Business hours tables, queries, & routes
-- Vendors
-  - Profile page
-    - Geolocation
-    - Hours
-    - Vendor info
-    - Vendor form
-    - Favorite button
-  - Adding food item
-  - Vendor NavBar
-- Feed
-  - Rendering food items
-  - Functionality of ‘isClaimed’
-  - Geolocation of client relative to vendor
-  - Search bar
-- CSS
-  - Vendors profile
-
-## Sprint 3 - Week 3
-
-- Backend
-  - Favorites tables, queries, & routes
-- Clients
-  - Profile page
-    - Client info
-    - Client form
-  - Claimed food items feed
-  - Favorited vendors feed
-  - Client NavBar
-- CSS
-  - Clients profile
-  - Feed
-
-## Sprint 4 - Week 4
-
-- Cleanup/ modularize code
-- Finish up incomplete tasks
-- Testing
-- Brainstorm demo ideas
+---
 
 ## Team
 
