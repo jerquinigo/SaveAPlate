@@ -3,7 +3,7 @@ const {db} = require('../index.js')
 const authHelpers = require("../../auth/helpers");
 
 getAllUsers = (req,res,next) => {
-  db.any('SELECT * FROM users')
+  db.any('SELECT name,email,type,address_field,body,telephone_number,ein,client_certificate FROM users')
     .then(users => {
       res.status(200).json({
       status: "success",
