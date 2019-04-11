@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginContainer from "./containers/LoginContainer.js";
 import "./App.css";
-import NavBar from "./components/navBar/NavBar.js";
-import Landing from "./components/landing/Landing.js";
+import NavBar from "./components/NavBar/NavBar.js";
+import Landing from "./components/Landing/Landing.js";
 
 class App extends Component {
   render() {
