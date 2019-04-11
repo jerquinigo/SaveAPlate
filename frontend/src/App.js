@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginContainer from "./containers/LoginContainer.js";
+import SignUpContainer from "./containers/SignUpContainer.js"
 import "./App.css";
 import NavBar from "./components/navBar/NavBar.js";
 import Landing from "./components/landing/Landing.js";
@@ -12,6 +13,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <LoginContainer />
+        <SignUpContainer />
         <div className="main-section">
           <Switch>
             <Route exact path="/welcome" component={Landing} />
