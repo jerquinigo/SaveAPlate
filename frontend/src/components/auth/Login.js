@@ -35,47 +35,6 @@ class Login extends Component {
       });
   };
 
-  vendorDemoLogin = e => {
-    e.preventDefault();
-    axios
-      .post("/api/sessions/login/", {
-        email: "vendordemo@test.com",
-        password_digest: "1234"
-      })
-      .then(() => {
-        Auth.authenticateUser("vendordemo@test.com");
-      })
-      .then(() => {
-        this.props.checkAuthenticateStatus();
-      })
-      .then(() => {
-        this.setState({
-          email: "",
-          password_digest: ""
-        });
-      });
-  };
-
-  clientDemoLogin = e => {
-    e.preventDefault();
-    axios
-      .post("/api/sessions/login/", {
-        email: "clientdemo@test.com",
-        password_digest: "1234"
-      })
-      .then(() => {
-        Auth.authenticateUser("clientdemo@test.com");
-      })
-      .then(() => {
-        this.props.checkAuthenticateStatus();
-      })
-      .then(() => {
-        this.setState({
-          email: "",
-          password_digest: ""
-        });
-      });
-  };
 
   render() {
     console.log("testing PROPS: ", this.props);
@@ -98,12 +57,7 @@ class Login extends Component {
             placeholder="PASSWORD"
           />
           <button type="submit">Login</button>
-          <button className="demo" onClick={this.vendorDemoLogin}>
-            Vendor Demo
-          </button>
-          <button className="demo" onClick={this.clientDemoLogin}>
-            Client Demo
-          </button>
+
         </form>
       </>
     );
