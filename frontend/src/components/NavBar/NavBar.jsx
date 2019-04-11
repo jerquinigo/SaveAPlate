@@ -8,7 +8,11 @@ export default function NavBar() {
       <nav id="nav">
         <span id="nav-title">
           <NavLink to="/welcome" className="nav-link">
-            Save a Plate
+            <img
+              src={require("./logo.png")}
+              alt="logo for save a plate"
+              id="logo"
+            />
           </NavLink>
         </span>
 
