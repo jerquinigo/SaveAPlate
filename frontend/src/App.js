@@ -12,12 +12,12 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <LoginContainer />
-        <SignUpContainer />
         <div className="main-section">
           <Switch>
             <Route exact path="/welcome" component={Landing} />
             <Route exact path="/aboutus" component={AboutUs} />
+            <Route path="/user/signup" component={SignUpContainer} />
+            <Route path="/user/login" component={LoginContainer} />
             {/* <Route exact path="/" component={Feed} />
             <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
