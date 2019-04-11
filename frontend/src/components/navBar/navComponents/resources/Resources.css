@@ -1,0 +1,8 @@
+#resources-container {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 50%;
+  background-color: whitesmoke;
+}

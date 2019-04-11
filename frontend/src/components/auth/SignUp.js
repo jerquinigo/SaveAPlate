@@ -35,7 +35,7 @@ class SignUp extends Component{
       telephone_number,
       client_certificate} = this.state;
 
-      await axios.post("api/users/new", {
+      await axios.post("/api/users/new", {
       email,
       password_digest,
       type,
@@ -48,7 +48,7 @@ class SignUp extends Component{
 
       Auth.authenticateUser(email);
 
-      await axios.post("api/sessions/login", {
+      await axios.post("/api/sessions/login", {
       email,
       password_digest,
       type,
@@ -107,8 +107,8 @@ signUpForm = () => {
     return(
       <div className="signUpForm">
       <form>
-             <input onClick={this.handleChange} type="radio" name="type" value="1" /> Non-Profit Organization
-             <input onClick={this.handleChange} type="radio" name="type" value="2" /> Food Business
+             <input onClick={this.handleChange} type="radio" name="type" value="2" /> Non-Profit Organization
+             <input onClick={this.handleChange} type="radio" name="type" value="1" /> Food Business
              </form>
       {this.signUpForm()}
       </div>
