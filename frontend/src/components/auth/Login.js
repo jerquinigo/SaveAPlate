@@ -37,8 +37,6 @@ class Login extends Component {
 
 
   render() {
-    console.log("testing PROPS: ", this.props);
-    console.log("testing STATE: ", this.state);
     return (
       <>
         <form onSubmit={this.loginUser}>

@@ -12,7 +12,8 @@ export const checkAuthenticateStatus = () => dispatch => {
       return dispatch(
         receiveUserStatus({
           isLoggedIn: Auth.isUserAuthenticated(),
-          user: Auth.getToken()
+          user: Auth.getToken(),
+          userInfoObj: user.data
         })
       );
     } else {

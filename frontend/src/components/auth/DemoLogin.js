@@ -47,6 +47,7 @@ clientDemoLogin = e => {
 };
 
 render(){
+  debugger
   return(
     <form>
     <button className="demo" onClick={this.vendorDemoLogin}>

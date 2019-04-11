@@ -2,11 +2,12 @@ import DemoLogin from "../components/auth/DemoLogin.js";
 import { connect } from "react-redux";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
-const mapStateToProps = state => {
-  return {
-    currentUser: state.currentUser
-  };
-};
+// const mapStateToProps = state => {
+//   debugger
+//   return {
+//     currentUser: state.auth
+//   };
+// };
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -15,6 +16,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(DemoLogin);

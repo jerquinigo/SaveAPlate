@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
 const mapStateToProps = state => {
+  debugger;
   return {
     currentUser: state.currentUser
   };
