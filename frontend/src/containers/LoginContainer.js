@@ -1,4 +1,4 @@
-import Login from "../components/Auth/Login.js";
+import Login from "../components/auth/Login.js";
 import { connect } from "react-redux";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 

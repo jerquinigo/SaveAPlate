@@ -1,6 +1,6 @@
 import Auth from "../utils/Auth.js";
 import axios from "axios";
-import { RECEIVE_USER } from "./ActionTypes";
+import { RECEIVE_USER } from "./ActionTypes.js";
 
 export const receiveUserStatus = user => {
   return { type: RECEIVE_USER, user };

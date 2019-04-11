@@ -1,4 +1,4 @@
-import SignUp from "../components/SignUp.js";
+import SignUp from "../components/auth/SignUp.js";
 import { connect } from "react-redux";
 import { fetchAllUsers } from "../actions/UsersActions.js";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
