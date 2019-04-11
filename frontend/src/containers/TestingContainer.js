@@ -1,6 +1,6 @@
 import Testing from "../components/testing.js";
 import { connect } from "react-redux";
-import { fetchAllUsers } from "../actions/usersActions.js";
+import { fetchAllUsers } from "../actions/UsersActions.js";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
 const mapStateToProps = state => {

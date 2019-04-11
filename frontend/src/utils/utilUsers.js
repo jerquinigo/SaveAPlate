@@ -1,6 +1,5 @@
-import axios from "axios"
-
+import axios from "axios";
 
 export const getAllUsers = () => {
-  return axios.get('/api/users/')
-}
+  return axios.get("/api/users/");
+};

@@ -1,5 +1,5 @@
 import React from "react";
-import "./LandingCSS/Landing.css";
+import "./landingCSS/Landing.css";
 import { NavLink } from "react-router-dom";
 
 export default function Landing() {
