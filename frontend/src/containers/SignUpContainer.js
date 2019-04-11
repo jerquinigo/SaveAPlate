@@ -1,6 +1,6 @@
-import {connect} from 'react-redux';
-import SignUp from '../components/Auth/SignUp.js'
-import { fetchAllUsers } from "../actions/usersActions.js";
+import SignUp from "../components/SignUp.js";
+import { connect } from "react-redux";
+import { fetchAllUsers } from "../actions/UsersActions.js";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
 const mapStateToProps = state => {

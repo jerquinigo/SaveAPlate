@@ -1,4 +1,4 @@
-import { RECEIVE_USER } from "../actions/actionTypes.js";
+import { RECEIVE_USER } from "../actions/ActionTypes.js";
 
 const initalState = {
   currentUser: null
