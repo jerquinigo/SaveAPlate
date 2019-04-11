@@ -10,15 +10,7 @@ export default function About() {
       <br />
       <div className="about-text">
         Save a Plate was formed in 2019 by four Full Stack Web Developers with
-        the goal of helping the food rescue movement in NYC. City Harvest helped
-        start the food rescue movement in 1982 when a group of New Yorkers saw
-        that New York City had an abundance of excess food even while a large
-        number of its residents struggled to feed themselves and their families.
-        We recognized the practical purpose that this surplus food could serve
-        if directed to New Yorkers who needed it, filling the plates of the
-        working mom who had trouble making ends meet at month’s end, the senior
-        in the apartment upstairs living on a fixed income, or the family around
-        the corner coping with a large and unexpected medical bill.
+        the goal of helping the food rescue movement in NYC.
       </div>
       <br />
       <div className="about-text">
