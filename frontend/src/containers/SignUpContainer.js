@@ -1,5 +1,5 @@
-import Testing from "../components/testing.js";
-import { connect } from "react-redux";
+import {connect} from 'react-redux';
+import SignUp from '../components/Auth/SignUp.js'
 import { fetchAllUsers } from "../actions/usersActions.js";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Testing);
+)(SignUp);
