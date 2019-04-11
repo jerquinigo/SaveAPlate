@@ -1,5 +1,7 @@
-![sap_logo](https://user-images.githubusercontent.com/22200791/55772723-73a18600-5a5b-11e9-9080-bc5f715a1778.png)
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/22200791/55772723-73a18600-5a5b-11e9-9080-bc5f715a1778.png" alt="Sublime's custom image"/>
+</p>
 ---
 
 # TL;DR
