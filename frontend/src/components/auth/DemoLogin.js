@@ -24,9 +24,10 @@ vendorDemoLogin = e => {
         password_digest: "",
         isSubmitted:true
       })
+      this.props.history.push('/vendortester')
     })
     .then(() => {
-      return <Redirect to='/vendortester' />
+      this.sendMeAsVendor();
     })
 }
 
@@ -50,14 +51,17 @@ clientDemoLogin = e => {
       })
       this.props.history.push('/clienttester')
     })
-    // .then(() => {
-    //   this.sendMeThere();
-    // })
+    .then(() => {
+      this.sendMeAsClient();
+    })
 }
 
-sendMeThere = () => {
-  debugger
+sendMeAsClient = () => {
   return <Redirect to='/clienttester' />
+}
+
+sendMeAsVendor = () => {
+  return <Redirect to='/vendortester' />
 }
 
 
