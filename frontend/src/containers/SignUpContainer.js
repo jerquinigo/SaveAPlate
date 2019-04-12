@@ -5,9 +5,7 @@ import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
 const mapStateToProps = state => {
   return {
-
-    currentUser: state.auth,
-
+    currentUser: state.auth
   };
 };
 

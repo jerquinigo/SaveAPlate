@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Link, Redirect} from 'react-router-dom'
+import { Redirect } from "react-router-dom";
 import Auth from "../../utils/Auth.js";
 
 class Login extends Component {
@@ -9,7 +9,6 @@ class Login extends Component {
     password_digest: "",
     isSubmitted: false
   };
-
 
   handleChange = e => {
     this.setState({
@@ -30,22 +29,22 @@ class Login extends Component {
         this.props.checkAuthenticateStatus();
       })
       .then(() => {
-                this.setState({
-                  email: "",
-                  password_digest: "",
-                  isSubmitted: true
-                  })
-      })
+        this.setState({
+          email: "",
+          password_digest: "",
+          isSubmitted: true
+        });
+      });
   };
 
-conditionalRouting = () => {
-  if (this.state.isSubmitted && this.props.currentUser.type === 1) {
-    return <Redirect to={`/${this.props.currentUser.name}`} />
-  } else if (this.state.isSubmitted && this.props.currentUser.type === 2){
-    return <Redirect to={`/${this.props.currentUser.name}`} />
-  }
-  console.log("CR code");
-}
+  conditionalRouting = () => {
+    if (this.state.isSubmitted && this.props.currentUser.type === 1) {
+      return <Redirect to={`/${this.props.currentUser.name}`} />;
+    } else if (this.state.isSubmitted && this.props.currentUser.type === 2) {
+      return <Redirect to={`/${this.props.currentUser.name}`} />;
+    }
+    console.log("CR code");
+  };
 
   render() {
     return (
@@ -67,12 +66,10 @@ conditionalRouting = () => {
             placeholder="PASSWORD"
           />
           <button type="submit">Login</button>
-
         </form>
       </>
-
-    )
-  };
+    );
+  }
 }
 
 export default Login;

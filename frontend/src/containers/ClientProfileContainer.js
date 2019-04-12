@@ -1,10 +1,13 @@
-import ClientProfile from '../components/profiles/ClientProfile'
-import { connect } from 'react-redux'
+import ClientProfile from "../components/profiles/ClientProfile";
+import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  return{
+  return {
     currentUser: state.auth
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, null)(ClientProfile)
+export default connect(
+  mapStateToProps,
+  null
+)(ClientProfile);
