@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Auth from "../../utils/Auth.js"
+import {Link, Redirect} from 'react-router-dom'
 
 class SignUp extends Component{
   state = {
@@ -11,7 +12,8 @@ class SignUp extends Component{
     address_field: "",
     body: "",
     telephone_number: "",
-    client_certificate: ""
+    client_certificate: "",
+    isSubmitted: false
 
   }
 
@@ -21,6 +23,7 @@ class SignUp extends Component{
       [e.target.name]: e.target.value
     })
   }
+
 
 
   registerUser = async e => {
@@ -69,7 +72,8 @@ class SignUp extends Component{
         address_field:"",
         body:"",
         telephone_number:"",
-        client_certificate: ""
+        client_certificate: "",
+        isSubmitted: true
       });
     };
 
@@ -101,10 +105,21 @@ signUpForm = () => {
  }
 }
 
+conditionalRouting = () => {
+  if (this.state.isSubmitted && this.props.currentUser.type === 1) {
+    return <Redirect to={`/${this.props.currentUser.name}`} />
+  } else if (this.state.isSubmitted && this.props.currentUser.type === 2){
+    return <Redirect to={`/${this.props.currentUser.name}`} />
+  }
+}
+
 
 
   render(){
+
     return(
+      <>
+        {this.conditionalRouting()}
       <div className="signUpForm">
       <form>
              <input onClick={this.handleChange} type="radio" name="type" value="2" /> Non-Profit Organization
@@ -112,6 +127,7 @@ signUpForm = () => {
              </form>
       {this.signUpForm()}
       </div>
+      </>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Auth from "../../utils/Auth.js";
+import {Link, Redirect} from 'react-router-dom'
 
 class DemoLogin extends Component {
 
@@ -20,10 +21,14 @@ vendorDemoLogin = e => {
     .then(() => {
       this.setState({
         email: "",
-        password_digest: ""
-      });
-    });
-};
+        password_digest: "",
+        isSubmitted:true
+      })
+    })
+    .then(() => {
+      return <Redirect to='/vendortester' />
+    })
+}
 
 clientDemoLogin = e => {
   e.preventDefault();
@@ -33,22 +38,33 @@ clientDemoLogin = e => {
       password_digest: "1234"
     })
     .then(() => {
-      Auth.authenticateUser("clientdemo@test.com");
+      Auth.authenticateUser("clientdemo@test.com")
     })
     .then(() => {
-      this.props.checkAuthenticateStatus();
+      this.props.checkAuthenticateStatus()
     })
     .then(() => {
       this.setState({
         email: "",
         password_digest: ""
-      });
-    });
-};
+      })
+      this.props.history.push('/clienttester')
+    })
+    // .then(() => {
+    //   this.sendMeThere();
+    // })
+}
+
+sendMeThere = () => {
+  debugger
+  return <Redirect to='/clienttester' />
+}
+
+
 
 render(){
-  debugger
   return(
+    <>
     <form>
     <button className="demo" onClick={this.vendorDemoLogin}>
       Vendor Demo
@@ -57,6 +73,7 @@ render(){
       Client Demo
     </button>
     </form>
+    </>
   )
 }
 }
