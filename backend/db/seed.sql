@@ -68,7 +68,7 @@ INSERT INTO users
     client_certificate
     )
 VALUES
-    (
+        (
         'Kings Terrace',
         'kingterrace@email.com',
         'kingsterrace123',
@@ -79,7 +79,6 @@ VALUES
         123456789,
         null
     ),
-
     (
         'Mauzone Catering',
         'mauzonee@email.com',
@@ -212,30 +211,28 @@ VALUES
         null,
         'http://lorempixel.com/640/480/abstract'
     ),
-
     (
       'clienttester',
       'clientdemo@test.com',
-      '$2a$10$uGQ7hFBmCmovvfe47NM37uFBCUQHuxUOP2R130IQQeuuS16.KIo8q',
+      '$2a$10$W3eHg65G5egF0cYlN2G7vebBra3yhaBUab2dj1au1SWwXZZE3lYdm',
       2,
       '47-10 Austell Place Long Island City queens ny ',
-      null,
-      null,
-      null,
-      'http://lorempixel.com/640/480/abstract'
-    ),
-
-    (
-      'vendortester',
-      'vendordemo@test.com',
-      '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
-      1,
-      '47-10 Austell Place Long Island City queens ny ',
-      null,
-      null,
-      null,
+      'I am viewing as an Non-Profit Organization',
+      '(347) 492-6843',
+      123456789,
       null
-    );
+    ),
+    (
+          'vendortester',
+          'vendordemo@test.com',
+          '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
+          1,
+          '47-10 Austell Place Long Island City queens ny' ,
+          'I am viewing as a Food Industry',
+          '(347) 502-6826',
+          123456989,
+          null
+        );
 
 INSERT INTO food_items
     (
