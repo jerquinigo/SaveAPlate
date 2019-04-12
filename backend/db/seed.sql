@@ -71,7 +71,7 @@ VALUES
         (
         'Kings Terrace',
         'kingterrace@email.com',
-        'kingsterrace123',
+        'kingsterrace',
         1,
         '815 Kings Hwy, Brooklyn, NY 11223',
         'The best catering hall',
@@ -214,7 +214,7 @@ VALUES
     (
       'clienttester',
       'clientdemo@test.com',
-      '$2a$10$W3eHg65G5egF0cYlN2G7vebBra3yhaBUab2dj1au1SWwXZZE3lYdm',
+      '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
       2,
       '47-10 Austell Place Long Island City queens ny ',
       'I am viewing as an Non-Profit Organization',
