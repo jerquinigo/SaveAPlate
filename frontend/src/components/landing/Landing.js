@@ -2,13 +2,13 @@ import React from "react";
 import "./landingCSS/Landing.css";
 import { NavLink, Link } from "react-router-dom";
 
-import DemoLogin from '../../containers/DemoLoginContainer.js'
+import DemoLogin from "../../containers/DemoLoginContainer.js";
 
 export default function Landing() {
   return (
     <div>
       <DemoLogin />
-      <Link to='/clienttester'>Client Profile</Link>
+      <Link to="/clienttester">Client Profile</Link>
       <div className="landing-container">
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
@@ -25,7 +25,6 @@ export default function Landing() {
       </div>
       <div className="login-container">
         <div className="login-sub-container-1">
-
           <NavLink to="/user/signup">
             <button type="submit" id="signup-button">
               Sign Up

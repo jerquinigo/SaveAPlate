@@ -1,7 +1,7 @@
 import DemoLogin from "../components/auth/DemoLogin.js";
 import { connect } from "react-redux";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
-import { withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => {
   return {
@@ -15,7 +15,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DemoLogin));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DemoLogin)
+);
