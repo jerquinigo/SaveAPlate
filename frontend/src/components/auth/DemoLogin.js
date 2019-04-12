@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Auth from "../../utils/Auth.js";
+import {Link, Redirect} from 'react-router-dom'
 
 class DemoLogin extends Component {
 
@@ -20,10 +21,15 @@ vendorDemoLogin = e => {
     .then(() => {
       this.setState({
         email: "",
-        password_digest: ""
-      });
-    });
-};
+        password_digest: "",
+        isSubmitted:true
+      })
+      this.props.history.push('/vendortester')
+    })
+    .then(() => {
+      this.sendMeAsVendor();
+    })
+}
 
 clientDemoLogin = e => {
   e.preventDefault();
@@ -33,21 +39,36 @@ clientDemoLogin = e => {
       password_digest: "1234"
     })
     .then(() => {
-      Auth.authenticateUser("clientdemo@test.com");
+      Auth.authenticateUser("clientdemo@test.com")
     })
     .then(() => {
-      this.props.checkAuthenticateStatus();
+      this.props.checkAuthenticateStatus()
     })
     .then(() => {
       this.setState({
         email: "",
         password_digest: ""
-      });
-    });
-};
+      })
+      this.props.history.push('/clienttester')
+    })
+    .then(() => {
+      this.sendMeAsClient();
+    })
+}
+
+sendMeAsClient = () => {
+  return <Redirect to='/clienttester' />
+}
+
+sendMeAsVendor = () => {
+  return <Redirect to='/vendortester' />
+}
+
+
 
 render(){
   return(
+    <>
     <form>
     <button className="demo" onClick={this.vendorDemoLogin}>
       Vendor Demo
@@ -56,6 +77,7 @@ render(){
       Client Demo
     </button>
     </form>
+    </>
   )
 }
 }

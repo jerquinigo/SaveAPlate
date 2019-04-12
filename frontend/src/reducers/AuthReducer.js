@@ -1,4 +1,5 @@
 import { RECEIVE_USER } from "../actions/ActionTypes.js";
+import merge from "lodash/merge";
 
 const initalState = {
   currentUser: null
@@ -9,7 +10,10 @@ const AuthReducer = (state = initalState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      return { currentUser: action.user };
+      let newState = merge({}, state)
+
+      return newState.currentUser = action.user.userInfoObj
+  
     default:
       return state;
   }
