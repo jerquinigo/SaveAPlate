@@ -8,7 +8,6 @@ export default function Landing() {
   return (
     <div>
       <DemoLogin />
-      <Link to="/clienttester">Client Profile</Link>
       <div className="landing-container">
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
