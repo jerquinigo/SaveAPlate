@@ -1,6 +1,6 @@
 #nav,
 .nav-link {
-  background-color: #343a40;
+  background-color: #353e5b;
   color: white;
   height: 100px;
   display: flex;
@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+.nav-link:hover {
+  color: #de6a5a;
+}
+
 #logo {
   width: 140px;
   border-radius: 30px;
@@ -19,7 +23,7 @@
 }
 
 #logo:hover {
-  border: 5px solid lightgray;
+  border: 5px solid #de6a5a;
 }
 
 #nav-links {
