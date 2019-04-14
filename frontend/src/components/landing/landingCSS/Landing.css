@@ -1,10 +1,10 @@
 body {
-  background-color: lightgray;
+  background-color: #ffd093;
 }
 
 #mission-statement {
   font-size: 50px;
-  color: darkslategray;
+  font-weight: bold;
 }
 
 .landing-container {
@@ -16,7 +16,7 @@ body {
   height: 300px;
   margin: 0 auto;
   margin-top: 50px;
-  background-color: lightgray;
+  background-color: #bcc9d2;
 }
 
 .mission-statement-p-text {
@@ -40,7 +40,7 @@ body {
 .login-sub-container-1,
 .login-sub-container-2 {
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #ebf4f4;
 }
 
 .login-sub-container-1 {
