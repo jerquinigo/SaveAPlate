@@ -64,7 +64,7 @@ export default class Feed extends Component {
       <>
         {this.state.allFoodItems ? (
           <div id="feed-container">
-            <h1>Client #1 - Food Item(s):</h1>
+            <h1>All Food Items:</h1>
             {this.state.allFoodItems.map((food, i) => {
               return (
                 <ul key={i}>
@@ -75,7 +75,7 @@ export default class Feed extends Component {
                   </li>
                   <li>
                     <strong>Feeds: </strong>
-                    {food.quantity}
+                    {food.quantity} people
                   </li>
                   <li>
                     <strong>Pick-up Time: </strong> {food.set_time}
