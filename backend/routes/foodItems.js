@@ -10,8 +10,8 @@ const {
 } = require("../db/queries/foodItemsQueries.js");
 
 router.get("/", getAllFoodItems);
-router.get("/client/:clientID", getFoodItemsByClient);
-router.get("/vendor/:vendorID", getFoodItemsByVendor);
+router.get("/client/:id", getFoodItemsByClient);
+router.get("/vendor/:id", getFoodItemsByVendor);
 router.post("/", createNewFoodItem);
 router.patch("/:id", updateFoodItem);
 router.delete("/:id", deleteFoodItem);

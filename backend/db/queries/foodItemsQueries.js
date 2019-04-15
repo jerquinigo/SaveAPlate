@@ -16,7 +16,7 @@ getAllFoodItems = (req, res, next) => {
 
 getFoodItemsByClient = (req, res, next) => {
   const clientID = Number(req.params.id);
-  db.any("SELECT * FROM food_items WHERE id=$1", [clientID])
+  db.any("SELECT * FROM food_items WHERE client_id=$1", [clientID])
     .then(food_items => {
       res.status(200).json({
         status: "sucess",
@@ -103,7 +103,12 @@ updateFoodItem = (req, res, next) => {
   }
 
   db.none(
-    'UPDATE food_items SET ' + queryString + ' WHERE id=' + Number(req.params.id), req.body)
+    "UPDATE food_items SET " +
+      queryString +
+      " WHERE id=" +
+      Number(req.params.id),
+    req.body
+  )
     .then(() => {
       res.status(200).json({
         status: "success",

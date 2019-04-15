@@ -1,4 +1,11 @@
 #feed-container {
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: lightblue;
   border: 2px solid black;
+  height: 100px;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 100px;
 }
