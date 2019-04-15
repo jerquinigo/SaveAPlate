@@ -1,17 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-
-class ClientProfile extends Component{
-
-
-
-  render(){
+class ClientProfile extends Component {
+  render() {
     console.log(this.props);
-    return(
-      <div className="clientProfileWrapper profile">
-      this is the clients page
-      </div>
-    )
+    return <div className="clientProfileWrapper profile">CLIENTS page!</div>;
   }
 }
 

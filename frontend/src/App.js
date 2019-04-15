@@ -8,6 +8,7 @@ import Landing from "./components/landing/Landing.js";
 import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
+import VendorProfileContainer from "./containers/VendorProfileContainer.js";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
             <Route path="/clienttester" component={ClientProfileContainer} />
+            <Route path="/vendortester" component={VendorProfileContainer} />
 
             {/* <Route exact path="/" component={Feed} />
             <Route path="/vendor/:vendorName" component={VendorProfile} />
