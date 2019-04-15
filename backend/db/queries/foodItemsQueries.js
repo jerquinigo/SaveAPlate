@@ -31,7 +31,7 @@ getFoodItemsByClient = (req, res, next) => {
 
 getFoodItemsByVendor = (req, res, next) => {
   let vendorID = Number(req.params.id);
-  db.any("SELECT * FROM food_items WHERE id=$1", [vendorID])
+  db.any("SELECT * FROM food_items WHERE vendor_id=$1", [vendorID])
     .then(food_items => {
       res.status(200).json({
         status: "sucess",

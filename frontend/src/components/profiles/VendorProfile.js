@@ -84,8 +84,8 @@ toAddItem = () => {
       set_time: set_time,
       vendor_id:this.props.currentUser.id
     })
-    .then(()=> {
-      this.getUserfoodItems()
+    .then((res)=> {
+      console.log(res.data.message);
     })
   }
 
