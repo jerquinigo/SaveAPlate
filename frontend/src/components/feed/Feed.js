@@ -18,9 +18,22 @@ export default class Feed extends Component {
       });
     });
   };
+  // at the moment, this function will only display foodItems for client #1 since "1" is hard-coded. will be updated
 
   render() {
-    console.log(this.state);
-    return <div id="feed-container" />;
+    console.log(this.state.foodItems);
+
+    return (
+      <>
+        {this.state.foodItems ? (
+          <div id="feed-container">
+            <ul>Client #1 - Food Item(s):</ul>
+            {this.state.foodItems.map((food, i) => {
+              return <li key={i}>{food.name}</li>;
+            })}
+          </div>
+        ) : null}
+      </>
+    );
   }
 }

@@ -1,7 +1,4 @@
 #feed-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
   background-color: lightblue;
   border: 2px solid black;
   height: 100px;
