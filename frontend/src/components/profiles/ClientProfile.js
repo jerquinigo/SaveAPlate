@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 
+
 class ClientProfile extends Component {
-  state = {
-    editProfileButton: false,
-    name: "",
-    email: "",
-    address_field: "",
-    body: "",
-    telephone_number: "",
-    client_certificate: ""
-  };
 
   componentDidMount() {
     this.displayClientProfile();
+    this.reloadUser()
   }
 
   displayClientProfile = () => {
@@ -25,13 +18,19 @@ class ClientProfile extends Component {
     );
   };
 
+  reloadUser = () => {
+  if(!this.props.currentUser){
+    return this.props.checkAuthenticateStatus()
+  }
+  }
+
 
 
   render() {
-    console.log(this.state, "in the webpage");
+    console.log(this.props.currentUser, "the obj");
     return (
       <div className="clientProfileWrapper profile">
-        this is the clients page
+
         {this.displayClientProfile()}
         <ClientProfileEditForm />
       </div>

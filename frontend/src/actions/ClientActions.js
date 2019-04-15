@@ -13,8 +13,9 @@ export const postClientChanges = (clientChange) => {
 }
 
 
-export const postClientFormChanges = () => dispatch => {
-  return
+export const postClientFormChanges = (id) => dispatch => {
+  return usersApi.postClientFormChanges(id)
+  .then()
 
 
 }

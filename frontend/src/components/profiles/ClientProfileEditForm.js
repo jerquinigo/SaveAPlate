@@ -62,6 +62,7 @@ class ClientProfileEditForm extends Component{
   };
 
   render(){
+    console.log(this.state)
     return(
       <div className="ClientFormMainPage">
       {this.editProfile()}

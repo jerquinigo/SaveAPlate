@@ -1,5 +1,6 @@
 import ClientProfile from "../components/profiles/ClientProfile";
 import { connect } from "react-redux";
+import { checkAuthenticateStatus } from "../actions/AuthActions.js";
 
 const mapStateToProps = state => {
   return {
@@ -7,7 +8,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    checkAuthenticateStatus: () => dispatch(checkAuthenticateStatus())
+  };
+};
+
 export default connect(
   mapStateToProps,
-  null
+mapDispatchToProps
 )(ClientProfile);
