@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 
 
@@ -30,10 +31,11 @@ class ClientProfile extends Component {
     console.log(this.props.currentUser, "the obj");
     return (
       <div className="clientProfileWrapper profile">
-
+   <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
         <ClientProfileEditForm />
       </div>
+
     );
   }
 }
