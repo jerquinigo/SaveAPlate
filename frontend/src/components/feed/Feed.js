@@ -27,9 +27,24 @@ export default class Feed extends Component {
       <>
         {this.state.foodItems ? (
           <div id="feed-container">
-            <ul>Client #1 - Food Item(s):</ul>
+            <h1>Client #1 - Food Item(s):</h1>
             {this.state.foodItems.map((food, i) => {
-              return <li key={i}>{food.name}</li>;
+              return (
+                <ul key={i}>
+                  <h3>Item: {i + 1}</h3>
+                  <li>
+                    <strong>Name: </strong>
+                    {food.name}
+                  </li>
+                  <li>
+                    <strong>Feeds: </strong>
+                    {food.quantity}
+                  </li>
+                  <li>
+                    <strong>Pick-up Time: </strong> {food.set_time}
+                  </li>
+                </ul>
+              );
             })}
           </div>
         ) : null}
