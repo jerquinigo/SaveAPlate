@@ -1,7 +1,7 @@
 import { RECEIVED_ALL_USERS } from "../actions/ActionTypes.js";
 
 let initialState = {};
-const userReducer = (oldState = initialState, action) => {
+const UserReducer = (oldState = initialState, action) => {
   switch (action.type) {
     case RECEIVED_ALL_USERS:
       return normalize(action.users);
@@ -10,7 +10,7 @@ const userReducer = (oldState = initialState, action) => {
   }
 };
 
-export default userReducer;
+export default UserReducer;
 
 function normalize(arr) {
   let obj = {};
