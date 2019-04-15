@@ -7,6 +7,7 @@ import NavBar from "./components/navBar/NavBar.js";
 import Landing from "./components/landing/Landing.js";
 import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
+import Feed from "./components/feed/Feed.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import VendorProfileContainer from "./containers/VendorProfileContainer.js";
 
@@ -24,9 +25,9 @@ class App extends Component {
             <Route path="/user/login" component={LoginContainer} />
             <Route path="/clienttester" component={ClientProfileContainer} />
             <Route path="/vendortester" component={VendorProfileContainer} />
+            <Route exact path="/feed" component={Feed} />
 
-            {/* <Route exact path="/" component={Feed} />
-            <Route path="/vendor/:vendorName" component={VendorProfile} />
+            {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>
         </div>
