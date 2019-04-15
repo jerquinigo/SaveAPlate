@@ -1,6 +1,6 @@
 import React from "react";
 import "./landingCSS/Landing.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import DemoLogin from "../../containers/DemoLoginContainer.js";
 

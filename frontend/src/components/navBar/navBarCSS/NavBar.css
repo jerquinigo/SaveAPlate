@@ -1,8 +1,8 @@
 #nav,
 .nav-link {
-  background-color: #343a40;
+  background-color: #353e5b;
   color: white;
-  height: 100px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,14 +12,18 @@
   text-decoration: none;
 }
 
+.nav-link:hover {
+  color: #de6a5a;
+}
+
 #logo {
-  width: 140px;
-  border-radius: 30px;
+  width: 80px;
+  border-radius: 50%;
   border: 5px solid black;
 }
 
 #logo:hover {
-  border: 5px solid lightgray;
+  border: 5px solid #de6a5a;
 }
 
 #nav-links {

@@ -7,3 +7,8 @@ export const getAllUsers = () => {
 // export const getSingleUser = () => {
 //   return axios.get(`/api/users/:${id}`);
 // };
+
+
+export const postClientFormChanges = (id) => {
+  return axios.patch(`/api/users/:${id}`);
+}

@@ -2,7 +2,7 @@ import VendorProfile from "../components/profiles/VendorProfile";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  debugger
+
   return {
     currentUser: state.auth
   };
