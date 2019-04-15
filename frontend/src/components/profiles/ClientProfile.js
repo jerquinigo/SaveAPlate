@@ -5,6 +5,7 @@ import ClientProfileEditForm from "./ClientProfileEditForm.js";
 
 class ClientProfile extends Component {
 
+
   componentDidMount() {
     this.displayClientProfile();
     this.reloadUser()

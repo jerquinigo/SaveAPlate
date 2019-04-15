@@ -30,7 +30,8 @@ getFoodItemsByClient = (req, res, next) => {
 };
 
 getFoodItemsByVendor = (req, res, next) => {
-  const vendorID = Number(req.params.id);
+  let vendorID = Number(req.params.id);
+  
   db.any("SELECT * FROM food_items WHERE vendor_id=$1", [vendorID])
     .then(food_items => {
       res.status(200).json({
@@ -40,13 +41,14 @@ getFoodItemsByVendor = (req, res, next) => {
       });
     })
     .catch(err => {
+      console.log(err);
       return next(err);
     });
 };
 
 createNewFoodItem = (req, res, next) => {
   db.one(
-    "INSERT INTO food_items (quantity, name, vendor_id, set_time) VALUES (${quantity}, ${name}, ${is_claimed}, ${vendor_id}, ${set_time}) RETURNING name",
+    "INSERT INTO food_items (quantity, name, vendor_id, set_time) VALUES (${quantity}, ${name}, ${vendor_id}, ${set_time}) RETURNING name",
     {
       quantity: req.body.quantity,
       name: req.body.name,
@@ -60,6 +62,7 @@ createNewFoodItem = (req, res, next) => {
       });
     })
     .catch(err => {
+      console.log(err)
       return next(err);
     });
 };

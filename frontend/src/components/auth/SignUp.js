@@ -82,7 +82,7 @@ class SignUp extends Component {
             onChange={this.handleChange}
             type="text"
             name="name"
-            placeholder="name"
+            placeholder="Food Industry Name"
             value={this.state.name}
           />
           <input
@@ -137,7 +137,7 @@ class SignUp extends Component {
             onChange={this.handleChange}
             type="text"
             name="name"
-            placeholder="name"
+            placeholder="Organization Name"
             value={this.state.name}
           />
           <input
