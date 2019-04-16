@@ -1,13 +1,20 @@
 import React from "react";
 import "./landingCSS/Landing.css";
 import { NavLink } from "react-router-dom";
-
 import DemoLogin from "../../containers/DemoLoginContainer.js";
+import Map from "../map/Map.js";
+
+const TOKEN =
+  "pk.eyJ1Ijoic3VyZ2FtIiwiYSI6ImNqdWlqYmZ5cjFiM3M0NHA0d253eXFldmMifQ.bhSlMrFx_78e90gmylryKQ";
+const LONG = 40.743273;
+const LAT = -73.9417729;
+const ZOOM = 14.26;
 
 export default function Landing() {
   return (
     <div>
       <DemoLogin />
+      <Map token={TOKEN} longitude={LONG} latitude={LAT} />
       <div className="landing-container">
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
