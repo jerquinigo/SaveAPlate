@@ -14,6 +14,7 @@ getAllFoodItems = (req, res, next) => {
     });
 };
 
+//after claiming it
 getFoodItemsByClient = (req, res, next) => {
   const clientID = Number(req.params.id);
   db.any("SELECT * FROM food_items WHERE client_id=$1", [clientID])
@@ -31,7 +32,7 @@ getFoodItemsByClient = (req, res, next) => {
 
 getFoodItemsByVendor = (req, res, next) => {
   let vendorID = Number(req.params.id);
-  
+
   db.any("SELECT * FROM food_items WHERE vendor_id=$1", [vendorID])
     .then(food_items => {
       res.status(200).json({

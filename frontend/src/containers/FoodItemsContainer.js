@@ -1,4 +1,4 @@
-import VendorProfile from "../components/profiles/VendorProfile.js";
+import VendorProfile from "../components/profiles/vendorProfiles/VendorProfile.js";
 import { connect } from "react-redux";
 import {fetchUserFoodItems} from "../actions/FoodItemsActions.js";
 import {withRouter} from 'react-router-dom'
