@@ -34,7 +34,7 @@ class ClientProfile extends Component {
       <div className="clientProfileWrapper profile">
    <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
-        <ClientProfileEditForm />
+        <ClientProfileEditForm id={this.props.currentUser.id}/>
       </div>
 
     );
