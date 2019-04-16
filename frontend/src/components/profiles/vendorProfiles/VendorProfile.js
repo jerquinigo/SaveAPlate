@@ -78,8 +78,8 @@ displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map((item, key) => {
       return (
           <div key={item.id}>
-          <button>
-          <img src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png" alt="" height="25" width="25"/>
+          <button onClick={this.deleteItem} id={item.id}>
+          <img id={item.id} src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png" alt="" height="25" width="25"/>
           </button>
           <h3> Food Dish </h3>
           <h3>{item.name}</h3>
@@ -120,7 +120,14 @@ displayClaimedItems = () => {
       })
   }
 
-//////////////////////////////////////////////FAVORITE VENDOR/////////////////////////////////////////////////////////
+//////////////////////////////////////////////DELETE ITEMS/////////////////////////////////////////////////////////
+  deleteItem = (e) => {
+    axios.delete(`/api/fooditems/${e.target.id}`)
+      .then((res) => {
+        this.vendorDonations()
+      })
+  }
+//////////////////////////////////////FAVORITE VENDOR /////////////////////////////////////////////////////////////
 
 
 
@@ -130,6 +137,7 @@ displayClaimedItems = () => {
       <div className="VendorProfileWrapper profile">
       <h3> {this.props.currentUser.name} </h3>
         {this.state.toAddItem ? <AddItemForm handleChange={this.handleChange} submitItem={this.submitItem}/> : this.addItemButton()}
+        <button onClick={this.favoriteVendor} id= {this.props.currentUser.id}> </button>
       <h1> Donation List </h1>
       {this.displayUnclaimedItems()}
       <h1> Claimed Items </h1>
