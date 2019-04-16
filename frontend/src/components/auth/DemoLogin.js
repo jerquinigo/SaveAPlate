@@ -14,15 +14,10 @@ class DemoLogin extends Component {
       .then(() => {
         Auth.authenticateUser("vendordemo@test.com");
       })
-      .then(() => {
-        this.props.checkAuthenticateStatus();
+      .then(async () => {
+        await this.props.checkAuthenticateStatus();
       })
       .then(() => {
-        this.setState({
-          email: "",
-          password_digest: "",
-          isSubmitted: true
-        });
         this.props.history.push("/vendortester");
       })
       .then(() => {
@@ -44,10 +39,6 @@ class DemoLogin extends Component {
         this.props.checkAuthenticateStatus();
       })
       .then(() => {
-        this.setState({
-          email: "",
-          password_digest: ""
-        });
         this.props.history.push("/clienttester");
       })
       .then(() => {
