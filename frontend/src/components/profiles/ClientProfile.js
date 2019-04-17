@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
+import ClientClaimedItems from "./ClientClaimedItems.js"
 
 
 class ClientProfile extends Component {
@@ -34,7 +35,8 @@ class ClientProfile extends Component {
       <div className="clientProfileWrapper profile">
    <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
-        <ClientProfileEditForm />
+        <ClientProfileEditForm id={this.props.currentUser.id}/>
+        <ClientClaimedItems id={this.props.currentUser.id}/>
       </div>
 
     );

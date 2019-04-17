@@ -16,6 +16,12 @@ getAllFavorites = (req, res, next) => {
     });
 };
 
+getAllFavoritesWithVendorName = (req, res, next) => {
+  db.any(
+    ""
+  )
+}
+
 getAllFavoritesByUserId = (req, res, next) => {
   const favoritesId = parseInt(req.params.id);
   db.any(
