@@ -14,10 +14,10 @@ getAllFoodItems = (req, res, next) => {
     });
 };
 
-
 getClaimedFoodItemsByClient = (req, res, next) => {
   db.any(
-    'SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE food_items.is_claimed = TRUE AND users.name=$1', [req.params.name]
+    "SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE food_items.is_claimed = TRUE AND users.name=$1",
+    [req.params.name]
   )
     .then(food_items => {
       res.status(200).json({
@@ -35,7 +35,10 @@ getClaimedFoodItemsByClient = (req, res, next) => {
 
 getFoodItemsByClient = (req, res, next) => {
   const clientName = req.params.name;
-  db.any("SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE users.name=$1", [clientName])
+  db.any(
+    "SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE users.name=$1",
+    [clientName]
+  )
     .then(food_items => {
       res.status(200).json({
         status: "sucess",
@@ -81,7 +84,7 @@ createNewFoodItem = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err)
+      console.log(err);
       return next(err);
     });
 };
