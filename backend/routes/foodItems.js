@@ -12,8 +12,8 @@ const {
 } = require("../db/queries/foodItemsQueries.js");
 
 router.get("/", getAllFoodItems);
-router.get("/clientpage/:name", getClaimedFoodItemsByClient)
-router.get("/client/:name", getFoodItemsByClient);
+router.get("/clientpage/:name", getFoodItemsByClient)
+router.get("/client/:name", getClaimedFoodItemsByClient);
 router.get("/vendor/:id", getFoodItemsByVendor);
 router.patch("/claimstatus/:id", foodItemClaimStatus);
 router.post("/", createNewFoodItem);
