@@ -5,9 +5,9 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVED_ALL_USERS = "RECEIVED_ALL_USERS";
 
 //food items action type
-export const RECEIVE_FOOD_ITEMS_BY_VENDOR = "RECEIVE_FOOD_ITEMS_BY_VENDOR"
+export const RECEIVE_FOOD_ITEMS_BY_VENDOR = "RECEIVE_FOOD_ITEMS_BY_VENDOR"; // vendor prof
+export const RECEIVE_FOOD_ITEMS_WITH_VENDOR_INFO = "RECEIVE_FOOD_ITEMS_WITH_VENDOR_INFO"; // feed
+export const RECEIVE_FOOD_ITEMS_BY_CLIENT = "RECEIVE_FOOD_ITEMS_BY_CLIENT"; //claimed items (client prof)
 
-//client actions
-
-export const POST_CLIENTS_CHANGES = "POST_CLIENTS_CHANGES"
-
+//favorites action type
+export const SET_FAVORITE = "SET_FAVORITE";

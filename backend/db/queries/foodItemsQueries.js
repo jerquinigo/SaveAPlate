@@ -14,6 +14,7 @@ getAllFoodItems = (req, res, next) => {
     });
 };
 
+
 getClaimedFoodItemsByClient = (req, res, next) => {
   db.any(
     'SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE food_items.is_claimed = TRUE AND users.name=$1', [req.params.name]
@@ -29,6 +30,8 @@ getClaimedFoodItemsByClient = (req, res, next) => {
       return next(err);
     });
 };
+
+//after claiming it
 
 getFoodItemsByClient = (req, res, next) => {
   const clientName = req.params.name;

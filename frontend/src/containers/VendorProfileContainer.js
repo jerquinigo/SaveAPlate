@@ -1,4 +1,4 @@
-import VendorProfile from "../components/profiles/VendorProfile";
+import VendorProfile from "../components/profiles/vendorProfiles/VendorProfile.js";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
