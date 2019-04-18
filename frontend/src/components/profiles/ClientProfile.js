@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
-import ClientClaimedItems from "./ClientClaimedItems.js"
-
+import ClientClaimedItems from "./ClientClaimedItems.js";
 
 class ClientProfile extends Component {
-
-
   componentDidMount() {
     this.displayClientProfile();
-    this.reloadUser()
+    this.reloadUser();
   }
 
   displayClientProfile = () => {
@@ -22,23 +19,20 @@ class ClientProfile extends Component {
   };
 
   reloadUser = () => {
-  if(!this.props.currentUser){
-    return this.props.checkAuthenticateStatus()
-  }
-  }
-
-
+    if (!this.props.currentUser) {
+      return this.props.checkAuthenticateStatus();
+    }
+  };
 
   render() {
     console.log(this.props.currentUser, "the obj");
     return (
       <div className="clientProfileWrapper profile">
-   <NavLink to="/feed">Feed</NavLink>
+        <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
-        <ClientProfileEditForm id={this.props.currentUser.id}/>
-        <ClientClaimedItems id={this.props.currentUser.id}/>
+        <ClientProfileEditForm id={this.props.currentUser.id} />
+        <ClientClaimedItems id={this.props.currentUser.id} />
       </div>
-
     );
   }
 }
