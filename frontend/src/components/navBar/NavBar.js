@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navBarCSS/NavBar.css";
-import Logout from "./navComponents/Logout.js";
+import Logout from "./navComponents/logout/Logout.js";
 
 export default function NavBar() {
   return (
