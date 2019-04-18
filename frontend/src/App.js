@@ -11,6 +11,7 @@ import Feed from "./components/feed/Feed.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
 import VendorProfileContainer from "./containers/VendorProfileContainer.js";
+import FeedContainer from "./containers/FeedContainer.js"
 
 class App extends Component {
   render() {
@@ -24,11 +25,9 @@ class App extends Component {
             <Route exact path="/resources" component={Resources} />
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
-
             <Route exact path="/client/:client" component={ClientProfileContainer} />
             <Route exact path="/vendor/:vendor" component={FoodItemsContainer} />
-
-            <Route exact path="/feed" component={Feed} />
+            <Route exact path="/feed" component={FeedContainer} />
             {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>

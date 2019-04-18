@@ -9,16 +9,16 @@ const AddItemForm = (props) => {
   <p>What is the lastest time for pick up?</p>
   <select onChange={props.handleChange} name="set_time">
   <option value="null"> Select time </option>
-  <option value="00:00"> 12:00 am </option>
-  <option value="1:00"> 1:00 am </option>
-  <option value="2:00"> 2:00 am </option>
-  <option value="3:00"> 3:00 am </option>
-  <option value="4:00"> 4:00 am </option>
-  <option value="5:00"> 5:00 am </option>
-  <option value="6:00"> 6:00 am </option>
-  <option value="7:00"> 7:00 am </option>
-  <option value="8:00"> 8:00 am </option>
-  <option value="9:00"> 9:00 am </option>
+  <option value="12:00"> 12:00 am </option>
+  <option value="01:00"> 1:00 am </option>
+  <option value="02:00"> 2:00 am </option>
+  <option value="03:00"> 3:00 am </option>
+  <option value="04:00"> 4:00 am </option>
+  <option value="05:00"> 5:00 am </option>
+  <option value="06:00"> 6:00 am </option>
+  <option value="07:00"> 7:00 am </option>
+  <option value="08:00"> 8:00 am </option>
+  <option value="09:00"> 9:00 am </option>
   <option value="10:00"> 10:00 am </option>
   <option value="11:00"> 11:00 am </option>
   <option value="12:00"> 12:00 pm </option>
