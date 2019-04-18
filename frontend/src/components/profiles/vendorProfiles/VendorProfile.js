@@ -178,19 +178,6 @@ class VendorProfile extends Component {
 //////////////////////////////////////FAVORITE VENDOR /////////////////////////////////////////////////////////////
 
 
-
-  render(){
-    return(
-      <>
-      <div className="VendorProfileWrapper profile">
-      <h3> {this.props.currentUser.name} </h3>
-      {this.state.toAddItem ? <AddItemForm handleChange={this.handleChange} submitItem={this.submitItem}/> : this.addItemButton()}
-      {this.state.donated ? (this.addItemButton(), 'Thank you for donating!') : null}
-      <h1> Donation List </h1>
-      {this.displayUnclaimedItems()}
-      <h1> Claimed Items </h1>
-      {this.displayClaimedItems()} 
-      </div>
   render() {
     console.log(this.state, "in the ven prof");
     console.log(this.props, "in the props in ven prof");
