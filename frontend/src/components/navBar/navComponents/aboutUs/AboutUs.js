@@ -7,7 +7,6 @@ export default function About() {
       <br />
       <img src={require("./food_is_love.jpg")} alt="food is love logo" />
       <br />
-      <br />
       <div className="about-text">
         <h2>Our Mission</h2>
         <div>
