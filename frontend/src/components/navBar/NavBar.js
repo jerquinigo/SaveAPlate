@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navBarCSS/NavBar.css";
+import Logout from "./navComponents/Logout.js";
 
 export default function NavBar() {
   return (
@@ -26,6 +27,7 @@ export default function NavBar() {
           <NavLink to="/donate" className="nav-link">
             Donate
           </NavLink>
+          <Logout className="nav-link" />
         </div>
       </nav>
     </div>
