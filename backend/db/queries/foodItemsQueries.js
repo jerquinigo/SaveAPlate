@@ -1,7 +1,26 @@
 const { db } = require("../index.js");
 
 getAllFoodItems = (req, res, next) => {
-  db.any("SELECT * FROM food_items")
+  db.any("SELECT food_items.* , users.name AS vendor_name , users.address_field , users.telephone_number FROM food_items JOIN users ON food_items.vendor_id = users.id ")
+    .then(food_items => {
+      res.status(200).json({
+        status: "success",
+        food_items: food_items,
+        message: "received all food items"
+      });
+    })
+    .catch(err => {
+      return next(err);
+    });
+};
+
+getAllClaimedFoodItems = (req, res, next) => {
+  console.log("hi");
+  console.log(req.session.currentUser, "whats up");
+  db.any(
+    "SELECT food_clients.*, users.name AS vendor_name FROM (SELECT food_items.*, users.name AS client_name, users.address_field, users.telephone_number FROM food_items JOIN users ON food_items.client_id=users.id) AS food_clients JOIN users ON food_clients.vendor_id=users.id WHERE client_id=$1",
+    [+req.session.currentUser.id]
+  )
     .then(food_items => {
       res.status(200).json({
         status: "success",
@@ -15,9 +34,13 @@ getAllFoodItems = (req, res, next) => {
 };
 
 //after claiming it
+
 getFoodItemsByClient = (req, res, next) => {
-  const clientID = Number(req.params.id);
-  db.any("SELECT * FROM food_items WHERE client_id=$1", [clientID])
+  const clientName = req.params.name;
+  db.any(
+    "SELECT * FROM food_items JOIN users ON food_items.client_id=users.id WHERE users.name=$1",
+    [clientName]
+  )
     .then(food_items => {
       res.status(200).json({
         status: "sucess",
@@ -63,7 +86,7 @@ createNewFoodItem = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err)
+      console.log(err);
       return next(err);
     });
 };
@@ -139,6 +162,7 @@ deleteFoodItem = (req, res, next) => {
 
 module.exports = {
   getAllFoodItems,
+  getAllClaimedFoodItems,
   getFoodItemsByClient,
   getFoodItemsByVendor,
   createNewFoodItem,

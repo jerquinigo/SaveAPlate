@@ -18,7 +18,7 @@ class DemoLogin extends Component {
         await this.props.checkAuthenticateStatus();
       })
       .then(() => {
-        this.props.history.push("/vendortester");
+        this.props.history.push("/vendor/vendortester");
       })
       .then(() => {
         this.sendMeAsVendor();
@@ -39,7 +39,7 @@ class DemoLogin extends Component {
         this.props.checkAuthenticateStatus();
       })
       .then(() => {
-        this.props.history.push("/clienttester");
+        this.props.history.push("client/clienttester");
       })
       .then(() => {
         this.sendMeAsClient();
@@ -47,7 +47,7 @@ class DemoLogin extends Component {
   };
 
   sendMeAsClient = () => {
-  return(<Redirect to="/clienttester" />)
+  return(<Redirect to="/client/clienttester" />)
   };
 
   sendMeAsVendor = () =>{

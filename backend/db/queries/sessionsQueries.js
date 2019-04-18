@@ -4,12 +4,12 @@ function logoutUser(req, res, next) {
 }
 
 function loginUser(req, res) {
-  req.session.currentUser = req.user
+  req.session.currentUser = req.user;
   res.json(req.user);
 }
 
 function isLoggedIn(req, res) {
-  console.log(req.user)
+  console.log(req.user);
   if (req.user) {
     res.json(req.user);
   } else {
@@ -17,8 +17,8 @@ function isLoggedIn(req, res) {
   }
 }
 
-module.exports={
+module.exports = {
   logoutUser,
   loginUser,
   isLoggedIn
-}
+};
