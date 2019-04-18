@@ -4,9 +4,9 @@ import { RECEIVE_USER } from "./ActionTypes.js";
 
 export const receiveUserStatus = user => {
   return {
-     type: RECEIVE_USER,
-     user
-   };
+    type: RECEIVE_USER,
+    user
+  };
 };
 
 export const checkAuthenticateStatus = () => dispatch => {
