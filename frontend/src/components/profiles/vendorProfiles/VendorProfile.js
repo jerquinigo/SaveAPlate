@@ -13,7 +13,8 @@ class VendorProfile extends Component{
         set_time:'',
         toAddItem: false,
         claimedItems: [],
-        unclaimedItems: []
+        unclaimedItems: [],
+        donated: false
       }
   }
 
@@ -29,7 +30,8 @@ addItemButton = () => {
 
 toAddItem = () => {
   this.setState({
-    toAddItem: !this.state.toAddItem
+    toAddItem: !this.state.toAddItem,
+     donated: false
   })
 }
 
@@ -47,6 +49,12 @@ toAddItem = () => {
       name: name,
       set_time: set_time,
       vendor_id:this.props.currentUser.id
+    })
+    .then(()=> {
+      this.setState({
+       donated: true,
+       toAddItem: false
+      })
     })
     .then(()=> {
       this.vendorDonations()
@@ -76,6 +84,7 @@ vendorDonations = () => {
 /////////////////////////////////////////////////////////////DISPLAY ITEMS ///////////////////////////////////////////////////////////////////
 displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map((item, key) => {
+          let converted_time = Number(item.set_time.slice(0,2))
       return (
           <div key={item.id}>
           <button onClick={this.deleteItem} id={item.id}>
@@ -86,7 +95,7 @@ displayUnclaimedItems = () => {
           <h3> Feeds </h3>
           <h3>{item.quantity}</h3>
           <h3> Lastest Pick Up Time </h3>
-          <h3>{item.set_time}</h3>
+          <h3>{converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}</h3>
          {item.is_claimed ? <button onClick={(e)=> this.claimItem(e, item.is_claimed)} id={item.id}>CLAIMED</button> : <button onClick={(e)=> this.claimItem(e, item.is_claimed)} id={item.id}>UNCLAIMED</button>}
           </div>
       )
@@ -95,6 +104,7 @@ displayUnclaimedItems = () => {
 
 displayClaimedItems = () => {
   return this.state.claimedItems.map((item, key) => {
+    let converted_time = Number(item.set_time.slice(0,2))
     return (
         <div key={item.id}>
         <h3> Food Dish </h3>
@@ -102,7 +112,7 @@ displayClaimedItems = () => {
         <h3> Feeds </h3>
         <h4>{item.quantity}</h4>
         <h3> Pick Up Time </h3>
-        <h4>{item.set_time}</h4>
+        <h4>{converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}</h4>
        {item.is_claimed ? <button onClick={(e)=> this.claimItem(e, item.is_claimed)} id={item.id}>CLAIMED</button> : <button onClick={(e)=> this.claimItem(e, item.is_claimed)} id={item.id}>UNCLAIMED</button>}
         </div>
     )
@@ -111,24 +121,25 @@ displayClaimedItems = () => {
 
 //////////////////////////////////////////to claim on vendor page////////////////////////////////////////////////////
   claimItem = (e, isClaimed) => {
+    if (this.props.currentUser.type){
     axios.patch(`/api/fooditems/claimstatus/${e.target.id}`, {
       client_id: this.props.currentUser.id,
       is_claimed: !isClaimed
     })
-      .then((res) => {
+      .then(() => {
         this.vendorDonations()
       })
+    }
   }
 
 //////////////////////////////////////////////DELETE ITEMS/////////////////////////////////////////////////////////
   deleteItem = (e) => {
     axios.delete(`/api/fooditems/${e.target.id}`)
-      .then((res) => {
+      .then(() => {
         this.vendorDonations()
       })
   }
 //////////////////////////////////////FAVORITE VENDOR /////////////////////////////////////////////////////////////
-
 
 
   render(){
@@ -136,12 +147,13 @@ displayClaimedItems = () => {
       <>
       <div className="VendorProfileWrapper profile">
       <h3> {this.props.currentUser.name} </h3>
-        {this.state.toAddItem ? <AddItemForm handleChange={this.handleChange} submitItem={this.submitItem}/> : this.addItemButton()}
-        <button onClick={this.favoriteVendor} id= {this.props.currentUser.id}> </button>
+      {this.state.toAddItem ? <AddItemForm handleChange={this.handleChange} submitItem={this.submitItem}/> : this.addItemButton()}
+      {this.state.donated ? (this.addItemButton(), 'Thank you for donating!') : null}
       <h1> Donation List </h1>
       {this.displayUnclaimedItems()}
       <h1> Claimed Items </h1>
       {this.displayClaimedItems()}
+      
       </div>
       </>
     )
