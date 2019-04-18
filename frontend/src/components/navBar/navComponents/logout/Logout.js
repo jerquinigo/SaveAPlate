@@ -3,9 +3,9 @@ import "./Logout.css";
 import axios from "axios";
 import Auth from "../../../../utils/Auth.js";
 import { checkAuthenticateStatus } from "../../../../actions/AuthActions.js";
-// import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class Logout extends Component {
+class Logout extends Component {
   logoutUser = () => {
     axios
       .post("/api/sessions/logout")
@@ -15,17 +15,17 @@ export default class Logout extends Component {
       .then(() => {
         checkAuthenticateStatus();
       })
-      //   .then(() => {
-      //     this.sendMeToLanding();
-      //   })
+      .then(() => {
+        this.sendMeToLanding();
+      })
       .catch(error => {
         console.log(error);
       });
   };
 
-  //   sendMeToLanding = () => {
-  //     return <Redirect to="/welcome" />;
-  //   };
+  sendMeToLanding = () => {
+    return this.props.history.push("/welcome");
+  };
 
   render() {
     return (
@@ -37,3 +37,5 @@ export default class Logout extends Component {
     );
   }
 }
+
+export default withRouter(Logout);
