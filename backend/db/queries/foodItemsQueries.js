@@ -53,10 +53,10 @@ getFoodItemsByClient = (req, res, next) => {
     });
 };
 
-getFoodItemsByVendor = (req, res, next) => {
-  let vendorID = Number(req.params.id);
+getFoodItemsByVendorName = (req, res, next) => {
+  let vendorName = req.params.name
 
-  db.any("SELECT * FROM food_items WHERE vendor_id=$1", [vendorID])
+  db.any("SELECT food_items.id AS food_id, food_items.quantity, food_items.name, food_items.client_id, food_items.vendor_id, food_items.set_time, users.id AS user_id, users.name AS vendor_name, users.email AS vendor_email, users.type, users.address_field AS vendor_address, users.body, users.telephone_number, users.ein FROM food_items JOIN users ON food_items.vendor_id = users.id WHERE users.name =$1", [vendorName])
     .then(food_items => {
       res.status(200).json({
         status: "sucess",
@@ -164,7 +164,7 @@ module.exports = {
   getAllFoodItems,
   getAllClaimedFoodItems,
   getFoodItemsByClient,
-  getFoodItemsByVendor,
+  getFoodItemsByVendorName,
   createNewFoodItem,
   foodItemClaimStatus,
   updateFoodItem,
