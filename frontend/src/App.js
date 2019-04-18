@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/resources" component={Resources} />
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
-            <Route path="/clienttester" component={ClientProfileContainer} />
+            <Route path="/:id" component={ClientProfileContainer} />
             <Route path="/vendortester" component={FoodItemsContainer} />
             <Route exact path="/feed" component={Feed} />
             {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
