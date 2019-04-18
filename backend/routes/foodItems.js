@@ -4,7 +4,7 @@ const {
   getAllFoodItems,
   getAllClaimedFoodItems,
   getFoodItemsByClient,
-  getFoodItemsByVendor,
+  getFoodItemsByVendorName,
   foodItemClaimStatus,
   createNewFoodItem,
   updateFoodItem,
@@ -14,7 +14,7 @@ const {
 router.get("/", getAllFoodItems);
 router.get("/client", getAllClaimedFoodItems);
 router.get("/clientpage/:name", getFoodItemsByClient);
-router.get("/vendor/:id", getFoodItemsByVendor);
+router.get("/vendor/:name", getFoodItemsByVendorName);
 router.patch("/claimstatus/:id", foodItemClaimStatus);
 router.post("/", createNewFoodItem);
 router.patch("/:id", updateFoodItem);

@@ -54,6 +54,7 @@ class ClientClaimedItems extends Component {
       }
     });
 
+
     for (let vendor in vendorsToItemsMap) {
       let items = vendorsToItemsMap[vendor];
       console.log(items, "ITEMS");
