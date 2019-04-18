@@ -28,6 +28,7 @@ class Logout extends Component {
   };
 
   render() {
+    console.log("hi");
     return (
       <div>
         <button type="submit" onClick={this.logoutUser} id="logout-button">
