@@ -1,7 +1,7 @@
 const { db } = require("../index.js");
 
 getAllFoodItems = (req, res, next) => {
-  db.any("SELECT food_items.* , users.name , users.address_field , users.telephone_number FROM food_items JOIN users ON food_items.vendor_id = users.id ORDER BY food_items.set_time ASC")
+  db.any("SELECT food_items.* , users.name AS vendor_name , users.address_field , users.telephone_number FROM food_items JOIN users ON food_items.vendor_id = users.id ORDER BY food_items.set_time ASC")
     .then(food_items => {
       res.status(200).json({
         status: "success",

@@ -178,9 +178,9 @@ class SignUp extends Component {
 
   conditionalRouting = () => {
     if (this.state.isSubmitted && this.props.currentUser.type === 1) {
-      return <Redirect to={`/${this.props.currentUser.name}`} />;
+      return <Redirect to={`/vendor/${this.props.currentUser.name}`} />;
     } else if (this.state.isSubmitted && this.props.currentUser.type === 2) {
-      return <Redirect to={`/${this.props.currentUser.name}`} />;
+      return <Redirect to={`/client/${this.props.currentUser.name}`} />;
     }
   };
 
