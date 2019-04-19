@@ -1,5 +1,3 @@
-import {getFoodItemsByVendor} from '../utils/UtilFoodItems.js'
-import axios from "axios";
 import {RECEIVE_FOOD_ITEMS_BY_VENDOR} from "./ActionTypes.js";
 import * as foodItemsApi from "../utils/UtilFoodItems.js"
 

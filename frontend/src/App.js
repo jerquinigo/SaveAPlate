@@ -7,10 +7,8 @@ import NavBar from "./components/navBar/NavBar.js";
 import Landing from "./components/landing/Landing.js";
 import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
-import Feed from "./components/feed/Feed.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
-import VendorProfileContainer from "./containers/VendorProfileContainer.js";
 import FeedContainer from "./containers/FeedContainer.js"
 
 class App extends Component {
