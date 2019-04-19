@@ -112,7 +112,7 @@ export default class Feed extends Component {
         return (
           <ul key={i}>
           <li>
-          <Link to = {"/" + results.vendor_name}>  <strong>Name: </strong>
+          <Link to = {"/vendor/" + results.vendor_name}>  <strong>Name: </strong>
             {results.vendor_name}
             </Link>
           </li>
@@ -151,7 +151,7 @@ export default class Feed extends Component {
           return(
             <ul key={i}>
               <li>
-                <Link to = {"/" + food.vendor_name}> <strong>Name: </strong>
+                <Link to = {"/vendor/" + food.vendor_name}> <strong>Name: </strong>
                 {food.vendor_name}
                 </Link>
               </li>
@@ -195,86 +195,3 @@ export default class Feed extends Component {
     )
   }
 }
-
-
-
-
-// return (
-//   <>
-//   <SearchBar allFoodItems={this.state.allFoodItems} userSearchResults={this.state.userSearchResults} />
-//     {this.state.userSearchResults.length > 0 ? {this.state.userSearchResults.map((results) => {
-//       let converted_time = Number(results.set_time.slice(0,2))
-//         <ul key={i}>
-//           <li>
-//             <strong>Name: </strong>
-//             {results.vendor_name}
-//           </li>
-//           <li>
-//             <strong>Address: </strong>
-//             {results.address_field}
-//           </li>
-//           <li>
-//             <strong>Telephone Number: </strong>
-//             {results.telephone_number}
-//           </li>
-//           <li>
-//             <strong>Food Item: </strong>
-//             {results.name}
-//           </li>
-//           <li>
-//             <strong>Feeds: </strong>
-//             {results.quantity} people
-//           </li>
-//           <li>
-//             <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
-//           </li>
-//           <li>
-//               {results.is_claimed ? <button className={results.is_claimed ? "claimed" : "unclaimed"} onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}>CLAIMED</button> : <button onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}>UNCLAIMED</button>}
-//           </li>
-//         </ul>
-//     }
-//   )
-// } : {this.state.allFoodItems ? (
-//       <div id="feed-container">
-//         <h1>All Food Items:</h1>
-//         {this.state.allFoodItems.map((food, i) => {
-//           let converted_time = Number(food.set_time.slice(0,2))
-//           return ((food.is_claimed === false) ?
-//             (
-//             <ul key={i}>
-//               <li>
-//                 <strong>Name: </strong>
-//                 {food.vendor_name}
-//               </li>
-//               <li>
-//                 <strong>Address: </strong>
-//                 {food.address_field}
-//               </li>
-//               <li>
-//                 <strong>Telephone Number: </strong>
-//                 {food.telephone_number}
-//               </li>
-//               <li>
-//                 <strong>Food Item: </strong>
-//                 {food.name}
-//               </li>
-//               <li>
-//                 <strong>Feeds: </strong>
-//                 {food.quantity} people
-//               </li>
-//               <li>
-//                 <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
-//               </li>
-//               <li>
-//                   {food.is_claimed ? <button className={food.is_claimed ? "claimed" : "unclaimed"} onClick={(e)=> this.claimItem(e, food.is_claimed)} id={food.id}>CLAIMED</button> : <button onClick={(e)=> this.claimItem(e, food.is_claimed)} id={food.id}>UNCLAIMED</button>}
-//               </li>
-//             </ul>
-//           ) : null )
-//         }
-//       )
-//     }
-//       </div>
-//     ) : null}
-//   }
-//   </>
-// );

@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export const getFoodItemsByVendor = (id) => {
-  return axios.get(`/api/fooditems/vendor/${id}`);
+export const getFoodItemsByVendor = (name) => {
+  return axios.get(`/api/fooditems/vendor/${name}`);
 };

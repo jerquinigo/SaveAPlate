@@ -63,10 +63,11 @@ class VendorProfile extends Component {
   vendorDonations = () => {
     let tempVar;
     if(this.props.currentUser.type === 2){
-      tempVar = 14
+      tempVar = this.props.match.params.vendor
     }
+    console.log(tempVar);
+    getFoodItemsByVendor(!tempVar ? this.props.currentUser.name : tempVar).then(data => {
 
-    getFoodItemsByVendor(!tempVar ? this.props.currentUser.id : tempVar).then(data => {
       let unclaimed = data.data.food_items.filter(item => {
         return item.is_claimed === false;
       });
@@ -85,7 +86,7 @@ class VendorProfile extends Component {
   /////////////////////////////////////////////////////////////DISPLAY ITEMS ///////////////////////////////////////////////////////////////////
   displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map((item, key) => {
-          let converted_time = Number(item.set_time.slice(0,2))
+      let converted_time = Number(item.set_time.slice(0,2))
       return (
         <div key={item.id}>
           <button onClick={this.deleteItem} id={item.id}>
@@ -97,13 +98,13 @@ class VendorProfile extends Component {
               width="25"
             />
           </button>
-          <h3> Food Dish </h3>
+          <h2> Food Dish </h2>
           <h3>{item.name}</h3>
-          <h3> Feeds </h3>
-          <h3>{item.quantity}</h3>
-          <h3> Lastest Pick Up Time </h3>
+          <h4> Feeds </h4>
+          <h5>{item.quantity}</h5>
+          <h4> Lastest Pick Up Time </h4>
 
-          <h3>{item.set_time}</h3>
+          <h5>{converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}</h5>
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
@@ -126,14 +127,15 @@ class VendorProfile extends Component {
 
   displayClaimedItems = () => {
     return this.state.claimedItems.map((item, key) => {
+      let converted_time = Number(item.set_time.slice(0,2))
       return (
         <div key={item.id}>
-          <h3> Food Dish </h3>
+          <h3><strong> Food Dish </strong></h3>
           <h4>{item.name}</h4>
-          <h3> Feeds </h3>
+          <h3><strong> Feeds </strong></h3>
           <h4>{item.quantity}</h4>
-          <h3> Pick Up Time </h3>
-          <h4>{item.set_time}</h4>
+          <h3><strong> Pick Up Time </strong></h3>
+          <h4>{converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}</h4>
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
@@ -179,13 +181,11 @@ class VendorProfile extends Component {
 
 
   render() {
-    console.log(this.state, "in the ven prof");
-    console.log(this.props, "in the props in ven prof");
     let vendorUser;
     if(this.props.currentUser.type === 2){
       vendorUser = this.props.match.params.vendor
-
     }
+    console.log(this.state)
     return (
       <>
         <div className="VendorProfileWrapper profile">
@@ -199,12 +199,9 @@ class VendorProfile extends Component {
           ) : (
             this.addItemButton()
           )}
-          <button onClick={this.favoriteVendor} id={this.props.currentUser.id}>
-            {" "}
-          </button>
-          <h1> Donation List </h1>
+          <h1><strong><i> Donation List </i></strong> </h1>
           {this.displayUnclaimedItems()}
-          <h1> Claimed Items </h1>
+          <h1><strong><i> Claimed Items </i></strong></h1>
           {this.displayClaimedItems()}
         </div>
 
