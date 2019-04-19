@@ -81,7 +81,7 @@ export default class Feed extends Component {
         return (
           <ul key={i}>
           <li>
-          <Link to = {"/vendor/" + results.vendor_name}>  <strong>Name: </strong>
+          <Link to = {"/" + results.vendor_name}>  <strong>Name: </strong>
             {results.vendor_name}
             </Link>
           </li>
@@ -109,7 +109,7 @@ export default class Feed extends Component {
             <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
           </li>
           <li>
-              {results.is_claimed ? <button className={results.is_claimed ? "claimed" : "unclaimed"} onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}>CLAIMED</button> : <button onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}>UNCLAIMED</button>}
+              {results.is_claimed ? <button className={results.is_claimed ? "claimed" : "unclaimed"} onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}> TO CLAIM</button> : <button onClick={(e)=> this.claimItem(e, results.is_claimed)} id={results.id}>UNCLAIMED</button>}
           </li>
         </ul>)
       }
@@ -123,7 +123,7 @@ export default class Feed extends Component {
           return(
             <ul key={i}>
               <li>
-                <Link to = {"/vendor/" + food.vendor_name}> <strong>Name: </strong>
+                <Link to = {"/" + food.vendor_name}> <strong>Name: </strong>
                 {food.vendor_name}
                 </Link>
               </li>
