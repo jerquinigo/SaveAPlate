@@ -238,52 +238,126 @@ INSERT INTO food_items
     (
     quantity,
     name,
+    is_claimed,
+    client_id,
     vendor_id,
     set_time
     )
 VALUES
     (
         5,
-        'Chicken',
+        'Massaman Curry',
+        TRUE,
+        8,
         1,
         '18:30'
     ),
     (
         10,
-        'Broccoli',
+        'Neapolitan Pizza',
+        TRUE,
+        9,
         2,
         '18:00'
     ),
     (
         15,
-        'Tuna',
+        'Sushi',
+        TRUE,
+        10,
         3,
         '18:00'
     ),
     (
         20,
-        'Eggs',
+        'Peking Duck',
+        TRUE,
+        11,
         4,
         '19:00'
     ),
     (
         25,
-        'Salad',
+        'Shish Kebab',
+        TRUE,
+        12,
         5,
         '17:00'
     ),
     (
         2,
-        'Potatoes',
+        'Arepas',
+        FALSE,
+        null,
         6,
         '17:30'
     ),
     (
         25,
-        'Shrimp',
+        'Lasagna',
+        FALSE,
+        null,
         7,
         '17:00'
+    ),
+    (
+        5,
+        'Butter Garlic Crab',
+        TRUE,
+        13,
+        14,
+        '18:30'
+    ),
+    (
+        10,
+        'Fajitas',
+        TRUE,
+        13,
+        14,
+        '18:00'
+    ),
+    (
+        15,
+        'Fish N Chips',
+        TRUE,
+        13,
+        14,
+        '18:00'
+    ),
+    (
+        20,
+        'Chicken Parm',
+        TRUE,
+        13,
+        14,
+        '19:00'
+    ),
+    (
+        25,
+        'Tacos',
+        TRUE,
+        13,
+        14,
+        '17:00'
+    ),
+    (
+        2,
+        'Poutine',
+        FALSE,
+        null,
+        14,
+        '17:30'
+    ),
+    (
+        25,
+        'Seafood Paella',
+        FALSE,
+        null,
+        14,
+        '17:00'
     );
+
+
 
 INSERT INTO favorites
     (
