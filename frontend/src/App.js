@@ -19,7 +19,7 @@ class App extends Component {
         <NavBar />
         <div className="main-section">
           <Switch>
-            <Route exact path={"/welcome" | "/"} component={Landing} />
+            <Route exact path="/welcome" component={Landing} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/resources" component={Resources} />
             <Route path="/user/signup" component={SignUpContainer} />
