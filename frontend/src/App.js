@@ -9,8 +9,8 @@ import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
-import FeedContainer from "./containers/FeedContainer.js"
-import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer"
+import FeedContainer from "./containers/FeedContainer.js";
+import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
 
 class App extends Component {
   render() {
@@ -19,15 +19,28 @@ class App extends Component {
         <NavBar />
         <div className="main-section">
           <Switch>
-            <Route exact path="/welcome" component={Landing} />
+            <Route exact path={"/welcome" | "/"} component={Landing} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/resources" component={Resources} />
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
-            <Route exact path="/client/:client" component={ClientProfileContainer} />
-            <Route exact path="/vendor/:vendor" component={FoodItemsContainer} />
+            <Route
+              exact
+              path="/client/:client"
+              component={ClientProfileContainer}
+            />
+            <Route
+              exact
+              path="/vendor/:vendor"
+              component={FoodItemsContainer}
+            />
             <Route exact path="/feed" component={FeedContainer} />
-            <Route exact path="/:vendor" component={VendorProfileThruClientContainer} />
+            <Route
+              exact
+              path="/:vendor"
+              component={VendorProfileThruClientContainer}
+            />
+
             {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>
