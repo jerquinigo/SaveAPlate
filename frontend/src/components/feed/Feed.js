@@ -134,6 +134,9 @@ export default class Feed extends Component {
             {results.quantity} people
           </li>
           <li>
+            ({Number(results.quantity) * 3} pounds)
+          </li>
+          <li>
             <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
           </li>
           <li>
@@ -170,6 +173,9 @@ export default class Feed extends Component {
               <li>
                 <strong>Feeds: </strong>
                 {food.quantity} people
+              </li>
+              <li>
+                ({Number(food.quantity) * 3} pounds)
               </li>
               <li>
                 <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
