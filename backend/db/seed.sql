@@ -71,7 +71,7 @@ VALUES
         (
         'Kings Terrace',
         'kingterrace@email.com',
-        'kingsterrace',
+        '$2a$10$gZPgf40pi6UoVX5E4H55lut330s75L8IPGfcTIJ9E2HaeqxNpfkhK',
         1,
         '815 Kings Hwy, Brooklyn, NY 11223',
         'The best catering hall',
@@ -82,7 +82,7 @@ VALUES
     (
         'Mauzone Catering',
         'mauzonee@email.com',
-        'mauzoneinthezone',
+        '$2a$10$mzTmfF6x2pSnfuOGEYS22OFzBateX99qHLT4SatFE5413WcucKVam',
         1,
         '3301 20th Ave Astoria, NY 11105',
         'Shady catering hall',
@@ -94,7 +94,7 @@ VALUES
     (
         'Flushing House',
         'flushinghousee@email.com',
-        'password1234',
+        '$2a$10$D/8R9jsRunT06bdNzbUuI./5TEdnUS.LDqY.tBztx1byVuUskRNGK',
         1,
         '3820 Bowne St, Flushing, NY 11354',
         'cool place',
@@ -106,7 +106,7 @@ VALUES
     (
         'Atlantic Diner',
         'atlanticdinerr@email.com',
-        'goodfood93',
+        '$2a$10$MXrGm6UCRQZspAr5wl1VyeSYVRVGqngk5Vb9L2bofqGZ6G4XzStSy',
         1,
         '111-16 Atlantic Ave, South Richmond Hill, NY 11419',
         'good food',
@@ -118,7 +118,7 @@ VALUES
     (
         'Court Square Diner',
         'courtsquaredinerr@yahoo.com',
-        'mypasswordissupersecure',
+        '$2a$10$4ejJwUya5yls/su7lXNW.uNyBRD5kXMQ72VbMWtu2s.o4EcrLuBQK',
         1,
         '45-30 23rd St Long Island City, NY 11101',
         'In operation since 1946, Court Square Diner stands out among the flashier restaurants and bars that have crowded into Long Island City in recent years. Not much has changed since brothers Steve and Nick Kanellos started running the joint in 1991 — the diner still serves oversized heroes and grilled cheese sandwiches 24/7.',
@@ -130,7 +130,7 @@ VALUES
     (
         'Mad For Chicken',
         'madforchickenn@hotmail.com',
-        'supersecretpassword',
+        '$2a$10$j7eeNV.kKAgY4ViLsMQ.de4IrcfDWf6PvcSOlS7gHkaR.sbhjgNm2',
         1,
         '157-18 Northern Blvd, Flushing, NY 11354',
         'yum chicken',
@@ -142,7 +142,7 @@ VALUES
     (
         'Gyu-Kaku Japanese BBQ',
         'gyukakuu@aol.com',
-        'bobblahblob3',
+        '$2a$10$ArJwEZXauWEhRg4yn3ZmBum5mCajRFJkmjxKSAjPrsU0ER45DOl4C',
         1,
         '4052 Main St, Flushing, NY 11354',
         'Gyu-Kaku (牛角 gyū kaku, bulls horn) is a chain of Japanese yakiniku restaurants. here are over six hundred Gyu-Kaku locations in Japan,[1] and locations have also been opened in the United States (including New York City, California, Pittsburgh, Chicago, Houston, Hawaii, Philadelphia, Boston, Miami, and Atlanta)[2], Canada, Hong Kong, Taiwan, Cambodia, Thailand, Indonesia, Malaysia, Singapore, Vietnam, Philippines and will open in South Korea.',
@@ -155,7 +155,7 @@ VALUES
     (
         'Boys and Girls Club',
         'b&gclubb@gmail.com',
-        'b&g',
+        '$2a$10$helfcWuepNkLUj46s8X0gO62GV/LhDu6pb7As.7n93Y.MARhOft1e',
         2,
         '733 3rd Ave Fl 2, New York, NY 10017',
         null,
@@ -167,7 +167,7 @@ VALUES
     (
         'St. Albans Baptist Church',
         'sabcc@gmail.com',
-        'sabc',
+        '$2a$10$7UxIPa9aqfhw8tq6QTjR/eQ1mKHHaImV3/dTSgQW5V/6wDL8raSHC',
         2,
         '196-02 119 Ave, St. Albans, NY 11412',
         null,
@@ -179,7 +179,7 @@ VALUES
     (
         'YMCA Flushing',
         'YMCAA@yahoo.com',
-        'YMCA',
+        '$2a$10$uY32J96RBWBp0ykFNzQVseruroRKyHgLnMNUXDqZsNH708Xfc1U9C',
         2,
         '138-46 Northern Boulevard, Flushing, NY 11354',
         null,
@@ -191,7 +191,7 @@ VALUES
     (
         'Lift',
         'Liftt@aol.com',
-        'Lift',
+        '$2a$10$vr5QrDvGKTWsgqw06OT4zurU2igUuNwy4ZyMXBSCRIYRkYMwVqr.y',
         2,
         '349 E 149th Street, The Bronx, NY, 10451',
         null,
@@ -203,7 +203,7 @@ VALUES
     (
         'Upper Manhattan Empowerment Zone',
         'UMEZZ@hotmail.com',
-        'UMEZ',
+        '$2a$10$i4uyBoQ0WV0ORZZu8QWxpuRHgeKP5Bincp94BV4IDuBl/6ikeL4z.',
         2,
         '55 W 125th Street, New York, NY, 10027',
         null,

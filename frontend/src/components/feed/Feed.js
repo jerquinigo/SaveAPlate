@@ -6,45 +6,14 @@ import { Link } from "react-router-dom"
 
 export default class Feed extends Component {
   state = {
-    // foodItems: [],
     allFoodItems: [],
     userSearchResults: [],
     textInput: ""
-    // clientID: 1,
-    // vendorID: 1
   };
 
   componentDidMount() {
     this.getAllFoodItems();
   }
-
-  //   getFoodItemsForClient = () => {
-  //     axios
-  //       .get(`/api/fooditems/client/${this.state.clientID}`)
-  //       .then(foodItems => {
-  //         this.setState({
-  //           foodItems: foodItems.data.food_items
-  //         });
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       });
-  //   };
-  //   // at the moment, this function will only display foodItems for client #1 since "1" is hard-coded. will be updated
-  //
-  // getFoodItemsForVendor = () => {
-  //   axios
-  //     .get(`/api/fooditems/vendor/${this.state.vendorID}`)
-  //     .then(foodItems => {
-  //       this.setState({
-  //         foodItems: foodItems.data.food_items
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // };
-  // at the moment, this function will only display foodItems for vendor #1 since "1" is hard-coded. will be updated
 
   getAllFoodItems = () => {
     axios
@@ -79,7 +48,7 @@ export default class Feed extends Component {
     let food = item.name.toLowerCase()
 
     let text = this.state.textInput.toLowerCase()
-    console.log(vendor, "vendor", food, "food", text, "input");
+
     return vendor.includes(text) || food.includes(text)
   })
 
@@ -134,6 +103,9 @@ export default class Feed extends Component {
             {results.quantity} people
           </li>
           <li>
+            ({Number(results.quantity) * 3} pounds)
+          </li>
+          <li>
             <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}
           </li>
           <li>
@@ -170,6 +142,9 @@ export default class Feed extends Component {
               <li>
                 <strong>Feeds: </strong>
                 {food.quantity} people
+              </li>
+              <li>
+                ({Number(food.quantity) * 3} pounds)
               </li>
               <li>
                 <strong>Pick-up Time: </strong> {converted_time === 0 || converted_time < 13 ? converted_time + "am" : converted_time-12 + "pm"}

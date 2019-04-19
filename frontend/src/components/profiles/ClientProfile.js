@@ -30,7 +30,6 @@ class ClientProfile extends Component {
       <div className="clientProfileWrapper profile">
         <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
-        <NavLink to={"/vendor/vendortester/"}>vendor link</NavLink>
         <ClientProfileEditForm id={this.props.currentUser.id} />
         <ClientClaimedItems id={this.props.currentUser.id} />
       </div>
