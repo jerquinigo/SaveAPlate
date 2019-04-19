@@ -10,6 +10,7 @@ import Resources from "./components/navBar/navComponents/resources/Resources.js"
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
 import FeedContainer from "./containers/FeedContainer.js"
+import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer"
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/client/:client" component={ClientProfileContainer} />
             <Route exact path="/vendor/:vendor" component={FoodItemsContainer} />
             <Route exact path="/feed" component={FeedContainer} />
+            <Route exact path="/:vendor" component={VendorProfileThruClientContainer} />
             {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>

@@ -7,7 +7,7 @@ const {
   getVendorHours
 } = require("../db/queries/business_hoursQueries.js");
 
-router.get('/:id', getVendorHours)
+router.get('/:name', getVendorHours)
 router.post('/:id', createBusiness_hours)
 router.patch('/:id', updateBusiness_hours)
 router.delete('/:id', deleteBusiness_hours)
