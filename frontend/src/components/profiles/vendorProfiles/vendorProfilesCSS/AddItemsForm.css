@@ -1,0 +1,38 @@
+#donation-form-header {
+  background-color: darkblue;
+  color: white;
+}
+
+#add-items-form {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  height: 260px;
+  margin: 0 auto;
+  background-color: #bcc9d2;
+}
+
+#input-name,
+#input-quantity {
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#select-pickup-time {
+  width: 100px;
+}
+
+#add-food-item-button {
+  margin-left: 20px;
+  width: 120px;
+  height: 50px;
+  border: 5px solid orange;
+  border-radius: 10px;
+  background-color: orange;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
