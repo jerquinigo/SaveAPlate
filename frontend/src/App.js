@@ -9,14 +9,16 @@ import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
-import FeedContainer from "./containers/FeedContainer.js"
-import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer"
+import FeedContainer from "./containers/FeedContainer.js";
+import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
+import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
 
 class App extends Component {
   render() {
+
     return (
       <div className="App">
-        <NavBar />
+        {(!this.props.currentUser.id) ? <NavBar /> : <LoggedInNavBarContainer/>}
         <div className="main-section">
           <Switch>
             <Route exact path="/welcome" component={Landing} />

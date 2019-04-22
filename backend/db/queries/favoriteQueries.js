@@ -20,21 +20,20 @@ getAllFavoritesWithVendorName = (req, res, next) => {
   db.any("");
 };
 
-getAllFavoritesByUserId = (req, res, next) => {
-  const favoritesId = parseInt(req.params.id);
-  db.any(
-    "SELECT DISTINCT users.id AS client_id, users.email, users.password_digest, users.type, users.address_field AS address, users.telephone_number AS telephone, users.client_certificate AS certificate FROM favorites JOIN users ON favorites.client_id = users.id WHERE favorites.client_id = $1 ORDER BY client_id",
-    [favoritesId]
-  )
+getAllFavoritesByUserName = (req, res, next) => {
+  const favoritesName = req.params.name;
+  console.log(favoritesName);
+  db.any("SELECT DISTINCT favorites.id , favorites.client_id , favorites.vendor_id , users.name AS vendor_name FROM favorites JOIN users ON favorites.vendor_id = users.id WHERE users.name = $1", [favoritesName])
     .then(favorites => {
       res.status(200).json({
         status: "success",
         favorites: favorites,
-        message: "received all favorites by id"
+        message: "received all favorites by vendor"
       });
     })
     .catch(err => {
       return next(err);
+      console.log(err);
     });
 };
 
@@ -75,7 +74,7 @@ deleteFavorite = (req, res, next) => {
 
 module.exports = {
   getAllFavorites,
-  getAllFavoritesByUserId,
+  getAllFavoritesByUserName,
   createFavorite,
   deleteFavorite
 };
