@@ -8,13 +8,15 @@ class VendorProfileThruClient extends Component {
     this.state = {
         businessHours: [],
         foodInfo: [],
-        favForVendor:[]
+        allFavs: [],
+        isFav: null
     }
   }
 
   componentDidMount(){
     this.getBusinessHours()
     this.getfoodItems()
+    this.getFavs()
   }
   /////////////////////////////////////GET INFORMATION///////////////////////////////////////////////////////////////////
   //////////////////////////////////////get business hours////////////////////////////////////////////////////////////////////////
@@ -35,16 +37,49 @@ class VendorProfileThruClient extends Component {
         })
       })
   }
+
+///////////////////////////////////////get Favs//////////////////////////////////////////////////////////////////////////////
+getFavs = () => {
+  axios.get(`/api/favorites/${this.props.match.params.vendor}`)
+    .then((data) => {
+      this.setState({
+        allFavs : data.data.favorites
+      })
+    }
+  )
+}
   //////////////////////////////////favorite vendor/////////////////////////////////////////////////////////////////////
-  addFav = () => {
-    axios.post('/api/favorites/', {
-      client_id: this.props.currentUser.id,
-      vendor_id: this.state.businessHours[0].id
+  isFav = async () => {
+    this.setState({
+      isFav : this.state.allFavs.filter((fav) => {
+          return fav.vendor_id === this.state.businessHours[0].id && fav.client_id === this.props.currentUser.id
+      })
     })
-    .then((res) => {
-      console.log(res.data.message);
-    })
+    await this.addFav()
   }
+
+  addFav = () => {
+
+    (this.state.isFav.length === 0) ?
+      axios.post('/api/favorites/', {
+        client_id: this.props.currentUser.id,
+        vendor_id: this.state.businessHours[0].id
+      })
+   .then((res) => {
+     console.log(res.data.message);
+     this.getFavs()
+   }) :
+     axios.delete(`/api/favorites/${this.state.isFav[0].id}`)
+       .then((res) => {
+         console.log(res.data.message);
+         this.getFavs()
+       }
+     ) 
+  }
+
+
+
+
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
   displayItems = () => {
     return this.state.foodInfo.map((item) => {
@@ -117,14 +152,14 @@ claimItem = (e, isClaimed) => {
   isClaimed === true ?
   axios.patch(`/api/fooditems/claimstatus/${e.target.id}`,{
     client_id: null,
-    is_claimed: !isClaimed
+    is_claimed: false
   })
   .then(() => {
     this.getfoodItems()
   }) :
   axios.patch(`/api/fooditems/claimstatus/${e.target.id}`, {
     client_id: this.props.currentUser.id,
-    is_claimed: !isClaimed
+    is_claimed: true
   })
     .then(() => {
       this.getfoodItems()
@@ -132,15 +167,16 @@ claimItem = (e, isClaimed) => {
   }
 
   render(){
-    console.log(this.state.foodInfo);
+
     return(
       <>
       {this.displayBusinessHours()}
-      <button onClick={this.addFav}> Fave </button>
+      <button onClick={this.isFav}> Fave </button>
       {this.displayItems()}
       </>
     )
   }
 }
+
 
 export default VendorProfileThruClient;

@@ -11,14 +11,17 @@ import ClientProfileContainer from "./containers/ClientProfileContainer.js";
 import FoodItemsContainer from "./containers/FoodItemsContainer.js";
 import FeedContainer from "./containers/FeedContainer.js";
 import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
+import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
 
 class App extends Component {
   render() {
+
     return (
       <div className="App">
-        <NavBar />
+        {(!this.props.currentUser.id) ? <NavBar /> : <LoggedInNavBarContainer/>}
         <div className="main-section">
           <Switch>
+            <Route exact={true} path="/" component={Landing} />
             <Route exact path="/welcome" component={Landing} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/resources" component={Resources} />

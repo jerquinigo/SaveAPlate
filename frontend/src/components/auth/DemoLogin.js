@@ -47,7 +47,7 @@ class DemoLogin extends Component {
   };
 
   sendMeAsClient = () => {
-  return(<Redirect to="/client/clienttester" />)
+  return(<Redirect to="/feed" />)
   };
 
   sendMeAsVendor = () =>{
