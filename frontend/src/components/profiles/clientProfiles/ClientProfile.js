@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import ClientClaimedItems from "./ClientClaimedItems.js";
-import { geoFindMe } from "../googleMapLoc/Geolocation.js";
-import { DisplayMap } from "../googleMapLoc/DisplayMap.js";
+import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
+import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
 
 class ClientProfile extends Component {
   constructor() {
