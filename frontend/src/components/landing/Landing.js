@@ -7,6 +7,19 @@ export default function Landing() {
   return (
     <div>
       <DemoLogin />
+      <div id="food-background-container">
+        {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
+        <img
+          src={require("./images/sap-logo.svg")}
+          alt="Save a Plate logo"
+          id="sap-logo"
+        />
+        <img
+          src={require("./images/food-background.jpeg")}
+          alt="food background"
+          id="food-background"
+        />
+      </div>
       <div id="landing-container">
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
@@ -26,7 +39,7 @@ export default function Landing() {
         <div id="info-vendor-client">
           <div id="info-vendor">
             <img
-              src={require("./icons/vendor.png")}
+              src={require("./images/vendor.png")}
               alt="icon for vendor"
               id="vendor-logo"
             />
@@ -42,7 +55,7 @@ export default function Landing() {
           </div>
           <div id="info-client">
             <img
-              src={require("./icons/client.png")}
+              src={require("./images/client.png")}
               alt="icon for client"
               id="client-logo"
             />
