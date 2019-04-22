@@ -2,11 +2,30 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import ClientClaimedItems from "./ClientClaimedItems.js";
+import { geoFindMe } from "../googleMapLoc/Geolocation.js";
+import { DisplayMap } from "../googleMapLoc/DisplayMap.js";
 
 class ClientProfile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      latitude: "",
+      longitude: "",
+      gotdata: false,
+      zoom: 18
+    };
+  }
   componentDidMount() {
     this.displayClientProfile();
     this.reloadUser();
+    geoFindMe().then(position => {
+      debugger;
+      this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        gotdata: true
+      });
+    });
   }
 
   displayClientProfile = () => {
@@ -26,12 +45,20 @@ class ClientProfile extends Component {
 
   render() {
     console.log(this.props.currentUser, "the obj");
+    console.log("STATE here", this.state);
     return (
       <div className="clientProfileWrapper profile">
         <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
         <ClientProfileEditForm id={this.props.currentUser.id} />
         <ClientClaimedItems id={this.props.currentUser.id} />
+        <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
+          <DisplayMap
+            latitude={this.state.latitude}
+            longitude={this.state.longitude}
+            zoom={this.state.zoom}
+          />
+        </div>
       </div>
     );
   }
