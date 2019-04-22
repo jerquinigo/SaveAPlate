@@ -21,15 +21,29 @@ class App extends Component {
         {(!this.props.currentUser.id) ? <NavBar /> : <LoggedInNavBarContainer/>}
         <div className="main-section">
           <Switch>
+            <Route exact={true} path="/" component={Landing} />
             <Route exact path="/welcome" component={Landing} />
             <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/resources" component={Resources} />
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
-            <Route exact path="/client/:client" component={ClientProfileContainer} />
-            <Route exact path="/vendor/:vendor" component={FoodItemsContainer} />
+            <Route
+              exact
+              path="/client/:client"
+              component={ClientProfileContainer}
+            />
+            <Route
+              exact
+              path="/vendor/:vendor"
+              component={FoodItemsContainer}
+            />
             <Route exact path="/feed" component={FeedContainer} />
-            <Route exact path="/:vendor" component={VendorProfileThruClientContainer} />
+            <Route
+              exact
+              path="/:vendor"
+              component={VendorProfileThruClientContainer}
+            />
+
             {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
             <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>

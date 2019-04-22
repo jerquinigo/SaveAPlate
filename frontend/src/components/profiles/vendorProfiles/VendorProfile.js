@@ -71,6 +71,7 @@ class VendorProfile extends Component {
       let unclaimed = data.data.food_items.filter(item => {
         return item.is_claimed === false;
       });
+
       this.setState({
         unclaimedItems: unclaimed
       });
@@ -86,12 +87,14 @@ class VendorProfile extends Component {
   /////////////////////////////////////////////////////////////DISPLAY ITEMS ///////////////////////////////////////////////////////////////////
   displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map((item, key) => {
+
       let converted_time = Number(item.set_time.slice(0,2))
+
       return (
-        <div key={item.id}>
-          <button onClick={this.deleteItem} id={item.id}>
+        <div key={item.food_id}>
+          <button onClick={this.deleteItem} id={item.food_id}>
             <img
-              id={item.id}
+              id={item.food_id}
               src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png"
               alt=""
               height="25"
@@ -108,14 +111,14 @@ class VendorProfile extends Component {
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.id}
+              id={item.food_id}
             >
               CLAIMED
             </button>
           ) : (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.id}
+              id={item.food_id}
             >
               UNCLAIMED
             </button>
@@ -128,8 +131,9 @@ class VendorProfile extends Component {
   displayClaimedItems = () => {
     return this.state.claimedItems.map((item, key) => {
       let converted_time = Number(item.set_time.slice(0,2))
+
       return (
-        <div key={item.id}>
+        <div key={item.food_id}>
           <h3><strong> Food Dish </strong></h3>
           <h4>{item.name}</h4>
           <h3><strong> Feeds </strong></h3>
@@ -139,14 +143,14 @@ class VendorProfile extends Component {
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.id}
+              id={item.food_id}
             >
               CLAIMED
             </button>
           ) : (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.id}
+              id={item.food_id}
             >
               UNCLAIMED
             </button>
@@ -159,6 +163,7 @@ class VendorProfile extends Component {
 
   //////////////////////////////////////////to claim on vendor page////////////////////////////////////////////////////
   claimItem = (e, isClaimed) => {
+
     if (this.props.currentUser.type){
     axios.patch(`/api/fooditems/claimstatus/${e.target.id}`, {
       client_id: this.props.currentUser.id,
