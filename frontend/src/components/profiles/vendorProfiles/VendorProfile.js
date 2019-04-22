@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import AddItemForm from "./AddItemsForm.js";
-import "./vendorProfilesCSS/vendorProfile.css";
+import "./vendorProfilesCSS/VendorProfile.css";
 
 class VendorProfile extends Component {
   constructor() {
@@ -55,6 +55,9 @@ class VendorProfile extends Component {
       })
       .then(() => {
         this.vendorDonations();
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 

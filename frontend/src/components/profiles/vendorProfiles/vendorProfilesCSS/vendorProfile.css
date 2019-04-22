@@ -53,9 +53,6 @@
   background-color: #de6a5a;
 }
 
-#display-unclaimed-items-container {
-}
-
 #display-unclaimed-items,
 #display-claimed-items {
   display: flex;
@@ -68,7 +65,7 @@
   margin-top: 2%;
   width: 75%;
   height: 80px;
-  background-color: #f6eae0;
+  background-color: #ebf4f4;
 }
 
 #item-name {
@@ -95,4 +92,8 @@
 #delete-button {
   border-radius: 10px;
   height: 40px;
+}
+
+#delete-button:hover {
+  background-color: greenyellow;
 }
