@@ -91,31 +91,32 @@ class VendorProfile extends Component {
 
       return (
         <div key={item.food_id} id="display-unclaimed-items">
-          <p>{item.name}</p>
+          <h4 id="item-name">{item.name}</h4>
           <p>{item.quantity} pounds</p>
-          <p>Feeds {item.quantity * 3} people</p>
+          <p>Feeds: {item.quantity * 3} people</p>
           <p>
             {" "}
-            Lastest Pick Up Time{" "}
+            Lastest Pick Up Time: {""}
             {converted_time === 0 || converted_time < 13
               ? converted_time + "am"
               : converted_time - 12 + "pm"}
           </p>
-
-          {item.is_claimed ? (
-            <button
-              onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
-              CLAIMED
-            </button>
-          ) : (
-            <button
-              onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
-              UNCLAIMED
-            </button>
-          )}
-          <button onClick={this.deleteItem} id={item.food_id}>
+          <div>
+            {item.is_claimed ? (
+              <button
+                onClick={e => this.claimItem(e, item.is_claimed)}
+                id="claimed-button">
+                Claimed
+              </button>
+            ) : (
+              <button
+                onClick={e => this.claimItem(e, item.is_claimed)}
+                id="unclaimed-button">
+                Unclaimed
+              </button>
+            )}
+          </div>
+          <button onClick={this.deleteItem} id="delete-button">
             <img
               id={item.food_id}
               src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png"
@@ -130,40 +131,45 @@ class VendorProfile extends Component {
   };
 
   displayClaimedItems = () => {
-    return this.state.claimedItems.map((item, key) => {
+    return this.state.claimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
 
       return (
-        <div key={item.food_id} id="">
-          <h3>
-            <strong> Food Dish </strong>
-          </h3>
-          <h4>{item.name}</h4>
-          <h3>
-            <strong> Feeds </strong>
-          </h3>
-          <h4>{item.quantity}</h4>
-          <h3>
-            <strong> Pick Up Time </strong>
-          </h3>
-          <h4>
+        <div key={item.food_id} id="display-claimed-items">
+          <h4 id="item-name">{item.name}</h4>
+          <p>{item.quantity} pounds</p>
+          <p>Feeds: {item.quantity * 3} people</p>
+          <p>
+            {" "}
+            Lastest Pick Up Time: {""}
             {converted_time === 0 || converted_time < 13
               ? converted_time + "am"
               : converted_time - 12 + "pm"}
-          </h4>
-          {item.is_claimed ? (
-            <button
-              onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
-              CLAIMED
-            </button>
-          ) : (
-            <button
-              onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
-              UNCLAIMED
-            </button>
-          )}
+          </p>
+          <div>
+            {item.is_claimed ? (
+              <button
+                onClick={e => this.claimItem(e, item.is_claimed)}
+                id="claimed-button">
+                Claimed
+              </button>
+            ) : (
+              <button
+                onClick={e => this.claimItem(e, item.is_claimed)}
+                id="unclaimed-button">
+                Unclaimed
+              </button>
+            )}
+          </div>
+          <button onClick={this.deleteItem} id="delete-button">
+            <img
+              id={item.food_id}
+              src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png"
+              alt=""
+              height="25"
+              width="25"
+            />
+          </button>
         </div>
       );
     });
@@ -204,6 +210,12 @@ class VendorProfile extends Component {
           {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
         </h1>
         <br />
+        <div id="vendor-people-fed">
+          Number of people fed:
+          <p>0</p>
+        </div>
+        <br />
+        <br />
         {this.state.toAddItem ? (
           <AddItemForm
             handleChange={this.handleChange}
@@ -212,10 +224,6 @@ class VendorProfile extends Component {
         ) : (
           this.addItemButton()
         )}
-        <div id="vendor-people-fed">
-          Number of people fed:
-          <p>0</p>
-        </div>
         <br />
         <div>
           <h1 id="donation-list">Donation List</h1>
@@ -224,7 +232,7 @@ class VendorProfile extends Component {
           </div>
         </div>
         <div>
-          <h1>Claimed Items</h1>
+          <h1 id="claimed-items-list">Claimed Items</h1>
           {this.displayClaimedItems()}
         </div>
       </div>
