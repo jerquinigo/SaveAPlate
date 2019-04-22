@@ -1,0 +1,65 @@
+#donation-list {
+}
+
+.vendor-profile-container {
+  background-color: #bcc9d2;
+}
+
+.vendor-name {
+  font-size: 40px;
+}
+
+.vendor-name,
+#vendor-people-fed {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 20px 20px 20px;
+  background-color: whitesmoke;
+}
+
+.add-item-button {
+  width: 150px;
+  height: 50px;
+  border: 5px solid orange;
+  border-radius: 10px;
+  background-color: orange;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 15%;
+}
+
+.add-item-button:hover {
+  /* border: 5px solid #353e5b; */
+  color: #353e5b;
+}
+
+#donation-list {
+  display: flex;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #de6a5a;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 10px 10px 10px 10px;
+  width: 12%;
+}
+
+#display-unclaimed-items-container {
+  background-color: #bcc9d2;
+}
+
+#display-unclaimed-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  border: 2px solid black;
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 75%;
+}
