@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import Auth from "../../utils/Auth.js";
 import { Redirect } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import "./authCSS/SignUp.css";
 
 class SignUp extends Component {
   state = {
@@ -77,98 +85,170 @@ class SignUp extends Component {
   signUpForm = () => {
     if (Number(this.state.type) === 1) {
       return (
-        <form onSubmit={this.registerUser}>
-          <input
+        <form onSubmit={this.registerUser} id="signup-form">
+          <h1>Create an account:</h1>
+          <TextField
+            required
+            className="input-field"
+            label="Name"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="name"
-            placeholder="Food Industry Name"
+            placeholder="Business Name"
             value={this.state.name}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Email"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="email"
-            placeholder="email"
+            placeholder="Email"
             value={this.state.email}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Password"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
-            type="password"
+            type="text"
             name="password_digest"
-            placeholder="password"
+            placeholder="Password"
             value={this.state.password_digest}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Address"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="address_field"
             placeholder="Address"
             value={this.state.address_field}
           />
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="body"
-            placeholder="About your business"
-            value={this.state.body}
-          />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Telephone Number"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="telephone_number"
             placeholder="Telephone Number"
             value={this.state.telephone_number}
           />
-          <input
+          <TextField
+            className="input-field"
+            label="Business Info"
+            margin="normal"
+            variant="outlined"
+            onChange={this.handleChange}
+            type="text"
+            name="body"
+            placeholder="Business Info"
+            value={this.state.body}
+          />
+          <TextField
+            className="input-field"
+            label="Employee ID Number"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="ein"
-            placeholder="Employee Id Number"
+            placeholder="Employee ID Number"
             value={this.state.ein}
           />
-          <button type="submit">Sign Up</button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className="signup-button">
+            Sign Up
+          </Button>
         </form>
       );
     } else if (Number(this.state.type) === 2) {
       return (
-        <form onSubmit={this.registerUser}>
-          <input
+        <form onSubmit={this.registerUser} id="signup-form">
+          <h1>Create an account:</h1>
+          <TextField
+            required
+            className="input-field"
+            label="Name"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="name"
-            placeholder="Organization Name"
+            placeholder="Non-Profit Name"
             value={this.state.name}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Email"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="email"
-            placeholder="email"
+            placeholder="Email"
             value={this.state.email}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Password"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
-            type="password"
+            type="text"
             name="password_digest"
-            placeholder="password"
+            placeholder="Password"
             value={this.state.password_digest}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Address"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
             type="text"
             name="address_field"
             placeholder="Address"
             value={this.state.address_field}
           />
-          <input
+          <TextField
+            required
+            className="input-field"
+            label="Client Certificate"
+            margin="normal"
+            variant="outlined"
             onChange={this.handleChange}
-            type="file"
+            type="text"
             name="client_certificate"
-            placeholder=""
+            placeholder="Client Certificate"
             value={this.state.client_certificate}
           />
-          <button type="submit">Sign Up</button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className="signup-button">
+            Sign Up
+          </Button>{" "}
         </form>
       );
     } else {
@@ -180,7 +260,7 @@ class SignUp extends Component {
     if (this.state.isSubmitted && this.props.currentUser.type === 1) {
       return <Redirect to={`/vendor/${this.props.currentUser.name}`} />;
     } else if (this.state.isSubmitted && this.props.currentUser.type === 2) {
-      return <Redirect to={'/feed'} />;
+      return <Redirect to={"/feed"} />;
     }
   };
 
@@ -188,23 +268,20 @@ class SignUp extends Component {
     return (
       <>
         {this.conditionalRouting()}
-        <div className="signUpForm">
-          <form>
-            <input
-              onClick={this.handleChange}
-              type="radio"
+        <div className="choose-user-signup-form">
+          <FormControl component="fieldset">
+            <FormLabel component="legend" className="user-type">
+              User Type
+            </FormLabel>
+            <RadioGroup
+              aria-label="User Type"
               name="type"
-              value="2"
-            />{" "}
-            Non-Profit Organization
-            <input
-              onClick={this.handleChange}
-              type="radio"
-              name="type"
-              value="1"
-            />{" "}
-            Food Business
-          </form>
+              value={this.state.value}
+              onClick={this.handleChange}>
+              <FormControlLabel value="1" control={<Radio />} label="Client" />
+              <FormControlLabel value="2" control={<Radio />} label="Vendor" />
+            </RadioGroup>
+          </FormControl>
           {this.signUpForm()}
         </div>
       </>

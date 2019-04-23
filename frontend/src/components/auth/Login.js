@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import Auth from "../../utils/Auth.js";
+import "./authCSS/Login.css";
 
 class Login extends Component {
   state = {
@@ -39,11 +42,11 @@ class Login extends Component {
 
   conditionalRouting = () => {
     if (this.state.isSubmitted && this.props.currentUser.type === 1) {
-      console.log(this.props.currentUser.type , "type");
-      console.log(this.props.currentUser.name , "name");
+      console.log(this.props.currentUser.type, "type");
+      console.log(this.props.currentUser.name, "name");
       return <Redirect to={`/vendor/${this.props.currentUser.name}`} />;
     } else if (this.state.isSubmitted && this.props.currentUser.type === 2) {
-      return <Redirect to={'/feed'} />;
+      return <Redirect to={"/feed"} />;
     }
     console.log("CR code");
   };
@@ -52,22 +55,38 @@ class Login extends Component {
     return (
       <>
         {this.conditionalRouting()}
-        <form onSubmit={this.loginUser}>
-          <input
-            type="text"
+        <form onSubmit={this.loginUser} id="login-form">
+          <h1>Log-In</h1>
+          <TextField
+            required
+            id="email-input"
+            label="Email"
+            defaultValue="Hello World"
+            margin="normal"
             value={this.state.email}
-            onChange={this.handleChange}
             name="email"
-            placeholder="EMAIL"
-          />
-          <input
-            type="password"
-            value={this.state.password_digest}
             onChange={this.handleChange}
-            name="password_digest"
-            placeholder="PASSWORD"
+            placeholder="Email"
           />
-          <button type="submit">Login</button>
+          <TextField
+            required
+            id="password-input"
+            label="Password"
+            defaultValue="Hello World"
+            margin="normal"
+            value={this.state.password_digest}
+            name="password_digest"
+            onChange={this.handleChange}
+            placeholder="Password"
+          />
+          <br />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className="signup-button">
+            Log-In
+          </Button>
         </form>
       </>
     );

@@ -17,19 +17,15 @@
   background-color: whitesmoke;
 }
 
-.add-item-button {
-  width: 150px;
-  height: 50px;
-  border: 5px solid #2996f3;
-  border-radius: 10px;
-  background-color: #2996f3;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+.add-item-text {
+  color: #272e48;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
 }
 
 .add-item-button:hover {
-  border: 5px solid #353e5b;
+  border: 3px solid white;
 }
 
 #donation-list,
@@ -91,8 +87,4 @@
 #delete-button {
   border-radius: 10px;
   height: 40px;
-}
-
-#delete-button:hover {
-  background-color: greenyellow;
 }

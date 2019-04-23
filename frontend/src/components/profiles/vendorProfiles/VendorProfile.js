@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import AddItemForm from "./AddItemsForm.js";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+
 import "./vendorProfilesCSS/VendorProfile.css";
 
 class VendorProfile extends Component {
@@ -24,10 +29,16 @@ class VendorProfile extends Component {
   // Add food items
   addItemButton = () => {
     return (
-      <button onClick={this.toAddItem} className="add-item-button">
-        {" "}
-        Add Item{" "}
-      </button>
+      <>
+        <p className="add-item-text">Add Item</p>
+        <Fab
+          color="primary"
+          aria-label="Add"
+          className="add-item-button"
+          onClick={this.toAddItem}>
+          <AddIcon />
+        </Fab>
+      </>
     );
   };
 
@@ -121,15 +132,9 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <button onClick={this.deleteItem} id="delete-button">
-            <img
-              id={item.food_id}
-              src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png"
-              alt=""
-              height="25"
-              width="25"
-            />
-          </button>
+          <Button variant="contained" color="secondary" id="delete-button">
+            <DeleteIcon id="delete-icon" />
+          </Button>
         </div>
       );
     });
@@ -168,15 +173,9 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <button onClick={this.deleteItem} id="delete-button">
-            <img
-              id={item.food_id}
-              src="https://cdn1.iconfinder.com/data/icons/round-ui/123/47-512.png"
-              alt=""
-              height="25"
-              width="25"
-            />
-          </button>
+          <Button variant="contained" color="secondary" id="delete-button">
+            <DeleteIcon id="delete-icon" />
+          </Button>
         </div>
       );
     });
