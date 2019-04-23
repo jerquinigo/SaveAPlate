@@ -43,9 +43,9 @@ export default function Landing() {
               alt="icon for vendor"
               id="vendor-logo"
             />
-            <h3>Vendor</h3>
+            <h3 id="user-type">Vendors</h3>
             <div className="tooltip">
-              More Info
+              <span id="more-info">More Info</span>
               <span className="tooltip-text">
                 Vendors include restaurants, catering halls, nursing homes, etc.
                 Sign up or log in using the links below and you will be eligible
@@ -59,9 +59,9 @@ export default function Landing() {
               alt="icon for client"
               id="client-logo"
             />
-            <h3>Client</h3>
+            <h3 id="user-type">Clients</h3>
             <div className="tooltip">
-              More Info
+              <span id="more-info">More Info</span>
               <span className="tooltip-text">
                 Clients are non-profit organizations such as the YMCA, PBS,
                 World Wildlife Fund (WWF), Pursuit, among many others. Sign up
