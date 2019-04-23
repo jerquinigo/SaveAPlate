@@ -1,0 +1,12 @@
+#login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e6f0f0;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 5px;
+}
