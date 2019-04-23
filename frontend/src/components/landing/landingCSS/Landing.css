@@ -53,15 +53,6 @@ body {
 .login-sub-container-2 {
   width: 100%;
   background-color: #f3e4d8;
-  border-top: 2px solid #f9c680;
-}
-
-.login-sub-container-1 {
-  border-right: 1px solid #f9c680;
-}
-
-.login-sub-container-2 {
-  border-left: 1px solid #f9c680;
 }
 
 #signup-button,
