@@ -6,7 +6,7 @@
 
 #add-items-form {
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 50%;
   height: 260px;
   margin: 0 auto;
@@ -36,14 +36,8 @@
   margin-left: 20px;
   width: 120px;
   height: 50px;
-  border: 5px solid orange;
   border-radius: 10px;
-  background-color: orange;
   font-size: 18px;
   font-weight: bold;
   color: white;
-}
-
-#add-food-item-button:hover {
-  color: #272e48;
 }

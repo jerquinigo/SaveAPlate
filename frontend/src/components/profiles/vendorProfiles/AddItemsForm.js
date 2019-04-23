@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 import "./vendorProfilesCSS/AddItemsForm.css";
 
 const AddItemForm = props => {
@@ -52,9 +53,9 @@ const AddItemForm = props => {
           <option value="22:00"> 10:00 pm </option>
           <option value="23:00"> 11:00 pm </option>
         </select>
-        <button type="submit" id="add-food-item-button">
-          Add Item{" "}
-        </button>
+        <Button variant="contained" color="primary" id="add-food-item-button">
+          Add Item
+        </Button>
       </form>
     </>
   );
