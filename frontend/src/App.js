@@ -14,11 +14,15 @@ import VendorProfileThruClientContainer from "./containers/VendorProfileThruClie
 import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
 
 class App extends Component {
-  render() {
+  componentDidMount() {
+    this.props.checkAuthenticateStatus();
+  }
 
+  render() {
+    console.log(this.props, "in the props");
     return (
       <div className="App">
-        {(!this.props.currentUser.id) ? <NavBar /> : <LoggedInNavBarContainer/>}
+        {!this.props.currentUser.id ? <NavBar /> : <LoggedInNavBarContainer />}
         <div className="main-section">
           <Switch>
             <Route exact={true} path="/" component={Landing} />

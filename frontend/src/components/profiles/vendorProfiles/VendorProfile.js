@@ -67,7 +67,7 @@ class VendorProfile extends Component {
     if (this.props.currentUser.type === 2) {
       tempVar = this.props.match.params.vendor;
     }
-    console.log(tempVar);
+    console.log(tempVar, "the temp var");
     getFoodItemsByVendor(!tempVar ? this.props.currentUser.name : tempVar).then(
       data => {
         let unclaimed = data.data.food_items.filter(item => {
@@ -108,13 +108,15 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
+                id="claimed-button"
+              >
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
+                id="unclaimed-button"
+              >
                 Unclaimed
               </button>
             )}
@@ -153,13 +155,15 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
+                id="claimed-button"
+              >
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
+                id="unclaimed-button"
+              >
                 Unclaimed
               </button>
             )}

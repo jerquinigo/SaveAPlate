@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
-import ClientClaimedItems from "./ClientClaimedItems.js";
+import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
 import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
 import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
 
@@ -51,7 +51,9 @@ class ClientProfile extends Component {
         <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
         <ClientProfileEditForm id={this.props.currentUser.id} />
-        <ClientClaimedItems id={this.props.currentUser.id} />
+
+        <ClientClaimedItemsContainer />
+
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
           {/* <DisplayMap
             latitude={this.state.latitude}
