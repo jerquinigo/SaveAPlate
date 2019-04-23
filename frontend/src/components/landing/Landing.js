@@ -24,7 +24,7 @@ export default function Landing() {
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
         </div>
-        <p className="mission-statement-p-text">
+        <p id="mission-statement-text">
           To provide food service businesses with a way to reduce food waste and
           become resourceful for organizations that demonstrates a need in their
           surrounding community. To feed New Yorkers that lack funds for the
