@@ -1,7 +1,8 @@
 import React from "react";
-import "./landingCSS/Landing.css";
 import { NavLink } from "react-router-dom";
 import DemoLogin from "../../containers/DemoLoginContainer.js";
+import Button from "@material-ui/core/Button";
+import "./landingCSS/Landing.css";
 
 export default function Landing() {
   return (
@@ -73,17 +74,27 @@ export default function Landing() {
       </div>
       <div id="login-container">
         <div className="login-sub-container-1">
-          <NavLink to="/user/signup">
-            <button type="submit" id="signup-button">
+          <NavLink to="/user/signup" id="nav-link">
+            <Button
+              variant="contained"
+              color="primary"
+              disableunderline="true"
+              type="submit"
+              id="signup-button">
               Sign Up
-            </button>
+            </Button>
           </NavLink>
         </div>
         <div className="login-sub-container-2">
-          <NavLink to="/user/login">
-            <button type="submit" id="login-button">
+          <NavLink to="/user/login" id="nav-link">
+            <Button
+              variant="contained"
+              color="secondary"
+              disableunderline="true"
+              type="submit"
+              id="login-button">
               Log In
-            </button>
+            </Button>
           </NavLink>
         </div>
       </div>
