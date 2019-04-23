@@ -1,21 +1,15 @@
 body {
-  background-color: #f9c680;
+  background-color: #aebdc7;
 }
 
 #food-background-container {
   /* padding-top: 2%;
   padding-bottom: 2%; */
-  background-color: #f9c680;
+  background-color: whitesmoke;
 }
 
-/* #save-a-plate-text {
-  font-size: 64px;
-  font-weight: bold;
-  color: #d35348;
-} */
-
 #sap-logo {
-  width: 50vw;
+  width: 100vw;
 }
 
 #food-background {
@@ -24,9 +18,16 @@ body {
 }
 
 #mission-statement {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
   color: #d35348;
+  font-family: "Oswald", sans-serif;
+}
+
+#mission-statement-text {
+  width: 80vw;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 #landing-container {
@@ -34,14 +35,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  height: 300px;
+  height: 60vh;
   margin: 0 auto;
-  background-color: #e6f0f0;
-}
-
-.mission-statement-p-text {
-  width: 80vw;
-  font-size: 20px;
+  background-image: linear-gradient(to top, #e6f0f0, #aebdc7);
 }
 
 #login-container {
@@ -57,15 +53,15 @@ body {
 .login-sub-container-2 {
   width: 100%;
   background-color: #f3e4d8;
-  border-top: 2px solid lightslategray;
+  border-top: 2px solid #f9c680;
 }
 
 .login-sub-container-1 {
-  border-right: 1px solid lightslategray;
+  border-right: 1px solid #f9c680;
 }
 
 .login-sub-container-2 {
-  border-left: 1px solid lightslategray;
+  border-left: 1px solid #f9c680;
 }
 
 #signup-button,
@@ -74,15 +70,16 @@ body {
   width: 200px;
   margin: 0 auto;
   margin-top: 100px;
-  border: 4px solid black;
-  border-radius: 5px;
+  border: 4px solid #272e48;
+  border-radius: 12px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 800;
+  color: #272e48;
 }
 
 #signup-button:hover,
 #login-button:hover {
-  border: 4px solid #de6a5a;
+  color: #d35348;
 }
 
 #signup-button {
@@ -96,15 +93,17 @@ body {
 #info-container {
   width: 100vw;
   height: 60vh;
-  background-color: lightblue;
+  background-image: linear-gradient(to top, #f3e4d8, #f9c680);
+  font-family: "Oswald", sans-serif;
 }
 
 #info-container-header {
   margin: 0 0 0 0;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   padding-top: 2%;
   color: #d35348;
+  font-family: "Oswald", sans-serif;
 }
 
 #info-vendor-client {
@@ -134,7 +133,7 @@ body {
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 300px;
-  background-color: black;
+  background-color: #272e48;
   color: whitesmoke;
   text-align: center;
   padding: 5px 0;
@@ -142,8 +141,24 @@ body {
   position: absolute;
   z-index: 1;
   padding: 20px 20px 20px 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .tooltip:hover .tooltip-text {
   visibility: visible;
+}
+
+#user-type,
+#more-info {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #272e48;
+}
+
+#user-type {
+  font-size: 26px;
+}
+
+#more-info:hover {
+  color: #d35348;
 }
