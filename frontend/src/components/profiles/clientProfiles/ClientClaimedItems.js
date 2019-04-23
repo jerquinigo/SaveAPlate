@@ -1,20 +1,42 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { ClientClaimedItemsList } from "./ClientClaimedItemsList.js";
+import _ from "lodash";
+
+const VendorSection = ({ vendor, children }) => {
+  return (
+    <div>
+      <div>
+        <span>{vendor.vendor_name}</span>
+        <span>{vendor.address_field}</span>
+        <span>{vendor.telephone_number}</span>
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+};
+
+const VendorItem = ({ item }) => {
+  return (
+    <div>
+      <span>{item.name}</span>
+      <span>{item.quantity}</span>
+      <span>{item.set_time}</span>
+    </div>
+  );
+};
 
 class ClientClaimedItems extends Component {
   constructor() {
     super();
     this.state = {
-      claimedFoodItems: null,
+      claimedFoodItems: [],
       newFoodItemsList: []
     };
   }
 
   componentDidMount() {
-    // this.getAllClaimedFoodItem(this.props.match.params.path);
-    this.combineAxiosCallAndDisplay();
+    this.getAllClaimedFoodItem(this.props.match.params.path);
   }
 
   getAllClaimedFoodItem = () => {
@@ -30,74 +52,42 @@ class ClientClaimedItems extends Component {
       });
   };
 
-  combineAxiosCallAndDisplay = async () => {
-    console.log(this.props.match);
-    await this.getAllClaimedFoodItem(this.props.match.params.path);
+  organizeFoodItems = () => {
+    const { claimedFoodItems = [] } = this.state;
+    let claimedList = {};
 
-    await this.displayClaimedFoodItems();
-  };
-
-  displayClaimedFoodItems = () => {
-    if (!this.state.claimedFoodItems) return null;
-    let food = this.state.claimedFoodItems;
-    let vendorsToItemsMap = {};
-    let vendorValues;
-    let vendorKeys;
-    let uniqueFoodName = {};
-    let clientClaimedItemsList = [];
-
-    food.forEach(item => {
-      if (!vendorsToItemsMap[item.vendor_name]) {
-        vendorsToItemsMap[item.vendor_name] = [item];
+    for (let i = 0; i < claimedFoodItems.length; i++) {
+      if (claimedList[claimedFoodItems[i].vendor_id]) {
+        claimedList[claimedFoodItems[i].vendor_id].push(claimedFoodItems[i]);
       } else {
-        vendorsToItemsMap[item.vendor_name].push(item);
+        claimedList[claimedFoodItems[i].vendor_id] = [claimedFoodItems[i]];
       }
-    });
-
-    for (let vendor in vendorsToItemsMap) {
-      let items = vendorsToItemsMap[vendor];
-      console.log(items, "ITEMS");
-      clientClaimedItemsList.push(<ClientClaimedItems name={items.name} />);
+      // console.log("claimed", claimedList);
     }
 
-    // return clientClaimedItemsList;
+    console.log("CLAIMED LIST", claimedList);
 
-    // console.log(vendorsToItemsMap, "our obj to work with ");
-    // vendorValues = Object.values(vendorsToItemsMap);
-    // vendorKeys = Object.keys(vendorsToItemsMap);
-    // for (let vendorsObj in vendorsToItemsMap) {
-    //   for (let i = 0; i <= vendorKeys.length; i++) {
-    //     debugger;
-    //     if (vendorKeys[i] === vendorsObj) {
-    //       for (let j = 0; j < vendorValues.length; j++) {
-    //         // console.log(vendorValues[j][j].name);
-    //         uniqueFoodName[vendorValues[j][j].name] = vendorValues[j][j].name;
-    //       }
-    //       let finalItems = Object.values(uniqueFoodName);
-
-    //       let array = finalItems.map(item => {
-    //         return (
-    //           <div>
-    //             <p>{item}</p>
-    //           </div>
-    //         );
-    //       });
-    //       debugger;
-    //       return array;
-    //     }
-    //   }
-    // }
-
-    // console.log(uniqueFoodName, "to see");
-
-    // console.log(uniqueFoodName);
+    return claimedList;
   };
 
   render() {
-    console.log(this.state.claimedFoodItems, "CLAIMED FOOD ITEMS");
+    // console.log(this.state.claimedFoodItems, "CLAIMED FOOD ITEMS");
+    const organizedItems = this.organizeFoodItems();
+    const vendorArea = _.map(organizedItems, (items, i) => {
+      return (
+        <VendorSection key={i} vendor={items[0]}>
+          {items.map(item => (
+            <VendorItem key={item.id} item={item} />
+          ))}
+        </VendorSection>
+      );
+    });
+    console.log(organizedItems);
     return (
       <div className="clientClaimedItemsPage">
-        {this.displayClaimedFoodItems()}
+        {vendorArea.map(item => {
+          return item;
+        })}
       </div>
     );
   }

@@ -7,13 +7,13 @@ export default function Landing() {
   return (
     <div>
       <DemoLogin />
+      <img
+        src={require("./images/sap-logo.svg")}
+        alt="Save a Plate logo"
+        id="sap-logo"
+      />
       <div id="food-background-container">
         {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
-        <img
-          src={require("./images/sap-logo.svg")}
-          alt="Save a Plate logo"
-          id="sap-logo"
-        />
         <img
           src={require("./images/food-background.jpeg")}
           alt="food background"

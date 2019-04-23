@@ -18,14 +18,14 @@ class ClientProfile extends Component {
   componentDidMount() {
     this.displayClientProfile();
     this.reloadUser();
-    geoFindMe().then(position => {
-      debugger;
-      this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-        gotdata: true
-      });
-    });
+    // geoFindMe().then(position => {
+    //   // debugger;
+    //   this.setState({
+    //     latitude: position.coords.latitude,
+    //     longitude: position.coords.longitude,
+    //     gotdata: true
+    //   });
+    // });
   }
 
   displayClientProfile = () => {
@@ -53,11 +53,11 @@ class ClientProfile extends Component {
         <ClientProfileEditForm id={this.props.currentUser.id} />
         <ClientClaimedItems id={this.props.currentUser.id} />
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
-          <DisplayMap
+          {/* <DisplayMap
             latitude={this.state.latitude}
             longitude={this.state.longitude}
             zoom={this.state.zoom}
-          />
+          /> */}
         </div>
       </div>
     );
