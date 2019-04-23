@@ -14,11 +14,11 @@ export default function Landing() {
       />
       <div id="food-background-container">
         {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
-        <img
+        {/* <img
           src={require("./images/food-background.jpeg")}
           alt="food background"
           id="food-background"
-        />
+        /> */}
       </div>
       <div id="landing-container">
         <div>

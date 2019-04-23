@@ -26,7 +26,7 @@ const AddItemForm = props => {
           onChange={props.handleChange}
           name="set_time"
           id="select-pickup-time">
-          <option value="null"> Pick up time </option>
+          <option value="null"> Select pick-up time </option>
           <option value="00:00"> 12:00 am </option>
           <option value="01:00"> 1:00 am </option>
           <option value="02:00"> 2:00 am </option>
