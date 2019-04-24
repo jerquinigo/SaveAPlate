@@ -85,7 +85,10 @@ class SignUp extends Component {
   signUpForm = () => {
     if (Number(this.state.type) === 1) {
       return (
-        <form onSubmit={this.registerUser} id="signup-form">
+        <form
+          onSubmit={this.registerUser}
+          className="signup-form"
+          id="vendor-signup-form">
           <h1>Create an account:</h1>
           <TextField
             required
@@ -180,7 +183,10 @@ class SignUp extends Component {
       );
     } else if (Number(this.state.type) === 2) {
       return (
-        <form onSubmit={this.registerUser} id="signup-form">
+        <form
+          onSubmit={this.registerUser}
+          className="signup-form"
+          id="client-signup-form">
           <h1>Create an account:</h1>
           <TextField
             required
@@ -266,7 +272,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <>
+      <div id="signup-page">
         {this.conditionalRouting()}
         <div className="choose-user-signup-form">
           <FormControl component="fieldset">
@@ -284,7 +290,7 @@ class SignUp extends Component {
           </FormControl>
           {this.signUpForm()}
         </div>
-      </>
+      </div>
     );
   }
 }
