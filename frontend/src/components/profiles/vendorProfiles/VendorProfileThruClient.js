@@ -9,8 +9,7 @@ class VendorProfileThruClient extends Component {
       businessHours: [],
       foodInfo: [],
       allFavsForVendor: [],
-      isFav: [],
-      favoritedStatus: false
+      isFav: []
     };
   }
 
@@ -43,7 +42,11 @@ class VendorProfileThruClient extends Component {
   ///////////////////////////////////////get Favs//////////////////////////////////////////////////////////////////////////////
   getFavs = () => {
     axios
-      .get(`/api/favorites/${this.props.match.params.vendor}`)
+      .get(
+        `/api/favorites/${this.props.match.params.vendor
+          .split("%20")
+          .join(" ")}`
+      )
       .then(data => {
         this.setState({
           allFavsForVendor: data.data.favorites
@@ -61,34 +64,27 @@ class VendorProfileThruClient extends Component {
         fav.client_id === this.props.currentUser.id
       );
     });
-
     this.setState({
       isFav: results
     });
   };
 
   addFav = async () => {
+
     await axios.post("/api/favorites/", {
       client_id: this.props.currentUser.id,
       vendor_id: this.state.businessHours[0].id
     });
     await this.getFavs();
 
-    await this.setState({
-      favoritedStatus: true
-    });
   };
 
   deleteFav = async () => {
-    debugger;
+
     await axios.delete(`/api/favorites/${this.state.isFav[0].id}`);
-    debugger;
 
     await this.getFavs();
 
-    await this.setState({
-      favoritedStatus: false
-    });
   };
 
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
@@ -213,17 +209,15 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
-    console.log(this.state, "STATE");
-    console.log(this.props, "PROPS");
     return (
       <>
         {this.displayBusinessHours()}
         <button
-          onClick={!this.state.favoritedStatus ? this.addFav : this.deleteFav}
+          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav  }
         >
-          {!this.state.favoritedStatus
-            ? "Add To Favorites"
-            : "Remove From Favorites"}
+          {!!this.state.isFav.length
+            ?  "Remove From Favorites" : "Add To Favorites"
+            }
         </button>
         {this.displayItems()}
       </>
