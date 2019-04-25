@@ -39,6 +39,25 @@ getAllFavoritesByUserName = (req, res, next) => {
     });
 };
 
+getAllFavoritesForClient = (req, res, next) => {
+  const favoritesName = req.params.name;
+
+  db.any(
+    'SELECT DISTINCT favorites.id , favorites.client_id , favorites.vendor_id , users.name AS vendor_name FROM favorites JOIN users ON favorites.client_id = users.id WHERE users.name=$1', [favoritesName]
+  )
+    .then(favorites => {
+      res.status(200).json({
+        status: "success",
+        favorites: favorites,
+        message: "received all favorites by vendor"
+      });
+    })
+    .catch(err => {
+      return next(err);
+      console.log(err);
+    });
+};
+
 createFavorite = (req, res, next) => {
   db.one(
     "INSERT INTO favorites(client_id, vendor_id) VALUES(${client_id}, ${vendor_id}) RETURNING vendor_id",
@@ -77,6 +96,7 @@ deleteFavorite = (req, res, next) => {
 module.exports = {
   getAllFavorites,
   getAllFavoritesByUserName,
+  getAllFavoritesForClient,
   createFavorite,
   deleteFavorite
 };

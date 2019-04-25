@@ -17,7 +17,8 @@ class DisplayClientFavorites extends Component {
   }
 
   getAllFavoritesForClient = name => {
-    axios.get(`/api/favorites/${name}`).then(res => {
+    axios.get(`/api/favorites/client/${name}`).then(res => {
+
       this.setState({
         usersFavorites: res.data.favorites
       });
@@ -33,13 +34,16 @@ class DisplayClientFavorites extends Component {
   };
 
   pairUpFavoritesWithVendors = () => {
+    debugger
     let favorites = this.state.usersFavorites;
     let vendors = this.state.vendorsList;
     let displayObj = {};
-
+    debugger;
     for (let i = 0; i < vendors.length; i++) {
-      for (let j = 1; j < favorites.length; j++) {
+
+      for (let j = 0; j < favorites.length; j++) {
         console.log(favorites[j].vendor_id);
+
 
         if (vendors[i].vendor_id === favorites[j].vendor_id) {
           displayObj[i] = vendors[i];
@@ -60,11 +64,20 @@ class DisplayClientFavorites extends Component {
     });
   };
 
+  noFavsToDisplay = () => {
+    return (
+      <div className='noFavsToDisplayWrapper'>
+        <h1>No favorites to display.  Please favorite a restaurant first.</h1>
+      </div>
+    )
+  }
+
   render() {
     console.log(this.state.sortedFavoritesToDisplay, "favvvess");
     return (
       <div class="displayClientFavPage">
-        {this.pairUpFavoritesWithVendors()}
+        {!!this.state.usersFavorites.length ? this.pairUpFavoritesWithVendors() : this.noFavsToDisplay()}
+        hi
       </div>
     );
   }
