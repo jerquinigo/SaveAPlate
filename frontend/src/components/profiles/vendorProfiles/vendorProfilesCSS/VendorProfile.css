@@ -1,0 +1,90 @@
+.vendor-profile-container {
+  background-color: #bcc9d2;
+}
+
+.vendor-name {
+  font-size: 40px;
+}
+
+.vendor-name,
+#vendor-people-fed {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 20px 20px 20px;
+  background-color: whitesmoke;
+}
+
+.add-item-text {
+  color: #272e48;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.add-item-button:hover {
+  border: 3px solid white;
+}
+
+#donation-list,
+#claimed-items-list {
+  display: flex;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 10px 10px 10px 10px;
+  width: 14%;
+}
+
+#donation-list {
+  background-color: #ffd093;
+}
+
+#claimed-items-list {
+  background-color: #de6a5a;
+}
+
+#display-unclaimed-items,
+#display-claimed-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 75%;
+  height: 80px;
+  background-color: #ebf4f4;
+}
+
+#item-name {
+  width: 10%;
+}
+
+#claimed-button,
+#unclaimed-button {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 40px;
+}
+
+#claimed-button {
+  background-color: red;
+}
+
+#unclaimed-button {
+  background-color: green;
+}
+
+#delete-button {
+  border-radius: 10px;
+  height: 40px;
+}
