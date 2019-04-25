@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class DisplayClientFavorites extends Component {
   constructor() {
@@ -34,11 +35,11 @@ class DisplayClientFavorites extends Component {
   };
 
   pairUpFavoritesWithVendors = () => {
-    
+
     let favorites = this.state.usersFavorites;
     let vendors = this.state.vendorsList;
     let displayObj = {};
-   
+
     for (let i = 0; i < vendors.length; i++) {
 
       for (let j = 0; j < favorites.length; j++) {
@@ -50,13 +51,15 @@ class DisplayClientFavorites extends Component {
         }
       }
     }
-    
+
 
     let favoriteArr = Object.values(displayObj);
     return favoriteArr.map(fav => {
       return (
         <div key={fav.vendor_id} class="display-vendor-name">
-          <span class="display-location-vendor-name">{fav.vendor_name}</span>
+          <Link to={"/" + fav.vendor_name}>
+            <span class="display-location-vendor-name">{fav.vendor_name}</span>
+          </Link>
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
         </div>
@@ -73,7 +76,7 @@ class DisplayClientFavorites extends Component {
   }
 
   render() {
- 
+
     return (
       <div class="displayClientFavPage">
         {!!this.state.usersFavorites.length ? this.pairUpFavoritesWithVendors() : this.noFavsToDisplay()}

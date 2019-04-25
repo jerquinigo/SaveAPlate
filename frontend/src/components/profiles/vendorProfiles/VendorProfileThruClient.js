@@ -13,12 +13,11 @@ class VendorProfileThruClient extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getBusinessHours();
+  componentDidMount = async () => {
+    await this.getBusinessHours();
     this.getfoodItems();
     this.getFavs();
-    this.isFav();
-  }
+  };
   /////////////////////////////////////GET INFORMATION///////////////////////////////////////////////////////////////////
   //////////////////////////////////////get business hours////////////////////////////////////////////////////////////////////////
   getBusinessHours = () => {
@@ -59,32 +58,31 @@ class VendorProfileThruClient extends Component {
   //////////////////////////////////favorite vendor/////////////////////////////////////////////////////////////////////
   isFav = () => {
     let results = this.state.allFavsForVendor.filter(fav => {
+      let answer = !!this.state.businessHours.length
+        ? this.state.businessHours[0].id
+        : 0;
       return (
-        fav.vendor_id === this.state.businessHours[0].id &&
-        fav.client_id === this.props.currentUser.id
+        fav.vendor_id === answer && fav.client_id === this.props.currentUser.id
       );
     });
+
     this.setState({
       isFav: results
     });
   };
 
   addFav = async () => {
-
     await axios.post("/api/favorites/", {
       client_id: this.props.currentUser.id,
       vendor_id: this.state.businessHours[0].id
     });
     await this.getFavs();
-
   };
 
   deleteFav = async () => {
-
     await axios.delete(`/api/favorites/${this.state.isFav[0].id}`);
 
     await this.getFavs();
-
   };
 
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
@@ -213,11 +211,11 @@ class VendorProfileThruClient extends Component {
       <>
         {this.displayBusinessHours()}
         <button
-          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav  }
+          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
         >
           {!!this.state.isFav.length
-            ?  "Remove From Favorites" : "Add To Favorites"
-            }
+            ? "Remove From Favorites"
+            : "Add To Favorites"}
         </button>
         {this.displayItems()}
       </>
