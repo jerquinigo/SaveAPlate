@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 class ClientProfileEditForm extends Component {
   constructor() {
@@ -42,7 +43,7 @@ class ClientProfileEditForm extends Component {
   displayEditForm = () => {
     return (
       <div className="displayEditFormPage">
-        <form onSubmit={this.handleSubmit}>
+        {/* <form onSubmit={this.handleSubmit}>
           <input
             onChange={this.handleChange}
             name="name"
@@ -87,6 +88,59 @@ class ClientProfileEditForm extends Component {
           />
           <br />
           <button type="submit">submit</button>
+        </form> */}
+
+        <form className="displayEditFormPage" noValidate autoComplete="off">
+          <TextField
+            label="Name"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter name"
+          />
+          <br />
+          <TextField
+            label="Email"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter email"
+          />
+          <br />
+          <TextField
+            label="Address Field"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter address"
+          />
+          <br />
+          <TextField
+            label="Description"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter description"
+          />
+          <br />
+          <TextField
+            label="Telephone Number"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter telephone number"
+          />
+          <br />
+          <TextField
+            label="Client Certificate"
+            margin="normal"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter Client Certificate"
+          />
+          <Button variant="contained" color="primary" type="submit">
+            Submit
+          </Button>
         </form>
       </div>
     );

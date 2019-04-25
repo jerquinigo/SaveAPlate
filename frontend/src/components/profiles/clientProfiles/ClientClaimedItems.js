@@ -21,6 +21,8 @@ const VendorSection = ({ vendor, userObj, children }) => {
 };
 
 const VendorItem = ({ item, userObj, toReRender }) => {
+  let converted_time = Number(item.set_time.slice(0, 2));
+
   return (
     <div className="display-claimed-items">
       <span className="display-item-name">{item.name}</span>
@@ -31,7 +33,9 @@ const VendorItem = ({ item, userObj, toReRender }) => {
 
       <span>
         <p>Pickup Time: </p>
-        {item.set_time}
+        {converted_time === 0 || converted_time < 13
+          ? converted_time + "am"
+          : converted_time - 12 + "pm"}
       </span>
       <Button
         variant="contained"
