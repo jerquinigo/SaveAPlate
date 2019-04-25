@@ -77,6 +77,9 @@ class VendorProfile extends Component {
         vendor_id: this.props.currentUser.id
       })
       .then(() => {
+        this.setState({
+          toAddItem: false
+        });
         this.vendorDonations();
       })
       .catch(err => {
@@ -114,7 +117,6 @@ class VendorProfile extends Component {
   displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
-
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <h4 id="item-name">{item.name}</h4>
@@ -144,8 +146,14 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <Button variant="contained" color="secondary" id="delete-button">
-            <DeleteIcon id="delete-icon" />
+          <Button
+            onClick={this.deleteItem}
+            type="submit"
+            variant="contained"
+            color="secondary"
+            id={item.food_id}
+          >
+            <DeleteIcon id={item.food_id} />
           </Button>
         </div>
       );
@@ -155,7 +163,6 @@ class VendorProfile extends Component {
   displayClaimedItems = () => {
     return this.state.claimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
-
       return (
         <div key={item.food_id} id="display-claimed-items">
           <h4 id="item-name">{item.name}</h4>
@@ -185,8 +192,13 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <Button variant="contained" color="secondary" id="delete-button">
-            <DeleteIcon id="delete-icon" />
+          <Button
+            onClick={this.deleteItem}
+            variant="contained"
+            color="secondary"
+            id={item.food_id}
+          >
+            <DeleteIcon onClick={this.deleteItem} id={item.food_id} />
           </Button>
         </div>
       );
