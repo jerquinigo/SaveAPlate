@@ -1,0 +1,48 @@
+.display-item-name {
+  width: 10%;
+}
+
+.display-vendor-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 75%;
+  height: 80px;
+  background-color: #ebf4f4;
+}
+
+.display-claimed-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  /* margin-top: 2%; */
+  width: 75%;
+  height: 80px;
+  background-color: #ebf4f4;
+}
+
+.claimed-button,
+.unclaimed-button {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.claimed-button {
+  background-color: red;
+}
+
+.unclaimed-button {
+  background-color: green;
+}
