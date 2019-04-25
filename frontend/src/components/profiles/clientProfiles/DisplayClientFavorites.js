@@ -34,11 +34,11 @@ class DisplayClientFavorites extends Component {
   };
 
   pairUpFavoritesWithVendors = () => {
-    debugger
+    
     let favorites = this.state.usersFavorites;
     let vendors = this.state.vendorsList;
     let displayObj = {};
-    debugger;
+   
     for (let i = 0; i < vendors.length; i++) {
 
       for (let j = 0; j < favorites.length; j++) {
@@ -50,7 +50,7 @@ class DisplayClientFavorites extends Component {
         }
       }
     }
-    console.log(displayObj, "obj");
+    
 
     let favoriteArr = Object.values(displayObj);
     return favoriteArr.map(fav => {
@@ -73,11 +73,10 @@ class DisplayClientFavorites extends Component {
   }
 
   render() {
-    console.log(this.state.sortedFavoritesToDisplay, "favvvess");
+ 
     return (
       <div class="displayClientFavPage">
         {!!this.state.usersFavorites.length ? this.pairUpFavoritesWithVendors() : this.noFavsToDisplay()}
-        hi
       </div>
     );
   }
