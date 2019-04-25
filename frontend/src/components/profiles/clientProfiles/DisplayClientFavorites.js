@@ -64,7 +64,6 @@ class DisplayClientFavorites extends Component {
     console.log(this.state.sortedFavoritesToDisplay, "favvvess");
     return (
       <div class="displayClientFavPage">
-        hello world
         {this.pairUpFavoritesWithVendors()}
       </div>
     );

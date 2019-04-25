@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Button from "@material-ui/core/Button";
 
 class ClientProfileEditForm extends Component {
   constructor() {
@@ -28,7 +29,14 @@ class ClientProfileEditForm extends Component {
   };
 
   editProfile = () => {
-    return <button onClick={this.toggleEditFormLogic}>Edit Profile</button>;
+    return (
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={this.toggleEditFormLogic}>
+        Edit Profile
+      </Button>
+    );
   };
 
   displayEditForm = () => {

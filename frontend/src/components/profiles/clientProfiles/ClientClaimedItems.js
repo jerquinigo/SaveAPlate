@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import _ from "lodash";
+import Button from "@material-ui/core/Button";
 import "./clientProfileCSS/ClientClaimedItems.css";
 
 const VendorSection = ({ vendor, userObj, children }) => {
   return (
     <div>
-      <div class="display-vendor-name">
-        <span class="display-item-name">{vendor.vendor_name}</span>
+      <div className="display-vendor-name">
+        <span className="display-item-name">{vendor.vendor_name}</span>
         <span>{vendor.address_field}</span>
         <span>{vendor.telephone_number}</span>
       </div>
@@ -19,8 +20,8 @@ const VendorSection = ({ vendor, userObj, children }) => {
 
 const VendorItem = ({ item, userObj, toReRender }) => {
   return (
-    <div class="display-claimed-items">
-      <span class="display-item-name">{item.name}</span>
+    <div className="display-claimed-items">
+      <span className="display-item-name">{item.name}</span>
       <span>
         <p>Quantity: </p>
         {item.quantity}
@@ -30,13 +31,14 @@ const VendorItem = ({ item, userObj, toReRender }) => {
         <p>Pickup Time: </p>
         {item.set_time}
       </span>
-      <button
-        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}
-        class={item.is_claimed ? "claimed-button" : "unclaimed-button"}
+      <Button
+        variant="contained"
+        color="secondary"
+        className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
         id={item.id}
-      >
+        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}>
         {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-      </button>
+      </Button>
     </div>
   );
 };
@@ -167,6 +169,7 @@ class ClientClaimedItems extends Component {
     console.log(organizedItems);
     return (
       <div className="clientClaimedItemsPage">
+        Booked Items
         {vendorArea.map(item => {
           return item;
         })}
