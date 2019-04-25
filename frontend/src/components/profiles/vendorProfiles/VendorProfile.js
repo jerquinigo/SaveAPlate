@@ -119,15 +119,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
@@ -160,15 +158,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
