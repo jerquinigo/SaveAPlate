@@ -51,33 +51,14 @@ class DisplayClientFavorites extends Component {
     let favoriteArr = Object.values(displayObj);
     return favoriteArr.map(fav => {
       return (
-        <div>
-          <span>{fav.vendor_name}</span>
+        <div key={fav.vendor_id} class="display-vendor-name">
+          <span class="display-location-vendor-name">{fav.vendor_name}</span>
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
         </div>
       );
     });
   };
-
-  // example for how to organize favorites and with the food item
-  // organizeFoodItems = () => {
-  //   const { claimedFoodItems = [] } = this.state;
-  //   let claimedList = {};
-  //
-  //   for (let i = 0; i < claimedFoodItems.length; i++) {
-  //     if (claimedList[claimedFoodItems[i].vendor_id]) {
-  //       claimedList[claimedFoodItems[i].vendor_id].push(claimedFoodItems[i]);
-  //     } else {
-  //       claimedList[claimedFoodItems[i].vendor_id] = [claimedFoodItems[i]];
-  //     }
-  //     // console.log("claimed", claimedList);
-  //   }
-
-  //   console.log("CLAIMED LIST", claimedList);
-  //
-  //   return claimedList;
-  // };
 
   render() {
     console.log(this.state.sortedFavoritesToDisplay, "favvvess");
