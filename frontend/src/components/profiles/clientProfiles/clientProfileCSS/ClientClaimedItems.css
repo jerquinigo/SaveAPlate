@@ -1,33 +1,39 @@
+#items-border {
+  border: 5px solid red;
+}
+
 .display-item-name {
   width: 10%;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.display-vendor-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin: 0 auto;
-  margin-top: 2%;
-  width: 75%;
-  height: 80px;
-  background-color: #ebf4f4;
-}
-
+.display-vendor-name,
 .display-claimed-items {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
-  margin: 0 auto;
-  /* margin-top: 2%; */
-  width: 75%;
   height: 80px;
   background-color: #ebf4f4;
+  margin: 0;
+  float: right;
+  margin-right: 15%;
+}
+
+.display-vendor-name {
+  width: 75%;
+  background-color: #f3e4d8;
+}
+
+.display-claimed-items {
+  width: 55%;
+}
+
+.display-vendor-name {
+  margin-top: 2%;
 }
 
 .claimed-button,
