@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import _ from "lodash";
 import Button from "@material-ui/core/Button";
 import "./clientProfileCSS/ClientClaimedItems.css";
@@ -9,7 +9,9 @@ const VendorSection = ({ vendor, userObj, children }) => {
   return (
     <div>
       <div className="display-vendor-name">
-        <span className="display-item-name">{vendor.vendor_name}</span>
+        <Link to={"/" + vendor.vendor_name}>
+          <span className="display-item-name">{vendor.vendor_name}</span>{" "}
+        </Link>
         <span>{vendor.address_field}</span>
         <span>{vendor.telephone_number}</span>
       </div>
