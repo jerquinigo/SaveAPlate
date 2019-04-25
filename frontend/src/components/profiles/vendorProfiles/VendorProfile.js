@@ -18,14 +18,25 @@ class VendorProfile extends Component {
       set_time: "",
       toAddItem: false,
       claimedItems: [],
-      unclaimedItems: []
+      unclaimedItems: [],
+      fedCount: 0
     };
   }
 
   componentDidMount() {
     this.vendorDonations();
+    this.getFeedingCount();
   }
 
+  //get feeding count
+
+  getFeedingCount = () => {
+    axios.get("/api/fooditems/feedingcount").then(count => {
+      this.setState({
+        fedCount: +count.data.fedCount[0].sum
+      });
+    });
+  };
   // Add food items
   addItemButton = () => {
     return (
@@ -35,7 +46,8 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}>
+          onClick={this.toAddItem}
+        >
           <AddIcon />
         </Fab>
       </>
@@ -119,13 +131,15 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
+                id="claimed-button"
+              >
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
+                id="unclaimed-button"
+              >
                 Unclaimed
               </button>
             )}
@@ -158,13 +172,15 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
+                id="claimed-button"
+              >
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
+                id="unclaimed-button"
+              >
                 Unclaimed
               </button>
             )}
@@ -200,6 +216,7 @@ class VendorProfile extends Component {
 
   // Favorite vendor
   render() {
+    console.log(this.state.fedCount, "FEEEDING");
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -214,7 +231,7 @@ class VendorProfile extends Component {
         <br />
         <div id="vendor-people-fed">
           Number of people fed:
-          <p>0</p>
+          <p>{this.state.fedCount}</p>
         </div>
         <br />
         <br />
