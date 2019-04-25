@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import DisplayClientFavorites from "./DisplayClientFavorites.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
+import "./clientProfileCSS/ClientProfile.css";
 import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
 import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
 
@@ -32,7 +33,7 @@ class ClientProfile extends Component {
   displayClientProfile = () => {
     return (
       <div className="displayInfo">
-        <p>{this.props.currentUser.name}</p>
+        <p className="client-name">{this.props.currentUser.name}</p>
         <p>{this.props.currentUser.address_field}</p>
       </div>
     );
