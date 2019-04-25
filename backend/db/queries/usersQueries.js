@@ -22,7 +22,7 @@ getAllUsers = (req, res, next) => {
 getAllVendors = (req, res, next) => {
   let isVendor = 1;
   db.any(
-    "SELECT users.id AS vendor_id, users.email, users.type, users.address_field, users.body, users.telephone_number, users.ein, users.client_certificate FROM users WHERE type=$1",
+    "SELECT users.id AS vendor_id, users.name AS vendor_name, users.email, users.type, users.address_field, users.body, users.telephone_number, users.ein, users.client_certificate FROM users WHERE type=$1",
     [isVendor]
   )
     .then(vendors => {

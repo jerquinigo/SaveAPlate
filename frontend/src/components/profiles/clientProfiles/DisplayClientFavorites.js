@@ -6,7 +6,8 @@ class DisplayClientFavorites extends Component {
     super();
     this.state = {
       usersFavorites: [],
-      vendorsList: []
+      vendorsList: [],
+      sortedFavoritesToDisplay: []
     };
   }
 
@@ -39,10 +40,24 @@ class DisplayClientFavorites extends Component {
     for (let i = 0; i < vendors.length; i++) {
       for (let j = 1; j < favorites.length; j++) {
         console.log(favorites[j].vendor_id);
+
         if (vendors[i].vendor_id === favorites[j].vendor_id) {
+          displayObj[i] = vendors[i];
         }
       }
     }
+    console.log(displayObj, "obj");
+
+    let favoriteArr = Object.values(displayObj);
+    return favoriteArr.map(fav => {
+      return (
+        <div>
+          <span>{fav.vendor_name}</span>
+          <span>{fav.address_field}</span>
+          <span>{fav.telephone_number}</span>
+        </div>
+      );
+    });
   };
 
   // example for how to organize favorites and with the food item
@@ -65,7 +80,7 @@ class DisplayClientFavorites extends Component {
   // };
 
   render() {
-    console.log(this.state.vendorsList, "favvvess");
+    console.log(this.state.sortedFavoritesToDisplay, "favvvess");
     return (
       <div class="displayClientFavPage">
         hello world
