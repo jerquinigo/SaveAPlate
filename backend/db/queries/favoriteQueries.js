@@ -23,7 +23,10 @@ getAllFavoritesWithVendorName = (req, res, next) => {
 getAllFavoritesByUserName = (req, res, next) => {
   const favoritesName = req.params.name;
   console.log(favoritesName);
-  db.any("SELECT DISTINCT favorites.id , favorites.client_id , favorites.vendor_id , users.name AS vendor_name FROM favorites JOIN users ON favorites.vendor_id = users.id WHERE users.name = $1", [favoritesName])
+  db.any(
+    "SELECT DISTINCT favorites.id , favorites.client_id , favorites.vendor_id , users.name AS vendor_name FROM favorites JOIN users ON favorites.client_id = users.id WHERE users.name = $1",
+    [favoritesName]
+  )
     .then(favorites => {
       res.status(200).json({
         status: "success",
