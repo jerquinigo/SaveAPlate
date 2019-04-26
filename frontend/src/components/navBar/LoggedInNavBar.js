@@ -11,30 +11,37 @@ export const LoggedInNavBar = props => {
   }
 
   let profileLink = `/${type}/${props.currentUser.name}`;
-  return (
-    <div>
-      <nav id="nav">
-        <span id="nav-title">
-          <img
-            src={require("./logo.png")}
-            alt="logo for save a plate"
-            id="logo"
-          />
-        </span>
-        <div id="nav-links">
-          <NavLink to="/aboutus" className="nav-link">
-            About Us
-          </NavLink>
-          <NavLink to="/resources" className="nav-link">
-            Resources
-          </NavLink>
-          <NavLink to="/donate" className="nav-link">
-            Donate
-          </NavLink>
-          <NavLink to={profileLink} className="nav-link">
-            My Profile
-          </NavLink>
-          <button
+
+  if (type === "client") {
+    return (
+      <div>
+        <nav id="nav">
+          <span id="nav-title">
+            <NavLink to="/welcome" className="nav-link">
+              <img
+                src={require("./logo.png")}
+                alt="logo for save a plate"
+                id="logo"
+              />
+            </NavLink>
+          </span>
+          <div id="nav-links">
+            <NavLink to="/aboutus" className="nav-link">
+              About Us
+            </NavLink>
+            <NavLink to="/resources" className="nav-link">
+              Resources
+            </NavLink>
+            <NavLink to="/donate" className="nav-link">
+              Donate
+            </NavLink>
+            <NavLink to={profileLink} className="nav-link">
+              My Profile
+            </NavLink>
+            <NavLink to="/feed" className="nav-link">
+              Feed
+            </NavLink>
+            <button
             className="nav-link"
             onClick={async () => {
               await props.logoutUser();
@@ -43,8 +50,49 @@ export const LoggedInNavBar = props => {
           >
             Logout
           </button>
-        </div>
-      </nav>
-    </div>
-  );
-};
+          </div>
+        </nav>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <nav id="nav">
+          <span id="nav-title">
+            
+              <img
+                src={require("./logo.png")}
+                alt="logo for save a plate"
+                id="logo"
+              />
+
+          </span>
+          <div id="nav-links">
+            <NavLink to="/aboutus" className="nav-link">
+              About Us
+            </NavLink>
+            <NavLink to="/resources" className="nav-link">
+              Resources
+            </NavLink>
+            <NavLink to="/donate" className="nav-link">
+              Donate
+            </NavLink>
+            <NavLink to={profileLink} className="nav-link">
+              My Profile
+            </NavLink>
+            <button
+            className="nav-link"
+            onClick={async () => {
+              await props.logoutUser();
+              await props.history.push("/welcome");
+            }}
+          >
+            Logout
+          </button>
+          </div>
+        </nav>
+      </div>
+    );
+  }
+}
+

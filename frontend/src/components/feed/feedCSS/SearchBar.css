@@ -1,0 +1,26 @@
+#search-container {
+  display: flex;
+  justify-content: left;
+  margin: 0 auto;
+  background-color: white;
+  width: 25%;
+  border-radius: 10px;
+  margin-top: 3%;
+}
+
+#search-icon {
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+#search-input {
+  position: relative;
+  width: 23vw;
+}
+
+#search-submit {
+  width: 12%;
+  height: 36px;
+  border-radius: 50px;
+  margin-top: 0.5%;
+}

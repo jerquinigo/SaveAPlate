@@ -47,8 +47,7 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}
-        >
+          onClick={this.toAddItem}>
           <AddIcon />
         </Fab>
       </>
@@ -137,15 +136,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
@@ -155,8 +152,7 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -183,15 +179,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
@@ -200,8 +194,7 @@ class VendorProfile extends Component {
             onClick={this.deleteItem}
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon onClick={this.deleteItem} id={item.food_id} />
           </Button>
         </div>
