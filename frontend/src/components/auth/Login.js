@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Auth from "../../utils/Auth.js";
@@ -42,13 +42,10 @@ class Login extends Component {
 
   conditionalRouting = () => {
     if (this.state.isSubmitted && this.props.currentUser.type === 1) {
-      console.log(this.props.currentUser.type, "type");
-      console.log(this.props.currentUser.name, "name");
       return <Redirect to={`/vendor/${this.props.currentUser.name}`} />;
     } else if (this.state.isSubmitted && this.props.currentUser.type === 2) {
       return <Redirect to={"/feed"} />;
     }
-    console.log("CR code");
   };
 
   render() {
@@ -90,6 +87,7 @@ class Login extends Component {
           >
             Log-In
           </Button>
+          <Link to="/user/signup"> Not a member yet? Sign Up Here! </Link>
         </form>
       </>
     );
