@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-
+import VendorProfileEditForm from "./VendorProfileEditForm.js";
 import "./vendorProfilesCSS/VendorProfile.css";
 
 class VendorProfile extends Component {
@@ -35,7 +35,8 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}>
+          onClick={this.toAddItem}
+        >
           <AddIcon />
         </Fab>
       </>
@@ -212,10 +213,9 @@ class VendorProfile extends Component {
     return (
       <div className="vendor-profile-container">
         <h1 className="vendor-name">
-          {" "}
           {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
         </h1>
-        <br />
+        <VendorProfileEditForm id={this.props.currentUser.id} /> <br />
         <div id="vendor-people-fed">
           Number of people fed:
           <p>0</p>
