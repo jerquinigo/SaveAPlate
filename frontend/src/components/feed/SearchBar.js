@@ -20,11 +20,7 @@ const SearchBar = props => {
             id="search-input"
           />
         </div>
-        <Button
-          variant="contained"
-          type="submit"
-          color="primary"
-          id="search-submit">
+        <Button variant="contained" type="submit" id="search-submit">
           Submit
         </Button>
       </form>

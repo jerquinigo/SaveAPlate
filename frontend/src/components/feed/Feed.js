@@ -118,13 +118,13 @@ export default class Feed extends Component {
                     onClick={e => this.claimItem(e, results.is_claimed)}
                     id={results.id}>
                     {" "}
-                    TO CLAIM
+                    UNCLAIM
                   </button>
                 ) : (
                   <button
                     onClick={e => this.claimItem(e, results.is_claimed)}
                     id={results.id}>
-                    UNCLAIMED
+                    CLAIM
                   </button>
                 )}
               </li>
@@ -162,13 +162,13 @@ export default class Feed extends Component {
                       className={food.is_claimed ? "claimed" : "unclaimed"}
                       onClick={e => this.claimItem(e, food.is_claimed)}
                       id={food.id}>
-                      CLAIMED
+                      UNCLAIM
                     </button>
                   ) : (
                     <button
                       onClick={e => this.claimItem(e, food.is_claimed)}
                       id={food.id}>
-                      UNCLAIMED
+                      CLAIM
                     </button>
                   )}
                 </span>
