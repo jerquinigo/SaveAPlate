@@ -286,7 +286,7 @@ class SignUp extends Component {
         this.props.checkAuthenticateStatus();
       })
       .then(() => {
-        this.props.history.push("/client/clienttester");
+        this.props.history.push("/feed");
       });
   };
 
