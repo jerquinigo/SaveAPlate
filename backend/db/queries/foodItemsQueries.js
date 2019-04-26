@@ -1,7 +1,26 @@
 const { db } = require("../index.js");
 
+getFedCount = (req, res, next) => {
+  db.any(
+    "SELECT SUM(quantity) FROM food_items WHERE vendor_id=$1 AND is_claimed = TRUE",
+    [+req.session.currentUser.id]
+  )
+    .then(fedCount => {
+      res.status(200).json({
+        status: "success",
+        fedCount: fedCount,
+        message: "received total fed count for current vendor"
+      });
+    })
+    .catch(err => {
+      return next(err);
+    });
+};
+
 getAllFoodItems = (req, res, next) => {
-  db.any("SELECT food_items.* , users.name AS vendor_name , users.address_field , users.telephone_number FROM food_items JOIN users ON food_items.vendor_id = users.id ORDER BY food_items.set_time ASC")
+  db.any(
+    "SELECT food_items.* , users.name AS vendor_name , users.address_field , users.telephone_number FROM food_items JOIN users ON food_items.vendor_id = users.id ORDER BY food_items.set_time ASC"
+  )
     .then(food_items => {
       res.status(200).json({
         status: "success",
@@ -54,8 +73,11 @@ getFoodItemsByClient = (req, res, next) => {
 };
 
 getFoodItemsByVendorName = (req, res, next) => {
-  let vendorName = req.params.name
-  db.any("SELECT food_items.id AS food_id, food_items.quantity, food_items.name, food_items.client_id, food_items.vendor_id, food_items.is_claimed, food_items.set_time, users.id AS user_id, users.name AS vendor_name, users.email AS vendor_email, users.type, users.address_field AS vendor_address, users.body, users.telephone_number, users.ein FROM food_items JOIN users ON food_items.vendor_id = users.id WHERE users.name =$1", [vendorName])
+  let vendorName = req.params.name;
+  db.any(
+    "SELECT food_items.id AS food_id, food_items.quantity, food_items.name, food_items.client_id, food_items.vendor_id, food_items.is_claimed, food_items.set_time, users.id AS user_id, users.name AS vendor_name, users.email AS vendor_email, users.type, users.address_field AS vendor_address, users.body, users.telephone_number, users.ein FROM food_items JOIN users ON food_items.vendor_id = users.id WHERE users.name =$1",
+    [vendorName]
+  )
     .then(food_items => {
       res.status(200).json({
         status: "sucess",
@@ -160,6 +182,7 @@ deleteFoodItem = (req, res, next) => {
 };
 
 module.exports = {
+  getFedCount,
   getAllFoodItems,
   getAllClaimedFoodItems,
   getFoodItemsByClient,

@@ -9,23 +9,22 @@ class VendorProfileThruClient extends Component {
       businessHours: [],
       foodInfo: [],
       allFavsForVendor: [],
-      isFav: [],
-      favoritedStatus: false
+      isFav: []
     };
   }
 
-  componentDidMount() {
-    this.getBusinessHours();
+  componentDidMount = async () => {
+    await this.getBusinessHours();
     this.getfoodItems();
     this.getFavs();
-    this.isFav();
-  }
-  /////////////////////////////////////GET INFORMATION///////////////////////////////////////////////////////////////////
-  //////////////////////////////////////get business hours////////////////////////////////////////////////////////////////////////
+  };
+  /////////////////////////////////////GET INFORMATION/////////////////////////////////////
+  //////////////////////////////////////get business hours/////////////////////////////////
   getBusinessHours = () => {
     axios
       .get(`/api/business_hours/${this.props.match.params.vendor}`)
       .then(info => {
+        console.log(info);
         this.setState({
           businessHours: info.data.data
         });
@@ -43,7 +42,11 @@ class VendorProfileThruClient extends Component {
   ///////////////////////////////////////get Favs//////////////////////////////////////////////////////////////////////////////
   getFavs = () => {
     axios
-      .get(`/api/favorites/${this.props.match.params.vendor}`)
+      .get(
+        `/api/favorites/${this.props.match.params.vendor
+          .split("%20")
+          .join(" ")}`
+      )
       .then(data => {
         this.setState({
           allFavsForVendor: data.data.favorites
@@ -56,9 +59,11 @@ class VendorProfileThruClient extends Component {
   //////////////////////////////////favorite vendor/////////////////////////////////////////////////////////////////////
   isFav = () => {
     let results = this.state.allFavsForVendor.filter(fav => {
+      let answer = !!this.state.businessHours.length
+        ? this.state.businessHours[0].id
+        : 0;
       return (
-        fav.vendor_id === this.state.businessHours[0].id &&
-        fav.client_id === this.props.currentUser.id
+        fav.vendor_id === answer && fav.client_id === this.props.currentUser.id
       );
     });
 
@@ -73,22 +78,12 @@ class VendorProfileThruClient extends Component {
       vendor_id: this.state.businessHours[0].id
     });
     await this.getFavs();
-
-    await this.setState({
-      favoritedStatus: true
-    });
   };
 
   deleteFav = async () => {
-    debugger;
     await axios.delete(`/api/favorites/${this.state.isFav[0].id}`);
-    debugger;
 
     await this.getFavs();
-
-    await this.setState({
-      favoritedStatus: false
-    });
   };
 
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
@@ -213,17 +208,15 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
-    console.log(this.state, "STATE");
-    console.log(this.props, "PROPS");
     return (
       <>
         {this.displayBusinessHours()}
         <button
-          onClick={!this.state.favoritedStatus ? this.addFav : this.deleteFav}
+          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
         >
-          {!this.state.favoritedStatus
-            ? "Add To Favorites"
-            : "Remove From Favorites"}
+          {!!this.state.isFav.length
+            ? "Remove From Favorites"
+            : "Add To Favorites"}
         </button>
         {this.displayItems()}
       </>

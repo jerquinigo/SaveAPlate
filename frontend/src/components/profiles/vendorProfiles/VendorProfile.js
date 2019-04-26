@@ -17,15 +17,27 @@ class VendorProfile extends Component {
       name: "",
       set_time: "",
       toAddItem: false,
+      hasAdded: false,
       claimedItems: [],
-      unclaimedItems: []
+      unclaimedItems: [],
+      fedCount: 0
     };
   }
 
   componentDidMount() {
     this.vendorDonations();
+    this.getFeedingCount();
   }
 
+  //get feeding count
+
+  getFeedingCount = () => {
+    axios.get("/api/fooditems/feedingcount").then(count => {
+      this.setState({
+        fedCount: +count.data.fedCount[0].sum
+      });
+    });
+  };
   // Add food items
   addItemButton = () => {
     return (
@@ -57,6 +69,9 @@ class VendorProfile extends Component {
 
   submitItem = e => {
     e.preventDefault();
+    this.setState({
+      hasAdded: true
+    });
     const { quantity, name, set_time } = this.state;
     axios
       .post("/api/fooditems/", {
@@ -66,6 +81,9 @@ class VendorProfile extends Component {
         vendor_id: this.props.currentUser.id
       })
       .then(() => {
+        this.setState({
+          toAddItem: false
+        });
         this.vendorDonations();
       })
       .catch(err => {
@@ -103,12 +121,11 @@ class VendorProfile extends Component {
   displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
-
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <h4 id="item-name">{item.name}</h4>
-          <p>{item.quantity} pounds</p>
-          <p>Feeds: {item.quantity * 3} people</p>
+          <p>{item.quantity * 3} pounds</p>
+          <p>Feeds: {item.quantity} people</p>
           <p>
             {" "}
             Lastest Pick Up Time: {""}
@@ -133,8 +150,14 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <Button variant="contained" color="secondary" id="delete-button">
-            <DeleteIcon id="delete-icon" />
+          <Button
+            onClick={this.deleteItem}
+            type="submit"
+            variant="contained"
+            color="secondary"
+            id={item.food_id}
+          >
+            <DeleteIcon id={item.food_id} />
           </Button>
         </div>
       );
@@ -144,7 +167,6 @@ class VendorProfile extends Component {
   displayClaimedItems = () => {
     return this.state.claimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
-
       return (
         <div key={item.food_id} id="display-claimed-items">
           <h4 id="item-name">{item.name}</h4>
@@ -174,8 +196,13 @@ class VendorProfile extends Component {
               </button>
             )}
           </div>
-          <Button variant="contained" color="secondary" id="delete-button">
-            <DeleteIcon id="delete-icon" />
+          <Button
+            onClick={this.deleteItem}
+            variant="contained"
+            color="secondary"
+            id={item.food_id}
+          >
+            <DeleteIcon onClick={this.deleteItem} id={item.food_id} />
           </Button>
         </div>
       );
@@ -198,13 +225,15 @@ class VendorProfile extends Component {
 
   // Delete items
   deleteItem = e => {
-    axios.delete(`/api/fooditems/${e.target.id}`).then(() => {
+    console.log(e);
+    axios.delete(`/api/fooditems/${e.currentTarget.id}`).then(() => {
       this.vendorDonations();
     });
   };
 
   // Favorite vendor
   render() {
+    console.log(this.state.fedCount, "FEEEDING");
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -218,7 +247,7 @@ class VendorProfile extends Component {
         <VendorProfileEditForm id={this.props.currentUser.id} /> <br />
         <div id="vendor-people-fed">
           Number of people fed:
-          <p>0</p>
+          <p>{this.state.fedCount}</p>
         </div>
         <br />
         <br />

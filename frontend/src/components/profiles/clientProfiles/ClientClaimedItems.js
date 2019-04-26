@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import _ from "lodash";
+import Button from "@material-ui/core/Button";
+import "./clientProfileCSS/ClientClaimedItems.css";
 
 const VendorSection = ({ vendor, userObj, children }) => {
   return (
     <div>
-      <div>
-        <span>{vendor.vendor_name}</span>
+      <div className="display-vendor-name">
+        <Link to={"/" + vendor.vendor_name}>
+          <span className="display-item-name">{vendor.vendor_name}</span>{" "}
+        </Link>
         <span>{vendor.address_field}</span>
         <span>{vendor.telephone_number}</span>
       </div>
@@ -17,23 +21,37 @@ const VendorSection = ({ vendor, userObj, children }) => {
 };
 
 const VendorItem = ({ item, userObj, toReRender }) => {
+  let converted_time = Number(item.set_time.slice(0, 2));
   return (
-    <div>
-      <span>{item.name}</span>
-      <span>{item.quantity}</span>
-      <span>{item.set_time}</span>
-      <button
-        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}
+    <div className="display-claimed-items">
+      <span className="display-item-name">{item.name}</span>
+      <span>
+        <p>Quantity: </p>
+        {item.quantity}
+      </span>
+
+      <span>
+        <p>Pickup Time: </p>
+        {converted_time === 0 || converted_time < 13
+          ? converted_time + "am"
+          : converted_time - 12 + "pm"}
+      </span>
+      <Button
         id={item.id}
+        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}
+        variant="contained"
+        color="secondary"
+        className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
       >
         {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-      </button>
+      </Button>
     </div>
   );
 };
 
 const ClaimItem = (e, isClaimed, userObj, toReRender) => {
-  let target = parseInt(e.target.id);
+  let target = parseInt(e.currentTarget.id);
+  debugger;
   isClaimed === true
     ? axios
         .patch(`/api/fooditems/claimstatus/${target}`, {
@@ -158,6 +176,7 @@ class ClientClaimedItems extends Component {
     console.log(organizedItems);
     return (
       <div className="clientClaimedItemsPage">
+        Booked Items
         {vendorArea.map(item => {
           return item;
         })}

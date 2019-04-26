@@ -1,0 +1,9 @@
+.client-name {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 20px 20px 20px;
+  background-color: whitesmoke;
+}

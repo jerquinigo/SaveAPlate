@@ -2,17 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import DemoLogin from "../../containers/DemoLoginContainer.js";
 import Button from "@material-ui/core/Button";
+import Carousel from "./Carousel.js";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./landingCSS/Landing.css";
 
 export default function Landing() {
   return (
     <div>
       <DemoLogin />
-      <img
-        src={require("./images/sap-logo.svg")}
-        alt="Save a Plate logo"
-        id="sap-logo"
-      />
+      <Carousel />
       <div id="food-background-container">
         {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
         {/* <img
