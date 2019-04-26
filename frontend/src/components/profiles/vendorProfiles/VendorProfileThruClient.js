@@ -60,7 +60,7 @@ class VendorProfileThruClient extends Component {
   isFav = () => {
     let results = this.state.allFavsForVendor.filter(fav => {
       let answer = !!this.state.businessHours.length
-        ? this.state.businessHours[0].id
+        ? this.state.businessHours[0].vendor_id
         : 0;
       return (
         fav.vendor_id === answer && fav.client_id === this.props.currentUser.id
@@ -75,7 +75,7 @@ class VendorProfileThruClient extends Component {
   addFav = async () => {
     await axios.post("/api/favorites/", {
       client_id: this.props.currentUser.id,
-      vendor_id: this.state.businessHours[0].id
+      vendor_id: this.state.businessHours[0].vendor_id
     });
     await this.getFavs();
   };
@@ -208,6 +208,7 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
+    console.log(this.state.isFav, "the current fav in the vendor profile");
     return (
       <>
         {this.displayBusinessHours()}
