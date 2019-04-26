@@ -22,7 +22,6 @@ const VendorSection = ({ vendor, userObj, children }) => {
 
 const VendorItem = ({ item, userObj, toReRender }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
-
   return (
     <div className="display-claimed-items">
       <span className="display-item-name">{item.name}</span>
@@ -38,11 +37,12 @@ const VendorItem = ({ item, userObj, toReRender }) => {
           : converted_time - 12 + "pm"}
       </span>
       <Button
+        id={item.id}
+        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}
         variant="contained"
         color="secondary"
         className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-        id={item.id}
-        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}>
+      >
         {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
       </Button>
     </div>
@@ -50,7 +50,8 @@ const VendorItem = ({ item, userObj, toReRender }) => {
 };
 
 const ClaimItem = (e, isClaimed, userObj, toReRender) => {
-  let target = parseInt(e.target.id);
+  let target = parseInt(e.currentTarget.id);
+  debugger;
   isClaimed === true
     ? axios
         .patch(`/api/fooditems/claimstatus/${target}`, {

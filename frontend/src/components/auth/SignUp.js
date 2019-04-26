@@ -88,7 +88,8 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="vendor-signup-form">
+          id="vendor-signup-form"
+        >
           <h1>Create an account:</h1>
           <TextField
             required
@@ -121,7 +122,7 @@ class SignUp extends Component {
             margin="normal"
             variant="outlined"
             onChange={this.handleChange}
-            type="text"
+            type="password"
             name="password_digest"
             placeholder="Password"
             value={this.state.password_digest}
@@ -176,7 +177,8 @@ class SignUp extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button">
+            className="signup-button"
+          >
             Sign Up
           </Button>
         </form>
@@ -186,7 +188,8 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="client-signup-form">
+          id="client-signup-form"
+        >
           <h1>Create an account:</h1>
           <TextField
             required
@@ -219,7 +222,7 @@ class SignUp extends Component {
             margin="normal"
             variant="outlined"
             onChange={this.handleChange}
-            type="text"
+            type="password"
             name="password_digest"
             placeholder="Password"
             value={this.state.password_digest}
@@ -252,7 +255,8 @@ class SignUp extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button">
+            className="signup-button"
+          >
             Sign Up
           </Button>{" "}
         </form>
@@ -283,9 +287,10 @@ class SignUp extends Component {
               aria-label="User Type"
               name="type"
               value={this.state.value}
-              onClick={this.handleChange}>
-              <FormControlLabel value="1" control={<Radio />} label="Client" />
-              <FormControlLabel value="2" control={<Radio />} label="Vendor" />
+              onClick={this.handleChange}
+            >
+              <FormControlLabel value="1" control={<Radio />} label="Vendor" />
+              <FormControlLabel value="2" control={<Radio />} label="Client" />
             </RadioGroup>
           </FormControl>
           {this.signUpForm()}
