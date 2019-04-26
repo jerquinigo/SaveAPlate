@@ -17,6 +17,7 @@ class VendorProfile extends Component {
       name: "",
       set_time: "",
       toAddItem: false,
+      hasAdded: false,
       claimedItems: [],
       unclaimedItems: [],
       fedCount: 0
@@ -68,6 +69,9 @@ class VendorProfile extends Component {
 
   submitItem = e => {
     e.preventDefault();
+    this.setState({
+      hasAdded: true
+    });
     const { quantity, name, set_time } = this.state;
     axios
       .post("/api/fooditems/", {
@@ -120,8 +124,8 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <h4 id="item-name">{item.name}</h4>
-          <p>{item.quantity} pounds</p>
-          <p>Feeds: {item.quantity * 3} people</p>
+          <p>{item.quantity * 3} pounds</p>
+          <p>Feeds: {item.quantity} people</p>
           <p>
             {" "}
             Lastest Pick Up Time: {""}
@@ -221,7 +225,8 @@ class VendorProfile extends Component {
 
   // Delete items
   deleteItem = e => {
-    axios.delete(`/api/fooditems/${e.target.id}`).then(() => {
+    console.log(e);
+    axios.delete(`/api/fooditems/${e.currentTarget.id}`).then(() => {
       this.vendorDonations();
     });
   };

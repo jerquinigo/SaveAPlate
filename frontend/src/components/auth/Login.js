@@ -59,6 +59,7 @@ class Login extends Component {
           <h1>Log-In</h1>
           <TextField
             required
+            type="text"
             id="email-input"
             label="Email"
             defaultValue="Hello World"
@@ -70,6 +71,7 @@ class Login extends Component {
           />
           <TextField
             required
+            type="password"
             id="password-input"
             label="Password"
             defaultValue="Hello World"
@@ -84,7 +86,8 @@ class Login extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button">
+            className="signup-button"
+          >
             Log-In
           </Button>
         </form>
