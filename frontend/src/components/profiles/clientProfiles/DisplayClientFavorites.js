@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./clientProfileCSS/DisplayClientFavorites.css";
 
 class DisplayClientFavorites extends Component {
   constructor() {
@@ -40,8 +41,6 @@ class DisplayClientFavorites extends Component {
 
     for (let i = 0; i < vendors.length; i++) {
       for (let j = 0; j < favorites.length; j++) {
-        console.log(favorites[j].vendor_id);
-
         if (vendors[i].vendor_id === favorites[j].vendor_id) {
           displayObj[i] = vendors[i];
         }
@@ -51,9 +50,9 @@ class DisplayClientFavorites extends Component {
     let favoriteArr = Object.values(displayObj);
     return favoriteArr.map(fav => {
       return (
-        <div key={fav.vendor_id} class="display-vendor-name">
+        <div key={fav.vendor_id} className="display-fav-info">
           <Link to={"/" + fav.vendor_name}>
-            <span class="display-location-vendor-name">{fav.vendor_name}</span>
+            <span>{fav.vendor_name}</span>
           </Link>
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
@@ -64,7 +63,7 @@ class DisplayClientFavorites extends Component {
 
   noFavsToDisplay = () => {
     return (
-      <div className="noFavsToDisplayWrapper">
+      <div className="display-fav-info">
         <h1>No favorites to display. Please favorite a restaurant first.</h1>
       </div>
     );
@@ -73,7 +72,6 @@ class DisplayClientFavorites extends Component {
   render() {
     return (
       <div className="displayClientFavPage">
-        <h5>Favorites</h5>
         {!!this.state.usersFavorites.length
           ? this.pairUpFavoritesWithVendors()
           : this.noFavsToDisplay()}

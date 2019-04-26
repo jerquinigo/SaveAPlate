@@ -26,14 +26,11 @@
 .display-vendor-name {
   width: 75%;
   background-color: #f3e4d8;
+  margin-top: 2%;
 }
 
 .display-claimed-items {
   width: 55%;
-}
-
-.display-vendor-name {
-  margin-top: 2%;
 }
 
 .claimed-button,

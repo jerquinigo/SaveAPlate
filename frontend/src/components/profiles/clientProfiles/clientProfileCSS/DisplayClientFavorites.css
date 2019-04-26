@@ -2,18 +2,21 @@
   width: 10%;
 }
 
-.display-vendor-name {
+.display-fav-info {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
-  margin: 0 auto;
-  margin-top: 2%;
-  width: 75%;
   height: 80px;
   background-color: #ebf4f4;
+  margin: 0;
+  float: right;
+  margin-right: 15%;
+  width: 75%;
+  background-color: #f3e4d8;
+  margin-top: 2%;
 }
 
 .display-claimed-items {
