@@ -226,9 +226,14 @@ class VendorProfile extends Component {
   // Delete items
   deleteItem = e => {
     console.log(e);
-    axios.delete(`/api/fooditems/${e.currentTarget.id}`).then(() => {
-      this.vendorDonations();
-    });
+    axios
+      .delete(`/api/fooditems/${e.currentTarget.id}`)
+      .then(() => {
+        this.vendorDonations();
+      })
+      .then(() => {
+        this.getFeedingCount();
+      });
   };
 
   // Favorite vendor
