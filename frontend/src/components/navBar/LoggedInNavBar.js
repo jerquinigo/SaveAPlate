@@ -1,28 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navBarCSS/NavBar.css";
-import Logout from "./navComponents/logout/Logout.js";
 
-export default function LoggedInNavBar(props) {
+export const LoggedInNavBar = props => {
   let type;
-  if (props.currentUser.type === 1){
-    type = "vendor"
+  if (props.currentUser.type === 1) {
+    type = "vendor";
   } else {
-    type = "client"
+    type = "client";
   }
 
-let profileLink = `/${type}/${props.currentUser.name}`
+  let profileLink = `/${type}/${props.currentUser.name}`;
   return (
     <div>
       <nav id="nav">
         <span id="nav-title">
-          <NavLink to="/welcome" className="nav-link">
-            <img
-              src={require("./logo.png")}
-              alt="logo for save a plate"
-              id="logo"
-            />
-          </NavLink>
+          <img
+            src={require("./logo.png")}
+            alt="logo for save a plate"
+            id="logo"
+          />
         </span>
         <div id="nav-links">
           <NavLink to="/aboutus" className="nav-link">
@@ -35,11 +32,19 @@ let profileLink = `/${type}/${props.currentUser.name}`
             Donate
           </NavLink>
           <NavLink to={profileLink} className="nav-link">
-          My Profile
+            My Profile
           </NavLink>
-          <Logout className="nav-link" />
+          <button
+            className="nav-link"
+            onClick={async () => {
+              await props.logoutUser();
+              await props.history.push("/welcome");
+            }}
+          >
+            Logout
+          </button>
         </div>
       </nav>
     </div>
   );
-}
+};

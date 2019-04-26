@@ -19,10 +19,13 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props, "in the props");
     return (
       <div className="App">
-        {!this.props.currentUser.id ? <NavBar /> : <LoggedInNavBarContainer />}
+        {this.props.currentUser.email === null ? (
+          <NavBar />
+        ) : (
+          <LoggedInNavBarContainer />
+        )}
         <div className="main-section">
           <Switch>
             <Route exact={true} path="/" component={Landing} />
@@ -47,9 +50,6 @@ class App extends Component {
               path="/:vendor"
               component={VendorProfileThruClientContainer}
             />
-
-            {/* <Route path="/vendor/:vendorName" component={VendorProfile} />
-            <Route path="/client/:clientName" component={ClientProfile} /> */}
           </Switch>
         </div>
       </div>
