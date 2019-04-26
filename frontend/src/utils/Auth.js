@@ -6,6 +6,7 @@ const Auth = {
     return localStorage.getItem("token") !== null;
   },
   deauthenticateUser: () => {
+    debugger;
     localStorage.removeItem("token");
   },
   getToken: () => {
