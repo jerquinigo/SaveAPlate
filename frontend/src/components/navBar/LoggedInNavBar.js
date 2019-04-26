@@ -17,13 +17,11 @@ export const LoggedInNavBar = props => {
       <div>
         <nav id="nav">
           <span id="nav-title">
-            <NavLink to="/welcome" className="nav-link">
-              <img
-                src={require("./logo.png")}
-                alt="logo for save a plate"
-                id="logo"
-              />
-            </NavLink>
+            <img
+              src={require("./logo.png")}
+              alt="logo for save a plate"
+              id="logo"
+            />
           </span>
           <div id="nav-links">
             <NavLink to="/aboutus" className="nav-link">
@@ -42,14 +40,14 @@ export const LoggedInNavBar = props => {
               Feed
             </NavLink>
             <button
-            className="nav-link"
-            onClick={async () => {
-              await props.logoutUser();
-              await props.history.push("/welcome");
-            }}
-          >
-            Logout
-          </button>
+              className="nav-link"
+              onClick={async () => {
+                await props.logoutUser();
+                await props.history.push("/welcome");
+              }}
+            >
+              Logout
+            </button>
           </div>
         </nav>
       </div>
@@ -59,13 +57,11 @@ export const LoggedInNavBar = props => {
       <div>
         <nav id="nav">
           <span id="nav-title">
-            
-              <img
-                src={require("./logo.png")}
-                alt="logo for save a plate"
-                id="logo"
-              />
-
+            <img
+              src={require("./logo.png")}
+              alt="logo for save a plate"
+              id="logo"
+            />
           </span>
           <div id="nav-links">
             <NavLink to="/aboutus" className="nav-link">
@@ -81,18 +77,17 @@ export const LoggedInNavBar = props => {
               My Profile
             </NavLink>
             <button
-            className="nav-link"
-            onClick={async () => {
-              await props.logoutUser();
-              await props.history.push("/welcome");
-            }}
-          >
-            Logout
-          </button>
+              className="nav-link"
+              onClick={async () => {
+                await props.logoutUser();
+                await props.history.push("/welcome");
+              }}
+            >
+              Logout
+            </button>
           </div>
         </nav>
       </div>
     );
   }
-}
-
+};
