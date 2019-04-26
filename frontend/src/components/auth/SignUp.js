@@ -181,6 +181,9 @@ class SignUp extends Component {
           >
             Sign Up
           </Button>
+          <button className="demo" onClick={this.vendorDemoLogin}>
+            Vendor Demo
+          </button>
         </form>
       );
     } else if (Number(this.state.type) === 2) {
@@ -259,11 +262,50 @@ class SignUp extends Component {
           >
             Sign Up
           </Button>{" "}
+          <button className="demo" onClick={this.clientDemoLogin}>
+            Client Demo
+          </button>
         </form>
       );
     } else {
       return null;
     }
+  };
+
+  clientDemoLogin = e => {
+    e.preventDefault();
+    axios
+      .post("/api/sessions/login/", {
+        email: "clientdemo@test.com",
+        password_digest: "1234"
+      })
+      .then(() => {
+        Auth.authenticateUser("clientdemo@test.com");
+      })
+      .then(() => {
+        this.props.checkAuthenticateStatus();
+      })
+      .then(() => {
+        this.props.history.push("/client/clienttester");
+      });
+  };
+
+  vendorDemoLogin = e => {
+    e.preventDefault();
+    axios
+      .post("/api/sessions/login/", {
+        email: "vendordemo@test.com",
+        password_digest: "1234"
+      })
+      .then(() => {
+        Auth.authenticateUser("vendordemo@test.com");
+      })
+      .then(async () => {
+        await this.props.checkAuthenticateStatus();
+      })
+      .then(() => {
+        this.props.history.push("/vendor/vendortester");
+      });
   };
 
   conditionalRouting = () => {
