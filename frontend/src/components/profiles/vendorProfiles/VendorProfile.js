@@ -29,14 +29,14 @@ class VendorProfile extends Component {
   }
 
   //get feeding count
-
   getFeedingCount = () => {
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
-        fedCount: +count.data.fedCount[0].sum
+        fedCount: +count.data.fedCount[0].sum * 3
       });
     });
   };
+
   // Add food items
   addItemButton = () => {
     return (
@@ -46,8 +46,7 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}
-        >
+          onClick={this.toAddItem}>
           <AddIcon />
         </Fab>
       </>
@@ -133,15 +132,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
@@ -151,8 +148,7 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -179,15 +175,13 @@ class VendorProfile extends Component {
             {item.is_claimed ? (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button"
-              >
+                id="claimed-button">
                 Claimed
               </button>
             ) : (
               <button
                 onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button"
-              >
+                id="unclaimed-button">
                 Unclaimed
               </button>
             )}
@@ -196,8 +190,7 @@ class VendorProfile extends Component {
             onClick={this.deleteItem}
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon onClick={this.deleteItem} id={item.food_id} />
           </Button>
         </div>
@@ -221,9 +214,14 @@ class VendorProfile extends Component {
 
   // Delete items
   deleteItem = e => {
-    axios.delete(`/api/fooditems/${e.target.id}`).then(() => {
-      this.vendorDonations();
-    });
+    axios
+      .delete(`/api/fooditems/${e.target.id}`)
+      .then(() => {
+        this.vendorDonations();
+      })
+      .then(() => {
+        this.getFeedingCount();
+      });
   };
 
   // Favorite vendor
@@ -242,8 +240,8 @@ class VendorProfile extends Component {
         </h1>
         <br />
         <div id="vendor-people-fed">
-          Number of people fed:
-          <p>{this.state.fedCount}</p>
+          <h2>Number of people fed:</h2>
+          <h3>{this.state.fedCount}</h3>
         </div>
         <br />
         <br />
