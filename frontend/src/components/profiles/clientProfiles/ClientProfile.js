@@ -46,11 +46,8 @@ class ClientProfile extends Component {
   };
 
   render() {
-    console.log(this.props.currentUser, "the obj");
-    console.log("STATE here", this.state);
     return (
       <div className="clientProfileWrapper profile">
-        <NavLink to="/feed">Feed</NavLink>
         {this.displayClientProfile()}
         <ClientProfileEditForm id={this.props.currentUser.id} />
 
