@@ -8,7 +8,6 @@ import "./landingCSS/Landing.css";
 export default function Landing() {
   return (
     <div>
-      <div id="navbar-spacing" />
       <Carousel />
       <div id="food-background-container">
         {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
