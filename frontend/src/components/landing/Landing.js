@@ -8,6 +8,7 @@ import "./landingCSS/Landing.css";
 export default function Landing() {
   return (
     <div>
+      <div id="navbar-spacing" />
       <Carousel />
       <div id="food-background-container">
         {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
@@ -76,8 +77,7 @@ export default function Landing() {
               color="primary"
               disableunderline="true"
               type="submit"
-              id="signup-button"
-            >
+              id="signup-button">
               Sign Up
             </Button>
           </NavLink>
@@ -89,8 +89,7 @@ export default function Landing() {
               color="secondary"
               disableunderline="true"
               type="submit"
-              id="login-button"
-            >
+              id="login-button">
               Log In
             </Button>
           </NavLink>
