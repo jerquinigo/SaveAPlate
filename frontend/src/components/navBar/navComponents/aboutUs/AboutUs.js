@@ -9,7 +9,7 @@ export default function About() {
       <br />
       <div className="about-text">
         <h2>Our Mission</h2>
-        <div>
+        <div id="our-mission-text">
           At Save a Plate, our mission is to reduce food waste in New York City.
           The main way in which we do this is by creating a food rescue
           ecosystem. Our other initiatives include providing resources about
@@ -17,7 +17,7 @@ export default function About() {
         </div>
       </div>
       <br />
-      <div className="about-text">
+      <div className="about-text" id="our-mission-text">
         Save a Plate was formed in 2019 by four Full Stack Web Developers with
         the goal of helping the food rescue movement in NYC.
       </div>
