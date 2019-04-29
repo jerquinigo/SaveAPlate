@@ -8,7 +8,6 @@ export const DisplayMap = ({ latitude, longitude, zoom }) => {
   };
 
   if (latitude && longitude) {
-    debugger;
     return (
       <div className="map" style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact defaultCenter={center} defaultZoom={zoom} />

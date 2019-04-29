@@ -206,7 +206,6 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
-    console.log(this.state.isFav, "the current fav in the vendor profile");
     return (
       <>
         {this.displayBusinessHours()}
