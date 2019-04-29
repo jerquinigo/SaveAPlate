@@ -1,6 +1,22 @@
+#about-container {
+  background-color: #e6f0f0;
+}
+#meet-our-team,
+#our-mission {
+  /* font-family: "Merriweather", serif; */
+  font-family: "Oswald", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 42px;
+  color: #272e48;
+  margin-bottom: 5%;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .about-text {
-  width: 75%;
+  width: 33%;
   margin: 0 auto;
+  font-family: "Merriweather", serif;
 }
 
 #about-us-container {
@@ -16,6 +32,10 @@
   border-radius: 50%;
 }
 
+.team-member-name {
+  color: #272e48;
+}
+
 .github-icon {
   width: 25px;
   height: 25px;
@@ -27,19 +47,49 @@
   height: 25px;
 }
 
-#about-us-container {
-  animation-duration: 5s;
+.team-member-photo {
+  animation-duration: 3s;
   animation-name: slidein;
 }
 
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
+  0% {
+    transform: translateY(-100%);
   }
+  50% {
+    transform: translateY(8%);
+  }
+  65% {
+    transform: translateY(-4%);
+  }
+  80% {
+    transform: translateY(4%);
+  }
+  95% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
+@-webkit-keyframes slidein {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+  }
+  65% {
+    -webkit-transform: translateY(-4%);
+  }
+  80% {
+    -webkit-transform: translateY(4%);
+  }
+  95% {
+    -webkit-transform: translateY(-2%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
   }
 }
