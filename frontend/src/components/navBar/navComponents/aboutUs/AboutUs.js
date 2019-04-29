@@ -120,8 +120,16 @@ export default function About() {
       <br />
       <br />
       <div className="about-text" id="our-mission-text">
-        Save a Plate was formed in 2019 by four Full Stack Web Developers with
-        the goal of helping the food rescue movement in NYC.
+        <a href="https://github.com/jerquinigo/SaveAPlate" id="save-a-plate">
+          Save a Plate
+        </a>{" "}
+        was built in 2019 by four Full Stack Web Developers from
+        <a href="https://www.pursuit.org/" id="pursuit-link">
+          {" "}
+          Pursuit
+        </a>{" "}
+        by creating a platform with the goal of fighting hunger and food waste
+        in NYC.
       </div>
 
       <div className="about-text">
