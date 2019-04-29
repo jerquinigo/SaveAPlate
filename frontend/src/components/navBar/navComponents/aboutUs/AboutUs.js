@@ -136,15 +136,24 @@ export default function About() {
         <h2 id="our-mission">Our Mission</h2>
         <div id="our-mission-text">
           At Save a Plate, our mission is to reduce food waste in New York City.
-          The main way in which we do this is by creating a food rescue
-          ecosystem. Our other initiatives include providing resources about
-          SNAP and learning about food/hunger through statistics and articles.
+          We do this is by creating a platform where vendors can sign-up and
+          donate food while clients can claim those food items and favorite
+          vendors. We also provide resources about SNAP, nearby food pantries /
+          soup kitchens and how you can help
         </div>
       </div>
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <br />
-      <img src={require("./food_is_love.jpg")} alt="food is love logo" />
+      <img
+        src={require("./food-waste.jpg")}
+        alt="food is love logo"
+        id="food-waste-img"
+      />
     </div>
   );
 }
