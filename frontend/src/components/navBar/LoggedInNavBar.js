@@ -17,12 +17,15 @@ export const LoggedInNavBar = props => {
       <div>
         <nav id="nav">
           <span id="nav-title">
-            <img
-              src={require("./logo.png")}
-              alt="logo for save a plate"
-              id="logo"
-            />
+            <NavLink to="/welcome" className="nav-link">
+              <img
+                src={require("./logo.png")}
+                alt="logo for save a plate"
+                id="logo"
+              />
+            </NavLink>
           </span>
+
           <div id="nav-links">
             <NavLink to="/aboutus" className="nav-link">
               About Us
@@ -44,8 +47,7 @@ export const LoggedInNavBar = props => {
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
-              }}
-            >
+              }}>
               Logout
             </button>
           </div>
@@ -57,11 +59,13 @@ export const LoggedInNavBar = props => {
       <div>
         <nav id="nav">
           <span id="nav-title">
-            <img
-              src={require("./logo.png")}
-              alt="logo for save a plate"
-              id="logo"
-            />
+            <NavLink to="/welcome" className="nav-link">
+              <img
+                src={require("./logo.png")}
+                alt="logo for save a plate"
+                id="logo"
+              />
+            </NavLink>
           </span>
           <div id="nav-links">
             <NavLink to="/aboutus" className="nav-link">
@@ -81,8 +85,7 @@ export const LoggedInNavBar = props => {
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
-              }}
-            >
+              }}>
               Logout
             </button>
           </div>
