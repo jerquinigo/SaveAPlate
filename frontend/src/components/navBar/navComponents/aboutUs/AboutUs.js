@@ -147,8 +147,8 @@ export default function About() {
       <br />
       <br />
       <br />
-
       <br />
+      {/* ^ the BR tags are a temporary solution to styling :) */}
       <img
         src={require("./food-waste.jpg")}
         alt="food is love logo"
