@@ -27,23 +27,39 @@ export const LoggedInNavBar = props => {
           </span>
 
           <div id="nav-links">
-            <NavLink to="/aboutus" className="nav-link">
+            <NavLink
+              to="/aboutus"
+              className="nav-link"
+              activeClassName="nav-link--active">
               About Us
             </NavLink>
-            <NavLink to="/resources" className="nav-link">
+            <NavLink
+              to="/resources"
+              className="nav-link"
+              activeClassName="nav-link--active">
               Resources
             </NavLink>
-            <NavLink to="/donate" className="nav-link">
+            <NavLink
+              to="/donate"
+              className="nav-link"
+              activeClassName="nav-link--active">
               Donate
             </NavLink>
-            <NavLink to={profileLink} className="nav-link">
+            <NavLink
+              to={profileLink}
+              className="nav-link"
+              activeClassName="nav-link--active">
               My Profile
             </NavLink>
-            <NavLink to="/feed" className="nav-link">
+            <NavLink
+              to="/feed"
+              className="nav-link"
+              activeClassName="nav-link--active">
               Feed
             </NavLink>
             <button
               className="nav-link"
+              id="logout-button"
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
@@ -59,7 +75,10 @@ export const LoggedInNavBar = props => {
       <div>
         <nav id="nav">
           <span id="nav-title">
-            <NavLink to="/welcome" className="nav-link">
+            <NavLink
+              to="/welcome"
+              className="nav-link"
+              activeClassName="nav-link--active">
               <img
                 src={require("./logo.png")}
                 alt="logo for save a plate"
@@ -68,20 +87,33 @@ export const LoggedInNavBar = props => {
             </NavLink>
           </span>
           <div id="nav-links">
-            <NavLink to="/aboutus" className="nav-link">
+            <NavLink
+              to="/aboutus"
+              className="nav-link"
+              activeClassName="nav-link--active">
               About Us
             </NavLink>
-            <NavLink to="/resources" className="nav-link">
+            <NavLink
+              to="/resources"
+              className="nav-link"
+              activeClassName="nav-link--active">
               Resources
             </NavLink>
-            <NavLink to="/donate" className="nav-link">
+            <NavLink
+              to="/donate"
+              className="nav-link"
+              activeClassName="nav-link--active">
               Donate
             </NavLink>
-            <NavLink to={profileLink} className="nav-link">
+            <NavLink
+              to={profileLink}
+              className="nav-link"
+              activeClassName="nav-link--active">
               My Profile
             </NavLink>
             <button
               className="nav-link"
+              id="logout-button"
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
