@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import "./clientProfileCSS/DisplayClientFavorites.css";
 
 class DisplayClientFavorites extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       usersFavorites: [],
       vendorsList: [],
@@ -14,7 +14,7 @@ class DisplayClientFavorites extends Component {
   }
 
   componentDidMount() {
-    this.getAllFavoritesForClient("clienttester");
+    this.getAllFavoritesForClient(this.props.currentUserName);
     this.getAllVendorsList();
   }
 

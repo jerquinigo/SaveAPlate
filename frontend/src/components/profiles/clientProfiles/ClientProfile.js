@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import DisplayClientFavorites from "./DisplayClientFavorites.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
 import "./clientProfileCSS/ClientProfile.css";
-import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
-import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
+// import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
+// import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
 
 class ClientProfile extends Component {
   constructor() {
@@ -52,7 +51,7 @@ class ClientProfile extends Component {
         <ClientProfileEditForm id={this.props.currentUser.id} />
 
         <ClientClaimedItemsContainer />
-        <DisplayClientFavorites />
+        <DisplayClientFavorites currentUserName={this.props.currentUser.name} />
 
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
           {/* <DisplayMap
