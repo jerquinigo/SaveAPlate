@@ -53,3 +53,11 @@
   font-family: "Ubuntu", sans-serif;
   margin-left: 3%;
 }
+
+#logout-button {
+  border: none;
+}
+
+.nav-link--active {
+  text-decoration: underline;
+}
