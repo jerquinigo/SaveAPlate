@@ -60,4 +60,5 @@
 
 .nav-link--active {
   text-decoration: underline;
+  text-underline-position: under;
 }
