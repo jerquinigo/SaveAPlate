@@ -81,7 +81,7 @@ export default class Feed extends Component {
           return (
             <ul key={i} id="display-claimed-items">
               <li>
-                <Link to={"/" + results.vendor_name}>
+                <Link to={"/clientview/" + results.vendor_name}>
                   {" "}
                   <strong>Name: </strong>
                   {results.vendor_name}
@@ -116,14 +116,16 @@ export default class Feed extends Component {
                   <button
                     className={results.is_claimed ? "claimed" : "unclaimed"}
                     onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}>
+                    id={results.id}
+                  >
                     {" "}
                     UNCLAIM
                   </button>
                 ) : (
                   <button
                     onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}>
+                    id={results.id}
+                  >
                     CLAIM
                   </button>
                 )}
@@ -141,7 +143,7 @@ export default class Feed extends Component {
             return (
               <div key={i} id="display-claimed-items">
                 <span>
-                  <Link to={"/" + food.vendor_name}>
+                  <Link to={"/clientview/" + food.vendor_name}>
                     {" "}
                     <strong>{food.vendor_name}</strong>
                   </Link>
@@ -161,13 +163,15 @@ export default class Feed extends Component {
                     <button
                       className={food.is_claimed ? "claimed" : "unclaimed"}
                       onClick={e => this.claimItem(e, food.is_claimed)}
-                      id={food.id}>
+                      id={food.id}
+                    >
                       UNCLAIM
                     </button>
                   ) : (
                     <button
                       onClick={e => this.claimItem(e, food.is_claimed)}
-                      id={food.id}>
+                      id={food.id}
+                    >
                       CLAIM
                     </button>
                   )}
