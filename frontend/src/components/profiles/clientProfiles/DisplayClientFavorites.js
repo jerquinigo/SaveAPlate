@@ -42,7 +42,7 @@ class DisplayClientFavorites extends Component {
     for (let i = 0; i < vendors.length; i++) {
       for (let j = 0; j < favorites.length; j++) {
         if (vendors[i].vendor_id === favorites[j].vendor_id) {
-          displayObj[i] = vendors[i];
+          displayObj[i] = { ...vendors[i], ...{ favoriteId: favorites[j].id } };
         }
       }
     }
@@ -56,9 +56,21 @@ class DisplayClientFavorites extends Component {
           </Link>
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
+          <button
+            onClick={e => {
+              this.deleteFav(e, fav.favoriteId);
+            }}
+          >
+            Unfavorite
+          </button>
         </div>
       );
     });
+  };
+
+  deleteFav = async (e, favoriteId) => {
+    await axios.delete(`/api/favorites/${favoriteId}`);
+    await this.getAllFavoritesForClient(this.props.currentUserName);
   };
 
   noFavsToDisplay = () => {
