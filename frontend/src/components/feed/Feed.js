@@ -138,6 +138,7 @@ export default class Feed extends Component {
       if (this.state.allFoodItems) {
         let foodDataObj = {};
         let converted_time;
+        // eslint-disable-next-line
         allFoodItemsMapped = this.state.allFoodItems.map((food, i) => {
           converted_time = Number(food.set_time.slice(0, 2));
           if (!foodDataObj[food.vendor_name] && food.is_claimed === false) {
@@ -150,21 +151,21 @@ export default class Feed extends Component {
           }
         });
 
-        let keys = Object.keys(foodDataObj);
+        let vendorNameArr = Object.keys(foodDataObj);
 
-        return keys.map(key => {
+        return vendorNameArr.map((vendorName, i) => {
           return (
-            <div>
+            <div key="i">
               <span>
-                <Link to={"/" + key}>
-                  <strong>{key}</strong>{" "}
+                <Link to={"/clientview/" + vendorName}>
+                  <strong>{vendorName}</strong>{" "}
                 </Link>
               </span>
 
-              <p>
-                {foodDataObj[key].map(food => {
+              <div className="vendorItemsWrapper">
+                {foodDataObj[vendorName].map((food, i) => {
                   return (
-                    <div>
+                    <div className="vendorItemsContainer" key={i}>
                       <span>{food.address_field}</span>
                       <span>{food.telephone_number}</span>
                       <span>{food.name}</span>
@@ -199,7 +200,7 @@ export default class Feed extends Component {
                     </div>
                   );
                 })}
-              </p>
+              </div>
             </div>
           );
         });
