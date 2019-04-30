@@ -141,8 +141,9 @@ export default function About() {
           vendors. We also provide resources about SNAP, nearby food pantries &
           soup kitchens and how you can help.
         </div>
+        <br />
+        <div>Spin the wheel to reduce food waste!</div>
       </div>
-      <span>Spin the wheel to reduce food waste!</span>
       <br />
       <br />
       <br />
