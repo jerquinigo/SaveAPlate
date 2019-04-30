@@ -51,6 +51,10 @@ class ClientProfile extends Component {
         <ClientProfileEditForm id={this.props.currentUser.id} />
 
         <ClientClaimedItemsContainer />
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb9be40d05f64134a6c7e965c32aeda7b4596a4c
         <DisplayClientFavorites currentUserName={this.props.currentUser.name} />
 
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>

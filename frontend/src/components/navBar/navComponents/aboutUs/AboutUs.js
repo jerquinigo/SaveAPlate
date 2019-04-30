@@ -3,25 +3,9 @@ import "./AboutUs.css";
 
 export default function About() {
   return (
-    <div>
-      <br />
-      <img src={require("./food_is_love.jpg")} alt="food is love logo" />
-      <br />
-      <div className="about-text">
-        <h2>Our Mission</h2>
-        <div id="our-mission-text">
-          At Save a Plate, our mission is to reduce food waste in New York City.
-          The main way in which we do this is by creating a food rescue
-          ecosystem. Our other initiatives include providing resources about
-          SNAP and learning about food/hunger through statistics and articles.
-        </div>
-      </div>
-      <br />
-      <div className="about-text" id="our-mission-text">
-        Save a Plate was formed in 2019 by four Full Stack Web Developers with
-        the goal of helping the food rescue movement in NYC.
-      </div>
-      <h2>Meet Our Team</h2>
+    <div id="about-container">
+      <h1 id="meet-our-team">Meet Our Team</h1>
+
       <div id="about-us-container">
         <div>
           <img
@@ -31,7 +15,7 @@ export default function About() {
             className="team-member-photo"
           />
           <br />
-          <h3>Wynter Reid</h3>
+          <h3 className="team-member-name">Wynter Reid</h3>
           <a href="https://github.com/wynterreid" className="team-github-link">
             <img
               src={require("./github.png")}
@@ -58,7 +42,7 @@ export default function About() {
             className="team-member-photo"
           />
           <br />
-          <h3>Jonathan Erquinigo</h3>
+          <h3 className="team-member-name">Jonathan Erquinigo</h3>
           <a href="https://github.com/jerquinigo" className="team-github-link">
             <img
               src={require("./github.png")}
@@ -85,7 +69,7 @@ export default function About() {
             className="team-member-photo"
           />
           <br />
-          <h3>Deyvi Ortiz</h3>
+          <h3 className="team-member-name">Deyvi Ortiz</h3>
           <a
             href="https://github.com/SurgamSurgam"
             className="team-github-link">
@@ -114,7 +98,7 @@ export default function About() {
             className="team-member-photo"
           />
           <br />
-          <h3>Andrew Kil</h3>
+          <h3 className="team-member-name">Andrew Kil</h3>
           <a href="https://github.com/Andrew-Kil" className="team-github-link">
             <img
               src={require("./github.png")}
@@ -133,6 +117,74 @@ export default function About() {
           </a>
         </div>
       </div>
+      <br />
+      <br />
+      <div className="about-text" id="our-mission-text">
+        <a href="https://github.com/jerquinigo/SaveAPlate" id="save-a-plate">
+          Save a Plate
+        </a>{" "}
+        was built in 2019 by four Full Stack Web Developers from
+        <a href="https://www.pursuit.org/" id="pursuit-link">
+          {" "}
+          Pursuit
+        </a>{" "}
+        with the goal of creating an online platform that fights hunger and food
+        waste in NYC.
+      </div>
+
+      <div className="about-text">
+        <h2 id="our-mission">Our Mission</h2>
+        <div id="our-mission-text">
+          At Save a Plate, our mission is to reduce food waste in New York City.
+          We do this is by creating a platform where vendors can sign-up and
+          donate food while clients can claim those food items and favorite
+          vendors. We also provide resources about SNAP, nearby food pantries &
+          soup kitchens and how you can help.
+        </div>
+        <br />
+        <h3>Spin the wheel to reduce food waste!</h3>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      {/* ^ the BR tags are a temporary solution to styling :) */}
+
+      <div id="wheel-container">
+        <div id="vendor-icon">
+          <img
+            src={require("../../../landing/images/vendor.png")}
+            alt="vendor"
+            className="vendor-client-icons"
+          />
+          <br />
+          <br />
+          <span className="vendor-client-text">Vendors</span>
+        </div>
+        <a href="http://localhost:3000/user/signup">
+          <img
+            src={require("./food-waste.jpg")}
+            alt="food is love logo"
+            id="food-waste-img"
+          />
+        </a>
+        <div>
+          <img
+            src={require("../../../landing/images/client.png")}
+            alt="client"
+            className="vendor-client-icons"
+          />
+          <br />
+          <br />
+          <span className="vendor-client-text">Clients</span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

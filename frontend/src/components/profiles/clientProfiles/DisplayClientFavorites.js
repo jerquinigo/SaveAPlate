@@ -15,6 +15,10 @@ class DisplayClientFavorites extends Component {
 
   componentDidMount() {
     this.getAllFavoritesForClient(this.props.currentUserName);
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb9be40d05f64134a6c7e965c32aeda7b4596a4c
     this.getAllVendorsList();
   }
 
