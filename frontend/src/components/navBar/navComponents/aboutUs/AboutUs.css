@@ -3,9 +3,7 @@
 }
 #meet-our-team,
 #our-mission {
-  /* font-family: "Merriweather", serif; */
   font-family: "Oswald", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
   font-size: 42px;
   color: #272e48;
   margin-bottom: 5%;
@@ -34,6 +32,8 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  animation-duration: 3s;
+  animation-name: bouncy;
 }
 
 .team-member-photo:hover {
@@ -68,11 +68,6 @@
   transform: scale(1.3);
 }
 
-.team-member-photo {
-  animation-duration: 3s;
-  animation-name: bounce;
-}
-
 @keyframes bounce {
   0% {
     transform: translateY(-100%);
@@ -94,7 +89,49 @@
   }
 }
 
-@-webkit-keyframes slidein {
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+  }
+  65% {
+    -webkit-transform: translateY(-4%);
+  }
+  80% {
+    -webkit-transform: translateY(4%);
+  }
+  95% {
+    -webkit-transform: translateY(-2%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@keyframes bouncy {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  65% {
+    transform: translateY(-4%);
+  }
+  80% {
+    transform: translateY(4%);
+  }
+  95% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes bouncy {
   0% {
     -webkit-transform: translateY(-100%);
   }
