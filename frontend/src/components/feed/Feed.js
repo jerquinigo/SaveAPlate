@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./feedCSS/Feed.css";
 import axios from "axios";
 import SearchBar from "./SearchBar.js";
-import { Link } from "react-router-dom";
+import AllFeedItems from "./AllFeedItems.js";
+import SearchBarResults from "./SearchBarResults.js";
 
 export default class Feed extends Component {
   state = {
@@ -71,142 +72,7 @@ export default class Feed extends Component {
   };
 
   render() {
-    let userSearchResultsMapped;
-    let allFoodItemsMapped;
-
-    if (this.state.userSearchResults.length > 0) {
-      userSearchResultsMapped = this.state.userSearchResults.map(
-        (results, i) => {
-          let converted_time = Number(results.set_time.slice(0, 2));
-          return (
-            <ul key={i} id="display-claimed-items">
-              <li>
-                <Link to={"/clientview/" + results.vendor_name}>
-                  {" "}
-                  <strong>Name: </strong>
-                  {results.vendor_name}
-                </Link>
-              </li>
-
-              <li>
-                <strong>Address: </strong>
-                {results.address_field}
-              </li>
-              <li>
-                <strong>Telephone Number: </strong>
-                {results.telephone_number}
-              </li>
-              <li>
-                <strong>Food Item: </strong>
-                {results.name}
-              </li>
-              <li>
-                <strong>Feeds: </strong>
-                {results.quantity} people
-              </li>
-              <li>({Number(results.quantity) * 3} pounds)</li>
-              <li>
-                <strong>Pick-up Time: </strong>{" "}
-                {converted_time === 0 || converted_time < 13
-                  ? converted_time + "am"
-                  : converted_time - 12 + "pm"}
-              </li>
-              <li>
-                {results.is_claimed ? (
-                  <button
-                    className={results.is_claimed ? "claimed" : "unclaimed"}
-                    onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}
-                  >
-                    {" "}
-                    UNCLAIM
-                  </button>
-                ) : (
-                  <button
-                    onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}
-                  >
-                    CLAIM
-                  </button>
-                )}
-              </li>
-            </ul>
-          );
-        }
-      );
-    } else {
-      if (this.state.allFoodItems) {
-        let foodDataObj = {};
-        let converted_time;
-        // eslint-disable-next-line
-        allFoodItemsMapped = this.state.allFoodItems.map((food, i) => {
-          converted_time = Number(food.set_time.slice(0, 2));
-          if (!foodDataObj[food.vendor_name] && food.is_claimed === false) {
-            foodDataObj[food.vendor_name] = [food];
-          } else if (
-            foodDataObj[food.vendor_name] &&
-            food.is_claimed === false
-          ) {
-            foodDataObj[food.vendor_name].push(food);
-          }
-        });
-
-        let vendorNameArr = Object.keys(foodDataObj);
-
-        return vendorNameArr.map((vendorName, i) => {
-          return (
-            <div key="i">
-              <span>
-                <Link to={"/clientview/" + vendorName}>
-                  <strong>{vendorName}</strong>{" "}
-                </Link>
-              </span>
-
-              <div className="vendorItemsWrapper">
-                {foodDataObj[vendorName].map((food, i) => {
-                  return (
-                    <div className="vendorItemsContainer" key={i}>
-                      <span>{food.address_field}</span>
-                      <span>{food.telephone_number}</span>
-                      <span>{food.name}</span>
-                      <span> Feeds: {food.quantity} people</span>
-                      <span>({Number(food.quantity) * 3} pounds)</span>
-                      <span>
-                        {converted_time === 0 || converted_time < 13
-                          ? converted_time + "am"
-                          : converted_time - 12 + "pm"}
-                      </span>
-
-                      <span>
-                        {food.is_claimed ? (
-                          <button
-                            className={
-                              food.is_claimed ? "claimed" : "unclaimed"
-                            }
-                            onClick={e => this.claimItem(e, food.is_claimed)}
-                            id={food.id}
-                          >
-                            UNCLAIM
-                          </button>
-                        ) : (
-                          <button
-                            onClick={e => this.claimItem(e, food.is_claimed)}
-                            id={food.id}
-                          >
-                            CLAIM
-                          </button>
-                        )}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        });
-      }
-    }
-
+    console.log(this.state.userSearchResults, "in the length");
     return (
       <>
         <SearchBar
@@ -216,8 +82,17 @@ export default class Feed extends Component {
           textInput={this.state.textInput}
           handleChange={this.handleChange}
         />
-        {userSearchResultsMapped ? userSearchResultsMapped : null}
-        {allFoodItemsMapped ? allFoodItemsMapped : null}
+        {this.state.userSearchResults.length > 0 ? (
+          <SearchBarResults
+            claimItem={this.claimItem}
+            userSearchResults={this.state.userSearchResults}
+          />
+        ) : (
+          <AllFeedItems
+            claimItem={this.claimItem}
+            allFoodItems={this.state.allFoodItems}
+          />
+        )}
       </>
     );
   }
