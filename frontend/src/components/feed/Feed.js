@@ -116,14 +116,16 @@ export default class Feed extends Component {
                   <button
                     className={results.is_claimed ? "claimed" : "unclaimed"}
                     onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}>
+                    id={results.id}
+                  >
                     {" "}
                     UNCLAIM
                   </button>
                 ) : (
                   <button
                     onClick={e => this.claimItem(e, results.is_claimed)}
-                    id={results.id}>
+                    id={results.id}
+                  >
                     CLAIM
                   </button>
                 )}
@@ -134,49 +136,72 @@ export default class Feed extends Component {
       );
     } else {
       if (this.state.allFoodItems) {
+        let foodDataObj = {};
+        let converted_time;
         allFoodItemsMapped = this.state.allFoodItems.map((food, i) => {
-          let converted_time = Number(food.set_time.slice(0, 2));
-
-          if (food.is_claimed === false) {
-            return (
-              <div key={i} id="display-claimed-items">
-                <span>
-                  <Link to={"/" + food.vendor_name}>
-                    {" "}
-                    <strong>{food.vendor_name}</strong>
-                  </Link>
-                </span>
-                <span>{food.address_field}</span>
-                <span>{food.telephone_number}</span>
-                <span id="item-name">{food.name}</span>
-                <span>Feeds: {food.quantity} people</span>
-                <span>({Number(food.quantity) * 3} pounds)</span>
-                <span>
-                  {converted_time === 0 || converted_time < 13
-                    ? converted_time + "am"
-                    : converted_time - 12 + "pm"}
-                </span>
-                <span>
-                  {food.is_claimed ? (
-                    <button
-                      className={food.is_claimed ? "claimed" : "unclaimed"}
-                      onClick={e => this.claimItem(e, food.is_claimed)}
-                      id={food.id}>
-                      UNCLAIM
-                    </button>
-                  ) : (
-                    <button
-                      onClick={e => this.claimItem(e, food.is_claimed)}
-                      id={food.id}>
-                      CLAIM
-                    </button>
-                  )}
-                </span>
-              </div>
-            );
-          } else {
-            return null;
+          converted_time = Number(food.set_time.slice(0, 2));
+          if (!foodDataObj[food.vendor_name] && food.is_claimed === false) {
+            foodDataObj[food.vendor_name] = [food];
+          } else if (
+            foodDataObj[food.vendor_name] &&
+            food.is_claimed === false
+          ) {
+            foodDataObj[food.vendor_name].push(food);
           }
+        });
+
+        let keys = Object.keys(foodDataObj);
+
+        return keys.map(key => {
+          return (
+            <div>
+              <span>
+                <Link to={"/" + key}>
+                  <strong>{key}</strong>{" "}
+                </Link>
+              </span>
+
+              <p>
+                {foodDataObj[key].map(food => {
+                  return (
+                    <div>
+                      <span>{food.address_field}</span>
+                      <span>{food.telephone_number}</span>
+                      <span>{food.name}</span>
+                      <span> Feeds: {food.quantity} people</span>
+                      <span>({Number(food.quantity) * 3} pounds)</span>
+                      <span>
+                        {converted_time === 0 || converted_time < 13
+                          ? converted_time + "am"
+                          : converted_time - 12 + "pm"}
+                      </span>
+
+                      <span>
+                        {food.is_claimed ? (
+                          <button
+                            className={
+                              food.is_claimed ? "claimed" : "unclaimed"
+                            }
+                            onClick={e => this.claimItem(e, food.is_claimed)}
+                            id={food.id}
+                          >
+                            UNCLAIM
+                          </button>
+                        ) : (
+                          <button
+                            onClick={e => this.claimItem(e, food.is_claimed)}
+                            id={food.id}
+                          >
+                            CLAIM
+                          </button>
+                        )}
+                      </span>
+                    </div>
+                  );
+                })}
+              </p>
+            </div>
+          );
         });
       }
     }
@@ -196,3 +221,38 @@ export default class Feed extends Component {
     );
   }
 }
+//
+// <span>
+//   <Link to={"/" + food.vendor_name}>
+//     {" "}
+//     <strong>{food.vendor_name}</strong>
+//   </Link>
+// </span>
+// <span>{food.address_field}</span>
+// <span>{food.telephone_number}</span>
+// <span id="item-name">{food.name}</span>
+// <span>Feeds: {food.quantity} people</span>
+// <span>({Number(food.quantity) * 3} pounds)</span>
+// <span>
+//   {converted_time === 0 || converted_time < 13
+//     ? converted_time + "am"
+//     : converted_time - 12 + "pm"}
+// </span>
+// <span>
+//   {food.is_claimed ? (
+//     <button
+//       className={food.is_claimed ? "claimed" : "unclaimed"}
+//       onClick={e => this.claimItem(e, food.is_claimed)}
+//       id={food.id}
+//     >
+//       UNCLAIM
+//     </button>
+//   ) : (
+//     <button
+//       onClick={e => this.claimItem(e, food.is_claimed)}
+//       id={food.id}
+//     >
+//       CLAIM
+//     </button>
+//   )}
+// </span>
