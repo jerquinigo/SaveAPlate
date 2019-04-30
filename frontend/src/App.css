@@ -2,6 +2,11 @@ a:hover {
   cursor: pointer;
 }
 
+.main-section {
+  padding: 0 40px 40px 40px;
+  margin-bottom: 25px;
+}
+
 .App {
   text-align: center;
 }
