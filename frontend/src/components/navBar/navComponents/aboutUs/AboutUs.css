@@ -2,3 +2,44 @@
   width: 75%;
   margin: 0 auto;
 }
+
+#about-us-container {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.team-member-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.github-icon {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+
+.linkedin-icon {
+  width: 25px;
+  height: 25px;
+}
+
+#about-us-container {
+  animation-duration: 5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

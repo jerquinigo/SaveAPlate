@@ -1,3 +1,18 @@
+/* CSS for sticky navbar */
+#nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* allows the pages to display properly */
+/* without this, the navbar will cover 120px worth of screen space from the top */
+.main-section {
+  margin-top: 120px;
+}
+
 #nav,
 .nav-link {
   background-color: #272e48;
@@ -38,4 +53,13 @@
   font-size: 30px;
   font-family: "Ubuntu", sans-serif;
   margin-left: 3%;
+}
+
+#logout-button {
+  border: none;
+}
+
+.nav-link--active {
+  text-decoration: underline;
+  text-underline-position: under;
 }
