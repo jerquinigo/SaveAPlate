@@ -128,8 +128,8 @@ export default function About() {
           {" "}
           Pursuit
         </a>{" "}
-        by creating a platform with the goal of fighting hunger and food waste
-        in NYC.
+        with the goal of creating an online platform that fights hunger and food
+        waste in NYC.
       </div>
 
       <div className="about-text">
@@ -138,10 +138,11 @@ export default function About() {
           At Save a Plate, our mission is to reduce food waste in New York City.
           We do this is by creating a platform where vendors can sign-up and
           donate food while clients can claim those food items and favorite
-          vendors. We also provide resources about SNAP, nearby food pantries /
-          soup kitchens and how you can help
+          vendors. We also provide resources about SNAP, nearby food pantries &
+          soup kitchens and how you can help.
         </div>
       </div>
+      <span>Spin the wheel to reduce food waste!</span>
       <br />
       <br />
       <br />
@@ -149,11 +150,14 @@ export default function About() {
       <br />
       <br />
       {/* ^ the BR tags are a temporary solution to styling :) */}
-      <img
-        src={require("./food-waste.jpg")}
-        alt="food is love logo"
-        id="food-waste-img"
-      />
+
+      <a href="http://localhost:3000/user/signup">
+        <img
+          src={require("./food-waste.jpg")}
+          alt="food is love logo"
+          id="food-waste-img"
+        />
+      </a>
     </div>
   );
 }

@@ -124,6 +124,12 @@
   font-family: "Merriweather", serif;
 }
 
+#save-a-plate:hover,
+#pursuit-link:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 #save-a-plate {
   color: #d35348;
 }
