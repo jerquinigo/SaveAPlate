@@ -9,7 +9,7 @@ const VendorSection = ({ vendor, userObj, children }) => {
   return (
     <div>
       <div className="display-vendor-name">
-        <Link to={"/" + vendor.vendor_name}>
+        <Link to={"/clientview/" + vendor.vendor_name}>
           <span className="display-item-name">{vendor.vendor_name}</span>{" "}
         </Link>
         <span>{vendor.address_field}</span>

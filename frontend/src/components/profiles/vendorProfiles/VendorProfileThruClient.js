@@ -108,13 +108,15 @@ class VendorProfileThruClient extends Component {
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
+              id={item.food_id}
+            >
               UNCLAIM
             </button>
           ) : (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}>
+              id={item.food_id}
+            >
               TO CLAIM
             </button>
           )}
@@ -124,7 +126,7 @@ class VendorProfileThruClient extends Component {
   };
   //////////////////////////////////////////////////////DISPLAY HOURS///////////////////////////////////////
   displayBusinessHours = () => {
-    return this.state.businessHours.map(time => {
+    return this.state.businessHours.map((time, i) => {
       let mon1 = Number(time.mon_start.slice(0, 2));
       let mon2 = Number(time.mon_end.slice(0, 2));
       let tue1 = Number(time.tues_start.slice(0, 2));
@@ -140,7 +142,7 @@ class VendorProfileThruClient extends Component {
       let sun1 = Number(time.sun_start.slice(0, 2));
       let sun2 = Number(time.sun_end.slice(0, 2));
       return (
-        <>
+        <div className="businessHoursDiv" key={i}>
           <h3>Business Hours</h3>
           <h5>
             {" "}
@@ -178,7 +180,7 @@ class VendorProfileThruClient extends Component {
             Sunday: {sun1 === 0 || sun1 < 13 ? sun1 + "am" : sun1 - 12 + "pm"}-
             {sun2 === 0 || sun2 < 13 ? sun2 + "am" : sun2 - 12 + "pm"}{" "}
           </h5>
-        </>
+        </div>
       );
     });
   };
@@ -209,7 +211,8 @@ class VendorProfileThruClient extends Component {
       <>
         {this.displayBusinessHours()}
         <button
-          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}>
+          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
+        >
           {!!this.state.isFav.length
             ? "Remove From Favorites"
             : "Add To Favorites"}
