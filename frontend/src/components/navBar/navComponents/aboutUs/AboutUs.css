@@ -172,3 +172,23 @@
     transform: rotate(360deg);
   }
 }
+
+#wheel-container {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.vendor-client-icons {
+  width: 200px;
+  height: 200px;
+  padding-top: 75px;
+}
+
+.vendor-client-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #272e48;
+}

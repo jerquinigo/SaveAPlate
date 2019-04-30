@@ -142,7 +142,7 @@ export default function About() {
           soup kitchens and how you can help.
         </div>
         <br />
-        <div>Spin the wheel to reduce food waste!</div>
+        <h3>Spin the wheel to reduce food waste!</h3>
       </div>
       <br />
       <br />
@@ -152,13 +152,39 @@ export default function About() {
       <br />
       {/* ^ the BR tags are a temporary solution to styling :) */}
 
-      <a href="http://localhost:3000/user/signup">
-        <img
-          src={require("./food-waste.jpg")}
-          alt="food is love logo"
-          id="food-waste-img"
-        />
-      </a>
+      <div id="wheel-container">
+        <div>
+          <img
+            src={require("../../../landing/images/vendor.png")}
+            alt="vendor"
+            className="vendor-client-icons"
+          />
+          <br />
+          <br />
+          <span className="vendor-client-text">Vendors</span>
+        </div>
+        <a href="http://localhost:3000/user/signup">
+          <img
+            src={require("./food-waste.jpg")}
+            alt="food is love logo"
+            id="food-waste-img"
+          />
+        </a>
+        <div>
+          <img
+            src={require("../../../landing/images/client.png")}
+            alt="client"
+            className="vendor-client-icons"
+          />
+          <br />
+          <br />
+          <span className="vendor-client-text">Clients</span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
