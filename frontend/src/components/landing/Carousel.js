@@ -3,42 +3,57 @@ import { Carousel } from "react-responsive-carousel";
 import "./landingCSS/Carousel.css";
 
 export default () => (
-  <Carousel autoPlay>
-    <div>
+  <Carousel
+    className="carousel-container"
+    width="1500px"
+    showThumbs={false}
+    axis="horizontal"
+    useKeyboardArrows
+    infiniteLoop
+    autoPlay
+    swipeable={true}
+    transitionTime={500}
+    centerMode
+    centerSlidePercentage={50}
+    emulateTouch
+  >
+    {/*<div>
       <img
-        src={require("./images/sap-logo.svg")}
+        src={require("./images/sap-logo-final.png")}
         alt="Save a Plate logo"
         className="carousel-image"
       />
-      <p className="legend">Legend 0</p>
-    </div>
+    </div>*/}
     <div>
       <img
-        src={require("./images/carousel-1.jpeg")}
+        src={require("./images/carousel-1-cropped-v1.jpg")}
         alt="carousel-1"
         className="carousel-image"
       />
-      <p className="legend">Legend 1</p>
     </div>
     <div>
-      <img src={require("./images/carousel-2.jpg")} alt="carousel-1" />
-      <p className="legend">Legend 2</p>
+      <img
+        src={require("./images/carousel-2-cropped-v1.jpg")}
+        alt="carousel-1"
+      />
     </div>
     <div>
-      <img src={require("./images/carousel-3.png")} alt="carousel-1" />
-      <p className="legend">Legend 3</p>
+      <img
+        src={require("./images/carousel-3-cropped-v1.jpg")}
+        alt="carousel-1"
+      />
     </div>
     <div>
-      <img src={require("./images/carousel-4.jpg")} alt="carousel-1" />
-      <p className="legend">Legend 4</p>
+      <img
+        src={require("./images/carousel-4-cropped-v1.jpg")}
+        alt="carousel-1"
+      />
     </div>
     <div>
-      <img src={require("./images/carousel-5.png")} alt="carousel-1" />
-      <p className="legend">Legend 5</p>
-    </div>
-    <div>
-      <img src={require("./images/carousel-6.png")} alt="carousel-1" />
-      <p className="legend">Legend 6</p>
+      <img
+        src={require("./images/carousel-5-cropped-v1.jpg")}
+        alt="carousel-1"
+      />
     </div>
   </Carousel>
 );

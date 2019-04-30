@@ -24,7 +24,6 @@ class VendorProfileThruClient extends Component {
     axios
       .get(`/api/business_hours/${this.props.match.params.vendor}`)
       .then(info => {
-        console.log(info);
         this.setState({
           businessHours: info.data.data
         });
@@ -109,15 +108,13 @@ class VendorProfileThruClient extends Component {
           {item.is_claimed ? (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}
-            >
+              id={item.food_id}>
               UNCLAIM
             </button>
           ) : (
             <button
               onClick={e => this.claimItem(e, item.is_claimed)}
-              id={item.food_id}
-            >
+              id={item.food_id}>
               TO CLAIM
             </button>
           )}
@@ -208,13 +205,11 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
-    console.log(this.state.isFav, "the current fav in the vendor profile");
     return (
       <>
         {this.displayBusinessHours()}
         <button
-          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
-        >
+          onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}>
           {!!this.state.isFav.length
             ? "Remove From Favorites"
             : "Add To Favorites"}

@@ -25,6 +25,7 @@
   font-weight: bold;
   font-family: "Arial";
   text-decoration: none;
+  border: none;
 }
 
 .nav-link:hover {
@@ -32,9 +33,9 @@
 }
 
 #logo {
-  width: 80px;
+  width: 100px;
   border-radius: 50%;
-  border: 5px solid black;
+  border: 5px solid #272e48;
 }
 
 #logo:hover {
@@ -52,4 +53,13 @@
   font-size: 30px;
   font-family: "Ubuntu", sans-serif;
   margin-left: 3%;
+}
+
+#logout-button {
+  border: none;
+}
+
+.nav-link--active {
+  text-decoration: underline;
+  text-underline-position: under;
 }
