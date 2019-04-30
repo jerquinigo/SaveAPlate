@@ -4,7 +4,7 @@ import "./Resources.css";
 export default function Resources() {
   return (
     <div id="resources-container">
-      <h1>Hungry?</h1>
+      <h1 id="hungry-header">Hungry?</h1>
       <p>
         Click here to learn/apply for: {""}
         <a href="http://foodhelp.nyc/snapfood-benefits-en/">SNAP</a>

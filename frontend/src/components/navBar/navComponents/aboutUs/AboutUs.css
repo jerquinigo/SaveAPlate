@@ -70,10 +70,10 @@
 
 .team-member-photo {
   animation-duration: 3s;
-  animation-name: slidein;
+  animation-name: bounce;
 }
 
-@keyframes slidein {
+@keyframes bounce {
   0% {
     transform: translateY(-100%);
   }
