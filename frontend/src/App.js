@@ -47,7 +47,7 @@ class App extends Component {
             <Route exact path="/feed" component={FeedContainer} />
             <Route
               exact
-              path="/:vendor"
+              path="/clientview/:vendor"
               component={VendorProfileThruClientContainer}
             />
           </Switch>

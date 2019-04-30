@@ -88,8 +88,7 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="vendor-signup-form"
-        >
+          id="vendor-signup-form">
           <h1>Create an account:</h1>
           <TextField
             required
@@ -177,8 +176,7 @@ class SignUp extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button"
-          >
+            className="signup-button">
             Sign Up
           </Button>
           <button className="demo" onClick={this.vendorDemoLogin}>
@@ -191,8 +189,7 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="client-signup-form"
-        >
+          id="client-signup-form">
           <h1>Create an account:</h1>
           <TextField
             required
@@ -258,8 +255,7 @@ class SignUp extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button"
-          >
+            className="signup-button">
             Sign Up
           </Button>{" "}
           <button className="demo" onClick={this.clientDemoLogin}>
@@ -329,8 +325,7 @@ class SignUp extends Component {
               aria-label="User Type"
               name="type"
               value={this.state.value}
-              onClick={this.handleChange}
-            >
+              onClick={this.handleChange}>
               <FormControlLabel value="1" control={<Radio />} label="Vendor" />
               <FormControlLabel value="2" control={<Radio />} label="Client" />
             </RadioGroup>
