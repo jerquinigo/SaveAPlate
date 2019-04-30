@@ -24,7 +24,6 @@ class VendorProfileThruClient extends Component {
     axios
       .get(`/api/business_hours/${this.props.match.params.vendor}`)
       .then(info => {
-        console.log(info);
         this.setState({
           businessHours: info.data.data
         });

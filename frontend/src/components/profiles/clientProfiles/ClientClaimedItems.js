@@ -66,20 +66,6 @@ const ClaimItem = (e, isClaimed, userObj, toReRender) => {
         is_claimed: true
       });
 };
-//
-// const getAllClaimedFoodItem = props => {
-//   axios
-//     .get("/api/fooditems/client/")
-//     .then(res => {
-//       debugger;
-//       this.setState({
-//         claimedFoodItems: res.data.food_items
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };
 
 class ClientClaimedItems extends Component {
   constructor() {
@@ -125,7 +111,6 @@ class ClientClaimedItems extends Component {
       } else {
         claimedList[claimedFoodItems[i].vendor_id] = [claimedFoodItems[i]];
       }
-      // console.log("claimed", claimedList);
     }
 
     console.log("CLAIMED LIST", claimedList);
@@ -133,28 +118,7 @@ class ClientClaimedItems extends Component {
     return claimedList;
   };
 
-  // claimItem = (e, isClaimed) => {
-  //   isClaimed === true
-  //     ? axios
-  //         .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
-  //           client_id: null,
-  //           is_claimed: false
-  //         })
-  //         .then(() => {
-  //           this.getfoodItems();
-  //         })
-  //     : axios
-  //         .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
-  //           client_id: this.props.currentUser.id,
-  //           is_claimed: true
-  //         })
-  //         .then(() => {
-  //           this.getfoodItems();
-  //         });
-  // };
-
   render() {
-    console.log(this.state.axiosCalledSwitch, "switcher");
     let currUser = this.props.currentUser;
     const organizedItems = this.organizeFoodItems();
     const vendorArea = _.map(organizedItems, (items, i) => {
@@ -173,7 +137,6 @@ class ClientClaimedItems extends Component {
         </VendorSection>
       );
     });
-    console.log(organizedItems);
     return (
       <div className="clientClaimedItemsPage">
         Booked Items

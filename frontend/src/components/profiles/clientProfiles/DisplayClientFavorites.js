@@ -15,11 +15,12 @@ class DisplayClientFavorites extends Component {
 
   componentDidMount() {
     this.getAllFavoritesForClient(this.props.currentUserName);
+
     this.getAllVendorsList();
   }
 
   getAllFavoritesForClient = name => {
-    axios.get(`/api/favorites/client/${name}`).then(res => {
+    axios.get(`/api/favorites/client/${this.props.name}`).then(res => {
       this.setState({
         usersFavorites: res.data.favorites
       });
@@ -45,6 +46,7 @@ class DisplayClientFavorites extends Component {
           displayObj[i] = { ...vendors[i], ...{ favoriteId: favorites[j].id } };
         }
       }
+      console.log("displayObj", displayObj);
     }
 
     let favoriteArr = Object.values(displayObj);
@@ -82,6 +84,7 @@ class DisplayClientFavorites extends Component {
   };
 
   render() {
+    console.log("props", this.props);
     return (
       <div className="displayClientFavPage">
         {!!this.state.usersFavorites.length
