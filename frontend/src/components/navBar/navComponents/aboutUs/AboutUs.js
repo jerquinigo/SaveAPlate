@@ -153,7 +153,7 @@ export default function About() {
       {/* ^ the BR tags are a temporary solution to styling :) */}
 
       <div id="wheel-container">
-        <div>
+        <div id="vendor-icon">
           <img
             src={require("../../../landing/images/vendor.png")}
             alt="vendor"
