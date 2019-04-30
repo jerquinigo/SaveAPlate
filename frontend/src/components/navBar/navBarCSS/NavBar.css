@@ -10,6 +10,7 @@
   font-weight: bold;
   font-family: "Arial";
   text-decoration: none;
+  border: none;
 }
 
 .nav-link:hover {
