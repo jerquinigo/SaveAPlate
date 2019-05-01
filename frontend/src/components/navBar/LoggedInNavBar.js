@@ -19,7 +19,7 @@ export const LoggedInNavBar = props => {
           <span id="nav-title">
             <NavLink to="/welcome" className="nav-link">
               <img
-                src={require("../landing/images/sap-logo-sq.png")}
+                src={require("../landing/images/sap-logo-name-black.png")}
                 alt="logo for save a plate"
                 id="logo"
               />
@@ -48,19 +48,20 @@ export const LoggedInNavBar = props => {
             >
               Donate
             </NavLink>*/}
+
+            <NavLink
+              to="/feed"
+              className="nav-link"
+              activeClassName="nav-link--active"
+            >
+              Feed
+            </NavLink>
             <NavLink
               to={profileLink}
               className="nav-link"
               activeClassName="nav-link--active"
             >
               My Profile
-            </NavLink>
-            <NavLink
-              to="/feed"
-              className="nav-link"
-              activeClassName="nav-link--active"
-            >
-              Home
             </NavLink>
             <button
               className="nav-link"
@@ -87,7 +88,7 @@ export const LoggedInNavBar = props => {
               activeClassName="nav-link--active"
             >
               <img
-                src={require("./logo.png")}
+                src={require("../landing/images/sap-logo-name-black.png")}
                 alt="logo for save a plate"
                 id="logo"
               />
