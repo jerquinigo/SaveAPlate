@@ -1,10 +1,22 @@
 #about-container {
   background-color: #e6f0f0;
 }
+
+#about-sub-container {
+  margin-top: 10%;
+  padding-bottom: 5%;
+  background-color: #aebdc7;
+}
+
+#meet-our-team {
+  padding-top: 2.5%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 46px;
+  font-weight: bold;
+}
+
 #meet-our-team,
 #our-mission {
-  font-family: "Oswald", sans-serif;
-  font-size: 42px;
   color: #272e48;
   margin-bottom: 5%;
   text-decoration: underline;
@@ -13,10 +25,11 @@
 
 #our-mission-text {
   color: #272e48;
+  padding-top: 2.5%;
 }
 
 .about-text {
-  width: 34%;
+  width: 45%;
   margin: 0 auto;
   font-family: "Merriweather", serif;
 }
@@ -33,15 +46,13 @@
   height: 200px;
   border-radius: 50%;
   animation-duration: 3s;
-  animation-name: bouncy;
-}
-
-.team-member-photo:hover {
-  animation: bounce 3s;
+  animation-name: bounce;
 }
 
 .team-member-name {
   color: #272e48;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
 }
 
 .team-member-name:hover {
@@ -90,48 +101,6 @@
 }
 
 @-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(-100%);
-  }
-  50% {
-    -webkit-transform: translateY(8%);
-  }
-  65% {
-    -webkit-transform: translateY(-4%);
-  }
-  80% {
-    -webkit-transform: translateY(4%);
-  }
-  95% {
-    -webkit-transform: translateY(-2%);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-  }
-}
-
-@keyframes bouncy {
-  0% {
-    transform: translateY(-100%);
-  }
-  50% {
-    transform: translateY(8%);
-  }
-  65% {
-    transform: translateY(-4%);
-  }
-  80% {
-    transform: translateY(4%);
-  }
-  95% {
-    transform: translateY(-2%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-@-webkit-keyframes bouncy {
   0% {
     -webkit-transform: translateY(-100%);
   }

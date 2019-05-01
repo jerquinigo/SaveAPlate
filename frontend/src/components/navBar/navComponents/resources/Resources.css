@@ -3,23 +3,8 @@
   border-radius: 5px;
   margin: 0 auto;
   margin-top: 200px;
-  width: 35%;
+  width: 75%;
   background-color: #f3e4d8;
-
-  animation-duration: 3s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
 }
 
 #hungry-header {
