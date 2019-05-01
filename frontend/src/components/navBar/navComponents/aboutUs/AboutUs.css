@@ -1,16 +1,22 @@
 #about-container {
   background-color: #e6f0f0;
-  padding-bottom: 10%;
+}
+
+#about-sub-container {
+  margin-top: 10%;
+  padding-bottom: 5%;
+  background-color: #aebdc7;
 }
 
 #meet-our-team {
   padding-top: 2.5%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 46px;
+  font-weight: bold;
 }
 
 #meet-our-team,
 #our-mission {
-  font-family: "Oswald", sans-serif;
-  font-size: 42px;
   color: #272e48;
   margin-bottom: 5%;
   text-decoration: underline;
@@ -23,7 +29,7 @@
 }
 
 .about-text {
-  width: 34%;
+  width: 45%;
   margin: 0 auto;
   font-family: "Merriweather", serif;
 }
@@ -45,7 +51,8 @@
 
 .team-member-name {
   color: #272e48;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
 }
 
 .team-member-name:hover {
