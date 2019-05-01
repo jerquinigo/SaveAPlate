@@ -19,7 +19,7 @@ export const LoggedInNavBar = props => {
           <span id="nav-title">
             <NavLink to="/welcome" className="nav-link">
               <img
-                src={require("./logo.png")}
+                src={require("../landing/images/sap-logo-name-black.png")}
                 alt="logo for save a plate"
                 id="logo"
               />
@@ -30,32 +30,38 @@ export const LoggedInNavBar = props => {
             <NavLink
               to="/aboutus"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               About Us
             </NavLink>
             <NavLink
               to="/resources"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               Resources
             </NavLink>
-            <NavLink
+            {/*<NavLink
               to="/donate"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               Donate
+            </NavLink>*/}
+
+            <NavLink
+              to="/feed"
+              className="nav-link"
+              activeClassName="nav-link--active"
+            >
+              Feed
             </NavLink>
             <NavLink
               to={profileLink}
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               My Profile
-            </NavLink>
-            <NavLink
-              to="/feed"
-              className="nav-link"
-              activeClassName="nav-link--active">
-              Feed
             </NavLink>
             <button
               className="nav-link"
@@ -63,7 +69,8 @@ export const LoggedInNavBar = props => {
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
-              }}>
+              }}
+            >
               Logout
             </button>
           </div>
@@ -78,9 +85,10 @@ export const LoggedInNavBar = props => {
             <NavLink
               to="/welcome"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               <img
-                src={require("./logo.png")}
+                src={require("../landing/images/sap-logo-name-black.png")}
                 alt="logo for save a plate"
                 id="logo"
               />
@@ -90,25 +98,29 @@ export const LoggedInNavBar = props => {
             <NavLink
               to="/aboutus"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               About Us
             </NavLink>
             <NavLink
               to="/resources"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               Resources
             </NavLink>
-            <NavLink
+            {/*<NavLink
               to="/donate"
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               Donate
-            </NavLink>
+            </NavLink>*/}
             <NavLink
               to={profileLink}
               className="nav-link"
-              activeClassName="nav-link--active">
+              activeClassName="nav-link--active"
+            >
               My Profile
             </NavLink>
             <button
@@ -117,7 +129,8 @@ export const LoggedInNavBar = props => {
               onClick={async () => {
                 await props.logoutUser();
                 await props.history.push("/welcome");
-              }}>
+              }}
+            >
               Logout
             </button>
           </div>
