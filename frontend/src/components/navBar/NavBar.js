@@ -21,30 +21,26 @@ export default function NavBar() {
           <NavLink
             to="/aboutus"
             className="nav-link"
-            activeClassName="nav-link--active"
-          >
+            activeClassName="nav-link--active">
             About Us
           </NavLink>
           <NavLink
             to="/resources"
             className="nav-link"
-            activeClassName="nav-link--active"
-          >
+            activeClassName="nav-link--active">
             Resources
-          </NavLink>
-          <NavLink
-            to="/user/login"
-            className="nav-link"
-            activeClassName="nav-link--active"
-          >
-            Login
           </NavLink>
           <NavLink
             to="/user/signup"
             className="nav-link"
-            activeClassName="nav-link--active"
-          >
+            activeClassName="nav-link--active">
             Get Started
+          </NavLink>
+          <NavLink
+            to="/user/login"
+            className="nav-link"
+            activeClassName="nav-link--active">
+            Login
           </NavLink>
         </div>
       </nav>
