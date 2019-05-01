@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class SearchBarResults extends Component {
-  displayResults = () => {
+  constructor() {
+    super();
+  }
+
+  displaySearchResults = () => {
     if (this.props.userSearchResults.length > 0) {
-      this.props.userSearchResults.map((results, i) => {
+      return this.props.userSearchResults.map((results, i) => {
+        debugger;
         let converted_time = Number(results.set_time.slice(0, 2));
         return (
           <ul key={i} id="display-claimed-items">
@@ -64,7 +69,12 @@ class SearchBarResults extends Component {
     }
   };
   render() {
-    return <>{this.displayResults()}</>;
+    return (
+      <div>
+        <span>{this.displaySearchResults()}</span>
+        <p>results</p>
+      </div>
+    );
   }
 }
 

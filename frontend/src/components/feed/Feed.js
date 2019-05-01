@@ -43,6 +43,7 @@ export default class Feed extends Component {
   };
 
   handleSubmit = async e => {
+    debugger;
     e.preventDefault();
     let searchResult = this.state.allFoodItems.filter(item => {
       let vendor = item.vendor_name.toLowerCase();
@@ -74,7 +75,7 @@ export default class Feed extends Component {
   render() {
     console.log(this.state.userSearchResults, "in the length");
     return (
-      <>
+      <div>
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
@@ -82,18 +83,27 @@ export default class Feed extends Component {
           textInput={this.state.textInput}
           handleChange={this.handleChange}
         />
+
         {this.state.userSearchResults.length > 0 ? (
           <SearchBarResults
             claimItem={this.claimItem}
             userSearchResults={this.state.userSearchResults}
           />
-        ) : (
-          <AllFeedItems
-            claimItem={this.claimItem}
-            allFoodItems={this.state.allFoodItems}
-          />
-        )}
-      </>
+        ) : null}
+      </div>
     );
   }
 }
+
+// {this.state.userSearchResults.length > 0 ? (
+//   <SearchBarResults
+//     claimItem={this.claimItem}
+//     userSearchResults={this.state.userSearchResults}
+//   />
+// ) : (
+//   <AllFeedItems
+//     claimItem={this.claimItem}
+//     allFoodItems={this.state.allFoodItems}
+//     userSearchResults={this.state.userSearchResults}
+//   />
+// )}
