@@ -20,6 +20,7 @@ export default class Feed extends Component {
     axios
       .get("/api/foodItems")
       .then(foodItems => {
+        debugger;
         this.setState({
           allFoodItems: foodItems.data.food_items
         });
@@ -30,6 +31,7 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
+    debugger;
     if (this.props.currentUser.type) {
       axios
         .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
@@ -88,8 +90,15 @@ export default class Feed extends Component {
           <SearchBarResults
             claimItem={this.claimItem}
             userSearchResults={this.state.userSearchResults}
+            currentUser={this.props.currentUser.type}
           />
-        ) : null}
+        ) : (
+          <AllFeedItems
+            claimItem={this.claimItem}
+            allFoodItems={this.state.allFoodItems}
+            userSearchResults={this.state.userSearchResults}
+          />
+        )}
       </div>
     );
   }
@@ -101,9 +110,9 @@ export default class Feed extends Component {
 //     userSearchResults={this.state.userSearchResults}
 //   />
 // ) : (
-//   <AllFeedItems
-//     claimItem={this.claimItem}
-//     allFoodItems={this.state.allFoodItems}
-//     userSearchResults={this.state.userSearchResults}
-//   />
+// <AllFeedItems
+//   claimItem={this.claimItem}
+//   allFoodItems={this.state.allFoodItems}
+//   userSearchResults={this.state.userSearchResults}
+// />
 // )}
