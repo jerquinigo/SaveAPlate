@@ -80,7 +80,7 @@ export default function Landing() {
               type="submit"
               id="signup-button"
             >
-              Sign Up
+              Get Started
             </Button>
           </NavLink>
         </div>
@@ -98,6 +98,7 @@ export default function Landing() {
           </NavLink>
         </div>
       </div>
+      <footer />
     </div>
   );
 }

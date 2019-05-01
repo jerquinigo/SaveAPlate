@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import "./navBarCSS/NavBar.css";
 
 export default function NavBar() {
@@ -9,7 +10,7 @@ export default function NavBar() {
         <span id="nav-title">
           <NavLink to="/welcome" className="nav-link">
             <img
-              src={require("./logo.png")}
+              src={require("../landing/images/sap-logo-name-black.png")}
               alt="logo for save a plate"
               id="logo"
             />
@@ -20,20 +21,30 @@ export default function NavBar() {
           <NavLink
             to="/aboutus"
             className="nav-link"
-            activeClassName="nav-link--active">
+            activeClassName="nav-link--active"
+          >
             About Us
           </NavLink>
           <NavLink
             to="/resources"
             className="nav-link"
-            activeClassName="nav-link--active">
+            activeClassName="nav-link--active"
+          >
             Resources
           </NavLink>
           <NavLink
-            to="/donate"
+            to="/user/login"
             className="nav-link"
-            activeClassName="nav-link--active">
-            Donate
+            activeClassName="nav-link--active"
+          >
+            Login
+          </NavLink>
+          <NavLink
+            to="/user/signup"
+            className="nav-link"
+            activeClassName="nav-link--active"
+          >
+            Get Started
           </NavLink>
         </div>
       </nav>

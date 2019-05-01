@@ -5,7 +5,7 @@ import "./landingCSS/Carousel.css";
 export default () => (
   <Carousel
     className="carousel-container"
-    width="1500px"
+    width="100vw"
     showThumbs={false}
     axis="horizontal"
     useKeyboardArrows
@@ -14,7 +14,7 @@ export default () => (
     swipeable={true}
     transitionTime={500}
     centerMode
-    centerSlidePercentage={50}
+    centerSlidePercentage={65}
     emulateTouch
   >
     {/*<div>
