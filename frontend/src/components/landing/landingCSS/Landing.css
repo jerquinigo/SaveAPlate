@@ -25,7 +25,8 @@
   width: 80vw;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 3.5%;
+
+  /* margin-bottom: 3.5%; */
 }
 
 #landing-container {
@@ -35,33 +36,32 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-image: linear-gradient(to top, #e6f0f0, #aebdc7);
-  border: 4px outset white;
-  margin-bottom: 8px;
+
+  /* background-image: linear-gradient(to top, #eff5f5, #aebdc7); */
+  background-color: #eff5f5;
+  margin: 15px 0 50px 0;
+
+  /* margin-bottom: 8px; */
 }
 
 #login-container {
-  /* display: flex;
-  justify-content: center;
-  align-content: center;
-  height: 300px;
-  width: 100%;
-  margin: 0 auto;
-  border: 7px outset white; */
-
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  border: 4px outset white;
+  background-color: #eff5f5;
 }
 
 .login-sub-container-1 {
-  background-color: #f3e4d8;
+  /* background-color: #f3e4d8; */
+
+  /* background-color: #f3e4d8; */
   text-align: right;
 }
 
 .login-sub-container-2 {
-  background-color: #f3e4d8;
+  /* background-color: #f3e4d8; */
+
+  /* background-color: #f3e4d8; */
   text-align: left;
 }
 
@@ -74,7 +74,7 @@
   height: 100px;
   width: 200px;
   margin: 0 auto;
-  margin: 6%;
+  margin: 10% 6%;
   font-size: 20px;
   font-weight: 800;
   border-radius: 12px;
@@ -88,10 +88,14 @@
 #info-container {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, #f3e4d8, #f9c680);
+
+  /* background-image: linear-gradient(to top, #f3e4d8, #f9c680); */
+
+  /* background-color: #f3e4d8; */
+  background-color: #fde9ce;
   font-family: "Oswald", sans-serif;
-  border: 4px outset white;
-  margin-bottom: 8px;
+
+  /* margin-bottom: 8px; */
   padding-bottom: 40px;
   padding-top: 4%;
 }
@@ -163,4 +167,9 @@
 
 #more-info:hover {
   color: #d35348;
+}
+
+footer {
+  background-color: #272e48;
+  height: 40px;
 }
