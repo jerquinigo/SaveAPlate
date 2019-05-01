@@ -131,60 +131,6 @@ export default function About() {
         with the goal of creating an online platform that fights hunger and food
         waste in NYC.
       </div>
-
-      <div className="about-text">
-        <h2 id="our-mission">Our Mission</h2>
-        <div id="our-mission-text">
-          At Save a Plate, our mission is to reduce food waste in New York City.
-          We do this is by creating a platform where vendors can sign-up and
-          donate food while clients can claim those food items and favorite
-          vendors. We also provide resources about SNAP, nearby food pantries &
-          soup kitchens and how you can help.
-        </div>
-        <br />
-        <h3>Spin the wheel to reduce food waste!</h3>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      {/* ^ the BR tags are a temporary solution to styling :) */}
-
-      <div id="wheel-container">
-        <div id="vendor-icon">
-          <img
-            src={require("../../../landing/images/vendor.png")}
-            alt="vendor"
-            className="vendor-client-icons"
-          />
-          <br />
-          <br />
-          <span className="vendor-client-text">Vendors</span>
-        </div>
-        <a href="http://localhost:3000/user/signup">
-          <img
-            src={require("./food-waste.jpg")}
-            alt="food is love logo"
-            id="food-waste-img"
-          />
-        </a>
-        <div>
-          <img
-            src={require("../../../landing/images/client.png")}
-            alt="client"
-            className="vendor-client-icons"
-          />
-          <br />
-          <br />
-          <span className="vendor-client-text">Clients</span>
-        </div>
-      </div>
-
-      <br />
-      <br />
-      <br />
     </div>
   );
 }

@@ -24,13 +24,11 @@ export default function Landing() {
           <h1 id="mission-statement">Mission Statement</h1>
         </div>
         <p id="mission-statement-text">
-          To provide food service businesses with a way to reduce food waste and
-          become resourceful for organizations that demonstrates a need in their
-          surrounding community. To feed New Yorkers that lack funds for the
-          basic necessity of food. A way for donating business will receive
-          tax-deductions along with decreased garbage disposal charges. We know
-          we’ve succeeded when the yearly rate of New Yorkers that face hunger
-          declines.
+          At Save a Plate, our mission is to reduce food waste in New York City.
+          We do this is by creating a platform where vendors can sign-up and
+          donate food while clients can claim those food items and favorite
+          vendors. We also provide resources about SNAP, nearby food pantries &
+          soup kitchens and how you can help.
         </p>
       </div>
       <div id="info-container">
@@ -78,8 +76,7 @@ export default function Landing() {
               color="primary"
               disableunderline="true"
               type="submit"
-              id="signup-button"
-            >
+              id="signup-button">
               Sign Up
             </Button>
           </NavLink>
@@ -91,8 +88,7 @@ export default function Landing() {
               color="secondary"
               disableunderline="true"
               type="submit"
-              id="login-button"
-            >
+              id="login-button">
               Log In
             </Button>
           </NavLink>
