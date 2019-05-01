@@ -19,7 +19,7 @@ export const LoggedInNavBar = props => {
           <span id="nav-title">
             <NavLink to="/welcome" className="nav-link">
               <img
-                src={require("../landing/images/sap-logo-name-black.png")}
+                src={require("../landing/images/sap-logo-black-plate.png")}
                 alt="logo for save a plate"
                 id="logo"
               />
