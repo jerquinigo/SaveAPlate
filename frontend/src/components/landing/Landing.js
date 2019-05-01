@@ -11,14 +11,7 @@ export default function Landing() {
       <div className="carousel-wrapper">
         <Carousel />
       </div>
-      <div id="food-background-container">
-        {/* <h1 id="save-a-plate-text">Save a Plate</h1> */}
-        {/* <img
-          src={require("./images/food-background.jpeg")}
-          alt="food background"
-          id="food-background"
-        /> */}
-      </div>
+      <div id="food-background-container" />
       <div id="landing-container">
         <div>
           <h1 id="mission-statement">Mission Statement</h1>
@@ -40,14 +33,13 @@ export default function Landing() {
               alt="icon for vendor"
               id="vendor-logo"
             />
-            <h3 id="user-type">Vendors</h3>
-            <div className="tooltip">
-              <span id="more-info">More Info</span>
-              <span className="tooltip-text">
+            <h3 id="user-type">Food Vendors</h3>
+            <div>
+              <div id="get-involved-info">
                 Vendors include restaurants, catering halls, nursing homes, etc.
                 Sign up or log in using the links below and you will be eligible
                 for tax deductions if you donate food.
-              </span>
+              </div>
             </div>
           </div>
           <div id="info-client">
@@ -56,14 +48,13 @@ export default function Landing() {
               alt="icon for client"
               id="client-logo"
             />
-            <h3 id="user-type">Clients</h3>
-            <div className="tooltip">
-              <span id="more-info">More Info</span>
-              <span className="tooltip-text">
-                Clients are non-profit organizations such as the YMCA, PBS,
-                World Wildlife Fund (WWF), Pursuit, among many others. Sign up
-                or log in using the links below.
-              </span>
+            <h3 id="user-type">Non-profit Organizations</h3>
+            <div>
+              <div id="get-involved-info">
+                Non-profit organizations such as the YMCA, PBS, World Wildlife
+                Fund (WWF), Pursuit, among many others. Sign up or log in using
+                the links below.
+              </div>
             </div>
           </div>
         </div>
