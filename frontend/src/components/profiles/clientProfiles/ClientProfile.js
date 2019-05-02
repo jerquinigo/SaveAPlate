@@ -20,7 +20,7 @@ class ClientProfile extends Component {
     this.displayClientProfile();
     this.reloadUser();
     // geoFindMe().then(position => {
-    //   // debugger;
+    //   // ;
     //   this.setState({
     //     latitude: position.coords.latitude,
     //     longitude: position.coords.longitude,

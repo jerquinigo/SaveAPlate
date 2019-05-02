@@ -51,7 +51,6 @@ const VendorItem = ({ item, userObj, toReRender }) => {
 
 const ClaimItem = (e, isClaimed, userObj, toReRender) => {
   let target = parseInt(e.currentTarget.id);
-  debugger;
   isClaimed === true
     ? axios
         .patch(`/api/fooditems/claimstatus/${target}`, {
