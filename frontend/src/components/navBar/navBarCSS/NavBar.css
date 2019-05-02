@@ -31,11 +31,12 @@
 }
 
 .nav-link:hover {
-  color: #de6a5a;
+  color: #d35348;
 }
 
 #logo {
-  width: 240px;
+  width: 8.5em;
+  margin-top: 1vh;
 }
 
 #nav-links {
