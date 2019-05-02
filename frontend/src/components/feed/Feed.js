@@ -20,7 +20,6 @@ export default class Feed extends Component {
     axios
       .get("/api/foodItems")
       .then(foodItems => {
-        debugger;
         this.setState({
           allFoodItems: foodItems.data.food_items
         });
@@ -31,12 +30,21 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
-    debugger;
-    if (this.props.currentUser.type) {
+    if (isClaimed === false) {
+      debugger;
       axios
         .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
           client_id: this.props.currentUser.id,
-          is_claimed: !isClaimed
+          is_claimed: true
+        })
+        .then(() => {
+          this.getAllFoodItems();
+        });
+    } else {
+      axios
+        .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
+          client_id: null,
+          is_claimed: false
         })
         .then(() => {
           this.getAllFoodItems();
@@ -45,14 +53,14 @@ export default class Feed extends Component {
   };
 
   handleSubmit = async e => {
-    debugger;
     e.preventDefault();
     let searchResult = this.state.allFoodItems.filter(item => {
       let vendor = item.vendor_name.toLowerCase();
       let food = item.name.toLowerCase();
       let text = this.state.textInput.toLowerCase();
+      let claimed = item.is_claimed;
 
-      return vendor.includes(text) || food.includes(text);
+      return (vendor.includes(text) && claimed !== true) || food.includes(text);
     });
 
     await this.setState({

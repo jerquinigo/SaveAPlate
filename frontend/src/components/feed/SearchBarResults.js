@@ -7,7 +7,11 @@ class SearchBarResults extends Component {
     let searchDataObj = {};
     let converted_time;
     if (this.props.userSearchResults.length > 0) {
-      this.props.userSearchResults.map((results, i) => {
+      let searchResults = this.props.userSearchResults.filter(result => {
+        return result.is_claimed !== true;
+      });
+      console.log(searchResults, "searchResult");
+      searchResults.map((results, i) => {
         if (!searchDataObj[results.vendor_name]) {
           searchDataObj[results.vendor_name] = [results];
         } else if (searchDataObj[results.vendor_name]) {
@@ -29,7 +33,6 @@ class SearchBarResults extends Component {
 
             <div className="vendorItemsWrapper">
               {searchDataObj[vendorName].map((food, b) => {
-                debugger;
                 return (
                   <div className="vendorItemsContainer" key={b}>
                     <span>{food.address_field}</span>
@@ -46,7 +49,7 @@ class SearchBarResults extends Component {
                     <span>
                       {food.is_claimed ? (
                         <button
-                          className={food.is_claimed ? "claimed" : "unclaimed"}
+                          className={food.is_claimed ? "unclaimed" : "claimed"}
                           onClick={e =>
                             this.props.claimItem(e, food.is_claimed)
                           }
@@ -56,6 +59,7 @@ class SearchBarResults extends Component {
                         </button>
                       ) : (
                         <button
+                          className={food.is_claimed ? "unclaimed" : "claimed"}
                           onClick={e =>
                             this.props.claimItem(e, food.is_claimed)
                           }
