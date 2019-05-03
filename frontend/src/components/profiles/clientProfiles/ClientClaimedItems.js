@@ -7,7 +7,7 @@ import "./clientProfileCSS/ClientClaimedItems.css";
 
 const VendorSection = ({ vendor, userObj, children }) => {
   return (
-    <div>
+    <div className="display-vendor-name-container">
       <div className="display-vendor-name">
         <Link to={"/clientview/" + vendor.vendor_name}>
           <span className="display-item-name">{vendor.vendor_name}</span>{" "}

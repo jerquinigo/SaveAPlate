@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./feedCSS/AllFeedItems.css";
+import Button from "@material-ui/core/Button";
 
 class AllFeedItems extends Component {
   allFoodItemsMapped = () => {
@@ -22,48 +24,46 @@ class AllFeedItems extends Component {
       let vendorName = vendorNameArr.map((vendorName, i) => {
         return (
           <div key={i}>
-            <span>
-              <Link to={"/clientview/" + vendorName}>
-                <strong>{vendorName}</strong>{" "}
-              </Link>
-            </span>
+            <div className="display-vendor-name">
+              <span>
+                <Link to={"/clientview/" + vendorName}>
+                  <strong className="display-item-name">{vendorName}</strong>{" "}
+                </Link>
+              </span>
+            </div>
 
             <div className="vendorItemsWrapper">
               {foodDataObj[vendorName].map((food, b) => {
                 return (
                   <div className="vendorItemsContainer" key={b}>
+                    <div className="display-claimed-items">
+                      <span className="display-item-name">{food.name}</span>
+                      <span> Feeds: {food.quantity} people</span>
+                      <span>({Number(food.quantity) * 3} pounds)</span>
+                      <span>
+                        {converted_time === 0 || converted_time < 13
+                          ? converted_time + "am"
+                          : converted_time - 12 + "pm"}
+                      </span>
 
-                    <span>{food.name}</span>
-                    <span> Feeds: {food.quantity} people</span>
-                    <span>({Number(food.quantity) * 3} pounds)</span>
-                    <span>
-                      {converted_time === 0 || converted_time < 13
-                        ? converted_time + "am"
-                        : converted_time - 12 + "pm"}
-                    </span>
-
-                    <span>
-                      {food.is_claimed ? (
-                        <button
-                          className={food.is_claimed ? "claimed" : "unclaimed"}
+                      <span>
+                        <Button
+                          id={food.id}
                           onClick={e =>
                             this.props.claimItem(e, food.is_claimed)
                           }
-                          id={food.id}
-                        >
-                          UNCLAIM
-                        </button>
-                      ) : (
-                        <button
-                          onClick={e =>
-                            this.props.claimItem(e, food.is_claimed)
+                          variant="contained"
+                          color="secondary"
+                          className={
+                            food.is_claimed
+                              ? "claimed-button"
+                              : "unclaimed-button"
                           }
-                          id={food.id}
                         >
-                          CLAIM
-                        </button>
-                      )}
-                    </span>
+                          {food.is_claimed ? "UNCLAIM" : "AVAILABLE"}
+                        </Button>
+                      </span>
+                    </div>
                   </div>
                 );
               })}

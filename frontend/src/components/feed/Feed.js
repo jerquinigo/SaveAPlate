@@ -4,6 +4,7 @@ import axios from "axios";
 import SearchBar from "./SearchBar.js";
 import AllFeedItems from "./AllFeedItems.js";
 import SearchBarResults from "./SearchBarResults.js";
+import "./feedCSS/Feed.css";
 
 export default class Feed extends Component {
   state = {
@@ -85,7 +86,7 @@ export default class Feed extends Component {
   render() {
     console.log(this.state.userSearchResults, "in the length");
     return (
-      <div>
+      <div className="feedWrapper">
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
