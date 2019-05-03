@@ -427,8 +427,16 @@ class SignUp extends Component {
               name="type"
               value={this.state.value}
               onClick={this.handleChange}>
-              <FormControlLabel value="1" control={<Radio />} label="Vendor" />
-              <FormControlLabel value="2" control={<Radio />} label="Client" />
+              <FormControlLabel
+                value="1"
+                control={<Radio />}
+                label="Food Vendor"
+              />
+              <FormControlLabel
+                value="2"
+                control={<Radio />}
+                label="Non-profit Organization"
+              />
             </RadioGroup>
           </FormControl>
           {this.signUpForm()}
