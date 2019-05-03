@@ -1,19 +1,23 @@
 #resources-container {
-  border: 5px solid #272e48;
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 10px #aebdc7;
   margin: 0 auto;
-  margin-top: 200px;
-  width: 75%;
-  background-color: #f3e4d8;
+  margin-top: 10%;
+  padding-bottom: 2%;
+  width: 50%;
 }
 
 #hungry-header {
-  background-color: #d35348;
-  margin: 0px 0px 0px 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #272e48;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 42px;
-  border-bottom: 5px solid #272e48;
+}
+
+.hungry-text {
+  font-family: "Merriweather", serif;
 }
