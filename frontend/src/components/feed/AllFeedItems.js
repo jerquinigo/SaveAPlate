@@ -2,7 +2,25 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class AllFeedItems extends Component {
+
+  displayNameAndAddress = (vendorAddress, vendorName, i) => {
+console.log(vendorAddress[1], "in the outer function")
+    // if (vendorAddress.length === i) {
+    return(
+    <span>
+      <Link to={"/clientview/" + vendorName}>
+        <strong>{vendorName}</strong>{" "}
+      </Link>
+        <strong>{!!vendorAddress ? null: vendorAddress[i]}</strong>{" "}
+
+
+    </span>
+  )
+  // }
+}
+
   allFoodItemsMapped = () => {
+
     if (this.props.allFoodItems) {
       let foodDataObj = {};
       let converted_time;
@@ -18,22 +36,57 @@ class AllFeedItems extends Component {
       });
 
       let vendorNameArr = Object.keys(foodDataObj);
+      let vendorAddress=[];
+      console.log('vendorNameArr', vendorNameArr);
+      console.log('vendorAddress', vendorAddress);
+      let vendorName = vendorNameArr.map((vendorName, i) => {
+        debugger;
+        let result;
+        // <div key={i}>
+        //   <span>
+        //     <Link to={"/clientview/" + vendorName}>
+        //       <strong>{vendorName}</strong>{" "}
+        //     </Link>
+        //       <strong>{result}</strong>{" "}
+        //
+        //
+        //   </span>
 
-      let vendorName = vendorNameArr.map((vendorName, a) => {
         return (
-          <div key="a">
-            <span>
-              <Link to={"/clientview/" + vendorName}>
-                <strong>{vendorName}</strong>{" "}
-              </Link>
-            </span>
+
 
             <div className="vendorItemsWrapper">
+            {this.displayNameAndAddress(vendorAddress,vendorName, i)}
               {foodDataObj[vendorName].map((food, b) => {
+                console.log(foodDataObj[vendorName]);
+                console.log(food.vendor_name);
+
+                if (vendorName === food.vendor_name) {
+                  console.log(foodDataObj[vendorName]);
+                  console.log(food.vendor_name);
+
+
+                  if (!vendorAddress.includes(food.address_field)) {
+                    console.log(foodDataObj[vendorName]);
+                    console.log(food.vendor_name);
+
+                    vendorAddress.push(food.address_field);
+                    // this.displayNameAndAddress(vendorAddress,vendorName)
+                  }
+                }
+
+
+
+                console.log("YOO",vendorAddress);
+
+                console.log("LENGTH of ARRAY",vendorAddress.length);
+                console.log("CURRENT i", i);
+                console.log("vendorAddress[i] i", vendorAddress[i]);
+
+
                 return (
                   <div className="vendorItemsContainer" key={b}>
-                    <span>{food.address_field}</span>
-                    <span>{food.telephone_number}</span>
+
                     <span>{food.name}</span>
                     <span> Feeds: {food.quantity} people</span>
                     <span>({Number(food.quantity) * 3} pounds)</span>
@@ -69,7 +122,7 @@ class AllFeedItems extends Component {
                 );
               })}
             </div>
-          </div>
+          // </div>
         );
       });
       return vendorName;
