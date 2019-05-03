@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./clientProfileCSS/DisplayClientFavorites.css";
+import Button from "@material-ui/core/Button";
 
 class DisplayClientFavorites extends Component {
   constructor(props) {
@@ -56,13 +57,18 @@ class DisplayClientFavorites extends Component {
           </Link>
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
-          <button
-            onClick={e => {
-              this.deleteFav(e, fav.favoriteId);
-            }}
+          <Button
+              id={fav.id}
+              onClick={e => {
+                this.deleteFav(e, fav.favoriteId);
+              }}
+            variant="contained"
+            color="secondary"
+            className="unclaimed-button"
           >
             Unfavorite
-          </button>
+          </Button>
+
         </div>
       );
     });
