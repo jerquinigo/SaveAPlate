@@ -83,7 +83,7 @@ class Login extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button">
+            className="login-button">
             Login
           </Button>
           <Link to="/user/signup" id="signup-link">
