@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 1;
   background-color: #eff5f5;
-  height: 90px;
+  height: 95px;
   display: grid;
   grid-template-columns: 50% 50%;
   justify-items: center;
@@ -13,7 +13,7 @@
 }
 
 .main-section {
-  margin-top: 85px;
+  margin-top: 95px;
 }
 
 .nav-link {

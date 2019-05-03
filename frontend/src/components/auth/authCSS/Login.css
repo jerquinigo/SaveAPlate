@@ -6,7 +6,28 @@
   background-color: #e6f0f0;
   width: 50%;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 10%;
   padding-bottom: 2%;
   border-radius: 5px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 10px #aebdc7;
+}
+
+#email-input,
+#password-input {
+  width: 500px;
+}
+
+#login-header {
+  font-family: "Montserrat", sans-serif;
+}
+
+.login-button {
+  width: 25%;
+}
+
+#signup-link {
+  font-family: "Merriweather", serif;
+  margin-top: 2%;
 }

@@ -53,7 +53,7 @@ class Login extends Component {
       <>
         {this.conditionalRouting()}
         <form onSubmit={this.loginUser} id="login-form">
-          <h1>Log-In</h1>
+          <h1 id="login-header">Login</h1>
           <TextField
             required
             type="text"
@@ -83,11 +83,14 @@ class Login extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="signup-button"
-          >
-            Log-In
+            className="login-button">
+            Login
           </Button>
-          <Link to="/user/signup"> Not a member yet? Sign Up Here! </Link>
+          <Link to="/user/signup" id="signup-link">
+            Not a member yet?
+            <br />
+            Sign Up Here!
+          </Link>
         </form>
       </>
     );
