@@ -19,9 +19,9 @@ class AllFeedItems extends Component {
 
       let vendorNameArr = Object.keys(foodDataObj);
 
-      let vendorName = vendorNameArr.map((vendorName, a) => {
+      let vendorName = vendorNameArr.map((vendorName, i) => {
         return (
-          <div key="a">
+          <div key={i}>
             <span>
               <Link to={"/clientview/" + vendorName}>
                 <strong>{vendorName}</strong>{" "}
@@ -32,8 +32,7 @@ class AllFeedItems extends Component {
               {foodDataObj[vendorName].map((food, b) => {
                 return (
                   <div className="vendorItemsContainer" key={b}>
-                    <span>{food.address_field}</span>
-                    <span>{food.telephone_number}</span>
+
                     <span>{food.name}</span>
                     <span> Feeds: {food.quantity} people</span>
                     <span>({Number(food.quantity) * 3} pounds)</span>
