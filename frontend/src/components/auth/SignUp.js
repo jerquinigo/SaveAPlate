@@ -90,99 +90,133 @@ class SignUp extends Component {
           className="signup-form"
           id="vendor-signup-form">
           <h1 className="signup-form-header">Sign up as a food vendor</h1>
-          <TextField
-            required
-            className="input-field"
-            label="Name"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="name"
-            placeholder="Business Name"
-            value={this.state.name}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Email"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Password"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="password"
-            name="password_digest"
-            placeholder="Password"
-            value={this.state.password_digest}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Address"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="address_field"
-            placeholder="Address"
-            value={this.state.address_field}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Telephone Number"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="telephone_number"
-            placeholder="Telephone Number"
-            value={this.state.telephone_number}
-          />
-          <TextField
-            className="input-field"
-            label="Business Info"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="body"
-            placeholder="Business Info"
-            value={this.state.body}
-          />
-          <TextField
-            className="input-field"
-            label="Employee ID Number"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="ein"
-            placeholder="Employee ID Number"
-            value={this.state.ein}
-          />
-          {/* <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            className="signup-button">
-            Sign Up
-          </Button>
-          <button className="demo" onClick={this.vendorDemoLogin}>
-            Vendor Demo
-          </button> */}
-
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/name.png")}
+              alt="name"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Name"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              placeholder="Business Name"
+              value={this.state.name}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/email.png")}
+              alt="email"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Email"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/password.png")}
+              alt="password"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Password"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="password"
+              name="password_digest"
+              placeholder="Password"
+              value={this.state.password_digest}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/address.png")}
+              alt="address"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Address"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="address_field"
+              placeholder="Address"
+              value={this.state.address_field}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/phone.png")}
+              alt="phone"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Telephone Number"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="telephone_number"
+              placeholder="Telephone Number"
+              value={this.state.telephone_number}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/info.png")}
+              alt="info"
+              className="icons"
+            />
+            <TextField
+              className="input-field"
+              label="Business Info"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="body"
+              placeholder="Business Info"
+              value={this.state.body}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img src={require("./icons/id.png")} alt="id" className="icons" />
+            <TextField
+              className="input-field"
+              label="Employee ID Number"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="ein"
+              placeholder="Employee ID Number"
+              value={this.state.ein}
+            />
+          </div>
           <div className="signup-demo-buttons">
             <Button
               type="submit"
@@ -212,66 +246,101 @@ class SignUp extends Component {
           <h1 className="signup-form-header">
             Sign up as a non-profit organization
           </h1>
-          <TextField
-            required
-            className="input-field"
-            label="Name"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="name"
-            placeholder="Non-Profit Name"
-            value={this.state.name}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Email"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Password"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="password"
-            name="password_digest"
-            placeholder="Password"
-            value={this.state.password_digest}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Address"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="address_field"
-            placeholder="Address"
-            value={this.state.address_field}
-          />
-          <TextField
-            required
-            className="input-field"
-            label="Client Certificate"
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleChange}
-            type="text"
-            name="client_certificate"
-            placeholder="Client Certificate"
-            value={this.state.client_certificate}
-          />
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/name.png")}
+              alt="name"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Name"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              placeholder="Non-Profit Name"
+              value={this.state.name}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/email.png")}
+              alt="email"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Email"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/password.png")}
+              alt="password"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Password"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="password"
+              name="password_digest"
+              placeholder="Password"
+              value={this.state.password_digest}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/address.png")}
+              alt="address"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Address"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="address_field"
+              placeholder="Address"
+              value={this.state.address_field}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/certificate.png")}
+              alt="certificate"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Client Certificate"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="client_certificate"
+              placeholder="Client Certificate"
+              value={this.state.client_certificate}
+            />
+          </div>
           <div className="signup-demo-buttons">
             <Button
               type="submit"
@@ -348,8 +417,10 @@ class SignUp extends Component {
         <div className="choose-user-signup-form">
           <FormControl component="fieldset">
             <FormLabel component="legend" className="user-type">
-              <h3>Welcome to Save a Plate!</h3>
-              <p>Are you a food vendor or non-profit organization?</p>
+              <h3 id="signup-header">Welcome to Save a Plate!</h3>
+              <p id="signup-header-body">
+                Are you a food vendor or non-profit organization?
+              </p>
             </FormLabel>
             <RadioGroup
               aria-label="User Type"

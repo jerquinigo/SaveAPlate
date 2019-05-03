@@ -3,6 +3,17 @@
   height: 100vh;
 }
 
+#signup-header {
+  font-family: "Montserrat", sans-serif;
+  color: #272e48;
+  font-size: 36px;
+}
+
+#signup-header-body {
+  font-family: "Merriweather", serif;
+  color: #272e48;
+}
+
 .signup-form {
   display: flex;
   flex-direction: column;
@@ -24,21 +35,14 @@
 
 #vendor-signup-form,
 #client-signup-form {
-  background-color: #fff;
-  background-image: linear-gradient(
-      90deg,
-      transparent 79px,
-      #abced4 79px,
-      #abced4 81px,
-      transparent 81px
-    ),
-    linear-gradient(#eee 0.1em, transparent 0.1em);
-  background-size: 100% 1.2em;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 10px #aebdc7;
 }
 
 .input-field {
-  background-color: whitesmoke;
-  width: 200px;
+  background-color: #e6f0f0;
+  width: 500px;
   border-radius: 5px;
 }
 
@@ -52,4 +56,16 @@
   display: flex;
   flex-direction: column;
   padding-top: 2%;
+}
+
+.icons {
+  width: 35px;
+  height: 35px;
+  padding-right: 10px;
+}
+
+.icon-input-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
