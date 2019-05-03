@@ -1,0 +1,16 @@
+.display-vendor-name-feed-version {
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 80px;
+  background-color: #ebf4f4;
+  margin: 0;
+  float: right;
+  margin-right: 15%;
+}
