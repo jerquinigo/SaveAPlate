@@ -89,7 +89,7 @@ class SignUp extends Component {
           onSubmit={this.registerUser}
           className="signup-form"
           id="vendor-signup-form">
-          <h1>Create an account:</h1>
+          <h1 className="signup-form-header">Sign up as a food vendor</h1>
           <TextField
             required
             className="input-field"
@@ -172,7 +172,7 @@ class SignUp extends Component {
             placeholder="Employee ID Number"
             value={this.state.ein}
           />
-          <Button
+          {/* <Button
             type="submit"
             variant="contained"
             color="primary"
@@ -181,7 +181,26 @@ class SignUp extends Component {
           </Button>
           <button className="demo" onClick={this.vendorDemoLogin}>
             Vendor Demo
-          </button>
+          </button> */}
+
+          <div className="signup-demo-buttons">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="signup-button">
+              Sign Up
+            </Button>
+            <br />
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              className="signup-button"
+              onClick={this.vendorDemoLogin}>
+              Vendor Demo
+            </Button>
+          </div>
         </form>
       );
     } else if (Number(this.state.type) === 2) {
@@ -190,7 +209,9 @@ class SignUp extends Component {
           onSubmit={this.registerUser}
           className="signup-form"
           id="client-signup-form">
-          <h1>Create an account:</h1>
+          <h1 className="signup-form-header">
+            Sign up as a non-profit organization
+          </h1>
           <TextField
             required
             className="input-field"
@@ -251,16 +272,24 @@ class SignUp extends Component {
             placeholder="Client Certificate"
             value={this.state.client_certificate}
           />
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            className="signup-button">
-            Sign Up
-          </Button>{" "}
-          <button className="demo" onClick={this.clientDemoLogin}>
-            Client Demo
-          </button>
+          <div className="signup-demo-buttons">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="signup-button">
+              Sign Up
+            </Button>
+            <br />
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              className="signup-button"
+              onClick={this.clientDemoLogin}>
+              Client Demo
+            </Button>
+          </div>
         </form>
       );
     } else {
@@ -319,7 +348,8 @@ class SignUp extends Component {
         <div className="choose-user-signup-form">
           <FormControl component="fieldset">
             <FormLabel component="legend" className="user-type">
-              User Type
+              <h3>Welcome to Save a Plate!</h3>
+              <p>Are you a food vendor or non-profit organization?</p>
             </FormLabel>
             <RadioGroup
               aria-label="User Type"
