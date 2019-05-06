@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AllFeedItemsDisplayed from "./AllFeedItemsDisplayed.js";
+import AllFeedItemsDisplayVendorName from "./AllFeedItemsDisplayVendorName.js";
 import "./feedCSS/AllFeedItems.css";
 import Button from "@material-ui/core/Button";
 
@@ -25,14 +26,10 @@ class AllFeedItems extends Component {
       let vendorName = vendorNameArr.map((vendorName, i) => {
         return (
           <div key={i}>
-            <div className="display-vendor-name">
-              <span>
-                <Link to={"/clientview/" + vendorName}>
-                  <strong className="display-item-name">{vendorName}</strong>{" "}
-                </Link>
-              </span>
-            </div>
-
+            <AllFeedItemsDisplayVendorName
+              vendorName={vendorName}
+              foodDataObj={foodDataObj}
+            />
             <AllFeedItemsDisplayed
               foodDataObj={foodDataObj}
               claimItem={this.props.claimItem}
@@ -51,6 +48,16 @@ class AllFeedItems extends Component {
 }
 
 export default AllFeedItems;
+
+// <div className="display-vendor-name">
+//   <span>
+//     <Link to={"/clientview/" + vendorName}>
+//       <strong className="display-item-name">{vendorName}</strong>{" "}
+//     </Link>
+//     {this.getAllAddress(foodDataObj, vendorName)}
+//   </span>
+// </div>
+//
 
 // <div className="vendorItemsWrapper">
 //   {foodDataObj[vendorName].map((food, b) => {

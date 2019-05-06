@@ -33,6 +33,7 @@ class SearchBarResults extends Component {
 
             <div className="vendorItemsWrapper">
               {searchDataObj[vendorName].map((food, b) => {
+                debugger;
                 return (
                   <div className="vendorItemsContainer" key={b}>
                     <span>{food.address_field}</span>
