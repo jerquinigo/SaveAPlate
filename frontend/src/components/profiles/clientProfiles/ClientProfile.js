@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import DisplayClientFavorites from "./DisplayClientFavorites.js";
+import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
 import "./clientProfileCSS/ClientProfile.css";
 // import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
@@ -49,11 +50,10 @@ class ClientProfile extends Component {
       <div className="clientProfileWrapper profile">
         {this.displayClientProfile()}
         <ClientProfileEditForm id={this.props.currentUser.id} />
-
+        <MainSnackbarContainer />
         <ClientClaimedItemsContainer />
 
         <DisplayClientFavorites currentUserName={this.props.currentUser.name} />
-
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
           {/* <DisplayMap
             latitude={this.state.latitude}
