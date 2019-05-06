@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
+import CountUp from "react-countup";
 
 import "./vendorProfilesCSS/VendorProfile.css";
 
@@ -30,7 +31,6 @@ class VendorProfile extends Component {
   }
 
   //get feeding count
-
   getFeedingCount = () => {
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
@@ -38,6 +38,7 @@ class VendorProfile extends Component {
       });
     });
   };
+
   // Add food items
   addItemButton = () => {
     return (
@@ -122,29 +123,31 @@ class VendorProfile extends Component {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
         <div key={item.food_id} id="display-unclaimed-items">
-          <h4 id="item-name">{item.name}</h4>
-          <p>{item.quantity * 3} pounds</p>
-          <p>Feeds: {item.quantity} people</p>
-          <p>
-            {" "}
-            Lastest Pick Up Time: {""}
-            {converted_time === 0 || converted_time < 13
-              ? converted_time + "am"
-              : converted_time - 12 + "pm"}
-          </p>
+          <div id="item-name-container">
+            <h4 id="item-name">Food Item:</h4>
+            <p>{item.name}</p>
+          </div>
+          <div>
+            <h4 id="weight">Weight: </h4>
+            <p>{item.quantity * 3} pounds</p>
+          </div>
+          <div>
+            <h4 id="feeds">Feeds: </h4>
+            <p>{item.quantity} people</p>
+          </div>
+          <div>
+            <h4 id="pick-up">Pick Up Time: </h4>
+            <p>
+              {converted_time === 0 || converted_time < 13
+                ? converted_time + "am"
+                : converted_time - 12 + "pm"}
+            </p>
+          </div>
           <div>
             {item.is_claimed ? (
-              <button
-                onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
-                Claimed
-              </button>
+              <div id="status-unavailable">Unavailable</div>
             ) : (
-              <button
-                onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
-                Unclaimed
-              </button>
+              <div id="status-available">Available</div>
             )}
           </div>
           <Button
@@ -164,61 +167,49 @@ class VendorProfile extends Component {
     return this.state.claimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
-        <div key={item.food_id} id="display-claimed-items">
-          <h4 id="item-name">{item.name}</h4>
-          <p>{item.quantity} pounds</p>
-          <p>Feeds: {item.quantity * 3} people</p>
-          <p>
-            {" "}
-            Lastest Pick Up Time: {""}
-            {converted_time === 0 || converted_time < 13
-              ? converted_time + "am"
-              : converted_time - 12 + "pm"}
-          </p>
+        <div key={item.food_id} id="display-unclaimed-items">
+          <div id="item-name-container">
+            <h4 id="item-name">Food Item:</h4>
+            <p>{item.name}</p>
+          </div>
+          <div>
+            <h4 id="weight">Weight: </h4>
+            <p>{item.quantity * 3} pounds</p>
+          </div>
+          <div>
+            <h4 id="feeds">Feeds: </h4>
+            <p>{item.quantity} people</p>
+          </div>
+          <div>
+            <h4 id="pick-up">Pick Up Time: </h4>
+            <p>
+              {converted_time === 0 || converted_time < 13
+                ? converted_time + "am"
+                : converted_time - 12 + "pm"}
+            </p>
+          </div>
           <div>
             {item.is_claimed ? (
-              <button
-                onClick={e => this.claimItem(e, item.is_claimed)}
-                id="claimed-button">
-                Claimed
-              </button>
+              <div id="status-unavailable">Unavailable</div>
             ) : (
-              <button
-                onClick={e => this.claimItem(e, item.is_claimed)}
-                id="unclaimed-button">
-                Unclaimed
-              </button>
+              <div id="status-available">Available</div>
             )}
           </div>
           <Button
             onClick={this.deleteItem}
+            type="submit"
             variant="contained"
             color="secondary"
             id={item.food_id}>
-            <DeleteIcon onClick={this.deleteItem} id={item.food_id} />
+            <DeleteIcon id={item.food_id} />
           </Button>
         </div>
       );
     });
   };
 
-  // To claim on vendor page
-  claimItem = (e, isClaimed) => {
-    if (this.props.currentUser.type) {
-      axios
-        .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
-          client_id: this.props.currentUser.id,
-          is_claimed: !isClaimed
-        })
-        .then(() => {
-          this.vendorDonations();
-        });
-    }
-  };
-
   // Delete items
   deleteItem = e => {
-    console.log(e);
     axios
       .delete(`/api/fooditems/${e.currentTarget.id}`)
       .then(() => {
@@ -236,36 +227,40 @@ class VendorProfile extends Component {
       vendorUser = this.props.match.params.vendor;
     }
     return (
-      <div className="vendor-profile-container">
-        <h1 className="vendor-name">
-          {" "}
-          {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
-        </h1>
-        <br />
-        <h3 id="vendor-people-fed">
-          Number of people fed:
-          <h1 id="vendor-people-fed-count">{this.state.fedCount}</h1>
-        </h3>
-        <br />
-        <br />
-        {this.state.toAddItem ? (
-          <AddItemForm
-            handleChange={this.handleChange}
-            submitItem={this.submitItem}
-          />
-        ) : (
-          this.addItemButton()
-        )}
-        <br />
-        <div>
-          <h1 id="donation-list">Donation List</h1>
-          <div id="display-unclaimed-items-container">
-            {this.displayUnclaimedItems()}
-          </div>
+      <div id="vendor-container">
+        <div id="vendor-profile-container">
+          <h1 id="vendor-name">
+            {" "}
+            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+          </h1>
+          <br />
+          <h3 id="vendor-people-fed">
+            <div id="vendor-people-fed-count">
+              <CountUp duration={5} delay={3} end={this.state.fedCount} />
+            </div>
+            pounds of food donated
+          </h3>
+          {this.state.toAddItem ? (
+            <AddItemForm
+              handleChange={this.handleChange}
+              submitItem={this.submitItem}
+            />
+          ) : (
+            this.addItemButton()
+          )}
+          <br />
         </div>
-        <div>
-          <h1 id="claimed-items-list">Claimed Items</h1>
-          {this.displayClaimedItems()}
+        <div id="vendor-info-container">
+          <div>
+            <h1 id="donation-list">Donation List</h1>
+            <div id="display-unclaimed-items-container">
+              {this.displayUnclaimedItems()}
+            </div>
+          </div>
+          <div>
+            <h1 id="claimed-items-list">Claimed Items</h1>
+            {this.displayClaimedItems()}
+          </div>
         </div>
       </div>
     );

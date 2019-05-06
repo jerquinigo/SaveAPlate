@@ -58,7 +58,7 @@ const AddItemForm = props => {
           variant="contained"
           color="primary"
           id="add-food-item-button">
-          Add Item
+          <div id="add-item">Add Item</div>
         </Button>
       </form>
     </>
