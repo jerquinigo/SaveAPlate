@@ -46,7 +46,7 @@ export default function Landing() {
             <img
               src={require("./images/client.png")}
               alt="icon for vendor"
-              id="vendor-logo"
+              id="volunteer-logo"
             />
             <h3 id="user-type">Volunteers</h3>
             <div>
