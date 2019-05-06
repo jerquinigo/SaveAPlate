@@ -58,17 +58,16 @@ class DisplayClientFavorites extends Component {
           <span>{fav.address_field}</span>
           <span>{fav.telephone_number}</span>
           <Button
-              id={fav.id}
-              onClick={e => {
-                this.deleteFav(e, fav.favoriteId);
-              }}
+            id={fav.id}
+            onClick={e => {
+              this.deleteFav(e, fav.favoriteId);
+            }}
             variant="contained"
             color="secondary"
             className="unclaimed-button"
           >
             Unfavorite
           </Button>
-
         </div>
       );
     });
