@@ -34,7 +34,7 @@ class VendorProfile extends Component {
   getFeedingCount = () => {
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
-        fedCount: +count.data.fedCount[0].sum
+        fedCount: +count.data.fedCount[0].sum * 3
       });
     });
   };
@@ -233,6 +233,7 @@ class VendorProfile extends Component {
             {" "}
             {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
           </h1>
+          <div id="profile-picture">PROFILE PICTURE PLACEHOLDER</div>
           <br />
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">

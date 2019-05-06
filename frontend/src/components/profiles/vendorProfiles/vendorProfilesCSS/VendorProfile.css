@@ -10,6 +10,13 @@
   width: 65vw;
 }
 
+#profile-picture {
+  margin: 0 auto;
+  border: 5px solid black;
+  width: 200px;
+  height: 200px;
+}
+
 #vendor-name {
   font-size: 40px;
   font-family: "Montserrat", sans-serif;
@@ -115,9 +122,4 @@
 
 #status-available {
   color: green;
-}
-
-#delete-button {
-  border-radius: 10px;
-  height: 40px;
 }
