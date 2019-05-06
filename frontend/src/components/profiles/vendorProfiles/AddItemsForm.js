@@ -26,8 +26,7 @@ const AddItemForm = props => {
         <select
           onChange={props.handleChange}
           name="set_time"
-          id="select-pickup-time"
-        >
+          id="select-pickup-time">
           <option value="null"> Select pick-up time </option>
           <option value="12:00"> 12:00 pm </option>
           <option value="13:00"> 1:00 pm </option>
@@ -58,9 +57,8 @@ const AddItemForm = props => {
           type="submit"
           variant="contained"
           color="primary"
-          id="add-food-item-button"
-        >
-          Add Item
+          id="add-food-item-button">
+          <div id="add-item">Add Item</div>
         </Button>
       </form>
     </>
