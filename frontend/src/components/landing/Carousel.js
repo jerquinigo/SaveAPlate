@@ -17,13 +17,6 @@ export default () => (
     centerSlidePercentage={65}
     emulateTouch
   >
-    {/*<div>
-      <img
-        src={require("./images/sap-logo-final.png")}
-        alt="Save a Plate logo"
-        className="carousel-image"
-      />
-    </div>*/}
     <div>
       <img
         src={require("./images/carousel-1-cropped-v1.jpg")}

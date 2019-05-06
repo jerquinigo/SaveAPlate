@@ -76,32 +76,53 @@
   height: 100%;
   background-color: #f3e4d8;
   font-family: "Merriweather", serif;
-  padding-bottom: 40px;
-  padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 #info-container-header {
-  margin: 0 0 0 0;
   font-size: 3.75em;
   font-weight: bold;
-  padding-top: 2%;
   color: #d35348;
   font-family: "Montserrat", sans-serif;
-  position: absolute;
-  margin-left: 38%;
-  margin-top: 5%;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 1;
 }
 
-#info-vendor-client {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+#info-vendor-volunteer-client {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
+  grid-template-rows: auto;
 }
 
-#info-vendor,
+#info-vendor-volunteer-client > img {
+  with: 200px;
+  height: 200px;
+}
+
+#info-vendor {
+  width: 100%;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+
+#info-volunteer {
+  width: 100%;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 1;
+}
+
 #info-client {
   width: 100%;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 4;
+  grid-column-end: span 1;
 }
 
 #vendor-logo,
@@ -111,12 +132,12 @@
 }
 
 #user-type {
-  font-size: 26px;
+  font-size: 1.75em;
   font-family: "Montserrat", sans-serif;
 }
 
 #get-involved-info {
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
   font-family: "Merriweather", serif;
 }

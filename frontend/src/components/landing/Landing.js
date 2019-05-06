@@ -25,8 +25,8 @@ export default function Landing() {
         </p>
       </div>
       <div id="info-container">
-        <h1 id="info-container-header">Get Involved</h1>
-        <div id="info-vendor-client">
+        <div id="info-vendor-volunteer-client">
+          <h1 id="info-container-header">Get Involved</h1>
           <div id="info-vendor">
             <img
               src={require("./images/vendor.png")}
@@ -42,9 +42,24 @@ export default function Landing() {
               </div>
             </div>
           </div>
-          <div id="info-client">
+          <div id="info-volunteer">
             <img
               src={require("./images/client.png")}
+              alt="icon for vendor"
+              id="vendor-logo"
+            />
+            <h3 id="user-type">Volunteers</h3>
+            <div>
+              <div id="get-involved-info">
+                When you volunteer your time with Save A Plate, you’re playing a
+                key role in ending extreme poverty. Your dedication as a
+                volunteer will create life-changing experiences for your city.
+              </div>
+            </div>
+          </div>
+          <div id="info-client">
+            <img
+              src={require("./images/npo-solid-black.png")}
               alt="icon for client"
               id="client-logo"
             />
@@ -67,7 +82,8 @@ export default function Landing() {
               color="primary"
               disableunderline="true"
               type="submit"
-              id="signup-button">
+              id="signup-button"
+            >
               Get Started
             </Button>
           </NavLink>
@@ -79,7 +95,8 @@ export default function Landing() {
               color="secondary"
               disableunderline="true"
               type="submit"
-              id="login-button">
+              id="login-button"
+            >
               Log In
             </Button>
           </NavLink>
