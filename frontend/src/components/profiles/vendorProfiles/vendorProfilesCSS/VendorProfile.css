@@ -1,9 +1,11 @@
 .vendor-profile-container {
-  background-color: #bcc9d2;
+  /* background-color: #bcc9d2; */
+  margin-bottom: 5%;
 }
 
 .vendor-name {
   font-size: 40px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .vendor-name,
@@ -17,11 +19,19 @@
   background-color: whitesmoke;
 }
 
+#vendor-people-fed {
+  font-family: "Montserrat", sans-serif;
+}
+
+#vendor-people-fed-count {
+  color: blue;
+}
+
 .add-item-text {
   color: #272e48;
   font-size: 24px;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .add-item-button:hover {
@@ -32,7 +42,7 @@
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   margin: 0 auto;
   margin-top: 2%;
@@ -48,16 +58,22 @@
   background-color: #de6a5a;
 }
 
+#donation-list,
+#claimed-items-list {
+  margin-bottom: 2%;
+  font-family: "Montserrat", sans-serif;
+}
+
 #display-unclaimed-items,
 #display-claimed-items {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
+  border: 1px solid black;
+  /* border-radius: 5px; */
   margin: 0 auto;
-  margin-top: 2%;
+  /* margin-top: 2%; */
   width: 75%;
   height: 80px;
   background-color: #ebf4f4;

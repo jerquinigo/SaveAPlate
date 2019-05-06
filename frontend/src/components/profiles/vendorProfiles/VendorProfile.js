@@ -231,12 +231,10 @@ class VendorProfile extends Component {
 
   // Favorite vendor
   render() {
-    console.log(this.state.fedCount, "FEEEDING");
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
     }
-    console.log(this.state);
     return (
       <div className="vendor-profile-container">
         <h1 className="vendor-name">
@@ -244,10 +242,10 @@ class VendorProfile extends Component {
           {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
         </h1>
         <br />
-        <div id="vendor-people-fed">
+        <h3 id="vendor-people-fed">
           Number of people fed:
-          <p>{this.state.fedCount}</p>
-        </div>
+          <h1 id="vendor-people-fed-count">{this.state.fedCount}</h1>
+        </h3>
         <br />
         <br />
         {this.state.toAddItem ? (
