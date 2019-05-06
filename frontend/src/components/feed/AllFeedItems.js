@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AllFeedItemsDisplayed from "./AllFeedItemsDisplayed.js";
 import "./feedCSS/AllFeedItems.css";
 import Button from "@material-ui/core/Button";
 
@@ -32,42 +33,12 @@ class AllFeedItems extends Component {
               </span>
             </div>
 
-            <div className="vendorItemsWrapper">
-              {foodDataObj[vendorName].map((food, b) => {
-                return (
-                  <div className="vendorItemsContainer" key={b}>
-                    <div className="display-claimed-items">
-                      <span className="display-item-name">{food.name}</span>
-                      <span> Feeds: {food.quantity} people</span>
-                      <span>({Number(food.quantity) * 3} pounds)</span>
-                      <span>
-                        {converted_time === 0 || converted_time < 13
-                          ? converted_time + "am"
-                          : converted_time - 12 + "pm"}
-                      </span>
-
-                      <span>
-                        <Button
-                          id={food.id}
-                          onClick={e =>
-                            this.props.claimItem(e, food.is_claimed)
-                          }
-                          variant="contained"
-                          color="secondary"
-                          className={
-                            food.is_claimed
-                              ? "claimed-button"
-                              : "unclaimed-button"
-                          }
-                        >
-                          {food.is_claimed ? "UNCLAIM" : "AVAILABLE"}
-                        </Button>
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <AllFeedItemsDisplayed
+              foodDataObj={foodDataObj}
+              claimItem={this.props.claimItem}
+              converted_time={converted_time}
+              vendorName={vendorName}
+            />
           </div>
         );
       });
@@ -80,3 +51,40 @@ class AllFeedItems extends Component {
 }
 
 export default AllFeedItems;
+
+// <div className="vendorItemsWrapper">
+//   {foodDataObj[vendorName].map((food, b) => {
+//     return (
+//       <div className="vendorItemsContainer" key={b}>
+//         <div className="display-claimed-items">
+//           <span className="display-item-name">{food.name}</span>
+//           <span> Feeds: {food.quantity} people</span>
+//           <span>({Number(food.quantity) * 3} pounds)</span>
+//           <span>
+//             {converted_time === 0 || converted_time < 13
+//               ? converted_time + "am"
+//               : converted_time - 12 + "pm"}
+//           </span>
+//
+//           <span>
+//             <Button
+//               id={food.id}
+//               onClick={e =>
+//                 this.props.claimItem(e, food.is_claimed)
+//               }
+//               variant="contained"
+//               color="secondary"
+//               className={
+//                 food.is_claimed
+//                   ? "claimed-button"
+//                   : "unclaimed-button"
+//               }
+//             >
+//               {food.is_claimed ? "UNCLAIM" : "AVAILABLE"}
+//             </Button>
+//           </span>
+//         </div>
+//       </div>
+//     );
+//   })}
+// </div>
