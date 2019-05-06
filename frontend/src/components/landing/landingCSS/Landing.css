@@ -126,7 +126,8 @@
 }
 
 #vendor-logo,
-#client-logo {
+#client-logo,
+#volunteer-logo {
   width: 25%;
   height: 25%;
 }
@@ -134,6 +135,7 @@
 #user-type {
   font-size: 1.75em;
   font-family: "Montserrat", sans-serif;
+  margin: 1.15em 0;
 }
 
 #get-involved-info {
