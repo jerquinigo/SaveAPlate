@@ -100,6 +100,7 @@ export default class Feed extends Component {
             claimItem={this.claimItem}
             userSearchResults={this.state.userSearchResults}
             currentUser={this.props.currentUser.type}
+            getAllFoodItems={this.getAllFoodItems}
           />
         ) : (
           <AllFeedItems
