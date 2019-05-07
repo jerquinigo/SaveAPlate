@@ -7,7 +7,8 @@ const {
   getAllClients,
   updateUser,
   deleteUser,
-  getSingleUser
+  getSingleUser,
+  createUser
 } = require("../db/queries/usersQueries.js");
 
 router.get("/", getAllUsers);
