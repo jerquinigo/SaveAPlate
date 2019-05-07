@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import green from "@material-ui/core/colors/green";
 
 class SearchBarResults extends Component {
   // will need to apply the search object filter here just like all the others to get it to work to group
@@ -48,7 +51,26 @@ class SearchBarResults extends Component {
                     </span>
 
                     <span>
-                      {food.is_claimed ? (
+                      <MuiThemeProvider theme={theme}>
+                        <Button
+                          id={food.id}
+                          variant="contained"
+                          color="secondary"
+                          onClick={e => {
+                            this.props.claimItem(e, food.is_claimed);
+                            this.props.receivedOpenSnackbar();
+                          }}
+                          className={
+                            food.is_claimed
+                              ? "claimed-button"
+                              : "unclaimed-button"
+                          }
+                        >
+                          {food.is_claimed ? "UNCLAIM" : "CLAIM"}
+                        </Button>
+                      </MuiThemeProvider>
+
+                      {/*{food.is_claimed ? (
                         <button
                           className={food.is_claimed ? "unclaimed" : "claimed"}
                           onClick={e =>
@@ -68,7 +90,7 @@ class SearchBarResults extends Component {
                         >
                           CLAIM
                         </button>
-                      )}
+                      )}*/}
                     </span>
                   </div>
                 );
@@ -86,109 +108,16 @@ class SearchBarResults extends Component {
   }
 }
 
-// return <p>test</p>;
-// <ul key={i} id="display-claimed-items">
-//   <li>
-//     <Link to={"/clientview/" + results.vendor_name}>
-//       {" "}
-//       <strong>Name: </strong>
-//       {results.vendor_name}
-//     </Link>
-//   </li>
-//
-//   <li>
-//     <strong>Address: </strong>
-//     {results.address_field}
-//   </li>
-//   <li>
-//     <strong>Telephone Number: </strong>
-//     {results.telephone_number}
-//   </li>
-//   <li>
-//     <strong>Food Item: </strong>
-//     {results.name}
-//   </li>
-//   <li>
-//     <strong>Feeds: </strong>
-//     {results.quantity} people
-//   </li>
-//   <li>({Number(results.quantity) * 3} pounds)</li>
-//   <li>
-//     <strong>Pick-up Time: </strong>{" "}
-//     {converted_time === 0 || converted_time < 13
-//       ? converted_time + "am"
-//       : converted_time - 12 + "pm"}
-//   </li>
-//   <li>
-//     {results.is_claimed ? (
-//       <button
-//         className={results.is_claimed ? "claimed" : "unclaimed"}
-//         onClick={e => this.props.claimItem(e, results.is_claimed)}
-//         id={results.id}
-//       >
-//         {" "}
-//         UNCLAIM
-//       </button>
-//     ) : (
-//       <button
-//         onClick={e => this.props.claimItem(e, results.is_claimed)}
-//         id={results.id}
-//       >
-//         CLAIM
-//       </button>
-//     )}
-//   </li>
-// </ul>
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: {
+      main: "#5cbc5c"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default SearchBarResults;
-
-// let vendorName = vendorNameArr.map((vendorName, i) => {
-//   return(
-//     <div key="i">
-//
-//   )
-//   <div className="vendorItemsWrapper">
-//     {foodDataObj[vendorName].map((food, b) => {
-//       return (
-//         <div className="vendorItemsContainer" key={b}>
-//           <span>{food.address_field}</span>
-//           <span>{food.telephone_number}</span>
-//           <span>{food.name}</span>
-//           <span> Feeds: {food.quantity} people</span>
-//           <span>({Number(food.quantity) * 3} pounds)</span>
-//           <span>
-//             {converted_time === 0 || converted_time < 13
-//               ? converted_time + "am"
-//               : converted_time - 12 + "pm"}
-//           </span>
-//
-//           <span>
-//             {food.is_claimed ? (
-//               <button
-//                 className={food.is_claimed ? "claimed" : "unclaimed"}
-//                 onClick={e =>
-//                   this.props.claimItem(e, food.is_claimed)
-//                 }
-//                 id={food.id}
-//               >
-//                 UNCLAIM
-//               </button>
-//             ) : (
-//               <button
-//                 onClick={e =>
-//                   this.props.claimItem(e, food.is_claimed)
-//                 }
-//                 id={food.id}
-//               >
-//                 CLAIM
-//               </button>
-//             )}
-//           </span>
-//         </div>
-//       );
-//     })}
-//   </div>
-//   </div>
-//
-// });
-// }

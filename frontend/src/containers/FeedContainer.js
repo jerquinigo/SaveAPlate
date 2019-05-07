@@ -1,5 +1,6 @@
 import Feed from "../components/feed/Feed.js";
 import { connect } from "react-redux";
+import { receivedOpenSnackbar } from "../actions/MainSnackbar.js";
 
 const mapStateToProps = state => {
   return {
@@ -7,8 +8,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    receivedOpenSnackbar: () => dispatch(receivedOpenSnackbar())
+  };
+};
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Feed);

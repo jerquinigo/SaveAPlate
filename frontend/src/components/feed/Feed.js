@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar.js";
 import AllFeedItems from "./AllFeedItems.js";
 import SearchBarResults from "./SearchBarResults.js";
 import "./feedCSS/Feed.css";
+import MainSnackbarContainer from "../../containers/MainSnackbarContainer.js";
 
 export default class Feed extends Component {
   state = {
@@ -31,6 +32,7 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
+    debugger;
     if (isClaimed === false) {
       debugger;
       axios
@@ -87,12 +89,14 @@ export default class Feed extends Component {
     console.log(this.state.userSearchResults, "in the length");
     return (
       <div className="feedWrapper">
+        <MainSnackbarContainer />
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
           handleSubmit={this.handleSubmit}
           textInput={this.state.textInput}
           handleChange={this.handleChange}
+          receivedOpenSnackbar={this.props.receivedOpenSnackbar}
         />
 
         {this.state.userSearchResults.length > 0 ? (
@@ -101,12 +105,14 @@ export default class Feed extends Component {
             userSearchResults={this.state.userSearchResults}
             currentUser={this.props.currentUser.type}
             getAllFoodItems={this.getAllFoodItems}
+            receivedOpenSnackbar={this.props.receivedOpenSnackbar}
           />
         ) : (
           <AllFeedItems
             claimItem={this.claimItem}
             allFoodItems={this.state.allFoodItems}
             userSearchResults={this.state.userSearchResults}
+            receivedOpenSnackbar={this.props.receivedOpenSnackbar}
           />
         )}
       </div>

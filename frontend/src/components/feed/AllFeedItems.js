@@ -35,6 +35,7 @@ class AllFeedItems extends Component {
               claimItem={this.props.claimItem}
               converted_time={converted_time}
               vendorName={vendorName}
+              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
             />
           </div>
         );

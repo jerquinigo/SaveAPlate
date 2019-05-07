@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import green from "@material-ui/core/colors/green";
 
 class AllFeedItemsDisplayed extends Component {
   render() {
@@ -19,20 +21,22 @@ class AllFeedItemsDisplayed extends Component {
                     ? this.props.converted_time + "am"
                     : this.props.converted_time - 12 + "pm"}
                 </span>
-
-                <span>
+                <MuiThemeProvider theme={theme}>
                   <Button
                     id={food.id}
-                    onClick={e => this.props.claimItem(e, food.is_claimed)}
                     variant="contained"
                     color="secondary"
+                    onClick={e => {
+                      this.props.claimItem(e, food.is_claimed);
+                      this.props.receivedOpenSnackbar();
+                    }}
                     className={
                       food.is_claimed ? "claimed-button" : "unclaimed-button"
                     }
                   >
-                    {food.is_claimed ? "UNCLAIM" : "AVAILABLE"}
+                    {food.is_claimed ? "UNCLAIM" : "CLAIM"}
                   </Button>
-                </span>
+                </MuiThemeProvider>
               </div>
             </div>
           );
@@ -41,5 +45,17 @@ class AllFeedItemsDisplayed extends Component {
     );
   }
 }
+
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: {
+      main: "#5cbc5c"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default AllFeedItemsDisplayed;
