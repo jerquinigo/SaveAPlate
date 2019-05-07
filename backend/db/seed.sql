@@ -236,6 +236,7 @@ VALUES
         123456789,
         null,
         'https://www.citynmb.com/ImageRepository/Document?documentID=855'
+
     ),
     (
         'vendortester',

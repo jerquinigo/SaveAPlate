@@ -13,6 +13,7 @@ import FoodItemsContainer from "./containers/FoodItemsContainer.js";
 import FeedContainer from "./containers/FeedContainer.js";
 import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
 import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
+import PrivateRoute from "./utils/AuthRouting.js";
 
 class App extends Component {
   componentDidMount() {
@@ -36,18 +37,18 @@ class App extends Component {
             <Route exact path="/donate" component={Donate} />
             <Route path="/user/signup" component={SignUpContainer} />
             <Route path="/user/login" component={LoginContainer} />
-            <Route
+            <PrivateRoute
               exact
               path="/client/:client"
               component={ClientProfileContainer}
             />
-            <Route
+            <PrivateRoute
               exact
               path="/vendor/:vendor"
               component={FoodItemsContainer}
             />
-            <Route exact path="/feed" component={FeedContainer} />
-            <Route
+            <PrivateRoute exact path="/feed" component={FeedContainer} />
+            <PrivateRoute
               exact
               path="/clientview/:vendor"
               component={VendorProfileThruClientContainer}

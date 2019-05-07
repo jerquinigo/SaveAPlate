@@ -3,6 +3,7 @@ import ClientProfileEditForm from "./ClientProfileEditForm.js";
 import DisplayClientFavorites from "./DisplayClientFavorites.js";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
+import axios from "axios";
 import "./clientProfileCSS/ClientProfile.css";
 // import { geoFindMe } from "../../googleMapLoc/Geolocation.js";
 // import { DisplayMap } from "../../googleMapLoc/DisplayMap.js";
@@ -14,12 +15,14 @@ class ClientProfile extends Component {
       latitude: "",
       longitude: "",
       gotdata: false,
-      zoom: 18
+      zoom: 18,
+      profilePic: ""
     };
   }
   componentDidMount() {
     this.displayClientProfile();
     this.reloadUser();
+    this.getProfilePic();
     // geoFindMe().then(position => {
     //   // ;
     //   this.setState({
@@ -30,10 +33,25 @@ class ClientProfile extends Component {
     // });
   }
 
+  getProfilePic = () => {
+    axios.get(`/api/users/${this.props.currentUser.id}`).then(pic => {
+      this.setState({
+        profilePic: pic.data.data[0].profile_picture
+      });
+    });
+  };
+
   displayClientProfile = () => {
     return (
       <div className="displayInfo">
         <p className="client-name">{this.props.currentUser.name}</p>
+        <div>
+          <img
+            id="profile-picture"
+            alt="profile pic"
+            src={this.state.profilePic}
+          />
+        </div>
         <p>{this.props.currentUser.address_field}</p>
       </div>
     );
