@@ -61,6 +61,7 @@ class DisplayClientFavorites extends Component {
             id={fav.id}
             onClick={e => {
               this.deleteFav(e, fav.favoriteId);
+              this.props.receivedOpenSnackbar();
             }}
             variant="contained"
             color="secondary"

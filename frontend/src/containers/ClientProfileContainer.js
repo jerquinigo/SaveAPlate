@@ -1,6 +1,7 @@
 import ClientProfile from "../components/profiles/clientProfiles/ClientProfile";
 import { connect } from "react-redux";
 import { checkAuthenticateStatus } from "../actions/AuthActions.js";
+import { receivedOpenSnackbar } from "../actions/MainSnackbar.js";
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    checkAuthenticateStatus: () => dispatch(checkAuthenticateStatus())
+    checkAuthenticateStatus: () => dispatch(checkAuthenticateStatus()),
+    receivedOpenSnackbar: () => dispatch(receivedOpenSnackbar())
   };
 };
 

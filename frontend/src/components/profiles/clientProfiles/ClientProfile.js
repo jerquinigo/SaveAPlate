@@ -69,9 +69,14 @@ class ClientProfile extends Component {
         {this.displayClientProfile()}
         <ClientProfileEditForm id={this.props.currentUser.id} />
         <MainSnackbarContainer />
-        <ClientClaimedItemsContainer />
+        <ClientClaimedItemsContainer
+          receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+        />
 
-        <DisplayClientFavorites currentUserName={this.props.currentUser.name} />
+        <DisplayClientFavorites
+          currentUserName={this.props.currentUser.name}
+          receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+        />
         <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
           {/* <DisplayMap
             latitude={this.state.latitude}

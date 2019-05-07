@@ -4,10 +4,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 
 class MainSnackbar extends React.Component {
   render() {
-    debugger;
     return (
       <div>
-        <Button onClick={this.props.receivedOpenSnackbar}>SNACK</Button>
         <Snackbar
           anchorOrigin={{
             vertical: "bottom",
