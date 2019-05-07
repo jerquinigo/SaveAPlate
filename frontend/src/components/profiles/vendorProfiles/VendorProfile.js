@@ -7,7 +7,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
-
+import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import "./vendorProfilesCSS/VendorProfile.css";
 
 class VendorProfile extends Component {
@@ -58,7 +58,8 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}>
+          onClick={this.toAddItem}
+        >
           <AddIcon />
         </Fab>
       </>
@@ -161,11 +162,15 @@ class VendorProfile extends Component {
             )}
           </div>
           <Button
-            onClick={this.deleteItem}
+            onClick={e => {
+              this.deleteItem(e);
+              this.props.receivedOpenSnackbar();
+            }}
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}>
+            id={item.food_id}
+          >
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -206,11 +211,15 @@ class VendorProfile extends Component {
             )}
           </div>
           <Button
-            onClick={this.deleteItem}
+            onClick={e => {
+              this.deleteItem(e);
+              this.props.receivedOpenSnackbar();
+            }}
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}>
+            id={item.food_id}
+          >
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -232,13 +241,14 @@ class VendorProfile extends Component {
 
   // Favorite vendor
   render() {
-    console.log(this.state);
+    console.log("PROPS!", this.props);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
     }
     return (
       <div id="vendor-container">
+        <MainSnackbarContainer />
         <div id="vendor-profile-container">
           <h1 id="vendor-name">
             {" "}
@@ -262,6 +272,7 @@ class VendorProfile extends Component {
             <AddItemForm
               handleChange={this.handleChange}
               submitItem={this.submitItem}
+              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
             />
           ) : (
             this.addItemButton()
