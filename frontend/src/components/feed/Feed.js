@@ -32,9 +32,10 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
+    debugger;
     if (isClaimed === false) {
       axios
-        .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
+        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
           client_id: this.props.currentUser.id,
           is_claimed: true
         })
@@ -43,7 +44,7 @@ export default class Feed extends Component {
         });
     } else {
       axios
-        .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
+        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
           client_id: null,
           is_claimed: false
         })
