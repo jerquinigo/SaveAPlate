@@ -3,14 +3,14 @@ import "./feedCSS/Feed.css";
 import axios from "axios";
 import SearchBar from "./SearchBar.js";
 import AllFeedItems from "./AllFeedItems.js";
-import SearchBarResults from "./SearchBarResults.js";
+import { SearchBarResults } from "./SearchBarResults.js";
 import "./feedCSS/Feed.css";
 
 export default class Feed extends Component {
   state = {
     allFoodItems: [],
-    userSearchResults: [],
-    textInput: ""
+    textInput: "",
+    searchText: ""
   };
 
   componentDidMount() {
@@ -32,7 +32,6 @@ export default class Feed extends Component {
 
   claimItem = (e, isClaimed) => {
     if (isClaimed === false) {
-      debugger;
       axios
         .patch(`/api/fooditems/claimstatus/${e.target.id}`, {
           client_id: this.props.currentUser.id,
@@ -55,19 +54,38 @@ export default class Feed extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    let searchResult = this.state.allFoodItems.filter(item => {
-      let vendor = item.vendor_name.toLowerCase();
-      let food = item.name.toLowerCase();
-      let text = this.state.textInput.toLowerCase();
-      let claimed = item.is_claimed;
-
-      return (vendor.includes(text) && claimed !== true) || food.includes(text);
-    });
-
+    // let searchResult = this.state.allFoodItems.filter(item => {
+    //   let vendor = item.vendor_name.toLowerCase();
+    //   let food = item.name.toLowerCase();
+    //   let text = this.state.textInput.toLowerCase();
+    //   let claimed = item.is_claimed;
+    //
+    //   return (vendor.includes(text) && claimed !== true) || food.includes(text);
+    // });
+    // const searchResults = this.search(
+    //   this.state.allFoodItems,
+    //   this.state.textInput.toLowerCase()
+    // );
     await this.setState({
-      userSearchResults: searchResult,
+      searchText: this.state.textInput.toLowerCase(),
       textInput: ""
     });
+  };
+  search = (allFoodItems, searchText) => {
+    //if search text is blank, return empty arr for length
+    if (this.state.searchText === "") return [];
+
+    let searchResult = allFoodItems.filter(item => {
+      let vendor = item.vendor_name.toLowerCase();
+      let food = item.name.toLowerCase();
+      let claimed = item.is_claimed;
+
+      return (
+        (vendor.includes(searchText) && claimed !== true) ||
+        food.includes(searchText)
+      );
+    });
+    return searchResult;
   };
 
   handleChange = e => {
@@ -84,7 +102,10 @@ export default class Feed extends Component {
   };
 
   render() {
-    console.log(this.state.userSearchResults, "in the length");
+    const filteredFoodItems = this.search(
+      this.state.allFoodItems,
+      this.state.searchText
+    );
     return (
       <div className="feedWrapper">
         <SearchBar
@@ -95,12 +116,13 @@ export default class Feed extends Component {
           handleChange={this.handleChange}
         />
 
-        {this.state.userSearchResults.length > 0 ? (
+        {filteredFoodItems.length > 0 ? (
           <SearchBarResults
             claimItem={this.claimItem}
-            userSearchResults={this.state.userSearchResults}
+            userSearchResults={filteredFoodItems}
             currentUser={this.props.currentUser.type}
             getAllFoodItems={this.getAllFoodItems}
+            foodItems={this.state.getAllFoodItems}
           />
         ) : (
           <AllFeedItems

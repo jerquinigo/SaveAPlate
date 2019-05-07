@@ -5,34 +5,17 @@ class AllFeedItemsDisplayVendorName extends Component {
   getAllAddress = (foodDataObj, vendorName) => {
     let newArr = [];
 
-    if (foodDataObj[vendorName].length > 1) {
-      foodDataObj[vendorName].map((name, i) => {
-        newArr.push(foodDataObj[vendorName][0].address_field);
-        newArr.slice(0, 0);
-        console.log(newArr, "thew nwefeoi");
-      });
-    } else {
-      foodDataObj[vendorName].map((name, i) => {
-        newArr.push(name.address_field);
-      });
-    }
+    foodDataObj[vendorName].length > 1
+      ? foodDataObj[vendorName].map((name, i) => {
+          newArr.push(foodDataObj[vendorName][0].address_field);
+        })
+      : foodDataObj[vendorName].map((name, i) => {
+          newArr.push(name.address_field);
+        });
 
-    // foodDataObj[vendorName].map((name, i) => {
-    // if (name.address_field.length === name.address_field.length) {
-    // debugger;
-
-    // if (foodDataObj[vendorName].length > 1) {
-    //   newArr.push(foodDataObj[vendorName].slice(0, 1));
-    // } else {
-    //   newArr.push(name.address_field);
-    // }
-    // });
-    if (newArr.length > 1) {
-      return <p>{newArr[0]}</p>;
-    } else {
-      return <p>{newArr}</p>;
-    }
+    return newArr.length > 1 ? <p>{newArr[0]}</p> : <p>{newArr}</p>;
   };
+  // }
 
   render() {
     return (
