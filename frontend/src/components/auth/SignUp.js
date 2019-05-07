@@ -21,6 +21,8 @@ class SignUp extends Component {
     body: "",
     telephone_number: "",
     client_certificate: "",
+    ein: "",
+    profile_pic: "",
     isSubmitted: false
   };
 
@@ -32,6 +34,7 @@ class SignUp extends Component {
 
   registerUser = async e => {
     e.preventDefault();
+
     const {
       email,
       password_digest,
@@ -40,32 +43,60 @@ class SignUp extends Component {
       address_field,
       body,
       telephone_number,
-      client_certificate
+      client_certificate,
+      ein,
+      profile_pic
     } = this.state;
 
-    await axios.post("/api/users/new", {
-      email,
-      password_digest,
-      type,
-      name,
-      address_field,
-      body,
-      telephone_number,
-      client_certificate
-    });
+    Number(this.state.type) === 1
+      ? await axios.post("/api/users/new", {
+          email,
+          password_digest,
+          type,
+          name,
+          address_field,
+          body,
+          telephone_number,
+          ein,
+          profile_pic
+        })
+      : await axios.post("/api/users/new", {
+          email,
+          password_digest,
+          type,
+          name,
+          address_field,
+          body,
+          telephone_number,
+          client_certificate,
+          profile_pic
+        });
 
     Auth.authenticateUser(email);
 
-    await axios.post("/api/sessions/login", {
-      email,
-      password_digest,
-      type,
-      name,
-      address_field,
-      body,
-      telephone_number,
-      client_certificate
-    });
+    Number(this.state.type) === 1
+      ? await axios.post("/api/sessions/login", {
+          email,
+          password_digest,
+          type,
+          name,
+          address_field,
+          body,
+          telephone_number,
+          ein,
+          profile_pic
+        })
+      : await axios.post("/api/sessions/login", {
+          email,
+          password_digest,
+          type,
+          name,
+          address_field,
+          body,
+          telephone_number,
+          client_certificate,
+          profile_pic
+        });
 
     await this.props.checkAuthenticateStatus();
 
@@ -78,6 +109,8 @@ class SignUp extends Component {
       body: "",
       telephone_number: "",
       client_certificate: "",
+      ein: "",
+      profile_pic: "",
       isSubmitted: true
     });
   };
@@ -217,6 +250,25 @@ class SignUp extends Component {
               value={this.state.ein}
             />
           </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/profile-pic.png")}
+              alt="profile pic"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Profile Picture (URL)"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="profile_pic"
+              placeholder="Profile Picture"
+              value={this.state.profile_pic}
+            />
+          </div>
           <div className="signup-demo-buttons">
             <Button
               type="submit"
@@ -339,6 +391,25 @@ class SignUp extends Component {
               name="client_certificate"
               placeholder="Client Certificate"
               value={this.state.client_certificate}
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("./icons/profile-pic.png")}
+              alt="profile pic"
+              className="icons"
+            />
+            <TextField
+              required
+              className="input-field"
+              label="Profile Picture (URL)"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+              type="text"
+              name="profile_pic"
+              placeholder="Profile Picture"
+              value={this.state.profile_pic}
             />
           </div>
           <div className="signup-demo-buttons">

@@ -55,9 +55,10 @@ getAllClients = (req, res, next) => {
 };
 
 createUser = (req, res, next) => {
+  console.log(req.body);
   const hash = authHelpers.createHash(req.body.password_digest);
   db.one(
-    "INSERT INTO users(name,email,password_digest,type,address_field,body,telephone_number,ein,client_certificate) VALUES(${name},${email},${password_digest},${type},${address_field},${body},${telephone_number},${ein},${client_certificate}) RETURNING name",
+    "INSERT INTO users(name,email,password_digest,type,address_field,body,telephone_number,ein,client_certificate,profile_picture) VALUES(${name},${email},${password_digest},${type},${address_field},${body},${telephone_number},${ein},${client_certificate},${profile_picture})RETURNING name",
     {
       name: req.body.name,
       email: req.body.email,
@@ -67,7 +68,8 @@ createUser = (req, res, next) => {
       body: req.body.body || null,
       telephone_number: req.body.telephone_number || null,
       ein: req.body.ein || null,
-      client_certificate: req.body.client_certificate || null
+      client_certificate: req.body.client_certificate || null,
+      profile_picture: req.body.profile_pic || null
     }
   )
     .then(() => {
