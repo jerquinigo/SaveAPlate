@@ -20,7 +20,7 @@ const VendorSection = ({ vendor, userObj, children }) => {
   );
 };
 
-const VendorItem = ({ item, userObj, toReRender }) => {
+const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
   return (
     <div className="display-claimed-items">
@@ -38,7 +38,10 @@ const VendorItem = ({ item, userObj, toReRender }) => {
       </span>
       <Button
         id={item.id}
-        onClick={e => ClaimItem(e, item.is_claimed, userObj, toReRender)}
+        onClick={e => {
+          ClaimItem(e, item.is_claimed, userObj, toReRender);
+          receivedOpenSnackbar();
+        }}
         variant="contained"
         color="secondary"
         className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
@@ -130,6 +133,7 @@ class ClientClaimedItems extends Component {
                 item={item}
                 userObj={currUser}
                 toReRender={this.toReRender}
+                receivedOpenSnackbar={this.props.receivedOpenSnackbar}
               />
             );
           })}
