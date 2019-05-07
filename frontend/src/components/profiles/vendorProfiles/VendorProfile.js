@@ -21,14 +21,24 @@ class VendorProfile extends Component {
       hasAdded: false,
       claimedItems: [],
       unclaimedItems: [],
-      fedCount: 0
+      fedCount: 0,
+      profilePic: ""
     };
   }
 
   componentDidMount() {
     this.vendorDonations();
     this.getFeedingCount();
+    this.getProfilePic();
   }
+
+  getProfilePic = () => {
+    axios.get(`/api/users/${this.props.currentUser.id}`).then(pic => {
+      this.setState({
+        profilePic: pic.data.data[0].profile_picture
+      });
+    });
+  };
 
   //get feeding count
   getFeedingCount = () => {
@@ -222,6 +232,7 @@ class VendorProfile extends Component {
 
   // Favorite vendor
   render() {
+    console.log(this.state);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -233,7 +244,13 @@ class VendorProfile extends Component {
             {" "}
             {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
           </h1>
-          <div id="profile-picture">PROFILE PICTURE PLACEHOLDER</div>
+          <div>
+            <img
+              id="profile-picture"
+              alt="profile pic"
+              src={this.state.profilePic}
+            />
+          </div>
           <br />
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">

@@ -14,7 +14,8 @@ CREATE TABLE users
     body TEXT,
     telephone_number VARCHAR,
     ein INT,
-    client_certificate VARCHAR
+    client_certificate VARCHAR,
+    profile_picture TEXT
 );
 
 CREATE TABLE food_items
@@ -65,10 +66,11 @@ INSERT INTO users
     body,
     telephone_number,
     ein,
-    client_certificate
+    client_certificate,
+    profile_picture
     )
 VALUES
-        (
+    (
         'Kings Terrace',
         'kingterracee@email.com',
         '$2a$10$gZPgf40pi6UoVX5E4H55lut330s75L8IPGfcTIJ9E2HaeqxNpfkhK',
@@ -77,7 +79,8 @@ VALUES
         'The best catering hall',
         '(347) 492-6826',
         123456789,
-        null
+        null,
+        'https://vintagebanquetsandcatering.com/wp-content/uploads/2019/02/vintage-banquets-catering-fraser-mi-48026.jpg'
     ),
     (
         'Mauzone Catering',
@@ -88,7 +91,8 @@ VALUES
         'Shady catering hall',
         '(718) 274-1100',
         123456788,
-        null
+        null,
+        'http://www.mauzone.net/img/logo2.png'
     ),
 
     (
@@ -100,6 +104,7 @@ VALUES
         'cool place',
         '(718) 762-3198',
         123432135,
+        null,
         null
     ),
 
@@ -112,6 +117,7 @@ VALUES
         'good food',
         '(718) 849-6673',
         123456787,
+        null,
         null
     ),
 
@@ -124,6 +130,7 @@ VALUES
         'In operation since 1946, Court Square Diner stands out among the flashier restaurants and bars that have crowded into Long Island City in recent years. Not much has changed since brothers Steve and Nick Kanellos started running the joint in 1991 — the diner still serves oversized heroes and grilled cheese sandwiches 24/7.',
         '(718) 392-1222',
         123456786,
+        null,
         null
     ),
 
@@ -136,6 +143,7 @@ VALUES
         'yum chicken',
         '718-321-1234',
         123456785,
+        null,
         null
     ),
 
@@ -148,6 +156,7 @@ VALUES
         'Gyu-Kaku (牛角 gyū kaku, bulls horn) is a chain of Japanese yakiniku restaurants. here are over six hundred Gyu-Kaku locations in Japan,[1] and locations have also been opened in the United States (including New York City, California, Pittsburgh, Chicago, Houston, Hawaii, Philadelphia, Boston, Miami, and Atlanta)[2], Canada, Hong Kong, Taiwan, Cambodia, Thailand, Indonesia, Malaysia, Singapore, Vietnam, Philippines and will open in South Korea.',
         '(347) 542-3653',
         123456784,
+        null,
         null
     ),
 
@@ -161,7 +170,8 @@ VALUES
         null,
         null,
         null,
-        'http://lorempixel.com/640/480/abstract'
+        'http://lorempixel.com/640/480/abstract',
+        null
     ),
 
     (
@@ -173,7 +183,8 @@ VALUES
         null,
         null,
         null,
-        'http://lorempixel.com/640/480/abstract'
+        'http://lorempixel.com/640/480/abstract',
+        null
     ),
 
     (
@@ -185,7 +196,8 @@ VALUES
         null,
         null,
         null,
-        'http://lorempixel.com/640/480/abstract'
+        'http://lorempixel.com/640/480/abstract',
+        null
     ),
 
     (
@@ -197,7 +209,8 @@ VALUES
         null,
         null,
         null,
-        'http://lorempixel.com/640/480/abstract'
+        'http://lorempixel.com/640/480/abstract',
+        null
     ),
 
     (
@@ -209,32 +222,35 @@ VALUES
         null,
         null,
         null,
-        'http://lorempixel.com/640/480/abstract'
+        'http://lorempixel.com/640/480/abstract',
+        null
     ),
     (
-      'clienttester',
-      'clientdemo@test.com',
-      '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
-      2,
-      '47-10 Austell Place Long Island City queens ny ',
-      'I am viewing as an Non-Profit Organization',
-      '(347) 492-6843',
-      123456789,
-      null
+        'clienttester',
+        'clientdemo@test.com',
+        '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
+        2,
+        '47-10 Austell Place Long Island City queens ny ',
+        'I am viewing as an Non-Profit Organization',
+        '(347) 492-6843',
+        123456789,
+        null,
+        null
     ),
     (
-          'vendortester',
-          'vendordemo@test.com',
-          '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
-          1,
-          '47-10 Austell Place Long Island City queens ny' ,
-          'I am viewing as a Food Industry',
-          '(347) 502-6826',
-          123456989,
-          null
+        'vendortester',
+        'vendordemo@test.com',
+        '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
+        1,
+        '47-10 Austell Place Long Island City queens ny' ,
+        'I am viewing as a Food Industry',
+        '(347) 502-6826',
+        123456989,
+        null,
+        'https://ib.hulu.com/user/v3/artwork/fdeb1018-4472-442f-ba94-fb087cdea069?base_image_bucket_name=hummus&base_image=c3be6bcd-278c-4e33-821c-a9e9b298029f&size=400x600&format=jpeg'
         ),
 
-      (
+    (
         'JonE Catering Hall',
         'jon@gmail.com',
         '$2a$10$ISjBUvV4FHZ0DVTttNOn1uqbJDmlO9b/btBngzCyZJpZXhsfVS5Cq',
@@ -243,6 +259,7 @@ VALUES
         'local catering hall',
         '(347) 455-8790',
         987645321,
+        null,
         null
       );
 INSERT INTO food_items
@@ -496,22 +513,22 @@ VALUES
         '11:00', '17:00'
     ),
     (
-    14,
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '11:00', '17:00',
-    '11:00', '17:00'
+        14,
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '11:00', '17:00',
+        '11:00', '17:00'
   ),
-  (
-    15,
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '08:00', '19:00',
-    '11:00', '17:00',
-    '11:00', '17:00'
+    (
+        15,
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '08:00', '19:00',
+        '11:00', '17:00',
+        '11:00', '17:00'
   );
