@@ -235,7 +235,7 @@ VALUES
         '(347) 492-6843',
         123456789,
         null,
-        null
+        'https://www.arborbrothers.org/wp-content/uploads/2018/10/Pursuit-Logo.jpg'
     ),
     (
         'vendortester',
