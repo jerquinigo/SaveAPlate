@@ -11,8 +11,7 @@
 }
 
 #profile-picture {
-  margin: 0 auto;
-  border: 5px solid black;
+  border: 2px solid black;
   width: 200px;
   height: 200px;
 }
