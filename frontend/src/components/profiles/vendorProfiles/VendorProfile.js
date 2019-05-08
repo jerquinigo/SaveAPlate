@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
-import AddItemForm from "./AddItemsForm.js";
+
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
-
+import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import red from "@material-ui/core/colors/red";
 import "./vendorProfilesCSS/VendorProfile.css";
+import Modal from "./Modal.js";
 
 class VendorProfile extends Component {
   constructor() {
@@ -22,7 +25,8 @@ class VendorProfile extends Component {
       claimedItems: [],
       unclaimedItems: [],
       fedCount: 0,
-      profilePic: ""
+      profilePic: "",
+      open: false //for modal
     };
   }
 
@@ -134,19 +138,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
+            <h4 id="item-name">Food Item</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight: </h4>
+            <h4 id="weight">Weight </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds: </h4>
+            <h4 id="feeds">Feeds </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time: </h4>
+            <h4 id="pick-up">Pick Up Time</h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -160,14 +164,19 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-          <Button
-            onClick={this.deleteItem}
-            type="submit"
-            variant="contained"
-            color="secondary"
-            id={item.food_id}>
-            <DeleteIcon id={item.food_id} />
-          </Button>
+          <MuiThemeProvider theme={theme}>
+            <Button
+              onClick={e => {
+                this.deleteItem(e);
+                this.props.receivedOpenSnackbar();
+              }}
+              type="submit"
+              variant="contained"
+              color="secondary"
+              id={item.food_id}>
+              <DeleteIcon id={item.food_id} />
+            </Button>
+          </MuiThemeProvider>
         </div>
       );
     });
@@ -179,19 +188,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
+            <h4 id="item-name">Food Item</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight: </h4>
+            <h4 id="weight">Weight </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds: </h4>
+            <h4 id="feeds">Feeds </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time: </h4>
+            <h4 id="pick-up">Pick Up Time </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -205,14 +214,20 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-          <Button
-            onClick={this.deleteItem}
-            type="submit"
-            variant="contained"
-            color="secondary"
-            id={item.food_id}>
-            <DeleteIcon id={item.food_id} />
-          </Button>
+
+          <MuiThemeProvider theme={theme}>
+            <Button
+              onClick={e => {
+                this.deleteItem(e);
+                this.props.receivedOpenSnackbar();
+              }}
+              type="submit"
+              variant="contained"
+              color="secondary"
+              id={item.food_id}>
+              <DeleteIcon id={item.food_id} />
+            </Button>
+          </MuiThemeProvider>
         </div>
       );
     });
@@ -230,15 +245,25 @@ class VendorProfile extends Component {
       });
   };
 
+  //handleOpen && handleClose are for the Modal
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false, toAddItem: !this.state.toAddItem });
+  };
+
   // Favorite vendor
   render() {
-    console.log(this.state);
+    console.log("PROPS!", this.props);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
     }
     return (
       <div id="vendor-container">
+        <MainSnackbarContainer />
         <div id="vendor-profile-container">
           <h1 id="vendor-name">
             {" "}
@@ -259,9 +284,13 @@ class VendorProfile extends Component {
             pounds of food donated
           </h3>
           {this.state.toAddItem ? (
-            <AddItemForm
+            <Modal
+              handleClose={this.handleClose}
+              handleOpen={this.handleOpen}
+              open={this.state.open}
               handleChange={this.handleChange}
               submitItem={this.submitItem}
+              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
             />
           ) : (
             this.addItemButton()
@@ -284,5 +313,17 @@ class VendorProfile extends Component {
     );
   }
 }
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red,
+    secondary: {
+      main: "#FF0000"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default VendorProfile;

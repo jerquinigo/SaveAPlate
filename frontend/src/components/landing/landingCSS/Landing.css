@@ -97,7 +97,7 @@
 }
 
 #info-vendor-volunteer-client > img {
-  with: 200px;
+  width: 200px;
   height: 200px;
 }
 
@@ -142,9 +142,4 @@
   width: 40%;
   margin: 0 auto;
   font-family: "Merriweather", serif;
-}
-
-footer {
-  background-color: #272e48;
-  height: 40px;
 }

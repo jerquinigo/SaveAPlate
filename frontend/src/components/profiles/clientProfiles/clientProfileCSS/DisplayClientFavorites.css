@@ -24,8 +24,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
+  border-bottom: 1px solid black;
+  /* border: 2px solid black; */
+  /* border-radius: 5px; */
   margin: 0 auto;
   /* margin-top: 2%; */
   width: 75%;

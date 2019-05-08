@@ -9,11 +9,13 @@ import AboutUs from "./components/navBar/navComponents/aboutUs/AboutUs.js";
 import Resources from "./components/navBar/navComponents/resources/Resources.js";
 import Donate from "./components/navBar/navComponents/donate/Donate.js";
 import ClientProfileContainer from "./containers/ClientProfileContainer.js";
-import FoodItemsContainer from "./containers/FoodItemsContainer.js";
+import VendorProfileContainer from "./containers/VendorProfileContainer.js";
 import FeedContainer from "./containers/FeedContainer.js";
 import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
 import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
 import PrivateRoute from "./utils/AuthRouting.js";
+// import Footer from "./components/footer/Footer.js";
+// import "./components/footer/footerCSS/Footer.css";
 
 class App extends Component {
   componentDidMount() {
@@ -45,7 +47,7 @@ class App extends Component {
             <PrivateRoute
               exact
               path="/vendor/:vendor"
-              component={FoodItemsContainer}
+              component={VendorProfileContainer}
             />
             <PrivateRoute exact path="/feed" component={FeedContainer} />
             <PrivateRoute
@@ -54,6 +56,7 @@ class App extends Component {
               component={VendorProfileThruClientContainer}
             />
           </Switch>
+          {/* <Footer /> */}
         </div>
       </div>
     );

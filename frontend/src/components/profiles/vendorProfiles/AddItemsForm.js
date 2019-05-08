@@ -5,7 +5,12 @@ import "./vendorProfilesCSS/AddItemsForm.css";
 const AddItemForm = props => {
   return (
     <>
-      <form onSubmit={props.submitItem} id="add-items-form">
+      <form
+        onSubmit={e => {
+          props.submitItem(e);
+          props.receivedOpenSnackbar();
+        }}
+        id="add-items-form">
         <h1 id="donation-form-header">Donation Form</h1>
         <input
           type="text"

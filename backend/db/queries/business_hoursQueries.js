@@ -138,8 +138,11 @@ updateBusiness_hours = (req, res, next) => {
 };
 
 getVendorHours = (req, res, next) => {
-  let vendor_name = req.params.name
-  db.any("SELECT business_hours.*, users.name FROM business_hours JOIN users ON users.id = business_hours.vendor_id WHERE users.name=$1", [vendor_name])
+  let vendor_name = req.params.name;
+  db.any(
+    "SELECT business_hours.*, users.name, users.address_field, users.email, users.telephone_number, users.body FROM business_hours JOIN users ON users.id = business_hours.vendor_id WHERE users.name=$1",
+    [vendor_name]
+  )
     .then(hours => {
       res.status(200).json({
         data: hours

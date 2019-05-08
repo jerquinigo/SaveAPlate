@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import AllFeedItemsDisplayed from "./AllFeedItemsDisplayed.js";
 import AllFeedItemsDisplayVendorName from "./AllFeedItemsDisplayVendorName.js";
 import "./feedCSS/AllFeedItems.css";
-// import Button from "@material-ui/core/Button";
+
 
 class AllFeedItems extends Component {
   constructor() {
