@@ -2,22 +2,17 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class AllFeedItemsDisplayVendorName extends Component {
-  displayPhotos = () => {
+  displayVendorPhoto = newArr => {
     if (this.props.profilePicture) {
-      let profileArr = Object.keys(this.props.profilePicture);
-      let firstKey = Object.keys(this.props.profilePicture)[0];
-      debugger;
-      if (profileArr.length > 1) {
-        return (
-          <div>
-            <img src={this.props.profilePicture[firstKey]} alt="" />
-          </div>
-        );
-      } else {
-        profileArr.map(img => {
-          return <img src={this.props.profilePicture[img]} alt="" />;
-        });
-      }
+      let addressArr = Object.keys(this.props.profilePicture);
+      return addressArr.map((data, i) => {
+        //newArr is the address repeating
+        if (data === newArr[0]) {
+          console.log(this.props.profilePicture[data], "check pls");
+          return <img src={this.props.profilePicture[data]} alt="" />;
+        }
+        console.log(newArr, "in the funciton im working in");
+      });
     }
   };
   getAllAddress = (foodDataObj, vendorName) => {
@@ -49,12 +44,14 @@ class AllFeedItemsDisplayVendorName extends Component {
       return (
         <div>
           <p>{newArr[0]}</p>
+          {this.displayVendorPhoto(newArr)}
         </div>
       );
     } else {
       return (
         <div>
           <p>{newArr}</p>
+          {this.displayVendorPhoto(newArr)}
         </div>
       );
     }
@@ -72,11 +69,10 @@ class AllFeedItemsDisplayVendorName extends Component {
             </strong>{" "}
           </Link>
           {this.getAllAddress(this.props.foodDataObj, this.props.vendorName)}
-          {this.props.profilePicture ? this.displayPhotos() : null}
         </span>
       </div>
     );
   }
 }
-
+// {this.props.profilePicture ? this.displayPhotos() : null}
 export default AllFeedItemsDisplayVendorName;

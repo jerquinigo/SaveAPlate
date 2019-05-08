@@ -21,7 +21,7 @@ class AllFeedItems extends Component {
       foodDataObj[vendorName].map(vendor => {
         this.props.allVendors.map(pics => {
           if (vendor.vendor_id === pics.vendor_id) {
-            newObj[vendor.vendor_id] = pics.profile_picture;
+            newObj[vendor.address_field] = pics.profile_picture;
           }
         });
       });
