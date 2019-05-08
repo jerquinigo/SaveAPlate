@@ -72,7 +72,7 @@ class ClientProfile extends Component {
         <ClientClaimedItemsContainer
           receivedOpenSnackbar={this.props.receivedOpenSnackbar}
         />
-
+        <h4> My Favorite Donors </h4>
         <DisplayClientFavorites
           currentUserName={this.props.currentUser.name}
           receivedOpenSnackbar={this.props.receivedOpenSnackbar}

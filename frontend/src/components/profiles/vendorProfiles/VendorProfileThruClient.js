@@ -88,8 +88,11 @@ class VendorProfileThruClient extends Component {
   };
 
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
-  displayItems = () => {
-    return this.state.foodInfo.map(item => {
+  displayUnclaimedItems = () => {
+    let unclaimedItems = this.state.foodInfo.filter(item => {
+      return item.is_claimed === false;
+    });
+    let unclaimedList = unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
         <div
@@ -141,9 +144,10 @@ class VendorProfileThruClient extends Component {
         </div>
       );
     });
+    return <>{claimedList} </>;
   };
   //////////////////////////////////////////////////////DISPLAY HOURS///////////////////////////////////////
-  displayBusinessHours = () => {
+  displayVendorInfo = () => {
     return this.state.businessHours.map((time, i) => {
       let mon1 = Number(time.mon_start.slice(0, 2));
       let mon2 = Number(time.mon_end.slice(0, 2));
@@ -225,6 +229,7 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
+    console.log(this.state.foodInfo);
     return (
       <>
         {this.displayItems()}
