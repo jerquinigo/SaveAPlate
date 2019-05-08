@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
-import AddItemForm from "./AddItemsForm.js";
+
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Fab from "@material-ui/core/Fab";
@@ -9,6 +9,7 @@ import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import "./vendorProfilesCSS/VendorProfile.css";
+import Modal from "./Modal.js";
 
 class VendorProfile extends Component {
   constructor() {
@@ -22,7 +23,8 @@ class VendorProfile extends Component {
       claimedItems: [],
       unclaimedItems: [],
       fedCount: 0,
-      profilePic: ""
+      profilePic: "",
+      open: false //for modal
     };
   }
 
@@ -58,7 +60,10 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}
+          onClick={() => {
+            this.toAddItem();
+            this.handleOpen();
+          }}
         >
           <AddIcon />
         </Fab>
@@ -239,6 +244,15 @@ class VendorProfile extends Component {
       });
   };
 
+  //handleOpen && handleClose are for the Modal
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false, toAddItem: !this.state.toAddItem });
+  };
+
   // Favorite vendor
   render() {
     console.log("PROPS!", this.props);
@@ -269,7 +283,10 @@ class VendorProfile extends Component {
             pounds of food donated
           </h3>
           {this.state.toAddItem ? (
-            <AddItemForm
+            <Modal
+              handleClose={this.handleClose}
+              handleOpen={this.handleOpen}
+              open={this.state.open}
               handleChange={this.handleChange}
               submitItem={this.submitItem}
               receivedOpenSnackbar={this.props.receivedOpenSnackbar}
