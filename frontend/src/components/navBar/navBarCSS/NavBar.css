@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #272e48;
+  background-color: white;
   height: 95px;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -17,8 +17,8 @@
 }
 
 .nav-link {
-  background-color: #272e48;
-  color: white;
+  background-color: white;
+  color: black;
   height: 85px;
   display: flex;
   justify-content: space-between;

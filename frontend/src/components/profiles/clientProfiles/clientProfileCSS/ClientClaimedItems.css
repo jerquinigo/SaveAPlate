@@ -14,21 +14,26 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 80px;
-  background-color: white;
+  /* background-color: white; */
   margin: 0;
   float: right;
   margin-right: 15%;
 }
 
 .display-vendor-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  background-color: #f3e4d8;
   width: 75%;
   margin-top: 2%;
-}
-
-.display-claimed-items {
-  width: 55%;
+  margin-bottom: 2%;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
 }
 
 .claimed-button,

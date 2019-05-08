@@ -37,8 +37,8 @@
 #vendor-signup-form,
 #client-signup-form {
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 5px 10px #aebdc7;
+  /* border-radius: 20px; */
+  /* box-shadow: 5px 10px #aebdc7; */
 }
 
 .input-field {

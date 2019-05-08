@@ -9,11 +9,13 @@ const VendorSection = ({ vendor, userObj, children }) => {
   return (
     <div className="display-vendor-name-container">
       <div className="display-vendor-name">
-        <Link to={"/clientview/" + vendor.vendor_name}>
-          <span className="display-item-name">{vendor.vendor_name}</span>{" "}
-        </Link>
-        <span>{vendor.address_field}</span>
-        <span>{vendor.telephone_number}</span>
+        <div>
+          <Link to={"/clientview/" + vendor.vendor_name}>
+            <span className="display-item-name">{vendor.vendor_name}</span>{" "}
+          </Link>
+        </div>
+        <div>{vendor.address_field}</div>
+        <div>{vendor.telephone_number}</div>
       </div>
       <div>{children}</div>
     </div>
