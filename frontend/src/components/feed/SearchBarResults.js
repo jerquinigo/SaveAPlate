@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -13,6 +13,7 @@ export const SearchBarResults = props => {
       return result.is_claimed !== true;
     });
     searchResults.map((results, i) => {
+
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
       } else if (searchDataObj[results.vendor_name]) {
