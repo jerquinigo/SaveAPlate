@@ -15,9 +15,8 @@
   justify-content: space-around;
   align-items: center;
   border: 1px solid black;
-  border-radius: 5px;
   height: 80px;
-  background-color: #ebf4f4;
+  background-color: white;
   margin: 0;
   float: right;
   margin-right: 15%;
@@ -25,7 +24,6 @@
 
 .display-vendor-name {
   width: 75%;
-  background-color: #f3e4d8;
   margin-top: 2%;
 }
 
@@ -38,7 +36,7 @@
   color: white;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   height: 40px;
 }
 

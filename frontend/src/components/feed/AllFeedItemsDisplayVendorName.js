@@ -19,7 +19,6 @@ class AllFeedItemsDisplayVendorName extends Component {
 
     // foodDataObj[vendorName].map((name, i) => {
     // if (name.address_field.length === name.address_field.length) {
-    // debugger;
 
     // if (foodDataObj[vendorName].length > 1) {
     //   newArr.push(foodDataObj[vendorName].slice(0, 1));

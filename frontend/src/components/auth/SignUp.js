@@ -489,7 +489,7 @@ class SignUp extends Component {
           <FormControl component="fieldset">
             <FormLabel component="legend" className="user-type">
               <h3 id="signup-header">Welcome to Save a Plate!</h3>
-              <p id="signup-header-body">
+              <p className="signup-header-body">
                 Are you a food vendor or non-profit organization?
               </p>
             </FormLabel>

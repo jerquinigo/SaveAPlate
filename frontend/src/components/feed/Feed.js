@@ -32,7 +32,6 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
-    debugger;
     if (isClaimed === false) {
       axios
         .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
@@ -111,6 +110,7 @@ export default class Feed extends Component {
     return (
       <div className="feedWrapper">
         <MainSnackbarContainer />
+        <div id="feed">Feed</div>
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
@@ -119,7 +119,6 @@ export default class Feed extends Component {
           handleChange={this.handleChange}
           receivedOpenSnackbar={this.props.receivedOpenSnackbar}
         />
-
         {filteredFoodItems.length > 0 ? (
           <SearchBarResults
             claimItem={this.claimItem}

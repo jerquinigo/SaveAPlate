@@ -83,7 +83,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 auto;
   margin-top: 2px;
   width: 90%;
