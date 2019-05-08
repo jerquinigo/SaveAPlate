@@ -137,6 +137,46 @@ class VendorProfileThruClient extends Component {
                 className={
                   item.is_claimed ? "claimed-button" : "unclaimed-button"
                 }>
+                {item.is_claimed ? "UNAVAILABLE" : "AVAILABLE"}
+              </Button>
+            </div>
+          </div>
+        </div>
+      );
+    });
+    return (
+      <>
+        <h3> Donation List </h3>
+        {unclaimedList}{" "}
+      </>
+    );
+  };
+
+  displayClaimedItems = () => {
+    let claimedItems = this.state.foodInfo.filter(item => {
+      return item.is_claimed === true;
+    });
+    let claimedList = claimedItems.map(item => {
+      let converted_time = Number(item.set_time.slice(0, 2));
+      return (
+        <div
+          key={item.food_id}
+          className="vendor-profile-container-vendor-version">
+          <div className="display-claimed-items-vendor-version">
+            <div className="claimed-vendor-items-two">
+              <h2> Food Dish </h2>
+              <h3>{item.name}</h3>
+              <h4> Feeds </h4>
+              <h5>{item.quantity}</h5>
+              <h4> Lastest Pick Up Time </h4>
+
+              <h5>
+                {converted_time === 0 || converted_time < 13
+                  ? converted_time + "am"
+                  : converted_time - 12 + "pm"}
+              </h5>
+              <Button id={item.food_id} variant="contained" color="secondary">
+                UNAVAILABLE }>
                 {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
               </Button>
             </div>
