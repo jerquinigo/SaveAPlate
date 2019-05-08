@@ -5,14 +5,14 @@ import green from "@material-ui/core/colors/green";
 
 class AllFeedItemsDisplayed extends Component {
   render() {
-    // let vendorName = Object.keys(this.props.foodDataObj);
     return (
       <div className="vendorItemsWrapper">
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
           return (
             <div className="vendorItemsContainer" key={b}>
               <div className="display-claimed-items">
-                <span className="display-item-name">{food.name}</span>
+                <div className="display-item-name">{food.name}</div>
+
                 <span> Feeds: {food.quantity} people</span>
                 <span>({Number(food.quantity) * 3} pounds)</span>
                 <span>
@@ -26,16 +26,14 @@ class AllFeedItemsDisplayed extends Component {
                   onClick={e => {
                     this.props.claimItem(e, food.is_claimed);
                     this.props.receivedOpenSnackbar();
-                  }}
-                >
+                  }}>
                   <MuiThemeProvider theme={theme}>
                     <Button
                       variant="contained"
                       color="secondary"
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }
-                    >
+                      }>
                       {food.is_claimed ? "UNCLAIM" : "CLAIM"}
                     </Button>
                   </MuiThemeProvider>

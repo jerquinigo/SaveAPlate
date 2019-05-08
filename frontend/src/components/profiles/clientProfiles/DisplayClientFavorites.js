@@ -65,8 +65,7 @@ class DisplayClientFavorites extends Component {
             }}
             variant="contained"
             color="secondary"
-            className="unclaimed-button"
-          >
+            className="unclaimed-button">
             Unfavorite
           </Button>
         </div>

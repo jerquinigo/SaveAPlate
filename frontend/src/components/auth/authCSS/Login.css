@@ -10,8 +10,8 @@
   padding-bottom: 2%;
   border-radius: 5px;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 5px 10px #aebdc7;
+  /* border-radius: 20px; */
+  /* box-shadow: 5px 10px #aebdc7; */
 }
 
 #email-input,

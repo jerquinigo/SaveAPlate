@@ -1,11 +1,34 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import AllFeedItemsDisplayed from "./AllFeedItemsDisplayed.js";
 import AllFeedItemsDisplayVendorName from "./AllFeedItemsDisplayVendorName.js";
 import "./feedCSS/AllFeedItems.css";
-import Button from "@material-ui/core/Button";
+
 
 class AllFeedItems extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pictureObj: []
+    };
+  }
+
+  allVendorsMapped = foodDataObj => {
+    if (!foodDataObj) return null;
+    let newObj = {};
+    let vendorNameArr = Object.keys(foodDataObj);
+    vendorNameArr.forEach((vendorName, i) => {
+      foodDataObj[vendorName].forEach(vendor => {
+        this.props.allVendors.forEach(pics => {
+          if (vendor.vendor_id === pics.vendor_id) {
+            newObj[vendor.address_field] = pics.profile_picture;
+          }
+        });
+      });
+    });
+
+    return newObj;
+  };
+
   allFoodItemsMapped = () => {
     if (this.props.allFoodItems) {
       let foodDataObj = {};
@@ -17,9 +40,11 @@ class AllFeedItems extends Component {
           foodDataObj[food.vendor_name] = [food];
         } else if (foodDataObj[food.vendor_name] && food.is_claimed === false) {
           foodDataObj[food.vendor_name].push(food);
+
           console.log(foodDataObj, "the food data in obj");
         }
       });
+      // this.allVendorsMapped(foodDataObj);
 
       let vendorNameArr = Object.keys(foodDataObj);
 
@@ -29,6 +54,7 @@ class AllFeedItems extends Component {
             <AllFeedItemsDisplayVendorName
               vendorName={vendorName}
               foodDataObj={foodDataObj}
+              profilePicture={this.allVendorsMapped(foodDataObj)}
             />
             <AllFeedItemsDisplayed
               foodDataObj={foodDataObj}
@@ -44,6 +70,14 @@ class AllFeedItems extends Component {
     }
   };
   render() {
+    console.log(this.state.pictureObj, "help");
+    // let value;
+    // if (this.props.allFoodItems) {
+    //   value = this.allVendorsMapped();
+    // }
+    // let pictureObj = this.allVendorsMapped();
+    // console.log(pictureObj, "sellslpoke")
+    console.log(this.props.allVendors, "all the vendi");
     return <>{this.allFoodItemsMapped()}</>;
   }
 }

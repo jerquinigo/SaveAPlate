@@ -11,11 +11,13 @@ export default class Feed extends Component {
   state = {
     allFoodItems: [],
     textInput: "",
-    searchText: ""
+    searchText: "",
+    allVendors: []
   };
 
   componentDidMount() {
     this.getAllFoodItems();
+    this.getAllVendors();
   }
 
   getAllFoodItems = () => {
@@ -31,27 +33,32 @@ export default class Feed extends Component {
       });
   };
 
+  getAllVendors = () => {
+    axios.get("/api/users/vendors/").then(foodItems => {
+      this.setState({
+        allVendors: foodItems.data.vendors
+      });
+    });
+  };
+
   claimItem = (e, isClaimed) => {
-    debugger;
-    if (isClaimed === false) {
-      axios
-        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-          client_id: this.props.currentUser.id,
-          is_claimed: true
-        })
-        .then(() => {
-          this.getAllFoodItems();
-        });
-    } else {
-      axios
-        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-          client_id: null,
-          is_claimed: false
-        })
-        .then(() => {
-          this.getAllFoodItems();
-        });
-    }
+    isClaimed === false
+      ? axios
+          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
+            client_id: this.props.currentUser.id,
+            is_claimed: true
+          })
+          .then(() => {
+            this.getAllFoodItems();
+          })
+      : axios
+          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
+            client_id: null,
+            is_claimed: false
+          })
+          .then(() => {
+            this.getAllFoodItems();
+          });
   };
 
   handleSubmit = async e => {
@@ -111,6 +118,7 @@ export default class Feed extends Component {
     return (
       <div className="feedWrapper">
         <MainSnackbarContainer />
+        <div id="feed">Feed</div>
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
@@ -119,7 +127,6 @@ export default class Feed extends Component {
           handleChange={this.handleChange}
           receivedOpenSnackbar={this.props.receivedOpenSnackbar}
         />
-
         {filteredFoodItems.length > 0 ? (
           <SearchBarResults
             claimItem={this.claimItem}
@@ -135,6 +142,7 @@ export default class Feed extends Component {
             allFoodItems={this.state.allFoodItems}
             userSearchResults={this.state.userSearchResults}
             receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+            allVendors={this.state.allVendors}
           />
         )}
       </div>

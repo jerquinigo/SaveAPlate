@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -12,13 +12,12 @@ export const SearchBarResults = props => {
     let searchResults = props.userSearchResults.filter(result => {
       return result.is_claimed !== true;
     });
-    console.log(searchResults, "searchResult");
     searchResults.map((results, i) => {
+
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
       } else if (searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name].push(results);
-        console.log(searchDataObj, "in the search results");
       }
       converted_time = Number(results.set_time.slice(0, 2));
     });
@@ -59,8 +58,7 @@ export const SearchBarResults = props => {
                       }}
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }
-                    >
+                      }>
                       {food.is_claimed ? "UNCLAIM" : "CLAIM"}
                     </Button>
                   </MuiThemeProvider>
