@@ -135,19 +135,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
+            <h4 id="item-name">Food Item</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight: </h4>
+            <h4 id="weight">Weight </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds: </h4>
+            <h4 id="feeds">Feeds </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time: </h4>
+            <h4 id="pick-up">Pick Up Time</h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -184,19 +184,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
+            <h4 id="item-name">Food Item</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight: </h4>
+            <h4 id="weight">Weight </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds: </h4>
+            <h4 id="feeds">Feeds </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time: </h4>
+            <h4 id="pick-up">Pick Up Time </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
