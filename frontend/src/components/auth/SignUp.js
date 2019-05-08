@@ -10,12 +10,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import "./authCSS/SignUp.css";
+import Typography from "@material-ui/core/Typography";
 
 class SignUp extends Component {
   state = {
     email: "",
     password_digest: "",
-    type: "",
+    type: 1,
     name: "",
     address_field: "",
     body: "",
@@ -121,8 +122,9 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="vendor-signup-form">
-          <h1 className="signup-form-header">Sign up as a food vendor</h1>
+          id="vendor-signup-form"
+        >
+          <h1 className="signup-form-header">Food Vendor</h1>
           <div className="icon-input-field">
             <img
               src={require("./icons/name.png")}
@@ -133,7 +135,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Name"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -152,7 +154,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Email"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -171,7 +173,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Password"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="password"
@@ -190,7 +192,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Address"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -209,7 +211,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Telephone Number"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -227,7 +229,7 @@ class SignUp extends Component {
             <TextField
               className="input-field"
               label="Business Info"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -241,7 +243,7 @@ class SignUp extends Component {
             <TextField
               className="input-field"
               label="Employee ID Number"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -260,7 +262,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Profile Picture (URL)"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -274,7 +276,8 @@ class SignUp extends Component {
               type="submit"
               variant="contained"
               color="primary"
-              className="signup-button">
+              className="signup-button"
+            >
               Sign Up
             </Button>
             <br />
@@ -283,7 +286,8 @@ class SignUp extends Component {
               variant="contained"
               color="secondary"
               className="signup-button"
-              onClick={this.vendorDemoLogin}>
+              onClick={this.vendorDemoLogin}
+            >
               Vendor Demo
             </Button>
           </div>
@@ -294,10 +298,9 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="client-signup-form">
-          <h1 className="signup-form-header">
-            Sign up as a non-profit organization
-          </h1>
+          id="client-signup-form"
+        >
+          <h1 className="signup-form-header">Non-Profit Org</h1>
           <div className="icon-input-field">
             <img
               src={require("./icons/name.png")}
@@ -308,7 +311,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Name"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -327,7 +330,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Email"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -346,7 +349,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Password"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="password"
@@ -365,7 +368,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Address"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -384,7 +387,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Client Certificate"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -403,7 +406,7 @@ class SignUp extends Component {
               required
               className="input-field"
               label="Profile Picture (URL)"
-              margin="normal"
+              margin="dense"
               variant="outlined"
               onChange={this.handleChange}
               type="text"
@@ -417,7 +420,8 @@ class SignUp extends Component {
               type="submit"
               variant="contained"
               color="primary"
-              className="signup-button">
+              className="signup-button"
+            >
               Sign Up
             </Button>
             <br />
@@ -426,8 +430,9 @@ class SignUp extends Component {
               variant="contained"
               color="secondary"
               className="signup-button"
-              onClick={this.clientDemoLogin}>
-              Client Demo
+              onClick={this.clientDemoLogin}
+            >
+              Non-Profit Demo
             </Button>
           </div>
         </form>
@@ -485,10 +490,10 @@ class SignUp extends Component {
     return (
       <div id="signup-page">
         {this.conditionalRouting()}
+        <h3 id="signup-header">Join Save A Plate!</h3>
         <div className="choose-user-signup-form">
           <FormControl component="fieldset">
             <FormLabel component="legend" className="user-type">
-              <h3 id="signup-header">Welcome to Save a Plate!</h3>
               <p id="signup-header-body">
                 Are you a food vendor or non-profit organization?
               </p>
@@ -497,21 +502,27 @@ class SignUp extends Component {
               aria-label="User Type"
               name="type"
               value={this.state.value}
-              onClick={this.handleChange}>
+              onClick={this.handleChange}
+              className="radioGroupContainer"
+            >
               <FormControlLabel
                 value="1"
                 control={<Radio />}
-                label="Food Vendor"
+                label={<Typography variant="h6">Food Vendor</Typography>}
+                className="foodVendorRadioContainer"
               />
               <FormControlLabel
                 value="2"
                 control={<Radio />}
-                label="Non-profit Organization"
+                label={
+                  <Typography variant="h6">Non-profit Organization</Typography>
+                }
+                className="npoRadioContainer"
               />
             </RadioGroup>
           </FormControl>
-          {this.signUpForm()}
         </div>
+        <div class="signup-form-wrapper">{this.signUpForm()}</div>
       </div>
     );
   }

@@ -1,17 +1,38 @@
 #signup-page {
-  padding-top: 1%;
-  height: 100vh;
+  height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 90%;
 }
 
 #signup-header {
   font-family: "Montserrat", sans-serif;
   color: #272e48;
-  font-size: 36px;
+  font-size: 2.65em;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  padding-top: 2em;
+}
+
+.choose-user-signup-form {
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  display: grid;
+  place-items: center center;
+  margin-top: -6em;
 }
 
 #signup-header-body {
   font-family: "Merriweather", serif;
   color: #272e48;
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 .signup-form {
@@ -27,17 +48,28 @@
   border-radius: 5px;
 }
 
+.signup-form-wrapper {
+  width: 100%;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+}
+
 .signup-form-header {
   font-family: "Montserrat", sans-serif;
   color: #272e48;
   font-size: 36px;
+  margin: 10px 0 0 0;
 }
 
 #vendor-signup-form,
 #client-signup-form {
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 5px 10px #aebdc7;
+  width: 95%;
+  margin-top: -70px;
+  min-height: 41em;
+  margin-bottom: 0;
 }
 
 .input-field {
@@ -52,10 +84,10 @@
 }
 
 .signup-demo-buttons {
-  width: 25%;
   display: flex;
-  flex-direction: column;
-  padding-top: 2%;
+  justify-content: space-evenly;
+  width: 40%;
+  margin-top: 1.5em;
 }
 
 .icons {
@@ -68,4 +100,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.MuiFormGroup-root-12 {
+  display: flex;
+}
+
+/*
+.radioGroupContainer {
+  display: flex;
+} */
+
+.foodVendorRadioContainer {
+  /* width: 100%; */
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
+
+.npoRadioContainer {
+  /* width: 100%; */
+  grid-column-start: 2;
+
+  /* grid-column-end: span 1; */
 }
