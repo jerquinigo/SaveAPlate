@@ -32,25 +32,23 @@ export default class Feed extends Component {
   };
 
   claimItem = (e, isClaimed) => {
-    if (isClaimed === false) {
-      axios
-        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-          client_id: this.props.currentUser.id,
-          is_claimed: true
-        })
-        .then(() => {
-          this.getAllFoodItems();
-        });
-    } else {
-      axios
-        .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-          client_id: null,
-          is_claimed: false
-        })
-        .then(() => {
-          this.getAllFoodItems();
-        });
-    }
+    isClaimed === false
+      ? axios
+          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
+            client_id: this.props.currentUser.id,
+            is_claimed: true
+          })
+          .then(() => {
+            this.getAllFoodItems();
+          })
+      : axios
+          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
+            client_id: null,
+            is_claimed: false
+          })
+          .then(() => {
+            this.getAllFoodItems();
+          });
   };
 
   handleSubmit = async e => {

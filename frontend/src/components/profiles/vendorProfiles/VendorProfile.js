@@ -58,8 +58,7 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}
-        >
+          onClick={this.toAddItem}>
           <AddIcon />
         </Fab>
       </>
@@ -169,8 +168,7 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -218,8 +216,7 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}
-          >
+            id={item.food_id}>
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>

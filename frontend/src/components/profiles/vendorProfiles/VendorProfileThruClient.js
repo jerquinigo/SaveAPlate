@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
-import './vendorProfilesCSS/VendorProfileThruClient.css'
+import "./vendorProfilesCSS/VendorProfileThruClient.css";
 import Button from "@material-ui/core/Button";
 
 class VendorProfileThruClient extends Component {
@@ -92,45 +92,51 @@ class VendorProfileThruClient extends Component {
     return this.state.foodInfo.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
-        <div key={item.food_id} className="vendor-profile-container-vendor-version">
+        <div
+          key={item.food_id}
+          className="vendor-profile-container-vendor-version">
           <h2 className="vendor-name">{item.vendor_name} </h2>
           <br />
-          <h2 className="vendor-name">{item.vendor_address} <br />{item.telephone_number}</h2>
+          <h2 className="vendor-name">
+            {item.vendor_address} <br />
+            {item.telephone_number}
+          </h2>
           <Button
-
             onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
             variant="contained"
             color="secondary"
-            className={!!this.state.isFav.length? "claimed-button" : "unclaimed-button"}
-          >
-          {!!this.state.isFav.length
-            ? "Remove From Favorites"
-            : "Add To Favorites"}
+            className={
+              !!this.state.isFav.length ? "claimed-button" : "unclaimed-button"
+            }>
+            {!!this.state.isFav.length
+              ? "Remove From Favorites"
+              : "Add To Favorites"}
           </Button>
           {this.displayBusinessHours()}
           <div className="display-claimed-items-vendor-version">
-          <div className="claimed-vendor-items-two">
-          <h2> Food Dish </h2>
-          <h3>{item.name}</h3>
-          <h4> Feeds </h4>
-          <h5>{item.quantity}</h5>
-          <h4> Lastest Pick Up Time </h4>
+            <div className="claimed-vendor-items-two">
+              <h2> Food Dish </h2>
+              <h3>{item.name}</h3>
+              <h4> Feeds </h4>
+              <h5>{item.quantity}</h5>
+              <h4> Lastest Pick Up Time </h4>
 
-          <h5>
-            {converted_time === 0 || converted_time < 13
-              ? converted_time + "am"
-              : converted_time - 12 + "pm"}
-          </h5>
-          <Button
-              id={item.food_id}
-           onClick={e => this.claimItem(e, item.is_claimed)}
-            variant="contained"
-            color="secondary"
-            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-          >
-            {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-          </Button>
-          </div>
+              <h5>
+                {converted_time === 0 || converted_time < 13
+                  ? converted_time + "am"
+                  : converted_time - 12 + "pm"}
+              </h5>
+              <Button
+                id={item.food_id}
+                onClick={e => this.claimItem(e, item.is_claimed)}
+                variant="contained"
+                color="secondary"
+                className={
+                  item.is_claimed ? "claimed-button" : "unclaimed-button"
+                }>
+                {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+              </Button>
+            </div>
           </div>
         </div>
       );
@@ -155,7 +161,6 @@ class VendorProfileThruClient extends Component {
       let sun2 = Number(time.sun_end.slice(0, 2));
       return (
         <div className="businessHoursDiv" key={i}>
-
           <h3>Business Hours</h3>
           <h5>
             {" "}
@@ -200,9 +205,7 @@ class VendorProfileThruClient extends Component {
 
   //////////////////////////////////////////////////to claim/////////////////////////////////////////////////////////////////////
   claimItem = (e, isClaimed) => {
-
     isClaimed === true
-
       ? axios
           .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
             client_id: null,
@@ -224,8 +227,6 @@ class VendorProfileThruClient extends Component {
   render() {
     return (
       <>
-
-
         {this.displayItems()}
 
         <br />
@@ -233,7 +234,6 @@ class VendorProfileThruClient extends Component {
         <br />
         <br />
         <br />
-
       </>
     );
   }
