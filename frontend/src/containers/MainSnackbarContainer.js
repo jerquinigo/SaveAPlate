@@ -4,7 +4,6 @@ import { receivedOpenSnackbar } from "../actions/MainSnackbar.js";
 import { receivedCloseSnackbar } from "../actions/MainSnackbar.js";
 
 const mapStateToProps = state => {
-  debugger;
   return {
     snackbarStatus: state.mainSnackbar.status
   };

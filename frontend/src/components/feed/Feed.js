@@ -11,11 +11,13 @@ export default class Feed extends Component {
   state = {
     allFoodItems: [],
     textInput: "",
-    searchText: ""
+    searchText: "",
+    allVendors: []
   };
 
   componentDidMount() {
     this.getAllFoodItems();
+    this.getAllVendors();
   }
 
   getAllFoodItems = () => {
@@ -29,6 +31,14 @@ export default class Feed extends Component {
       .catch(err => {
         console.log(err);
       });
+  };
+
+  getAllVendors = () => {
+    axios.get("/api/users/vendors/").then(foodItems => {
+      this.setState({
+        allVendors: foodItems.data.vendors
+      });
+    });
   };
 
   claimItem = (e, isClaimed) => {
@@ -134,6 +144,7 @@ export default class Feed extends Component {
             allFoodItems={this.state.allFoodItems}
             userSearchResults={this.state.userSearchResults}
             receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+            allVendors={this.state.allVendors}
           />
         )}
       </div>

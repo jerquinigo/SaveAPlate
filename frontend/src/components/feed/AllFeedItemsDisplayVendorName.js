@@ -2,6 +2,24 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class AllFeedItemsDisplayVendorName extends Component {
+  displayPhotos = () => {
+    if (this.props.profilePicture) {
+      let profileArr = Object.keys(this.props.profilePicture);
+      let firstKey = Object.keys(this.props.profilePicture)[0];
+      debugger;
+      if (profileArr.length > 1) {
+        return (
+          <div>
+            <img src={this.props.profilePicture[firstKey]} alt="" />
+          </div>
+        );
+      } else {
+        profileArr.map(img => {
+          return <img src={this.props.profilePicture[img]} alt="" />;
+        });
+      }
+    }
+  };
   getAllAddress = (foodDataObj, vendorName) => {
     let newArr = [];
 
@@ -28,13 +46,23 @@ class AllFeedItemsDisplayVendorName extends Component {
     // }
     // });
     if (newArr.length > 1) {
-      return <p>{newArr[0]}</p>;
+      return (
+        <div>
+          <p>{newArr[0]}</p>
+        </div>
+      );
     } else {
-      return <p>{newArr}</p>;
+      return (
+        <div>
+          <p>{newArr}</p>
+        </div>
+      );
     }
   };
 
   render() {
+    console.log(this.props.allVendorsPic, "all the final vendors in the comp");
+    console.log(this.props.profilePicture, "the profile pic");
     return (
       <div className="display-vendor-name">
         <span>
@@ -44,6 +72,7 @@ class AllFeedItemsDisplayVendorName extends Component {
             </strong>{" "}
           </Link>
           {this.getAllAddress(this.props.foodDataObj, this.props.vendorName)}
+          {this.props.profilePicture ? this.displayPhotos() : null}
         </span>
       </div>
     );
