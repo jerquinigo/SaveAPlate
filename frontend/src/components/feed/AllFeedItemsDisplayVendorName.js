@@ -6,12 +6,10 @@ class AllFeedItemsDisplayVendorName extends Component {
     if (this.props.profilePicture) {
       let addressArr = Object.keys(this.props.profilePicture);
       return addressArr.map((data, i) => {
-        //newArr is the address repeating
         if (data === newArr[0]) {
-          console.log(this.props.profilePicture[data], "check pls");
           return <img src={this.props.profilePicture[data]} alt="" />;
         }
-        console.log(newArr, "in the funciton im working in");
+        return null;
       });
     }
   };
@@ -19,13 +17,13 @@ class AllFeedItemsDisplayVendorName extends Component {
     let newArr = [];
 
     if (foodDataObj[vendorName].length > 1) {
-      foodDataObj[vendorName].map((name, i) => {
+      foodDataObj[vendorName].forEach((name, i) => {
         newArr.push(foodDataObj[vendorName][0].address_field);
         newArr.slice(0, 0);
         console.log(newArr, "thew nwefeoi");
       });
     } else {
-      foodDataObj[vendorName].map((name, i) => {
+      foodDataObj[vendorName].forEach((name, i) => {
         newArr.push(name.address_field);
       });
     }

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import AllFeedItemsDisplayed from "./AllFeedItemsDisplayed.js";
 import AllFeedItemsDisplayVendorName from "./AllFeedItemsDisplayVendorName.js";
 import "./feedCSS/AllFeedItems.css";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 
 class AllFeedItems extends Component {
   constructor() {
@@ -17,9 +17,9 @@ class AllFeedItems extends Component {
     if (!foodDataObj) return null;
     let newObj = {};
     let vendorNameArr = Object.keys(foodDataObj);
-    let vendorName = vendorNameArr.map((vendorName, i) => {
-      foodDataObj[vendorName].map(vendor => {
-        this.props.allVendors.map(pics => {
+    vendorNameArr.forEach((vendorName, i) => {
+      foodDataObj[vendorName].forEach(vendor => {
+        this.props.allVendors.forEach(pics => {
           if (vendor.vendor_id === pics.vendor_id) {
             newObj[vendor.address_field] = pics.profile_picture;
           }
