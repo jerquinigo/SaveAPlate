@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #eff5f5;
+  background-color: white;
   height: 95px;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -17,21 +17,21 @@
 }
 
 .nav-link {
-  background-color: #eff5f5;
+  background-color: white;
   color: black;
   height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
   border: none;
 }
 
 .nav-link:hover {
-  color: #d35348;
+  color: #f9c680;
 }
 
 #logo {

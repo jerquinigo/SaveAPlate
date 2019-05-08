@@ -8,6 +8,8 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import red from "@material-ui/core/colors/red";
 import "./vendorProfilesCSS/VendorProfile.css";
 import Modal from "./Modal.js";
 
@@ -60,11 +62,7 @@ class VendorProfile extends Component {
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={() => {
-            this.toAddItem();
-            this.handleOpen();
-          }}
-        >
+          onClick={this.toAddItem}>
           <AddIcon />
         </Fab>
       </>
@@ -166,18 +164,19 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-          <Button
-            onClick={e => {
-              this.deleteItem(e);
-              this.props.receivedOpenSnackbar();
-            }}
-            type="submit"
-            variant="contained"
-            color="secondary"
-            id={item.food_id}
-          >
-            <DeleteIcon id={item.food_id} />
-          </Button>
+          <MuiThemeProvider theme={theme}>
+            <Button
+              onClick={e => {
+                this.deleteItem(e);
+                this.props.receivedOpenSnackbar();
+              }}
+              type="submit"
+              variant="contained"
+              color="secondary"
+              id={item.food_id}>
+              <DeleteIcon id={item.food_id} />
+            </Button>
+          </MuiThemeProvider>
         </div>
       );
     });
@@ -215,18 +214,20 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-          <Button
-            onClick={e => {
-              this.deleteItem(e);
-              this.props.receivedOpenSnackbar();
-            }}
-            type="submit"
-            variant="contained"
-            color="secondary"
-            id={item.food_id}
-          >
-            <DeleteIcon id={item.food_id} />
-          </Button>
+
+          <MuiThemeProvider theme={theme}>
+            <Button
+              onClick={e => {
+                this.deleteItem(e);
+                this.props.receivedOpenSnackbar();
+              }}
+              type="submit"
+              variant="contained"
+              color="secondary"
+              id={item.food_id}>
+              <DeleteIcon id={item.food_id} />
+            </Button>
+          </MuiThemeProvider>
         </div>
       );
     });
@@ -312,5 +313,17 @@ class VendorProfile extends Component {
     );
   }
 }
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red,
+    secondary: {
+      main: "#FF0000"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default VendorProfile;

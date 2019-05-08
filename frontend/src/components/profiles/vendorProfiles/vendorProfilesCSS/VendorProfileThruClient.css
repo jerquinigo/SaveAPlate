@@ -1,6 +1,3 @@
-
-
-
 .test {
   display: flex;
   flex-direction: row;
@@ -14,8 +11,6 @@
   height: 80px;
   background-color: #ebf4f4;
 }
-
-
 
 .claimed-items-list-vendor-version {
   display: flex;

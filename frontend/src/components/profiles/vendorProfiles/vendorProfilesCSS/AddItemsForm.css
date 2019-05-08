@@ -12,7 +12,8 @@
 
 #add-items-form {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 20px;
+  /* box-shadow: 5px 10px #aebdc7; */
   margin: 0 auto;
   width: 100%;
   display: flex;

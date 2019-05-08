@@ -82,8 +82,7 @@ export default function Landing() {
               color="primary"
               disableunderline="true"
               type="submit"
-              id="signup-button"
-            >
+              id="signup-button">
               Get Started
             </Button>
           </NavLink>
@@ -95,14 +94,12 @@ export default function Landing() {
               color="secondary"
               disableunderline="true"
               type="submit"
-              id="login-button"
-            >
+              id="login-button">
               Log In
             </Button>
           </NavLink>
         </div>
       </div>
-      <footer />
     </div>
   );
 }

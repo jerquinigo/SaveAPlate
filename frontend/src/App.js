@@ -14,6 +14,8 @@ import FeedContainer from "./containers/FeedContainer.js";
 import VendorProfileThruClientContainer from "./containers/VendorProfileThruClientContainer";
 import LoggedInNavBarContainer from "./containers/LoggedInNavBarContainer.js";
 import PrivateRoute from "./utils/AuthRouting.js";
+// import Footer from "./components/footer/Footer.js";
+// import "./components/footer/footerCSS/Footer.css";
 
 class App extends Component {
   componentDidMount() {
@@ -54,6 +56,7 @@ class App extends Component {
               component={VendorProfileThruClientContainer}
             />
           </Switch>
+          {/* <Footer /> */}
         </div>
       </div>
     );
