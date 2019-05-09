@@ -1,6 +1,6 @@
 .feed-profile-pic {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
 }
 
 .vendor-account-container {
@@ -16,7 +16,7 @@
 .vendor-span-container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -25,12 +25,13 @@
 }
 
 .address-text {
-  font-size: 35px;
+  font-size: 24px;
   max-width: 75%;
   max-height: 70%;
 }
 
 .display-item-name {
   width: 100%;
-  font-size: 35px;
+  font-size: 32px;
+  margin-left: 2.5%;
 }
