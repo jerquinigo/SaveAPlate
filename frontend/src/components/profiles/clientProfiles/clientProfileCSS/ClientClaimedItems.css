@@ -27,13 +27,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
   background-color: #f3e4d8;
   width: 75%;
   margin-top: 2%;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   font-family: "Montserrat", sans-serif;
-  border-radius: 5px;
   height: 150px;
 }
 
