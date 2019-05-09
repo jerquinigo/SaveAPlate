@@ -57,7 +57,7 @@ class VendorProfile extends Component {
   addItemButton = () => {
     return (
       <>
-        <p className="add-item-text">Add Item</p>
+        <h1 className="add-item-text">Add Item</h1>
         <Fab
           color="primary"
           aria-label="Add"
@@ -254,9 +254,7 @@ class VendorProfile extends Component {
     this.setState({ open: false, toAddItem: !this.state.toAddItem });
   };
 
-  // Favorite vendor
   render() {
-    console.log("PROPS!", this.props);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -265,10 +263,6 @@ class VendorProfile extends Component {
       <div id="vendor-container">
         <MainSnackbarContainer />
         <div id="vendor-profile-container">
-          <h1 id="vendor-name">
-            {" "}
-            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
-          </h1>
           <div>
             <img
               id="profile-picture"
@@ -276,6 +270,20 @@ class VendorProfile extends Component {
               src={this.state.profilePic}
             />
           </div>
+          <h1 id="vendor-name">
+            {" "}
+            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+          </h1>
+          <div id="vendor-info">
+            <p>
+              {" "}
+              {!vendorUser
+                ? this.props.currentUser.address_field
+                : vendorUser}{" "}
+            </p>
+            <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
+          </div>
+
           <br />
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">
@@ -283,6 +291,10 @@ class VendorProfile extends Component {
             </div>
             pounds of food donated
           </h3>
+
+          <br />
+        </div>
+        <div id="vendor-info-container">
           {this.state.toAddItem ? (
             <Modal
               handleClose={this.handleClose}
@@ -295,9 +307,6 @@ class VendorProfile extends Component {
           ) : (
             this.addItemButton()
           )}
-          <br />
-        </div>
-        <div id="vendor-info-container">
           <div>
             <h1 id="donation-list">Donation List</h1>
             <div id="display-unclaimed-items-container">
