@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./feedCSS/AllFeedItemsDisplayVendorName.css";
 
 class AllFeedItemsDisplayVendorName extends Component {
   displayVendorPhoto = newArr => {
@@ -7,7 +8,13 @@ class AllFeedItemsDisplayVendorName extends Component {
       let addressArr = Object.keys(this.props.profilePicture);
       return addressArr.map((data, i) => {
         if (data === newArr[0]) {
-          return <img src={this.props.profilePicture[data]} alt="" />;
+          return (
+            <img
+              className="feed-profile-pic"
+              src={this.props.profilePicture[data]}
+              alt=""
+            />
+          );
         }
         return null;
       });
@@ -39,17 +46,25 @@ class AllFeedItemsDisplayVendorName extends Component {
     // });
     if (newArr.length > 1) {
       return (
-        <div>
-          <p>{newArr[0]}</p>
-          {this.displayVendorPhoto(newArr)}
-        </div>
+        <>
+          <div className="vendor-address-field">
+            <p className="address-text">{newArr[0]}</p>
+          </div>
+          <div className="vendor-account-profile-pic">
+            {this.displayVendorPhoto(newArr)}
+          </div>
+        </>
       );
     } else {
       return (
-        <div>
-          <p>{newArr}</p>
-          {this.displayVendorPhoto(newArr)}
-        </div>
+        <>
+          <div className="vendor-address-field">
+            <p className="address-text">{newArr}</p>
+          </div>
+          <div className="vendor-account-profile-pic">
+            {this.displayVendorPhoto(newArr)}
+          </div>
+        </>
       );
     }
   };
@@ -59,7 +74,7 @@ class AllFeedItemsDisplayVendorName extends Component {
     console.log(this.props.profilePicture, "the profile pic");
     return (
       <div className="display-vendor-name">
-        <span>
+        <span className="vendor-span-container">
           <Link to={"/clientview/" + this.props.vendorName}>
             <strong className="display-item-name">
               {this.props.vendorName}
