@@ -50,7 +50,7 @@ class Login extends Component {
 
   render() {
     return (
-      <>
+      <div className="loginWrapper">
         {this.conditionalRouting()}
         <form onSubmit={this.loginUser} id="login-form">
           <h1 id="login-header">Login</h1>
@@ -83,16 +83,20 @@ class Login extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className="login-button">
+            className="login-button"
+          >
             Login
           </Button>
-          <Link to="/user/signup" id="signup-link">
-            Not a member yet?
-            <br />
-            Sign Up Here!
-          </Link>
+          <div className="notMemberDiv">
+            <p>Need an account?</p>
+            <p>
+              <Link to="/user/signup" id="signup-link">
+                Sign up now
+              </Link>
+            </p>
+          </div>
         </form>
-      </>
+      </div>
     );
   }
 }
