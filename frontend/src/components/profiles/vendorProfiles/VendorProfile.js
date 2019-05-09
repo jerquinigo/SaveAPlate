@@ -252,7 +252,6 @@ class VendorProfile extends Component {
 
   // Favorite vendor
   render() {
-    console.log("PROPS!", this.props);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -271,6 +270,19 @@ class VendorProfile extends Component {
               alt="profile pic"
               src={this.state.profilePic}
             />
+          </div>
+          <h1 id="vendor-name">
+            {" "}
+            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+          </h1>
+          <div id="vendor-info">
+            <p>
+              {" "}
+              {!vendorUser
+                ? this.props.currentUser.address_field
+                : vendorUser}{" "}
+            </p>
+            <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
           </div>
           <br />
           <h3 id="vendor-people-fed">
