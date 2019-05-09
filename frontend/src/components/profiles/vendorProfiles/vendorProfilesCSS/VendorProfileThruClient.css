@@ -43,7 +43,13 @@
 }
 
 .vendor-profile-container-vendor-version {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 218px;
+  margin-top: 218px; */
+
+  width: 75%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
 }

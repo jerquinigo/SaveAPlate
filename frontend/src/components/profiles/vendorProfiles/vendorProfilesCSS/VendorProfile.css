@@ -3,13 +3,13 @@
 }
 
 #vendor-profile-container {
-  width: 30vw;
+  width: 20vw;
   margin-left: 1%;
   height: 100%;
 }
 
 #vendor-info-container {
-  width: 70vw;
+  width: 80vw;
 }
 
 #profile-picture {
@@ -58,7 +58,7 @@
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 10px 10px 10px 10px;
-  width: 90%;
+  width: 45%;
 }
 
 #D35348 .add-item-button:hover {
@@ -106,6 +106,13 @@
 
 #item-name-container {
   width: 20%;
+}
+
+#item-name,
+#weight,
+#feeds,
+#pick-up {
+  text-decoration: underline;
 }
 
 #status-unavailable,
