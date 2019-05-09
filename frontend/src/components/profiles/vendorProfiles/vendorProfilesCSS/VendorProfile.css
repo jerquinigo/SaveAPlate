@@ -15,7 +15,7 @@
 #profile-picture {
   width: 200px;
   height: 200px;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 #vendor-name,
@@ -55,10 +55,10 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 2.5%;
   margin-bottom: 2%;
   padding: 10px 10px 10px 10px;
-  width: 45%;
+  width: 90%;
 }
 
 #D35348 .add-item-button:hover {
@@ -121,7 +121,7 @@
   font-family: "Merriweather", serif;
   font-size: 14px;
   font-weight: 800;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 10px 10px 10px 10px;
   width: 80px;
