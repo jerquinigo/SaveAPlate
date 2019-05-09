@@ -14,7 +14,7 @@
 #mission-statement {
   font-size: 60px;
   font-weight: bold;
-  color: #d35348;
+  color: #272e48;
   font-family: "Montserrat", sans-serif;
   margin: 0.3em;
 }
@@ -82,7 +82,7 @@
 #info-container-header {
   font-size: 3.75em;
   font-weight: bold;
-  color: #d35348;
+  color: #272e48;
   font-family: "Montserrat", sans-serif;
   grid-row-start: 1;
   grid-row-end: span 1;
