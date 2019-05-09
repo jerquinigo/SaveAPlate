@@ -1,11 +1,6 @@
-#about-container {
-  background-color: #e6f0f0;
-}
-
-#about-sub-container {
-  background-color: #d0dae1;
+/* #about-sub-container {
   height: 100vh;
-}
+} */
 
 #meet-our-team {
   padding-top: 2.5%;
@@ -17,8 +12,8 @@
 #meet-our-team,
 #our-mission {
   color: #272e48;
-  margin-bottom: 5%;
-  text-decoration: underline;
+
+  /* margin-bottom: 5%; */
   text-underline-position: under;
 }
 
@@ -28,7 +23,7 @@
 }
 
 .about-text {
-  width: 45%;
+  width: 56%;
   margin: 0 auto;
   font-family: "Merriweather", serif;
 }
@@ -38,6 +33,7 @@
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
+  margin-top: 5%;
 }
 
 .team-member-photo {
@@ -46,8 +42,8 @@
   border-radius: 50%;
   animation-duration: 3s;
   animation-name: drop;
-
-  -webkit-animation: slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1)
+  -webkit-animation:
+    slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1)
     both;
   animation: slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
@@ -103,15 +99,19 @@
   0% {
     transform: translateY(-40%);
   }
+
   25% {
     transform: translateY(-30%);
   }
+
   50% {
     transform: translateY(-20%);
   }
+
   75% {
     transform: translateY(-10%);
   }
+
   100% {
     transform: translateY(0%);
   }
@@ -121,15 +121,19 @@
   0% {
     transform: translateY(-40%);
   }
+
   25% {
     transform: translateY(-30%);
   }
+
   50% {
     transform: translateY(-20%);
   }
+
   75% {
     transform: translateY(-10%);
   }
+
   100% {
     transform: translateY(0%);
   }
@@ -145,6 +149,7 @@
     filter: blur(40px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateY(0) scaleY(1) scaleX(1);
     transform: translateY(0) scaleY(1) scaleX(1);
@@ -166,6 +171,7 @@
     filter: blur(40px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateY(0) scaleY(1) scaleX(1);
     transform: translateY(0) scaleY(1) scaleX(1);

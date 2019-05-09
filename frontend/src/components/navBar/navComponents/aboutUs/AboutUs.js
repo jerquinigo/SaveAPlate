@@ -18,7 +18,9 @@ export default function About() {
             <h3 className="team-member-name">Wynter Reid</h3>
             <a
               href="https://github.com/wynterreid"
-              className="team-github-link">
+              className="team-github-link"
+              target="_blank"
+            >
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -27,7 +29,9 @@ export default function About() {
             </a>
             <a
               href="https://www.linkedin.com/in/wynter-reid-2608b9174/"
-              className="team-linkedin-link">
+              className="team-linkedin-link"
+              target="_blank"
+            >
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -47,7 +51,9 @@ export default function About() {
             <h3 className="team-member-name">Jonathan Erquinigo</h3>
             <a
               href="https://github.com/jerquinigo"
-              className="team-github-link">
+              className="team-github-link"
+              target="_blank"
+            >
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -56,7 +62,9 @@ export default function About() {
             </a>
             <a
               href="https://www.linkedin.com/in/jonathan-erquinigo-8072b881/"
-              className="team-linkedin-link">
+              className="team-linkedin-link"
+              target="_blank"
+            >
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -76,7 +84,9 @@ export default function About() {
             <h3 className="team-member-name">Deyvi Ortiz</h3>
             <a
               href="https://github.com/SurgamSurgam"
-              className="team-github-link">
+              className="team-github-link"
+              target="_blank"
+            >
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -85,7 +95,9 @@ export default function About() {
             </a>
             <a
               href="https://www.linkedin.com/in/deyvio"
-              className="team-linkedin-link">
+              className="team-linkedin-link"
+              target="_blank"
+            >
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -105,7 +117,9 @@ export default function About() {
             <h3 className="team-member-name">Andrew Kil</h3>
             <a
               href="https://github.com/Andrew-Kil"
-              className="team-github-link">
+              className="team-github-link"
+              target="_blank"
+            >
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -114,7 +128,9 @@ export default function About() {
             </a>
             <a
               href="https://www.linkedin.com/in/andrew-kil/"
-              className="team-linkedin-link">
+              className="team-linkedin-link"
+              target="_blank"
+            >
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -126,16 +142,29 @@ export default function About() {
         <br />
         <br />
         <div className="about-text" id="our-mission-text">
-          <a href="https://github.com/jerquinigo/SaveAPlate" id="save-a-plate">
-            Save a Plate
-          </a>{" "}
-          was built in 2019 by four Full Stack Web Developers from
-          <a href="https://www.pursuit.org/" id="pursuit-link">
-            {" "}
-            Pursuit
-          </a>{" "}
-          with the goal of creating an online platform that fights hunger and
-          food waste in NYC.
+          <p>
+            <a
+              href="https://github.com/jerquinigo/SaveAPlate"
+              id="save-a-plate"
+              target="_blank"
+            >
+              Save a Plate
+            </a>{" "}
+            was built in 2019 by four Full Stack Web Developers from
+            <a
+              href="https://www.pursuit.org/"
+              id="pursuit-link"
+              target="_blank"
+            >
+              {" "}
+              Pursuit
+            </a>{" "}
+            with the goal of{" "}
+          </p>
+          <p>
+            creating an online platform that fights hunger and food waste in
+            NYC.
+          </p>
         </div>
       </div>
     </div>
