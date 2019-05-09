@@ -3,28 +3,35 @@
 }
 
 #vendor-profile-container {
-  width: 35vw;
+  width: 30vw;
+  margin-left: 1%;
+  height: 100%;
 }
 
 #vendor-info-container {
-  width: 65vw;
+  width: 70vw;
 }
 
 #profile-picture {
-  border: 2px solid black;
   width: 200px;
   height: 200px;
+  margin-top: 5%;
+}
+
+#vendor-name,
+#vendor-info {
+  width: 50%;
 }
 
 #vendor-name {
-  font-size: 40px;
+  font-size: 32px;
   font-family: "Montserrat", sans-serif;
   display: inline-block;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 20px 20px 20px 20px;
-  background-color: whitesmoke;
-  margin-top: 5%;
+}
+
+#vendor-info {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
 }
 
 #vendor-people-fed {
@@ -39,13 +46,22 @@
 }
 
 .add-item-text {
+  background-color: #aebdc7;
   color: #272e48;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 10px 10px 10px 10px;
+  width: 90%;
 }
 
-.add-item-button:hover {
+#D35348 .add-item-button:hover {
   border: 3px solid white;
 }
 
@@ -53,11 +69,11 @@
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 0 auto;
   margin-top: 2%;
-  /* margin: 0 0 0 0; */
   padding: 10px 10px 10px 10px;
+  font-family: "Montserrat", sans-serif;
 }
 
 #donation-list {
@@ -69,13 +85,6 @@
 #claimed-items-list {
   background-color: #f3e4d8;
   width: 90%;
-}
-
-#donation-list,
-#claimed-items-list {
-  margin-bottom: 2%;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 5px;
 }
 
 #display-unclaimed-items,
@@ -97,12 +106,6 @@
 
 #item-name-container {
   width: 20%;
-}
-
-#item-name,
-#weight,
-#feeds,
-#pick-up {
 }
 
 #status-unavailable,
