@@ -88,7 +88,7 @@ class VendorProfileThruClient extends Component {
   };
 
   //////////////////////////////////////////DISPLAY ITEMS/////////////////////////////////////////////////////////////////////////////
-  displayUnclaimedItems = () => {
+  displayItems = () => {
     let unclaimedItems = this.state.foodInfo.filter(item => {
       return item.is_claimed === false;
     });
@@ -187,7 +187,7 @@ class VendorProfileThruClient extends Component {
     return <>{claimedList} </>;
   };
   //////////////////////////////////////////////////////DISPLAY HOURS///////////////////////////////////////
-  displayVendorInfo = () => {
+  displayBusinessHours = () => {
     return this.state.businessHours.map((time, i) => {
       let mon1 = Number(time.mon_start.slice(0, 2));
       let mon2 = Number(time.mon_end.slice(0, 2));
