@@ -11,7 +11,7 @@ class AllFeedItemsDisplayed extends Component {
           return (
             <div className="vendorItemsContainer" key={b}>
               <div className="display-claimed-items">
-                <div className="display-item-name">{food.name}</div>
+                <div className="display-food-name">{food.name}</div>
 
                 <span> Feeds: {food.quantity} people</span>
                 <span>({Number(food.quantity) * 3} pounds)</span>

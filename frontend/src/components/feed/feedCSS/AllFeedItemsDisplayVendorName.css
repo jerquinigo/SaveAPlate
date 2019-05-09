@@ -1,0 +1,36 @@
+.feed-profile-pic {
+  width: 130px;
+  height: 130px;
+}
+
+.vendor-account-container {
+  display: flex;
+  width: 100%;
+}
+
+.vendor-account-profile-pic {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vendor-span-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vendor-address-field {
+  display: flex;
+}
+
+.address-text {
+  font-size: 35px;
+  max-width: 75%;
+  max-height: 70%;
+}
+
+.display-item-name {
+  width: 100%;
+  font-size: 35px;
+}

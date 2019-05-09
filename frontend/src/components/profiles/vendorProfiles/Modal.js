@@ -23,8 +23,7 @@ class SimpleModal extends React.Component {
               left: "50%",
               transform: "translate(-50%, -50%)"
             }}
-            className={this.props.classes.paper}
-          >
+            className={this.props.classes.paper}>
             <AddItemForm
               handleChange={this.props.handleChange}
               submitItem={this.props.submitItem}
