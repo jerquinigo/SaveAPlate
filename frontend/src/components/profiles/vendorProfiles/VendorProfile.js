@@ -11,7 +11,7 @@ import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import red from "@material-ui/core/colors/red";
 import "./vendorProfilesCSS/VendorProfile.css";
-import Modal from "./Modal.js";
+import SimpleModal from "./SimpleModal.js";
 
 class VendorProfile extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class VendorProfile extends Component {
       unclaimedItems: [],
       fedCount: 0,
       profilePic: "",
-      open: false //for modal
+      open: false //for Simplemodal
     };
   }
 
@@ -296,7 +296,7 @@ class VendorProfile extends Component {
         </div>
         <div id="vendor-info-container">
           {this.state.toAddItem ? (
-            <Modal
+            <SimpleModal
               handleClose={this.handleClose}
               handleOpen={this.handleOpen}
               open={this.state.open}
