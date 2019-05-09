@@ -1,3 +1,8 @@
+.loginWrapper {
+  display: grid;
+  place-items: center center;
+}
+
 #login-form {
   display: flex;
   justify-content: center;
@@ -10,8 +15,6 @@
   padding-bottom: 2%;
   border-radius: 5px;
   background-color: white;
-  /* border-radius: 20px; */
-  /* box-shadow: 5px 10px #aebdc7; */
 }
 
 #email-input,
@@ -30,4 +33,16 @@
 #signup-link {
   font-family: "Merriweather", serif;
   margin-top: 2%;
+}
+
+.notMemberDiv {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  justify-content: space-between;
+  margin-top: 3.5%;
+}
+
+.notMemberDiv > p {
+  margin: 2%;
 }
