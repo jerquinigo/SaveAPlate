@@ -8,8 +8,6 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import red from "@material-ui/core/colors/red";
 import "./vendorProfilesCSS/VendorProfile.css";
 import SimpleModal from "./SimpleModal.js";
 
@@ -26,7 +24,7 @@ class VendorProfile extends Component {
       unclaimedItems: [],
       fedCount: 0,
       profilePic: "",
-      open: false //for Simplemodal
+      open: false //for modal
     };
   }
 
@@ -57,12 +55,15 @@ class VendorProfile extends Component {
   addItemButton = () => {
     return (
       <>
-        <h1 className="add-item-text">Add Item</h1>
+        <p className="add-item-text">Add Item</p>
         <Fab
           color="primary"
           aria-label="Add"
           className="add-item-button"
-          onClick={this.toAddItem}>
+          onClick={() => {
+            this.toAddItem();
+            this.handleOpen();
+          }}>
           <AddIcon />
         </Fab>
       </>
@@ -138,19 +139,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item</h4>
+            <h4 id="item-name">Food Item:</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight </h4>
+            <h4 id="weight">Weight: </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds </h4>
+            <h4 id="feeds">Feeds: </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time</h4>
+            <h4 id="pick-up">Pick Up Time: </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -164,19 +165,17 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-          <MuiThemeProvider theme={theme}>
-            <Button
-              onClick={e => {
-                this.deleteItem(e);
-                this.props.receivedOpenSnackbar();
-              }}
-              type="submit"
-              variant="contained"
-              color="secondary"
-              id={item.food_id}>
-              <DeleteIcon id={item.food_id} />
-            </Button>
-          </MuiThemeProvider>
+          <Button
+            onClick={e => {
+              this.deleteItem(e);
+              this.props.receivedOpenSnackbar();
+            }}
+            type="submit"
+            variant="contained"
+            color="secondary"
+            id={item.food_id}>
+            <DeleteIcon id={item.food_id} />
+          </Button>
         </div>
       );
     });
@@ -188,19 +187,19 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item</h4>
+            <h4 id="item-name">Food Item:</h4>
             <p>{item.name}</p>
           </div>
           <div>
-            <h4 id="weight">Weight </h4>
+            <h4 id="weight">Weight: </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div>
-            <h4 id="feeds">Feeds </h4>
+            <h4 id="feeds">Feeds: </h4>
             <p>{item.quantity} people</p>
           </div>
           <div>
-            <h4 id="pick-up">Pick Up Time </h4>
+            <h4 id="pick-up">Pick Up Time: </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -214,20 +213,17 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
-
-          <MuiThemeProvider theme={theme}>
-            <Button
-              onClick={e => {
-                this.deleteItem(e);
-                this.props.receivedOpenSnackbar();
-              }}
-              type="submit"
-              variant="contained"
-              color="secondary"
-              id={item.food_id}>
-              <DeleteIcon id={item.food_id} />
-            </Button>
-          </MuiThemeProvider>
+          <Button
+            onClick={e => {
+              this.deleteItem(e);
+              this.props.receivedOpenSnackbar();
+            }}
+            type="submit"
+            variant="contained"
+            color="secondary"
+            id={item.food_id}>
+            <DeleteIcon id={item.food_id} />
+          </Button>
         </div>
       );
     });
@@ -245,7 +241,7 @@ class VendorProfile extends Component {
       });
   };
 
-  //handleOpen && handleClose are for the Modal
+  //handleOpen && handleClose are for the SimpleModal
   handleOpen = () => {
     this.setState({ open: true });
   };
@@ -254,7 +250,9 @@ class VendorProfile extends Component {
     this.setState({ open: false, toAddItem: !this.state.toAddItem });
   };
 
+  // Favorite vendor
   render() {
+    console.log("PROPS!", this.props);
     let vendorUser;
     if (this.props.currentUser.type === 2) {
       vendorUser = this.props.match.params.vendor;
@@ -263,6 +261,10 @@ class VendorProfile extends Component {
       <div id="vendor-container">
         <MainSnackbarContainer />
         <div id="vendor-profile-container">
+          <h1 id="vendor-name">
+            {" "}
+            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+          </h1>
           <div>
             <img
               id="profile-picture"
@@ -270,20 +272,6 @@ class VendorProfile extends Component {
               src={this.state.profilePic}
             />
           </div>
-          <h1 id="vendor-name">
-            {" "}
-            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
-          </h1>
-          <div id="vendor-info">
-            <p>
-              {" "}
-              {!vendorUser
-                ? this.props.currentUser.address_field
-                : vendorUser}{" "}
-            </p>
-            <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
-          </div>
-
           <br />
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">
@@ -291,10 +279,6 @@ class VendorProfile extends Component {
             </div>
             pounds of food donated
           </h3>
-
-          <br />
-        </div>
-        <div id="vendor-info-container">
           {this.state.toAddItem ? (
             <SimpleModal
               handleClose={this.handleClose}
@@ -307,6 +291,9 @@ class VendorProfile extends Component {
           ) : (
             this.addItemButton()
           )}
+          <br />
+        </div>
+        <div id="vendor-info-container">
           <div>
             <h1 id="donation-list">Donation List</h1>
             <div id="display-unclaimed-items-container">
@@ -322,17 +309,5 @@ class VendorProfile extends Component {
     );
   }
 }
-
-const theme = createMuiTheme({
-  palette: {
-    primary: red,
-    secondary: {
-      main: "#FF0000"
-    }
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
 export default VendorProfile;

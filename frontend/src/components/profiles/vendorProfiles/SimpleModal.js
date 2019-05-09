@@ -14,6 +14,7 @@ const styles = theme => ({
 
 class SimpleModal extends React.Component {
   render() {
+    debugger;
     return (
       <div>
         <Modal open={this.props.open} onClose={this.props.handleClose}>
