@@ -1,5 +1,5 @@
 import React from "react";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 const SearchBarResultsVendorItemsDisplay = props => {

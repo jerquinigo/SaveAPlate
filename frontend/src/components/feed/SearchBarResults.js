@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SearchBarResultsVendorDisplay from "./SearchBarResultsVendorDisplay.js";
 import SearchBarResultsVendorItemsDisplay from "./SearchBarResultsVendorItemsDisplay.js";
-import Button from "@material-ui/core/Button";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
 import "./feedCSS/SearchBarResults.css";
 
@@ -29,7 +27,10 @@ export const SearchBarResults = props => {
     let vendorName = vendorNameArr.map((vendorName, a) => {
       return (
         <div key="a">
-          <SearchBarResultsVendorDisplay vendorName={vendorName} />
+          <SearchBarResultsVendorDisplay
+            vendorName={vendorName}
+            allVendors={props.allVendors}
+          />
 
           <div className="vendorItemsWrapper">
             {searchDataObj[vendorName].map((food, b) => {
