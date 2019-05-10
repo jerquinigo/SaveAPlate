@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SearchBarResultsVendorDisplay = props => {
-  // props.allVendors.map(pic => {
-  //   debugger;
-  // });
   return (
     <span>
       <Link to={"/clientview/" + props.vendorName}>

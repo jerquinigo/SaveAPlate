@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SearchBarResultsVendorDisplay from "./SearchBarResultsVendorDisplay.js";
 import SearchBarResultsVendorItemsDisplay from "./SearchBarResultsVendorItemsDisplay.js";
-import Button from "@material-ui/core/Button";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
 import "./feedCSS/SearchBarResults.css";
 
