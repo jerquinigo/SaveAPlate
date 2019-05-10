@@ -28,12 +28,10 @@
   margin-top: -6em;
 }
 
-.signup-header-body {
-  font-size: 20px;
+#signup-header-body {
   font-family: "Merriweather", serif;
-  color: #272e48;
-  font-size: 1.25em;
-  font-weight: bold;
+  color: black;
+  font-size: 1.35em;
 }
 
 .signup-form {
@@ -67,12 +65,10 @@
 #vendor-signup-form,
 #client-signup-form {
   background-color: white;
-
   width: 95%;
   margin-top: -70px;
   min-height: 41em;
   margin-bottom: 0;
-
 }
 
 .input-field {

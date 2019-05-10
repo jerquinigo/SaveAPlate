@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
-import DisplayClientFavorites from "./DisplayClientFavorites.js";
+// import DisplayClientFavorites from "./DisplayClientFavorites.js";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
 import axios from "axios";

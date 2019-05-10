@@ -154,7 +154,6 @@ getVendorHours = (req, res, next) => {
 };
 
 deleteBusiness_hours = (req, res, next) => {
-  console.log("MY VENDOR ID", req.params);
   let vendor_id = Number(req.params.id);
   db.result("DELETE FROM business_hours WHERE vendor_id=$1", [vendor_id])
     .then(result => {

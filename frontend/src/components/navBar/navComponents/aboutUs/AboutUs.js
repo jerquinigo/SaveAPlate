@@ -20,6 +20,7 @@ export default function About() {
               href="https://github.com/wynterreid"
               className="team-github-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./github.png")}
@@ -31,6 +32,7 @@ export default function About() {
               href="https://www.linkedin.com/in/wynter-reid-2608b9174/"
               className="team-linkedin-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./linkedin.png")}
@@ -53,6 +55,7 @@ export default function About() {
               href="https://github.com/jerquinigo"
               className="team-github-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./github.png")}
@@ -64,6 +67,7 @@ export default function About() {
               href="https://www.linkedin.com/in/jonathan-erquinigo-8072b881/"
               className="team-linkedin-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./linkedin.png")}
@@ -86,6 +90,7 @@ export default function About() {
               href="https://github.com/SurgamSurgam"
               className="team-github-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./github.png")}
@@ -97,6 +102,7 @@ export default function About() {
               href="https://www.linkedin.com/in/deyvio"
               className="team-linkedin-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./linkedin.png")}
@@ -119,6 +125,7 @@ export default function About() {
               href="https://github.com/Andrew-Kil"
               className="team-github-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./github.png")}
@@ -130,6 +137,7 @@ export default function About() {
               href="https://www.linkedin.com/in/andrew-kil/"
               className="team-linkedin-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={require("./linkedin.png")}
@@ -147,6 +155,7 @@ export default function About() {
               href="https://github.com/jerquinigo/SaveAPlate"
               id="save-a-plate"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Save a Plate
             </a>{" "}
@@ -155,6 +164,7 @@ export default function About() {
               href="https://www.pursuit.org/"
               id="pursuit-link"
               target="_blank"
+              rel="noopener noreferrer"
             >
               {" "}
               Pursuit

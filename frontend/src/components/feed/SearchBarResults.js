@@ -12,8 +12,8 @@ export const SearchBarResults = props => {
     let searchResults = props.userSearchResults.filter(result => {
       return result.is_claimed !== true;
     });
+    // eslint-disable-next-line
     searchResults.map((results, i) => {
-
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
       } else if (searchDataObj[results.vendor_name]) {
@@ -58,7 +58,8 @@ export const SearchBarResults = props => {
                       }}
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }>
+                      }
+                    >
                       {food.is_claimed ? "UNCLAIM" : "CLAIM"}
                     </Button>
                   </MuiThemeProvider>

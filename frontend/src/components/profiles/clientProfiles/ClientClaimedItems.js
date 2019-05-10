@@ -46,7 +46,8 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
         }}
         variant="contained"
         color="secondary"
-        className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
+        className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
+      >
         {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
       </Button>
     </div>
@@ -115,9 +116,6 @@ class ClientClaimedItems extends Component {
         claimedList[claimedFoodItems[i].vendor_id] = [claimedFoodItems[i]];
       }
     }
-
-    console.log("CLAIMED LIST", claimedList);
-
     return claimedList;
   };
 
