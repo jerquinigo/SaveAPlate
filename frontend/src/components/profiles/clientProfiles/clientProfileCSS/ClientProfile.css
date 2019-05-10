@@ -1,3 +1,30 @@
+#client-container {
+  display: flex;
+}
+
+#client-profile-container {
+  width: 20vw;
+  margin-left: 1%;
+  height: 100%;
+}
+
+#client-info-container {
+  width: 80vw;
+}
+
+#profile-picture {
+  width: 200px;
+  height: 200px;
+  margin-top: 10%;
+}
+
+#client-name {
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  width: 50%;
+}
+
 .client-name {
   display: inline-block;
   border: 2px solid black;
