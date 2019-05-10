@@ -55,7 +55,6 @@ getAllClients = (req, res, next) => {
 };
 
 createUser = (req, res, next) => {
-  console.log(req.body);
   const hash = authHelpers.createHash(req.body.password_digest);
   db.one(
     "INSERT INTO users(name,email,password_digest,type,address_field,body,telephone_number,ein,client_certificate,profile_picture) VALUES(${name},${email},${password_digest},${type},${address_field},${body},${telephone_number},${ein},${client_certificate},${profile_picture})RETURNING name",

@@ -94,7 +94,8 @@ class VendorProfileThruClient extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="display-claimed-items-vendor-version" />
           <div className="claimed-vendor-items-two">
             <h2> Food Dish </h2>
@@ -115,7 +116,8 @@ class VendorProfileThruClient extends Component {
               color="secondary"
               className={
                 item.is_claimed ? "claimed-button" : "unclaimed-button"
-              }>
+              }
+            >
               {item.is_claimed ? "UNAVAILABLE" : "AVAILABLE"}
             </Button>
           </div>
@@ -139,7 +141,8 @@ class VendorProfileThruClient extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="display-claimed-items-vendor-version">
             <div className="claimed-vendor-items-two">
               <h2> Food Dish </h2>
@@ -178,7 +181,8 @@ class VendorProfileThruClient extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="display-claimed-items-vendor-version">
             <div className="claimed-vendor-items-two">
               <h2> Food Dish </h2>
@@ -219,7 +223,7 @@ class VendorProfileThruClient extends Component {
       let sun1 = Number(time.sun_start.slice(0, 2));
       let sun2 = Number(time.sun_end.slice(0, 2));
       return (
-        <>
+        <div key={i}>
           <h2 className="vendor-name">{time.name} </h2>
           <h5> {time.body} </h5>
           <br />
@@ -279,13 +283,14 @@ class VendorProfileThruClient extends Component {
                 !!this.state.isFav.length
                   ? "claimed-button"
                   : "unclaimed-button"
-              }>
+              }
+            >
               {!!this.state.isFav.length
                 ? "Remove From Favorites"
                 : "Add To Favorites"}
             </Button>
           </div>
-        </>
+        </div>
       );
     });
   };
@@ -311,7 +316,6 @@ class VendorProfileThruClient extends Component {
   };
 
   render() {
-    console.log(this.state.foodInfo);
     return (
       <>
         {this.displayVendorInfo()}

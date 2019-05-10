@@ -63,7 +63,8 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}>
+          }}
+        >
           <AddIcon />
         </Fab>
       </>
@@ -112,7 +113,6 @@ class VendorProfile extends Component {
     if (this.props.currentUser.type === 2) {
       tempVar = this.props.match.params.vendor;
     }
-    console.log(tempVar, "the temp var");
     getFoodItemsByVendor(!tempVar ? this.props.currentUser.name : tempVar).then(
       data => {
         let unclaimed = data.data.food_items.filter(item => {
@@ -165,6 +165,7 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
+
           <div id="item-button-container">
             <Button
               onClick={e => {
@@ -215,6 +216,7 @@ class VendorProfile extends Component {
               <div id="status-available">Available</div>
             )}
           </div>
+
           <div id="item-button-container">
             <Button
               onClick={e => {
@@ -228,6 +230,7 @@ class VendorProfile extends Component {
               <DeleteIcon id={item.food_id} />
             </Button>
           </div>
+
         </div>
       );
     });

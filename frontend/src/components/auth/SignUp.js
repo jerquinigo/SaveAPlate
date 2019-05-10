@@ -522,7 +522,7 @@ class SignUp extends Component {
             </RadioGroup>
           </FormControl>
         </div>
-        <div class="signup-form-wrapper">{this.signUpForm()}</div>
+        <div className="signup-form-wrapper">{this.signUpForm()}</div>
       </div>
     );
   }

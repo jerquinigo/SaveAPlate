@@ -27,6 +27,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
   return (
     <div className="display-claimed-items">
+
       <div id="item-name-container">
         <h4 id="item-name">Food Item:</h4>
         <p>{item.name}</p>
@@ -133,9 +134,6 @@ class ClientClaimedItems extends Component {
         claimedList[claimedFoodItems[i].vendor_id] = [claimedFoodItems[i]];
       }
     }
-
-    console.log("CLAIMED LIST", claimedList);
-
     return claimedList;
   };
 
