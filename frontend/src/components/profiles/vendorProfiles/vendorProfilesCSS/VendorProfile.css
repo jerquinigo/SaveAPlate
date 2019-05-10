@@ -18,7 +18,14 @@
   margin-top: 10%;
 }
 
-#vendor-name,
+#vendor-name {
+  width: 50%;
+}
+
+.vendor-info-display {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+}
 #vendor-info {
   width: 50%;
 }

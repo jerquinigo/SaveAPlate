@@ -175,7 +175,8 @@ class VendorProfile extends Component {
               type="submit"
               variant="contained"
               color="secondary"
-              id={item.food_id}>
+              id={item.food_id}
+            >
               <DeleteIcon id={item.food_id} />
             </Button>
           </div>
@@ -226,11 +227,11 @@ class VendorProfile extends Component {
               type="submit"
               variant="contained"
               color="secondary"
-              id={item.food_id}>
+              id={item.food_id}
+            >
               <DeleteIcon id={item.food_id} />
             </Button>
           </div>
-
         </div>
       );
     });
@@ -278,7 +279,7 @@ class VendorProfile extends Component {
             {" "}
             {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
           </h1>
-          <div id="vendor-info">
+          <div className="vendor-info-display">
             <p>
               {" "}
               {!vendorUser
