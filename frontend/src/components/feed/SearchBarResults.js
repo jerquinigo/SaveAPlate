@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBarResultsVendorDisplay from "./SearchBarResultsVendorDisplay.js";
+import SearchBarResultsVendorItemsDisplay from "./SearchBarResultsVendorItemsDisplay.js";
 import Button from "@material-ui/core/Button";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
+import "./feedCSS/SearchBarResults.css";
 
 // will need to apply the search object filter here just like all the others to get it to work to group
 export const SearchBarResults = props => {
@@ -13,7 +16,6 @@ export const SearchBarResults = props => {
       return result.is_claimed !== true;
     });
     searchResults.map((results, i) => {
-
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
       } else if (searchDataObj[results.vendor_name]) {
@@ -26,42 +28,19 @@ export const SearchBarResults = props => {
     let vendorName = vendorNameArr.map((vendorName, a) => {
       return (
         <div key="a">
-          <span>
-            <Link to={"/clientview/" + vendorName}>
-              <strong>{vendorName}</strong>{" "}
-            </Link>
-          </span>
+          <SearchBarResultsVendorDisplay vendorName={vendorName} />
 
           <div className="vendorItemsWrapper">
             {searchDataObj[vendorName].map((food, b) => {
               return (
                 <div className="vendorItemsContainer" key={b}>
-                  <span>{food.address_field}</span>
-                  <span>{food.telephone_number}</span>
-                  <span>{food.name}</span>
-                  <span> Feeds: {food.quantity} people</span>
-                  <span>({Number(food.quantity) * 3} pounds)</span>
-                  <span>
-                    {converted_time === 0 || converted_time < 13
-                      ? converted_time + "am"
-                      : converted_time - 12 + "pm"}
-                  </span>
-
-                  <MuiThemeProvider theme={theme}>
-                    <Button
-                      id={food.id}
-                      variant="contained"
-                      color="secondary"
-                      onClick={e => {
-                        props.claimItem(e, food.is_claimed);
-                        props.receivedOpenSnackbar();
-                      }}
-                      className={
-                        food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }>
-                      {food.is_claimed ? "UNCLAIM" : "CLAIM"}
-                    </Button>
-                  </MuiThemeProvider>
+                  <SearchBarResultsVendorItemsDisplay
+                    food={food}
+                    claimItem={props.claimItem}
+                    receivedOpenSnackbar={props.receivedOpenSnackbar}
+                    converted_time={converted_time}
+                    theme={theme}
+                  />
                 </div>
               );
             })}
