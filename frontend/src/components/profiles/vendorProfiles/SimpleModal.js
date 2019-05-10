@@ -1,7 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import Button from "@material-ui/core/Button";
 import AddItemForm from "./AddItemsForm.js";
 
 const styles = theme => ({
@@ -24,7 +23,8 @@ class SimpleModal extends React.Component {
               left: "50%",
               transform: "translate(-50%, -50%)"
             }}
-            className={this.props.classes.paper}>
+            className={this.props.classes.paper}
+          >
             <AddItemForm
               handleChange={this.props.handleChange}
               submitItem={this.props.submitItem}

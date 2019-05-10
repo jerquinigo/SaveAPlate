@@ -34,7 +34,8 @@ class ClientProfileEditForm extends Component {
       <Button
         variant="contained"
         color="primary"
-        onClick={this.toggleEditFormLogic}>
+        onClick={this.toggleEditFormLogic}
+      >
         Edit Profile
       </Button>
     );
@@ -43,53 +44,6 @@ class ClientProfileEditForm extends Component {
   displayEditForm = () => {
     return (
       <div className="displayEditFormPage">
-        {/* <form onSubmit={this.handleSubmit}>
-          <input
-            onChange={this.handleChange}
-            name="name"
-            type="text"
-            placeholder="enter name"
-          />
-          <br />
-          <input
-            onChange={this.handleChange}
-            name="email"
-            type="text"
-            placeholder="enter email"
-          />
-          <br />
-          <input
-            onChange={this.handleChange}
-            name="address_field"
-            type="text"
-            placeholder="enter address"
-          />
-          <br />
-          <input
-            onChange={this.handleChange}
-            name="body"
-            type="text"
-            placeholder="enter new description"
-          />
-          <br />
-          <input
-            onChange={this.handleChange}
-            name="telephone_number"
-            type="text"
-            placeholder="enter telephone number"
-          />
-          <br />
-
-          <input
-            onChange={this.handleChange}
-            name="client_certificate"
-            type="text"
-            placeholder="enter client certificate"
-          />
-          <br />
-          <button type="submit">submit</button>
-        </form> */}
-
         <form className="displayEditFormPage" noValidate autoComplete="off">
           <TextField
             label="Name"
@@ -175,7 +129,6 @@ class ClientProfileEditForm extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="ClientFormMainPage">
         {this.editProfile()}

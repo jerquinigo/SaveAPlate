@@ -6,8 +6,7 @@ import RootReducer from "../reducers/RootReducer.js";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   RootReducer,
-  composeEnhancers(
-  applyMiddleware(logger, thunk)
-));
-console.log(store.getState(), "STORE");
+  composeEnhancers(applyMiddleware(logger, thunk))
+);
+
 export default store;

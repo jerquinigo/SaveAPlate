@@ -27,7 +27,6 @@ class AllFeedItemsDisplayVendorName extends Component {
       foodDataObj[vendorName].forEach((name, i) => {
         newArr.push(foodDataObj[vendorName][0].address_field);
         newArr.slice(0, 0);
-        console.log(newArr, "thew nwefeoi");
       });
     } else {
       foodDataObj[vendorName].forEach((name, i) => {
@@ -35,15 +34,6 @@ class AllFeedItemsDisplayVendorName extends Component {
       });
     }
 
-    // foodDataObj[vendorName].map((name, i) => {
-    // if (name.address_field.length === name.address_field.length) {
-
-    // if (foodDataObj[vendorName].length > 1) {
-    //   newArr.push(foodDataObj[vendorName].slice(0, 1));
-    // } else {
-    //   newArr.push(name.address_field);
-    // }
-    // });
     if (newArr.length > 1) {
       return (
         <>
@@ -70,8 +60,6 @@ class AllFeedItemsDisplayVendorName extends Component {
   };
 
   render() {
-    console.log(this.props.allVendorsPic, "all the final vendors in the comp");
-    console.log(this.props.profilePicture, "the profile pic");
     return (
       <div className="display-vendor-name">
         <span className="vendor-span-container">

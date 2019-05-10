@@ -63,7 +63,8 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}>
+          }}
+        >
           <AddIcon />
         </Fab>
       </>
@@ -112,7 +113,6 @@ class VendorProfile extends Component {
     if (this.props.currentUser.type === 2) {
       tempVar = this.props.match.params.vendor;
     }
-    console.log(tempVar, "the temp var");
     getFoodItemsByVendor(!tempVar ? this.props.currentUser.name : tempVar).then(
       data => {
         let unclaimed = data.data.food_items.filter(item => {
@@ -173,7 +173,8 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}>
+            id={item.food_id}
+          >
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>
@@ -221,7 +222,8 @@ class VendorProfile extends Component {
             type="submit"
             variant="contained"
             color="secondary"
-            id={item.food_id}>
+            id={item.food_id}
+          >
             <DeleteIcon id={item.food_id} />
           </Button>
         </div>

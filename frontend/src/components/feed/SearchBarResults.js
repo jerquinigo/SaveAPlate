@@ -15,6 +15,7 @@ export const SearchBarResults = props => {
     let searchResults = props.userSearchResults.filter(result => {
       return result.is_claimed !== true;
     });
+    // eslint-disable-next-line
     searchResults.map((results, i) => {
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
@@ -34,6 +35,7 @@ export const SearchBarResults = props => {
             {searchDataObj[vendorName].map((food, b) => {
               return (
                 <div className="vendorItemsContainer" key={b}>
+
                   <SearchBarResultsVendorItemsDisplay
                     food={food}
                     claimItem={props.claimItem}
@@ -41,6 +43,7 @@ export const SearchBarResults = props => {
                     converted_time={converted_time}
                     theme={theme}
                   />
+
                 </div>
               );
             })}

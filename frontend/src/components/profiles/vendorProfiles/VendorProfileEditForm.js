@@ -111,7 +111,6 @@ class VendorProfileEditForm extends Component {
     if (ein !== "") {
       changeValue.push(name);
     }
-    console.log(changeValue);
     axios
       .patch(`/api/users/${this.props.id}`, {
         name: this.state.name,
