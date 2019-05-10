@@ -80,9 +80,7 @@ class ClientProfile extends Component {
             <p>{this.props.currentUser.address_field}</p>
             <p>{this.props.currentUser.email}</p>
           </div>
-          <div className="displayInfo">
-            <p>{this.props.currentUser.address_field}</p>
-          </div>
+          <br />
           <ClientProfileEditForm id={this.props.currentUser.id} />
         </div>
 

@@ -13,7 +13,6 @@ export const SearchBarResults = props => {
       return result.is_claimed !== true;
     });
     searchResults.map((results, i) => {
-
       if (!searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name] = [results];
       } else if (searchDataObj[results.vendor_name]) {
