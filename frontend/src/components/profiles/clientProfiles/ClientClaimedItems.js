@@ -15,7 +15,8 @@ const VendorSection = ({ vendor, userObj, children }) => {
           </Link>
         </div>
         <div>{vendor.address_field}</div>
-        <div>{vendor.telephone_number}</div>
+        {/* <div>{vendor.telephone_number}</div> */}
+        <div>IMAGE</div>
       </div>
       <div>{children}</div>
     </div>
