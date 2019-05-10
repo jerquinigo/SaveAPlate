@@ -135,6 +135,7 @@ export default class Feed extends Component {
             getAllFoodItems={this.getAllFoodItems}
             foodItems={this.state.getAllFoodItems}
             receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+            allVendors={this.state.allVendors}
           />
         ) : (
           <AllFeedItems

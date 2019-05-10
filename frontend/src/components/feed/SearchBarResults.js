@@ -28,7 +28,10 @@ export const SearchBarResults = props => {
     let vendorName = vendorNameArr.map((vendorName, a) => {
       return (
         <div key="a">
-          <SearchBarResultsVendorDisplay vendorName={vendorName} />
+          <SearchBarResultsVendorDisplay
+            vendorName={vendorName}
+            allVendors={props.allVendors}
+          />
 
           <div className="vendorItemsWrapper">
             {searchDataObj[vendorName].map((food, b) => {
