@@ -8,18 +8,38 @@
   font-weight: 700;
 }
 
-.display-vendor-name,
-.display-claimed-items {
+.display-vendor-name {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 80px;
-  margin: 0;
+  margin: 0, auto;
   float: right;
   margin-right: 15%;
 }
+.display-vendor-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+  /* border: 2px solid black; */
+  /* border-radius: 5px; */
+  margin: 0 auto;
+  /* margin-top: 2%; */
+  width: 75%;
+  height: 80px;
+  background-color: #ebf4f4;
 
+  /* flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  float: right;
+  margin: 0;
+  margin-right: 15%; */
+}
 .display-vendor-name {
   background-color: #f3e4d8;
   width: 75%;

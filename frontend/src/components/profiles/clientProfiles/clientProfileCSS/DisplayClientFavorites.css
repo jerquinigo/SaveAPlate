@@ -19,7 +19,7 @@
   margin-top: 2%;
 }
 
-.display-claimed-items {
+.display-claimed-items-for-client {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
