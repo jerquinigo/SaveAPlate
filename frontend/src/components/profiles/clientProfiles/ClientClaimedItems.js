@@ -26,10 +26,9 @@ const VendorSection = ({ vendor, userObj, children }) => {
 const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
   return (
-    <div className="display-claimed-items">
-
+    <div className="display-vendor-items">
       <div id="item-name-container">
-        <h4 id="item-name">Food Item:</h4>
+        <h4 id="item-name">Food Item: </h4>
         <p>{item.name}</p>
       </div>
       <div id="item-weight-container">
@@ -64,7 +63,8 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
           }}
           variant="contained"
           color="secondary"
-          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
+          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
+        >
           {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
         </Button>
       </div>
