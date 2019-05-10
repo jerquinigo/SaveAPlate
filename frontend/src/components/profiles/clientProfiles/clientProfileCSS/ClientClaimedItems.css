@@ -14,25 +14,25 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid black; */
   height: 80px;
-  /* background-color: white; */
   margin: 0;
   float: right;
   margin-right: 15%;
 }
 
 .display-vendor-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   background-color: #f3e4d8;
   width: 75%;
   margin-top: 2%;
-  /* margin-bottom: 2%; */
   font-family: "Montserrat", sans-serif;
   height: 150px;
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .claimed-button,

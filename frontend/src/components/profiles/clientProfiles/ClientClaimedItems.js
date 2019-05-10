@@ -15,7 +15,8 @@ const VendorSection = ({ vendor, userObj, children }) => {
           </Link>
         </div>
         <div>{vendor.address_field}</div>
-        <div>{vendor.telephone_number}</div>
+        {/* <div>{vendor.telephone_number}</div> */}
+        <div>IMAGE</div>
       </div>
       <div>{children}</div>
     </div>
@@ -26,30 +27,47 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
   return (
     <div className="display-claimed-items">
-      <span className="display-item-name">{item.name}</span>
-      <span>
-        <p>Quantity: </p>
-        {item.quantity}
-      </span>
 
-      <span>
-        <p>Pickup Time: </p>
-        {converted_time === 0 || converted_time < 13
-          ? converted_time + "am"
-          : converted_time - 12 + "pm"}
-      </span>
-      <Button
-        id={item.id}
-        onClick={e => {
-          ClaimItem(e, item.is_claimed, userObj, toReRender);
-          receivedOpenSnackbar();
-        }}
-        variant="contained"
-        color="secondary"
-        className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-      >
-        {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-      </Button>
+      <div id="item-name-container">
+        <h4 id="item-name">Food Item:</h4>
+        <p>{item.name}</p>
+      </div>
+      <div id="item-weight-container">
+        <h4 id="weight">Weight: </h4>
+        <p>{item.quantity * 3} pounds</p>
+      </div>
+      <div id="item-feeds-container">
+        <h4 id="feeds">Feeds: </h4>
+        <p>{item.quantity} people</p>
+      </div>
+      <div id="item-pickup-container">
+        <h4 id="pick-up">Pick Up Time: </h4>
+        <p>
+          {converted_time === 0 || converted_time < 13
+            ? converted_time + "am"
+            : converted_time - 12 + "pm"}
+        </p>
+      </div>
+      <div id="item-claim-container">
+        {item.is_claimed ? (
+          <div id="status-unavailable">Unavailable</div>
+        ) : (
+          <div id="status-available">Available</div>
+        )}
+      </div>
+      <div id="item-button-container">
+        <Button
+          id={item.id}
+          onClick={e => {
+            ClaimItem(e, item.is_claimed, userObj, toReRender);
+            receivedOpenSnackbar();
+          }}
+          variant="contained"
+          color="secondary"
+          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
+          {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+        </Button>
+      </div>
     </div>
   );
 };

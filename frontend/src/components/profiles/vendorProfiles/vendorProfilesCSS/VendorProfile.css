@@ -104,8 +104,17 @@
   font-family: "Merriweather", serif;
 }
 
-#item-name-container {
+#item-name-container,
+#item-weight-container,
+#item-feeds-container,
+#item-pickup-container,
+#item-claim-button-container {
   width: 20%;
+}
+
+#item-claim-container,
+#item-button-container {
+  width: 10%;
 }
 
 #item-name,
