@@ -20,12 +20,31 @@
   align-items: center;
 }
 
+.display-item-name {
+  width: 25%;
+}
+
+.display-item-name:hover,
+.display-item-name:visited,
+.display-item-name:link,
+.display-item-name:active {
+  text-decoration: none;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  padding-left: 10px;
+}
+
+.display-item-name:hover {
+  color: #d35348;
+}
+
 .vendor-address-field {
   display: flex;
+  width: 50%;
 }
 
 .address-text {
-  font-size: 24px;
-  max-width: 75%;
-  max-height: 70%;
+  font-size: 18px;
 }

@@ -28,7 +28,6 @@
 .display-vendor-name {
   background-color: #f3e4d8;
   width: 90%;
-  margin-top: 2%;
   font-family: "Montserrat", sans-serif;
   height: 150px;
   margin: 0 auto;
@@ -36,6 +35,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid black;
 }
 
 .claimed-button,
