@@ -25,7 +25,6 @@
 .about-text {
   width: 56%;
   margin: 0 auto;
-  font-family: "Merriweather", serif;
 }
 
 #about-us-container {
@@ -42,8 +41,7 @@
   border-radius: 50%;
   animation-duration: 3s;
   animation-name: drop;
-  -webkit-animation:
-    slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1)
+  -webkit-animation: slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1)
     both;
   animation: slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
@@ -78,7 +76,6 @@
   color: #d35348;
   font-weight: 800;
   font-size: 18px;
-  font-family: "Merriweather", serif;
 }
 
 #save-a-plate:hover,

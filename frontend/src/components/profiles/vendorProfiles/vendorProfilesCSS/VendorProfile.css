@@ -100,15 +100,12 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid black; */
   border-width: thin;
   border-bottom: 1px solid black;
   margin: 0 auto;
   margin-top: 2px;
   width: 90%;
   height: 100px;
-  /* background-color: white; */
-  font-family: "Merriweather", serif;
 }
 
 #item-name-container,
@@ -131,14 +128,9 @@
   text-decoration: underline;
 }
 
-#item-name {
-  font-family: "Merriweather", serif;
-}
-
 #status-unavailable,
 #status-available {
   background-color: white;
-  font-family: "Merriweather", serif;
   font-size: 14px;
   font-weight: 800;
   border: 1px solid black;
