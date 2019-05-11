@@ -76,10 +76,10 @@
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 auto;
   margin-top: 2%;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0px 10px 0px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -129,6 +129,10 @@
 #feeds,
 #pick-up {
   text-decoration: underline;
+}
+
+#item-name {
+  font-family: "Merriweather", serif;
 }
 
 #status-unavailable,

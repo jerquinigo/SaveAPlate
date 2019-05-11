@@ -68,7 +68,6 @@ class ClientProfile extends Component {
       <div id="client-container">
         <MainSnackbarContainer />
         <div id="client-profile-container">
-          <h1 id="client-name">{this.props.currentUser.name}</h1>
           <div>
             <img
               id="profile-picture"
@@ -76,6 +75,7 @@ class ClientProfile extends Component {
               src={this.state.profilePic}
             />
           </div>
+          <h1 id="client-name">{this.props.currentUser.name}</h1>
           <div id="vendor-info">
             <p>{this.props.currentUser.address_field}</p>
             <p>{this.props.currentUser.email}</p>

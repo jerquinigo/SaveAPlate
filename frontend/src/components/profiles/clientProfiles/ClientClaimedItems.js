@@ -63,8 +63,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
           }}
           variant="contained"
           color="secondary"
-          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-        >
+          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
           {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
         </Button>
       </div>
@@ -158,10 +157,9 @@ class ClientClaimedItems extends Component {
       );
     });
     return (
-      <div className="clientClaimedItemsPage">
-        Booked Items
-        {vendorArea.map(item => {
-          return item;
+      <div className="client-claimed-items">
+        {vendorArea.map((item, i) => {
+          return <div key={i}>{item}</div>;
         })}
       </div>
     );

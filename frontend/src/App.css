@@ -1,13 +1,13 @@
+* {
+  font-family: "Merriweather", serif;
+}
+
 body {
   background-color: #e6f0f0;
 }
 
 a:hover {
   cursor: pointer;
-}
-
-body {
-  background-color: #eff5f5;
 }
 
 .App {
