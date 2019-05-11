@@ -103,11 +103,12 @@
   justify-content: space-around;
   align-items: center;
   border-width: thin;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   margin: 0 auto;
   margin-top: 2px;
   width: 90%;
   height: 100px;
+  background-color: white;
 }
 
 #item-name-container,
