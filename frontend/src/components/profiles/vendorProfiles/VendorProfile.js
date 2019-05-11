@@ -54,19 +54,37 @@ class VendorProfile extends Component {
   // Add food items
   addItemButton = () => {
     return (
-      <>
-        <p className="add-item-text">Add Item</p>
-        <Fab
-          color="primary"
-          aria-label="Add"
-          className="add-item-button"
-          onClick={() => {
-            this.toAddItem();
-            this.handleOpen();
-          }}>
-          <AddIcon />
-        </Fab>
-      </>
+      // <button
+      //   className="add-item-button"
+      //   onClick={() => {
+      //     this.toAddItem();
+      //     this.handleOpen();
+      //   }}>
+      //   <p className="add-item-text">
+      //     {/* <Fab
+      //       color="primary"
+      //       aria-label="Add"
+      //       className="add-item-button"
+      //       onClick={() => {
+      //         this.toAddItem();
+      //         this.handleOpen();
+      //       }}
+      //     /> */}
+      //     {/* <AddIcon /> */}
+      //     <div>Add Item</div>
+      //   </p>
+      // </button>
+
+      <Button
+        variant="contained"
+        color="primary"
+        className="add-item-button"
+        onClick={() => {
+          this.toAddItem();
+          this.handleOpen();
+        }}>
+        <div className="add-item-text"> Add Item</div>
+      </Button>
     );
   };
 
@@ -285,7 +303,6 @@ class VendorProfile extends Component {
             </p>
             <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
           </div>
-          <br />
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">
               <CountUp duration={5} delay={3} end={this.state.fedCount} />

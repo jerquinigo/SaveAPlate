@@ -23,7 +23,7 @@
 }
 
 .vendor-info-display {
-  border-bottom: 1px solid black;
+  /* border-bottom: 2px solid black; */
   margin: 0 auto;
 }
 #vendor-info {
@@ -36,13 +36,11 @@
   display: inline-block;
 }
 
-#vendor-info {
-  border-bottom: 1px solid black;
-  margin: 0 auto;
-}
-
 #vendor-people-fed {
   font-family: "Montserrat", sans-serif;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 10%;
 }
 
 #vendor-people-fed-count {
@@ -53,19 +51,23 @@
 }
 
 .add-item-text {
-  background-color: #aebdc7;
-  color: #272e48;
-  font-size: 32px;
+  color: white;
+  font-size: 24px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   margin: 0 auto;
   margin-top: 2.5%;
   margin-bottom: 2%;
   padding: 10px 10px 10px 10px;
   width: 90%;
+}
+
+.add-item-button {
+  width: 200px;
+  height: 100px;
+  border-radius: 100px;
 }
 
 #D35348 .add-item-button:hover {
@@ -101,7 +103,7 @@
   justify-content: space-around;
   align-items: center;
   border-width: thin;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   margin: 0 auto;
   margin-top: 2px;
   width: 90%;
