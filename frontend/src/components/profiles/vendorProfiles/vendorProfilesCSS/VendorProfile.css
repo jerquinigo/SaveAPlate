@@ -19,7 +19,7 @@
 }
 
 #vendor-name {
-  width: 50%;
+  width: 100%;
 }
 
 .vendor-info-display {
@@ -76,7 +76,7 @@
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
+  border-bottom: 2px solid black;
   margin: 0 auto;
   margin-top: 2%;
   padding: 10px 0px 10px 0px;
