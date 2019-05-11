@@ -27,16 +27,14 @@ class AllFeedItemsDisplayed extends Component {
                   onClick={e => {
                     this.props.claimItem(e, food.is_claimed);
                     this.props.receivedOpenSnackbar();
-                  }}
-                >
+                  }}>
                   <MuiThemeProvider theme={theme}>
                     <Button
                       variant="contained"
                       color="secondary"
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }
-                    >
+                      }>
                       {food.is_claimed ? "UNCLAIM" : "CLAIM"}
                     </Button>
                   </MuiThemeProvider>

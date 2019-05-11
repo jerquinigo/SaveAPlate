@@ -46,7 +46,7 @@
 #vendor-people-fed-count {
   font-family: "Montserrat", sans-serif;
   font-size: 64px;
-  color: #de6a5a;
+  color: #272e48;
   margin-bottom: 1%;
 }
 
@@ -70,15 +70,16 @@
   border-radius: 100px;
 }
 
-#D35348 .add-item-button:hover {
-  border: 3px solid white;
+.add-item-button:hover {
+  border: 5px solid white;
+  background-color: blue;
 }
 
 #donation-list,
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   margin: 0 auto;
   margin-top: 2%;
   padding: 10px 0px 10px 0px;
@@ -114,8 +115,7 @@
 #item-name-container,
 #item-weight-container,
 #item-feeds-container,
-#item-pickup-container,
-#item-claim-button-container {
+#item-pickup-container {
   width: 20%;
 }
 

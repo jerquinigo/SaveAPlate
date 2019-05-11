@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
-
 import Button from "@material-ui/core/Button";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import blue from "@material-ui/core/colors/blue";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import "./vendorProfilesCSS/VendorProfile.css";
@@ -54,37 +53,18 @@ class VendorProfile extends Component {
   // Add food items
   addItemButton = () => {
     return (
-      // <button
-      //   className="add-item-button"
-      //   onClick={() => {
-      //     this.toAddItem();
-      //     this.handleOpen();
-      //   }}>
-      //   <p className="add-item-text">
-      //     {/* <Fab
-      //       color="primary"
-      //       aria-label="Add"
-      //       className="add-item-button"
-      //       onClick={() => {
-      //         this.toAddItem();
-      //         this.handleOpen();
-      //       }}
-      //     /> */}
-      //     {/* <AddIcon /> */}
-      //     <div>Add Item</div>
-      //   </p>
-      // </button>
-
-      <Button
-        variant="contained"
-        color="primary"
-        className="add-item-button"
-        onClick={() => {
-          this.toAddItem();
-          this.handleOpen();
-        }}>
-        <div className="add-item-text"> Add Item</div>
-      </Button>
+      <MuiThemeProvider theme={theme}>
+        <Button
+          variant="contained"
+          color="primary"
+          className="add-item-button"
+          onClick={() => {
+            this.toAddItem();
+            this.handleOpen();
+          }}>
+          <div className="add-item-text"> Add Item</div>
+        </Button>
+      </MuiThemeProvider>
     );
   };
 
@@ -184,17 +164,19 @@ class VendorProfile extends Component {
           </div>
 
           <div id="item-button-container">
-            <Button
-              onClick={e => {
-                this.deleteItem(e);
-                this.props.receivedOpenSnackbar();
-              }}
-              type="submit"
-              variant="contained"
-              color="secondary"
-              id={item.food_id}>
-              <DeleteIcon id={item.food_id} />
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                onClick={e => {
+                  this.deleteItem(e);
+                  this.props.receivedOpenSnackbar();
+                }}
+                type="submit"
+                variant="contained"
+                color="secondary"
+                id={item.food_id}>
+                <DeleteIcon id={item.food_id} />
+              </Button>
+            </MuiThemeProvider>
           </div>
         </div>
       );
@@ -235,17 +217,19 @@ class VendorProfile extends Component {
           </div>
 
           <div id="item-button-container">
-            <Button
-              onClick={e => {
-                this.deleteItem(e);
-                this.props.receivedOpenSnackbar();
-              }}
-              type="submit"
-              variant="contained"
-              color="secondary"
-              id={item.food_id}>
-              <DeleteIcon id={item.food_id} />
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                onClick={e => {
+                  this.deleteItem(e);
+                  this.props.receivedOpenSnackbar();
+                }}
+                type="submit"
+                variant="contained"
+                color="secondary"
+                id={item.food_id}>
+                <DeleteIcon id={item.food_id} />
+              </Button>
+            </MuiThemeProvider>
           </div>
         </div>
       );
@@ -339,5 +323,14 @@ class VendorProfile extends Component {
     );
   }
 }
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { 500: "#272E48" },
+    secondary: {
+      main: "#D35348"
+    }
+  }
+});
 
 export default VendorProfile;
