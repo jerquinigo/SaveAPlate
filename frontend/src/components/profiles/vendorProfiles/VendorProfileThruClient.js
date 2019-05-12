@@ -3,6 +3,7 @@ import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import "./vendorProfilesCSS/VendorProfileThruClient.css";
 import Button from "@material-ui/core/Button";
+import { withRouter } from "react-router-dom";
 
 class VendorProfileThruClient extends Component {
   constructor() {
@@ -11,7 +12,8 @@ class VendorProfileThruClient extends Component {
       businessHours: [],
       foodInfo: [],
       allFavsForVendor: [],
-      isFav: []
+      isFav: [],
+      allVendors: []
     };
   }
 
@@ -19,6 +21,29 @@ class VendorProfileThruClient extends Component {
     await this.getBusinessHours();
     this.getfoodItems();
     this.getFavs();
+    this.getAllVendors();
+  };
+
+  getAllVendors = () => {
+    axios.get("/api/users/vendors/").then(foodItems => {
+      this.setState({
+        allVendors: foodItems.data.vendors
+      });
+    });
+  };
+
+  getProfilePicture = () => {
+    let profilePicture = [];
+    if (this.state.allVendors) {
+      this.state.allVendors.forEach(vendor => {
+        if (vendor.vendor_name === this.props.match.params.vendor) {
+          profilePicture.push(vendor.profile_picture);
+        }
+      });
+      return <img src={profilePicture[0]} alt="" />;
+    } else {
+      return null;
+    }
   };
 
   getBusinessHours = () => {
@@ -225,6 +250,7 @@ class VendorProfileThruClient extends Component {
       return (
         <div key={i}>
           <h2 className="vendor-name">{time.name} </h2>
+          {this.getProfilePicture()}
           <h5> {time.body} </h5>
           <br />
           <h2> Contact Us </h2>
@@ -326,4 +352,4 @@ class VendorProfileThruClient extends Component {
   }
 }
 
-export default VendorProfileThruClient;
+export default withRouter(VendorProfileThruClient);
