@@ -4,8 +4,8 @@
   width: 75%;
   margin: 0 auto;
   background-color: #aebdc7;
-  border-left: 1px solid lightslategray;
-  border-right: 1px solid lightslategray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
   /* color: white; */
 }
 
@@ -14,9 +14,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-left: 1px solid lightslategray;
-  border-right: 1px solid lightslategray;
-  border-bottom: 1px solid lightslategray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   /* border: 2px solid black; */
   /* border-radius: 5px; */
   margin: 0 auto;

@@ -18,15 +18,28 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   width: 90%;
   height: 80px;
   background-color: whitesmoke;
   margin: 0 auto;
 }
 
+#vendor-items-header-client {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid #aebdc7;
+  border-right: 1px solid #aebdc7;
+}
+
 .display-vendor-name {
-  background-color: #f3e4d8;
+  background-color: #272e48;
+  color: white;
   width: 90%;
   font-family: "Montserrat", sans-serif;
   height: 150px;
@@ -36,7 +49,18 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #272e48;
+  border-left: 1px solid #272e48;
+  border-right: 1px solid #272e48;
+}
+
+.display-item-name-client {
+  text-decoration: none;
+  color: lightblue;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  padding-left: 50px;
 }
 
 .claimed-button,

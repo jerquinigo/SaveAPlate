@@ -20,19 +20,15 @@ class AllFeedItemsDisplayed extends Component {
             <div className="vendor-items-container" key={b}>
               <div className="display-claimed-items-for-client">
                 <div id="item-name-container">
-                  {/* <h4 id="item-name">Food Item: </h4> */}
                   <p>{food.name}</p>
                 </div>
                 <div id="item-weight-container">
-                  {/* <h4 id="weight">Weight: </h4> */}
                   <p>{food.quantity * 3} pounds</p>
                 </div>
                 <div id="item-feeds-container">
-                  {/* <h4 id="feeds">Feeds: </h4> */}
                   <p>{food.quantity} people</p>
                 </div>
                 <div id="item-pickup-container">
-                  {/* <h4 id="pick-up">Pick Up Time: </h4> */}
                   <p>
                     {this.props.converted_time === 0 ||
                     this.props.converted_time < 13
