@@ -40,7 +40,13 @@ class VendorProfileThruClient extends Component {
           profilePicture.push(vendor.profile_picture);
         }
       });
-      return <img src={profilePicture[0]} alt="" />;
+      return (
+        <img
+          className="profile-picture-through-client-page"
+          src={profilePicture[0]}
+          alt=""
+        />
+      );
     } else {
       return null;
     }
@@ -121,7 +127,6 @@ class VendorProfileThruClient extends Component {
           key={item.food_id}
           className="vendor-profile-container-vendor-version"
         >
-          <div className="display-claimed-items-vendor-version" />
           <div className="claimed-vendor-items-two">
             <h2> Food Dish </h2>
             <h3>{item.name}</h3>
@@ -343,11 +348,17 @@ class VendorProfileThruClient extends Component {
 
   render() {
     return (
-      <>
-        {this.displayVendorInfo()}
-        {this.displayUnclaimedItems()}
-        {this.displayClaimedItems()}
-      </>
+      <div>
+        <div className="vendor-profile-thru-client-main-page">
+          <div className="inner-main-vendor-profile-thru-client-page">
+            {this.displayVendorInfo()}
+            <div className="divide-list-right">
+              {this.displayUnclaimedItems()}
+              {this.displayClaimedItems()}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
