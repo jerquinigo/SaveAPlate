@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: white;
+  background-color: #e6f0f0;
   height: 95px;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -17,7 +17,7 @@
 }
 
 .nav-link {
-  background-color: white;
+  background-color: #e6f0f0;
   color: black;
   height: 85px;
   display: flex;
@@ -31,7 +31,7 @@
 }
 
 .nav-link:hover {
-  color: #f9c680;
+  color: #d35348;
 }
 
 #logo {

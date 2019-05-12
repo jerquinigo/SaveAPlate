@@ -35,8 +35,7 @@ export const SearchBarResults = props => {
           <div className="vendorItemsWrapper">
             {searchDataObj[vendorName].map((food, b) => {
               return (
-                <div className="vendorItemsContainer" key={b}>
-
+                <div className="search-results-container" key={b}>
                   <SearchBarResultsVendorItemsDisplay
                     food={food}
                     claimItem={props.claimItem}
@@ -44,7 +43,6 @@ export const SearchBarResults = props => {
                     converted_time={converted_time}
                     theme={theme}
                   />
-
                 </div>
               );
             })}

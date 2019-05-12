@@ -10,18 +10,29 @@ class AllFeedItemsDisplayed extends Component {
       <div className="vendorItemsWrapper">
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
           return (
-            <div className="vendorItemsContainer" key={b}>
+            <div className="vendor-items-container" key={b}>
               <div className="display-claimed-items-for-client">
-                <div className="display-food-name">{food.name}</div>
-
-                <span> Feeds: {food.quantity} people</span>
-                <span>({Number(food.quantity) * 3} pounds)</span>
-                <span>
-                  {this.props.converted_time === 0 ||
-                  this.props.converted_time < 13
-                    ? this.props.converted_time + "am"
-                    : this.props.converted_time - 12 + "pm"}
-                </span>
+                <div id="item-name-container">
+                  <h4 id="item-name">Food Item: </h4>
+                  <p>{food.name}</p>
+                </div>
+                <div id="item-weight-container">
+                  <h4 id="weight">Weight: </h4>
+                  <p>{food.quantity * 3} pounds</p>
+                </div>
+                <div id="item-feeds-container">
+                  <h4 id="feeds">Feeds: </h4>
+                  <p>{food.quantity} people</p>
+                </div>
+                <div id="item-pickup-container">
+                  <h4 id="pick-up">Pick Up Time: </h4>
+                  <p>
+                    {this.props.converted_time === 0 ||
+                    this.props.converted_time < 13
+                      ? this.props.converted_time + "am"
+                      : this.props.converted_time - 12 + "pm"}
+                  </p>
+                </div>
                 <span
                   id={food.id}
                   onClick={e => {
@@ -35,7 +46,7 @@ class AllFeedItemsDisplayed extends Component {
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
                       }>
-                      {food.is_claimed ? "UNCLAIM" : "CLAIM"}
+                      {food.is_claimed ? "Unclaim" : "Claim"}
                     </Button>
                   </MuiThemeProvider>
                 </span>

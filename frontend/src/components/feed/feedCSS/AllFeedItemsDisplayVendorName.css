@@ -8,16 +8,16 @@
   width: 100%;
 }
 
-.vendor-account-profile-pic {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .vendor-span-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.vendor-account-profile-pic {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .display-item-name {
@@ -29,7 +29,7 @@
 .display-item-name:link,
 .display-item-name:active {
   text-decoration: none;
-  color: black;
+  color: #d35348;
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
   font-weight: 900;
@@ -37,7 +37,7 @@
 }
 
 .display-item-name:hover {
-  color: #d35348;
+  color: #aebdc7;
 }
 
 .vendor-address-field {

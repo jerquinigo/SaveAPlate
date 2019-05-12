@@ -13,7 +13,7 @@ export default function Landing() {
       </div>
       <div id="food-background-container" />
       <div id="landing-container">
-        <div>
+        <div id="mission-statement-container">
           <h1 id="mission-statement">Mission Statement</h1>
         </div>
         <p id="mission-statement-text">
