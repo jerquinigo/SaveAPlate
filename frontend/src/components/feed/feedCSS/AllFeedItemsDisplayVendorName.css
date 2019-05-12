@@ -29,7 +29,7 @@
 .display-item-name:link,
 .display-item-name:active {
   text-decoration: none;
-  color: #d35348;
+  color: lightblue;
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
   font-weight: 900;

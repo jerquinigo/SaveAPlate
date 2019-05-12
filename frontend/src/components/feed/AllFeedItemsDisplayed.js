@@ -7,25 +7,32 @@ import "./feedCSS/AllFeedItemsDisplayed.css";
 class AllFeedItemsDisplayed extends Component {
   render() {
     return (
-      <div className="vendorItemsWrapper">
+      <div className="vendor-items-wrapper">
+        <div id="vendor-items-header">
+          <h4 id="item-name">Food Item: </h4>
+          <h4 id="weight">Weight: </h4>
+          <h4 id="feeds">Feeds: </h4>
+          <h4 id="pick-up">Pick Up Time: </h4>
+          <div id="spacing" />
+        </div>
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
           return (
             <div className="vendor-items-container" key={b}>
               <div className="display-claimed-items-for-client">
                 <div id="item-name-container">
-                  <h4 id="item-name">Food Item: </h4>
+                  {/* <h4 id="item-name">Food Item: </h4> */}
                   <p>{food.name}</p>
                 </div>
                 <div id="item-weight-container">
-                  <h4 id="weight">Weight: </h4>
+                  {/* <h4 id="weight">Weight: </h4> */}
                   <p>{food.quantity * 3} pounds</p>
                 </div>
                 <div id="item-feeds-container">
-                  <h4 id="feeds">Feeds: </h4>
+                  {/* <h4 id="feeds">Feeds: </h4> */}
                   <p>{food.quantity} people</p>
                 </div>
                 <div id="item-pickup-container">
-                  <h4 id="pick-up">Pick Up Time: </h4>
+                  {/* <h4 id="pick-up">Pick Up Time: </h4> */}
                   <p>
                     {this.props.converted_time === 0 ||
                     this.props.converted_time < 13
@@ -35,6 +42,7 @@ class AllFeedItemsDisplayed extends Component {
                 </div>
                 <span
                   id={food.id}
+                  className="span-claim-button"
                   onClick={e => {
                     this.props.claimItem(e, food.is_claimed);
                     this.props.receivedOpenSnackbar();

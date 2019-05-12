@@ -1,16 +1,29 @@
+#vendor-items-header {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid lightslategray;
+  border-right: 1px solid lightslategray;
+  /* color: white; */
+}
+
 .display-claimed-items-for-client {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-left: 1px solid lightslategray;
+  border-right: 1px solid lightslategray;
+  border-bottom: 1px solid lightslategray;
   /* border: 2px solid black; */
   /* border-radius: 5px; */
   margin: 0 auto;
   /* margin-top: 2%; */
   width: 75%;
   height: 80px;
-  background-color: whitesmoke;
+  background-color: white;
 
   /* flex-direction: row;
   justify-content: space-around;
@@ -26,3 +39,18 @@
   font-size: 16px;
   font-weight: 900;
 } */
+
+#item-name,
+#weight,
+#feeds,
+#pick-up {
+  width: 20%;
+}
+
+#spacing {
+  width: 20%;
+}
+
+.span-claim-button {
+  width: 20%;
+}
