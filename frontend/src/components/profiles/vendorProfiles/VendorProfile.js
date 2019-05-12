@@ -306,14 +306,14 @@ class VendorProfile extends Component {
         </div>
         <div id="vendor-info-container">
           <div>
-            <h1 id="donation-list">Donation List</h1>
+            <h1 id="donation-list-vendor">Donation List</h1>
             <div id="display-unclaimed-items-container">
               {this.foodItemsHeader()}
               {this.displayUnclaimedItems()}
             </div>
           </div>
           <div>
-            <h1 id="claimed-items-list">Claimed Items</h1>
+            <h1 id="claimed-items-list-vendor">Claimed Items</h1>
             {this.foodItemsHeader()}
             {this.displayClaimedItems()}
           </div>

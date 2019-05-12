@@ -81,14 +81,14 @@ class DisplayClientFavorites extends Component {
   noFavsToDisplay = () => {
     return (
       <div className="display-fav-info">
-        <h1>No favorites to display. Please favorite a restaurant first.</h1>
+        <h2>No favorites to display. Please favorite a restaurant first.</h2>
       </div>
     );
   };
 
   render() {
     return (
-      <div className="displayClientFavPage">
+      <div className="display-client-fav-container">
         {!!this.state.usersFavorites.length
           ? this.pairUpFavoritesWithVendors()
           : this.noFavsToDisplay()}
