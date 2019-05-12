@@ -5,14 +5,18 @@
 
 #resources-container {
   background-color: whitesmoke;
-  margin: 0 auto;
-  margin-top: 7%;
+  /* margin: 0 auto; */
+  margin-top: 5%;
   /* padding: 4% 0; */
-  padding: 0;
+  /* padding: 0; */
   width: 90%;
-  min-height: 40vh;
-  display: grid;
-  place-items: center center;
+  /* min-height: 40vh; */
+  /* display: grid;
+  place-items: center center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 #hungry-header {
