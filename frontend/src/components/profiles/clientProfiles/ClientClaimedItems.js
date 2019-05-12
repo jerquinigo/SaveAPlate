@@ -10,8 +10,10 @@ const VendorSection = ({ vendor, userObj, children }) => {
     <div className="display-vendor-name-container">
       <div className="display-vendor-name">
         <div>
-          <Link to={"/clientview/" + vendor.vendor_name}>
-            <span className="display-item-name">{vendor.vendor_name}</span>{" "}
+          <Link
+            to={"/clientview/" + vendor.vendor_name}
+            className="display-item-name-client">
+            <span>{vendor.vendor_name}</span>{" "}
           </Link>
         </div>
         <div>{vendor.address_field}</div>
@@ -26,48 +28,46 @@ const VendorSection = ({ vendor, userObj, children }) => {
 const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
   let converted_time = Number(item.set_time.slice(0, 2));
   return (
-    <div className="display-vendor-items">
-      <div id="item-name-container">
-        <h4 id="item-name">Food Item: </h4>
-        <p>{item.name}</p>
+    <>
+      <div className="display-vendor-items">
+        <div id="item-name-container">
+          <p>{item.name}</p>
+        </div>
+        <div id="item-weight-container">
+          <p>{item.quantity * 3} pounds</p>
+        </div>
+        <div id="item-feeds-container">
+          <p>{item.quantity} people</p>
+        </div>
+        <div id="item-pickup-container">
+          <p>
+            {converted_time === 0 || converted_time < 13
+              ? converted_time + "am"
+              : converted_time - 12 + "pm"}
+          </p>
+        </div>
+        <div id="item-claim-container">
+          {item.is_claimed ? (
+            <div id="status-unavailable">Unavailable</div>
+          ) : (
+            <div id="status-available">Available</div>
+          )}
+        </div>
+        <div id="item-button-container">
+          <Button
+            id={item.id}
+            onClick={e => {
+              ClaimItem(e, item.is_claimed, userObj, toReRender);
+              receivedOpenSnackbar();
+            }}
+            variant="contained"
+            color="secondary"
+            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
+            {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+          </Button>
+        </div>
       </div>
-      <div id="item-weight-container">
-        <h4 id="weight">Weight: </h4>
-        <p>{item.quantity * 3} pounds</p>
-      </div>
-      <div id="item-feeds-container">
-        <h4 id="feeds">Feeds: </h4>
-        <p>{item.quantity} people</p>
-      </div>
-      <div id="item-pickup-container">
-        <h4 id="pick-up">Pick Up Time: </h4>
-        <p>
-          {converted_time === 0 || converted_time < 13
-            ? converted_time + "am"
-            : converted_time - 12 + "pm"}
-        </p>
-      </div>
-      <div id="item-claim-container">
-        {item.is_claimed ? (
-          <div id="status-unavailable">Unavailable</div>
-        ) : (
-          <div id="status-available">Available</div>
-        )}
-      </div>
-      <div id="item-button-container">
-        <Button
-          id={item.id}
-          onClick={e => {
-            ClaimItem(e, item.is_claimed, userObj, toReRender);
-            receivedOpenSnackbar();
-          }}
-          variant="contained"
-          color="secondary"
-          className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
-          {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };
 
@@ -141,19 +141,28 @@ class ClientClaimedItems extends Component {
     const organizedItems = this.organizeFoodItems();
     const vendorArea = _.map(organizedItems, (items, i) => {
       return (
-        <VendorSection key={i} vendor={items[0]} userObj={currUser}>
-          {items.map(item => {
-            return (
-              <VendorItem
-                key={item.id}
-                item={item}
-                userObj={currUser}
-                toReRender={this.toReRender}
-                receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-              />
-            );
-          })}
-        </VendorSection>
+        <>
+          <VendorSection key={i} vendor={items[0]} userObj={currUser}>
+            <div id="vendor-items-header-client">
+              <h4 id="item-name">Food Item: </h4>
+              <h4 id="weight">Weight: </h4>
+              <h4 id="feeds">Feeds: </h4>
+              <h4 id="pick-up">Pick Up Time: </h4>
+              <div id="spacing" />
+            </div>
+            {items.map(item => {
+              return (
+                <VendorItem
+                  key={item.id}
+                  item={item}
+                  userObj={currUser}
+                  toReRender={this.toReRender}
+                  receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+                />
+              );
+            })}
+          </VendorSection>
+        </>
       );
     });
     return (
