@@ -1,3 +1,7 @@
+/* .vendor-profile-thru-client-main-page {
+  width: 100%;
+} */
+
 .test {
   display: flex;
   flex-direction: row;
@@ -10,6 +14,19 @@
   width: 75%;
   height: 80px;
   background-color: #ebf4f4;
+}
+
+.profile-picture-through-client-page {
+  width: 200px;
+  height: 200px;
+  margin-top: 10%;
+  object-fit: cover;
+}
+
+.inner-main-vendor-profile-thru-client-page {
+  width: 100%;
+  display: flex;
+  justify-content: left;
 }
 
 .claimed-items-list-vendor-version {
@@ -40,6 +57,12 @@
   /* float: right; */
   width: 100%;
   margin-right: 15%;
+}
+
+.divide-list-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .vendor-profile-container-vendor-version {
