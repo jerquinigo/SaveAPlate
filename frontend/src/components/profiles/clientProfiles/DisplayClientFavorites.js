@@ -52,22 +52,26 @@ class DisplayClientFavorites extends Component {
     return favoriteArr.map(fav => {
       return (
         <div key={fav.vendor_id} className="display-fav-info">
-          <Link to={"/clientview/" + fav.vendor_name}>
-            <span>{fav.vendor_name}</span>
-          </Link>
-          <span>{fav.address_field}</span>
-          <span>{fav.telephone_number}</span>
-          <Button
-            id={fav.id}
-            onClick={e => {
-              this.deleteFav(e, fav.favoriteId);
-              this.props.receivedOpenSnackbar();
-            }}
-            variant="contained"
-            color="secondary"
-            className="unclaimed-button">
-            Unfavorite
-          </Button>
+          <div id="display-fav-vendor-name">
+            <Link to={"/clientview/" + fav.vendor_name}>
+              <span>{fav.vendor_name}</span>
+            </Link>
+          </div>
+          <div id="display-fav-vendor-address">{fav.address_field}</div>
+          <div id="display-fav-vendor-phone">{fav.telephone_number}</div>
+          <div id="display-fav-vendor-button">
+            <Button
+              id={fav.id}
+              onClick={e => {
+                this.deleteFav(e, fav.favoriteId);
+                this.props.receivedOpenSnackbar();
+              }}
+              variant="contained"
+              color="secondary"
+              className="unclaimed-button">
+              Unfavorite
+            </Button>
+          </div>
         </div>
       );
     });

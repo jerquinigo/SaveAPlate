@@ -29,3 +29,10 @@
   margin-top: 2%;
   margin: 0 auto;
 }
+
+#display-fav-vendor-name,
+#display-fav-vendor-address,
+#display-fav-vendor-phone,
+#display-fav-vendor-button {
+  width: 25%;
+}

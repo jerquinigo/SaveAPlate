@@ -41,22 +41,6 @@ class ClientProfile extends Component {
     });
   };
 
-  // displayClientProfile = () => {
-  //   return (
-  //     <div className="displayInfo">
-  //       <p className="client-name">{this.props.currentUser.name}</p>
-  //       <div>
-  //         <img
-  //           id="profile-picture"
-  //           alt="profile pic"
-  //           src={this.state.profilePic}
-  //         />
-  //       </div>
-  //       <p>{this.props.currentUser.address_field}</p>
-  //     </div>
-  //   );
-  // };
-
   reloadUser = () => {
     if (!this.props.currentUser) {
       return this.props.checkAuthenticateStatus();
@@ -98,6 +82,12 @@ class ClientProfile extends Component {
 
           <div>
             <h1 id="favorite-vendors-list-client"> Favorite Vendors </h1>
+            <div id="favorite-vendors-client">
+              <h4 id="favorite-vendor-name">Name: </h4>
+              <h4 id="favorite-vendor-address">Address: </h4>
+              <h4 id="favorite-vendor-phone">Phone Number: </h4>
+              <div id="favorite-spacing" />
+            </div>
             <DisplayClientFavorites
               currentUserName={this.props.currentUser.name}
               receivedOpenSnackbar={this.props.receivedOpenSnackbar}

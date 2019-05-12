@@ -55,13 +55,19 @@
   margin-top: 20px;
 }
 
-#claimed-items-list-client {
-  background-color: #f9c680;
+#favorite-vendors-client {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid #aebdc7;
+  border-right: 1px solid #aebdc7;
 }
 
-#favorite-vendors-list-client {
-  background-color: #f9c680;
-  border-left: 1px solid #f9c680;
-  border-right: 1px solid #f9c680;
-  border-bottom: 1px solid #f9c680;
+#favorite-vendor-name,
+#favorite-vendor-address,
+#favorite-vendor-phone,
+#favorite-spacing {
+  width: 25%;
 }
