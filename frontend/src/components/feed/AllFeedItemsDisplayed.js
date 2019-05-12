@@ -4,6 +4,18 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
 import "./feedCSS/AllFeedItemsDisplayed.css";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: {
+      main: "#5cbc5c"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
+
 class AllFeedItemsDisplayed extends Component {
   render() {
     return (
@@ -62,17 +74,5 @@ class AllFeedItemsDisplayed extends Component {
     );
   }
 }
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-    secondary: {
-      main: "#5cbc5c"
-    }
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
 export default AllFeedItemsDisplayed;

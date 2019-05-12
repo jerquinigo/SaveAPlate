@@ -3,12 +3,21 @@ import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import Button from "@material-ui/core/Button";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import blue from "@material-ui/core/colors/blue";
+// import blue from "@material-ui/core/colors/blue";
 import DeleteIcon from "@material-ui/icons/Delete";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
-import "./vendorProfilesCSS/VendorProfile.css";
 import SimpleModal from "./SimpleModal.js";
+import "./vendorProfilesCSS/VendorProfile.css";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { 500: "#272E48" },
+    secondary: {
+      main: "#D35348"
+    }
+  }
+});
 
 class VendorProfile extends Component {
   constructor() {
@@ -322,14 +331,5 @@ class VendorProfile extends Component {
     );
   }
 }
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { 500: "#272E48" },
-    secondary: {
-      main: "#D35348"
-    }
-  }
-});
 
 export default VendorProfile;

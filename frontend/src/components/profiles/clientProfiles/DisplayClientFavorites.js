@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./clientProfileCSS/DisplayClientFavorites.css";
 import Button from "@material-ui/core/Button";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import "./clientProfileCSS/DisplayClientFavorites.css";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { 500: "#272E48" },
+    secondary: {
+      main: "#D35348"
+    }
+  }
+});
 
 class DisplayClientFavorites extends Component {
   constructor(props) {
@@ -60,17 +70,19 @@ class DisplayClientFavorites extends Component {
           <div id="display-fav-vendor-address">{fav.address_field}</div>
           <div id="display-fav-vendor-phone">{fav.telephone_number}</div>
           <div id="display-fav-vendor-button">
-            <Button
-              id={fav.id}
-              onClick={e => {
-                this.deleteFav(e, fav.favoriteId);
-                this.props.receivedOpenSnackbar();
-              }}
-              variant="contained"
-              color="secondary"
-              className="unclaimed-button">
-              Unfavorite
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                id={fav.id}
+                onClick={e => {
+                  this.deleteFav(e, fav.favoriteId);
+                  this.props.receivedOpenSnackbar();
+                }}
+                variant="contained"
+                color="secondary"
+                className="unclaimed-button">
+                Unfavorite
+              </Button>
+            </MuiThemeProvider>
           </div>
         </div>
       );

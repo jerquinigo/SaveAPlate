@@ -5,6 +5,18 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
 import "./feedCSS/SearchBarResults.css";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: {
+      main: "#5cbc5c"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
+
 // will need to apply the search object filter here just like all the others to get it to work to group
 export const SearchBarResults = props => {
   let searchDataObj = {};
@@ -53,15 +65,3 @@ export const SearchBarResults = props => {
     return vendorName;
   }
 };
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-    secondary: {
-      main: "#5cbc5c"
-    }
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
