@@ -53,7 +53,7 @@ class DisplayClientFavorites extends Component {
       return (
         <div key={fav.vendor_id} className="display-fav-info">
           <div id="display-fav-vendor-name">
-            <Link to={"/clientview/" + fav.vendor_name}>
+            <Link to={"/clientview/" + fav.vendor_name} id="fav-vendor-link">
               <span>{fav.vendor_name}</span>
             </Link>
           </div>
