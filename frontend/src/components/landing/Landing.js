@@ -52,7 +52,7 @@ export default function Landing() {
             <div>
               <div id="get-involved-info">
                 When you volunteer your time with Save A Plate, you’re playing a
-                key role in ending extreme poverty. Your dedication as a
+                key role in fighting hunger & poverty. Your dedication as a
                 volunteer will create life-changing experiences for your city.
               </div>
             </div>
@@ -66,9 +66,9 @@ export default function Landing() {
             <h3 id="user-type">Non-profit Organizations</h3>
             <div>
               <div id="get-involved-info">
-                Non-profit organizations such as the YMCA, PBS, World Wildlife
-                Fund (WWF), Pursuit, among many others. Sign up or log in using
-                the links below.
+                Non-profit organizations such as YMCA, PBS, World Wildlife Fund
+                (WWF), and Pursuit can register to claim donated food items.
+                Sign up or log in using the links below.
               </div>
             </div>
           </div>

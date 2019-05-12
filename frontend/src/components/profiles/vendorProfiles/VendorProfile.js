@@ -32,6 +32,8 @@ class VendorProfile extends Component {
       unclaimedItems: [],
       fedCount: 0,
       profilePic: "",
+      phoneNumber: "",
+      body: "",
       open: false //for modal
     };
   }
@@ -39,13 +41,15 @@ class VendorProfile extends Component {
   componentDidMount() {
     this.vendorDonations();
     this.getFeedingCount();
-    this.getProfilePic();
+    this.getProfileInfo();
   }
 
-  getProfilePic = () => {
-    axios.get(`/api/users/${this.props.currentUser.id}`).then(pic => {
+  getProfileInfo = () => {
+    axios.get(`/api/users/${this.props.currentUser.id}`).then(info => {
       this.setState({
-        profilePic: pic.data.data[0].profile_picture
+        profilePic: info.data.data[0].profile_picture,
+        phoneNumber: info.data.data[0].telephone_number,
+        body: info.data.data[0].body
       });
     });
   };
@@ -281,17 +285,15 @@ class VendorProfile extends Component {
             />
           </div>
           <h1 id="vendor-name">
-            {" "}
-            {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+            {!vendorUser ? this.props.currentUser.name : vendorUser}
           </h1>
           <div className="vendor-info-display">
             <p>
-              {" "}
-              {!vendorUser
-                ? this.props.currentUser.address_field
-                : vendorUser}{" "}
+              {!vendorUser ? this.props.currentUser.address_field : vendorUser}
             </p>
             <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
+            <p>{this.state.phoneNumber}</p>
+            <p>{this.state.body}</p>
           </div>
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">
