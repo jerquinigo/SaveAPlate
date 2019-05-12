@@ -29,6 +29,10 @@
   margin: 0 auto;
 }
 
+.display-fav-info:hover {
+  background-color: lightgray;
+}
+
 #fav-vendor-link {
   text-decoration: none;
   color: #272e48;
