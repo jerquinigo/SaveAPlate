@@ -124,12 +124,16 @@
   align-items: center;
   border-width: thin;
   margin: 0 auto;
-  margin-top: 2px;
   width: 90%;
   height: 100px;
   border-bottom: 1px solid lightgray;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
+  background-color: whitesmoke;
+}
+
+#display-unclaimed-items:hover {
+  background-color: lightgray;
 }
 
 #item-name-container,

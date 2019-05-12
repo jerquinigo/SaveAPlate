@@ -17,28 +17,15 @@
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
-  /* border: 2px solid black; */
-  /* border-radius: 5px; */
   margin: 0 auto;
-  /* margin-top: 2%; */
   width: 75%;
   height: 80px;
-  background-color: white;
-
-  /* flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80px;
-  float: right;
-  margin: 0;
-  margin-right: 15%; */
+  background-color: whitesmoke;
 }
 
-/* .MuiButton-label-35 {
-  color: white;
-  font-size: 16px;
-  font-weight: 900;
-} */
+.display-claimed-items-for-client:hover {
+  background-color: lightgray;
+}
 
 #item-name,
 #weight,
