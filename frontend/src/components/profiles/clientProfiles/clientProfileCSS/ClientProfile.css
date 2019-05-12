@@ -1,5 +1,8 @@
 #client-container {
   display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  align-content: center; */
 }
 
 #client-profile-container {
@@ -8,7 +11,7 @@
   height: 100%;
 }
 
-#client-info-container {
+#client-info-fav-container {
   width: 80vw;
 }
 
@@ -38,4 +41,33 @@
 #vendor-info {
   border-bottom: 2px solid black;
   margin: 0 auto;
+}
+
+#favorite-vendors-list-client,
+#claimed-items-list-client {
+  font-family: "Montserrat", sans-serif;
+  width: 90%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#favorite-vendors-client {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid #aebdc7;
+  border-right: 1px solid #aebdc7;
+}
+
+#favorite-vendor-name,
+#favorite-vendor-address,
+#favorite-vendor-phone,
+#favorite-spacing {
+  width: 25%;
 }

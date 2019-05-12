@@ -41,7 +41,6 @@ class VendorProfile extends Component {
     });
   };
 
-  //get feeding count
   getFeedingCount = () => {
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
@@ -50,7 +49,6 @@ class VendorProfile extends Component {
     });
   };
 
-  // Add food items
   addItemButton = () => {
     return (
       <MuiThemeProvider theme={theme}>
@@ -104,7 +102,6 @@ class VendorProfile extends Component {
       });
   };
 
-  // Get items
   vendorDonations = () => {
     let tempVar;
     if (this.props.currentUser.type === 2) {
@@ -129,26 +126,21 @@ class VendorProfile extends Component {
     );
   };
 
-  // Display items
   displayUnclaimedItems = () => {
     return this.state.unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
             <p>{item.name}</p>
           </div>
           <div id="item-weight-container">
-            <h4 id="weight">Weight: </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div id="item-feeds-container">
-            <h4 id="feeds">Feeds: </h4>
             <p>{item.quantity} people</p>
           </div>
           <div id="item-pickup-container">
-            <h4 id="pick-up">Pick Up Time: </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -189,19 +181,15 @@ class VendorProfile extends Component {
       return (
         <div key={item.food_id} id="display-unclaimed-items">
           <div id="item-name-container">
-            <h4 id="item-name">Food Item:</h4>
             <p>{item.name}</p>
           </div>
           <div id="item-weight-container">
-            <h4 id="weight">Weight: </h4>
             <p>{item.quantity * 3} pounds</p>
           </div>
           <div id="item-feeds-container">
-            <h4 id="feeds">Feeds: </h4>
             <p>{item.quantity} people</p>
           </div>
           <div id="item-pickup-container">
-            <h4 id="pick-up">Pick Up Time: </h4>
             <p>
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
@@ -236,7 +224,6 @@ class VendorProfile extends Component {
     });
   };
 
-  // Delete items
   deleteItem = e => {
     axios
       .delete(`/api/fooditems/${e.currentTarget.id}`)
@@ -248,7 +235,6 @@ class VendorProfile extends Component {
       });
   };
 
-  //handleOpen && handleClose are for the SimpleModal
   handleOpen = () => {
     this.setState({ open: true });
   };
@@ -257,7 +243,18 @@ class VendorProfile extends Component {
     this.setState({ open: false, toAddItem: !this.state.toAddItem });
   };
 
-  // Favorite vendor
+  foodItemsHeader = () => {
+    return (
+      <div id="vendor-items-header-vendor">
+        <h4 id="item-name">Food Item: </h4>
+        <h4 id="weight">Weight: </h4>
+        <h4 id="feeds">Feeds: </h4>
+        <h4 id="pick-up">Pick Up Time: </h4>
+        <div id="spacing" />
+      </div>
+    );
+  };
+
   render() {
     let vendorUser;
     if (this.props.currentUser.type === 2) {
@@ -309,13 +306,15 @@ class VendorProfile extends Component {
         </div>
         <div id="vendor-info-container">
           <div>
-            <h1 id="donation-list">Donation List</h1>
+            <h1 id="donation-list-vendor">Donation List</h1>
             <div id="display-unclaimed-items-container">
+              {this.foodItemsHeader()}
               {this.displayUnclaimedItems()}
             </div>
           </div>
           <div>
-            <h1 id="claimed-items-list">Claimed Items</h1>
+            <h1 id="claimed-items-list-vendor">Claimed Items</h1>
+            {this.foodItemsHeader()}
             {this.displayClaimedItems()}
           </div>
         </div>

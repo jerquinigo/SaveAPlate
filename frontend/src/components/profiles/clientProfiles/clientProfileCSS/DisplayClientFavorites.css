@@ -2,19 +2,43 @@
   width: 10%;
 }
 
+.display-client-fav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  width: 90%;
+  height: 80px;
+  background-color: whitesmoke;
+  margin: 0 auto;
+}
+
 .display-fav-info {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 5px;
   height: 80px;
-  background-color: #ebf4f4;
-  margin: 0;
   float: right;
+  width: 100%;
   margin-right: 15%;
-  width: 75%;
-  background-color: #f3e4d8;
   margin-top: 2%;
+  margin: 0 auto;
+}
+
+#fav-vendor-link {
+  text-decoration: none;
+  color: #272e48;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#display-fav-vendor-name,
+#display-fav-vendor-address,
+#display-fav-vendor-phone,
+#display-fav-vendor-button {
+  width: 25%;
 }

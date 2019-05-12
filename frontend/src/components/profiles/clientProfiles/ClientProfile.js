@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ClientProfileEditForm from "./ClientProfileEditForm.js";
-// import DisplayClientFavorites from "./DisplayClientFavorites.js";
+import DisplayClientFavorites from "./DisplayClientFavorites.js";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
 import ClientClaimedItemsContainer from "../../../containers/ClientClaimedItemsContainer.js";
 import axios from "axios";
@@ -41,22 +41,6 @@ class ClientProfile extends Component {
     });
   };
 
-  // displayClientProfile = () => {
-  //   return (
-  //     <div className="displayInfo">
-  //       <p className="client-name">{this.props.currentUser.name}</p>
-  //       <div>
-  //         <img
-  //           id="profile-picture"
-  //           alt="profile pic"
-  //           src={this.state.profilePic}
-  //         />
-  //       </div>
-  //       <p>{this.props.currentUser.address_field}</p>
-  //     </div>
-  //   );
-  // };
-
   reloadUser = () => {
     if (!this.props.currentUser) {
       return this.props.checkAuthenticateStatus();
@@ -84,23 +68,32 @@ class ClientProfile extends Component {
           <ClientProfileEditForm id={this.props.currentUser.id} />
         </div>
 
-        <div id="client-info-container">
-          <div>
-            <h1 id="donation-list">Donation List</h1>
-            <div id="display-unclaimed-items-container">
-              <ClientClaimedItemsContainer
-                receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-              />
+        <div id="client-info-fav-container">
+          <div id="client-info-container">
+            <div>
+              <h1 id="claimed-items-list-client">Claimed Items</h1>
+              <div id="display-claimed-items-container">
+                <ClientClaimedItemsContainer
+                  receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+                />
+              </div>
             </div>
           </div>
+
+          <div>
+            <h1 id="favorite-vendors-list-client"> Favorite Vendors </h1>
+            <div id="favorite-vendors-client">
+              <h4 id="favorite-vendor-name">Name: </h4>
+              <h4 id="favorite-vendor-address">Address: </h4>
+              <h4 id="favorite-vendor-phone">Phone Number: </h4>
+              <div id="favorite-spacing" />
+            </div>
+            <DisplayClientFavorites
+              currentUserName={this.props.currentUser.name}
+              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+            />
+          </div>
         </div>
-
-        {/* <h4> My Favorite Donors </h4>
-        <DisplayClientFavorites
-          currentUserName={this.props.currentUser.name}
-          receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-        /> */}
-
         {/* <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
           <DisplayMap
             latitude={this.state.latitude}
