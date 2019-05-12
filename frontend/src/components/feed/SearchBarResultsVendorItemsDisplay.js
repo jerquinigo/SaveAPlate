@@ -27,8 +27,7 @@ const SearchBarResultsVendorItemsDisplay = props => {
             }}
             className={
               props.food.is_claimed ? "claimed-button" : "unclaimed-button"
-            }
-          >
+            }>
             {props.food.is_claimed ? "UNCLAIM" : "CLAIM"}
           </Button>
         </MuiThemeProvider>

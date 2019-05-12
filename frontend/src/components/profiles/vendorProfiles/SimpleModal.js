@@ -13,7 +13,6 @@ const styles = theme => ({
 
 class SimpleModal extends React.Component {
   render() {
-    debugger;
     return (
       <div>
         <Modal open={this.props.open} onClose={this.props.handleClose}>
@@ -23,8 +22,7 @@ class SimpleModal extends React.Component {
               left: "50%",
               transform: "translate(-50%, -50%)"
             }}
-            className={this.props.classes.paper}
-          >
+            className={this.props.classes.paper}>
             <AddItemForm
               handleChange={this.props.handleChange}
               submitItem={this.props.submitItem}

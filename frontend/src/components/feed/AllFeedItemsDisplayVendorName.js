@@ -61,12 +61,12 @@ class AllFeedItemsDisplayVendorName extends Component {
 
   render() {
     return (
-      <div className="display-vendor-name">
+      <div className="display-vendor-name-feed">
         <span className="vendor-span-container">
-          <Link to={"/clientview/" + this.props.vendorName}>
-            <strong className="display-item-name">
-              {this.props.vendorName}
-            </strong>{" "}
+          <Link
+            to={"/clientview/" + this.props.vendorName}
+            className="display-item-name">
+            {this.props.vendorName}
           </Link>
           {this.getAllAddress(this.props.foodDataObj, this.props.vendorName)}
         </span>
@@ -74,5 +74,5 @@ class AllFeedItemsDisplayVendorName extends Component {
     );
   }
 }
-// {this.props.profilePicture ? this.displayPhotos() : null}
+
 export default AllFeedItemsDisplayVendorName;

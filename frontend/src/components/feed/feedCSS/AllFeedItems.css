@@ -14,3 +14,20 @@
   float: right;
   margin-right: 15%;
 }
+
+.display-vendor-name-feed {
+  background-color: #272e48;
+  color: white;
+  width: 75%;
+  font-family: "Montserrat", sans-serif;
+  height: 150px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid lightslategray;
+  border-right: 1px solid lightslategray;
+}

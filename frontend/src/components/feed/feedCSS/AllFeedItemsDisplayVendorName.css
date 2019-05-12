@@ -8,11 +8,6 @@
   width: 100%;
 }
 
-.vendor-account-profile-pic {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .vendor-span-container {
   width: 100%;
   display: flex;
@@ -20,12 +15,36 @@
   align-items: center;
 }
 
+.vendor-account-profile-pic {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.display-item-name {
+  width: 25%;
+}
+
+.display-item-name:hover,
+.display-item-name:visited,
+.display-item-name:link,
+.display-item-name:active {
+  text-decoration: none;
+  color: lightblue;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  padding-left: 10px;
+}
+
+.display-item-name:hover {
+  color: #aebdc7;
+}
+
 .vendor-address-field {
   display: flex;
+  width: 50%;
 }
 
 .address-text {
-  font-size: 24px;
-  max-width: 75%;
-  max-height: 70%;
+  font-size: 18px;
 }

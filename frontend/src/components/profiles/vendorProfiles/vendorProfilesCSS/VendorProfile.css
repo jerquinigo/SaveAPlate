@@ -19,11 +19,11 @@
 }
 
 #vendor-name {
-  width: 50%;
+  width: 100%;
 }
 
 .vendor-info-display {
-  border-bottom: 1px solid black;
+  /* border-bottom: 2px solid black; */
   margin: 0 auto;
 }
 #vendor-info {
@@ -36,31 +36,27 @@
   display: inline-block;
 }
 
-#vendor-info {
-  border-bottom: 1px solid black;
-  margin: 0 auto;
-}
-
 #vendor-people-fed {
   font-family: "Montserrat", sans-serif;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 10%;
 }
 
 #vendor-people-fed-count {
   font-family: "Montserrat", sans-serif;
   font-size: 64px;
-  color: #de6a5a;
+  color: #272e48;
   margin-bottom: 1%;
 }
 
 .add-item-text {
-  background-color: #aebdc7;
-  color: #272e48;
-  font-size: 32px;
+  color: white;
+  font-size: 24px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   margin: 0 auto;
   margin-top: 2.5%;
   margin-bottom: 2%;
@@ -68,18 +64,25 @@
   width: 90%;
 }
 
-#D35348 .add-item-button:hover {
-  border: 3px solid white;
+.add-item-button {
+  width: 200px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.add-item-button:hover {
+  border: 5px solid white;
+  background-color: blue;
 }
 
 #donation-list,
 #claimed-items-list {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   margin: 0 auto;
   margin-top: 2%;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0px 10px 0px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -100,22 +103,19 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid black; */
   border-width: thin;
   border-bottom: 1px solid black;
   margin: 0 auto;
   margin-top: 2px;
   width: 90%;
   height: 100px;
-  /* background-color: white; */
-  font-family: "Merriweather", serif;
+  background-color: whitesmoke;
 }
 
 #item-name-container,
 #item-weight-container,
 #item-feeds-container,
-#item-pickup-container,
-#item-claim-button-container {
+#item-pickup-container {
   width: 20%;
 }
 
@@ -134,7 +134,6 @@
 #status-unavailable,
 #status-available {
   background-color: white;
-  font-family: "Merriweather", serif;
   font-size: 14px;
   font-weight: 800;
   border: 1px solid black;

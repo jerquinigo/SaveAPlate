@@ -1,58 +1,42 @@
-#items-border {
-  border: 5px solid red;
-}
-
 .display-food-name {
   width: 10%;
   font-size: 20px;
   font-weight: 700;
 }
 
-.display-vendor-name {
+.display-vendor-name-container {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80px;
-  margin: 0, auto;
-  float: right;
-  margin-right: 15%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
 }
+
 .display-vendor-items {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid black;
-  /* border: 2px solid black; */
-  /* border-radius: 5px; */
+  width: 90%;
+  height: 80px;
+  background-color: whitesmoke;
   margin: 0 auto;
-  /* margin-top: 2%; */
-  width: 75%;
-  height: 80px;
-  background-color: #ebf4f4;
-
-  /* flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80px;
-  float: right;
-  margin: 0;
-  margin-right: 15%; */
 }
+
 .display-vendor-name {
   background-color: #f3e4d8;
-  width: 75%;
-  margin-top: 2%;
+  width: 90%;
   font-family: "Montserrat", sans-serif;
   height: 150px;
-
+  margin: 0 auto;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
-  -webkit-align-items: center;
   align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid black;
 }
 
 .claimed-button,
@@ -60,7 +44,6 @@
   color: white;
   font-size: 14px;
   font-weight: bold;
-  /* border-radius: 10px; */
   height: 40px;
 }
 
