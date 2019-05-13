@@ -1,7 +1,6 @@
 .loginWrapper {
   display: grid;
   place-items: center center;
-  background-color: whitesmoke;
   height: 100vh;
 }
 
@@ -10,12 +9,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #e6f0f0;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   padding-bottom: 1%;
+  border: 2px solid black;
   border-radius: 5px;
-  background-color: white;
 }
 
 #email-input,
@@ -39,8 +37,7 @@
 #signup-link {
   margin-top: 2%;
   text-decoration: none;
-  color: #f9c680;
-  font-size: 18px;
+  color: blue;
 }
 
 .notMemberDiv {

@@ -106,13 +106,7 @@ class Login extends Component {
             <p>Don't have an account?</p>
             <p>
               <Link to="/user/signup" id="signup-link">
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                  className="signup-button">
-                  Sign Up
-                </Button>
+                Sign up
               </Link>
             </p>
           </div>

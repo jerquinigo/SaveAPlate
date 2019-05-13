@@ -2,11 +2,59 @@
   width: 100%;
 } */
 
+.profile-picture-container-div {
+  display: flex;
+  justify-content: center;
+}
+
 .profile-picture-through-client-page {
-  width: 200px;
-  height: 200px;
-  margin-top: 10%;
+  width: 300px;
+  height: 300px;
+  margin-top: 3%;
   object-fit: cover;
+  border-radius: 50%;
+}
+.table-spacer {
+  width: 40%;
+}
+
+.main-div-displaying-detail-vendor-view-through-profile {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.display-donations-list-name,
+.donation-list-text {
+  background-color: #272e48;
+  color: white;
+  width: 75%;
+  font-family: "Montserrat", sans-serif;
+  height: 150px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid #272e48;
+  border-left: 1px solid #272e48;
+  border-right: 1px solid #272e48;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.donation-list-text {
+  font-size: 3.5em;
+}
+
+.vendor-profile-thru-client-item-name,
+.vendor-profile-thru-client-weight,
+.vendor-profile-thru-client-feeds,
+.vendor-profile-thru-client-pick-up {
+  width: 40%;
 }
 
 .inner-main-vendor-profile-thru-client-page {
@@ -64,7 +112,7 @@
 }
 
 .divide-list-right {
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 }

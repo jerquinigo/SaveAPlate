@@ -7,12 +7,13 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-left: 1px solid lightgray;
+  flex-wrap: wrap;
+  /* border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid lightgray; */
   width: 90%;
   height: 80px;
-  background-color: whitesmoke;
+
   margin: 0 auto;
 }
 
@@ -27,6 +28,10 @@
   margin-right: 15%;
   margin-top: 2%;
   margin: 0 auto;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background-color: whitesmoke;
 }
 
 .display-fav-info:hover {

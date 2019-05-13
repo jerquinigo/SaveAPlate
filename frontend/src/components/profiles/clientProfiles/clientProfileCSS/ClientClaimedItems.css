@@ -82,3 +82,11 @@
 .unclaimed-button {
   background-color: green;
 }
+
+#item-button-wrapper {
+  width: 10%;
+}
+
+/* #item-claim-container {
+  padding-right: 5%;
+} */

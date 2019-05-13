@@ -1,5 +1,6 @@
 #client-container {
   display: flex;
+
   /* flex-direction: column;
   justify-content: center;
   align-content: center; */
@@ -61,8 +62,8 @@
   width: 90%;
   margin: 0 auto;
   background-color: #aebdc7;
-  border-left: 1px solid #aebdc7;
-  border-right: 1px solid #aebdc7;
+  /* border-left: 1px solid #aebdc7;
+  border-right: 1px solid #aebdc7; */
 }
 
 #favorite-vendor-name,
@@ -70,5 +71,6 @@
 #favorite-vendor-phone,
 #favorite-spacing {
   width: 25%;
-  text-decoration: underline;
+
+  /* text-decoration: underline; */
 }

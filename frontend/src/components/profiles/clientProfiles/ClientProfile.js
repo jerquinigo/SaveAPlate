@@ -83,9 +83,9 @@ class ClientProfile extends Component {
           <div>
             <h1 id="favorite-vendors-list-client"> Favorite Vendors </h1>
             <div id="favorite-vendors-client">
-              <h4 id="favorite-vendor-name">Name: </h4>
-              <h4 id="favorite-vendor-address">Address: </h4>
-              <h4 id="favorite-vendor-phone">Phone Number: </h4>
+              <h4 id="favorite-vendor-name">Name </h4>
+              <h4 id="favorite-vendor-address">Address </h4>
+              <h4 id="favorite-vendor-phone">Phone Number </h4>
               <div id="favorite-spacing" />
             </div>
             <DisplayClientFavorites
