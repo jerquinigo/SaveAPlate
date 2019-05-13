@@ -18,10 +18,8 @@ class ClientProfileEditForm extends Component {
     };
   }
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.value });
   };
 
   toggleEditFormLogic = () => {
@@ -43,12 +41,17 @@ class ClientProfileEditForm extends Component {
 
   displayEditForm = () => {
     return (
-      <div id="display-edit-form-container">
-        <form id="display-edit-form" noValidate autoComplete="off">
+      <div className="displayEditFormPageDiv">
+        <form
+          className="displayEditFormPage"
+          autoComplete="off"
+          onSubmit={this.handleSubmit}
+        >
           <TextField
             label="Name"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("name")}
+            value={this.state.name}
             type="text"
             placeholder="Enter name"
           />
@@ -56,7 +59,8 @@ class ClientProfileEditForm extends Component {
           <TextField
             label="Email"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("email")}
+            value={this.state.email}
             type="text"
             placeholder="Enter email"
           />
@@ -64,7 +68,8 @@ class ClientProfileEditForm extends Component {
           <TextField
             label="Address Field"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("address_field")}
+            value={this.state.address_field}
             type="text"
             placeholder="Enter address"
           />
@@ -72,7 +77,8 @@ class ClientProfileEditForm extends Component {
           <TextField
             label="Description"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("body")}
+            value={this.state.body}
             type="text"
             placeholder="Enter description"
           />
@@ -80,7 +86,8 @@ class ClientProfileEditForm extends Component {
           <TextField
             label="Telephone Number"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("telephone_number")}
+            value={this.state.telephone_number}
             type="text"
             placeholder="Enter telephone number"
           />
@@ -88,15 +95,17 @@ class ClientProfileEditForm extends Component {
           <TextField
             label="Client Certificate"
             margin="normal"
-            onChange={this.handleChange}
+            onChange={this.handleChange("client_certificate")}
+            value={this.state.client_certificate}
             type="text"
             placeholder="Enter Client Certificate"
           />
           <br />
-          <br />
-          <Button variant="contained" color="primary" type="submit">
-            Submit
-          </Button>
+          <div className="editFormButtonDiv">
+            <Button variant="contained" color="primary" type="submit">
+              Submit
+            </Button>
+          </div>
         </form>
       </div>
     );
@@ -109,7 +118,8 @@ class ClientProfileEditForm extends Component {
         email: this.state.email,
         address_field: this.state.address_field,
         body: this.state.body,
-        telephone_number: this.state.telephone_number
+        telephone_number: this.state.telephone_number,
+        client_certificate: this.state.client_certificate
       })
       .then(() => {
         this.setState({
@@ -117,7 +127,8 @@ class ClientProfileEditForm extends Component {
           email: "",
           address_field: "",
           body: "",
-          telephone_number: ""
+          telephone_number: "",
+          client_certificate: ""
         });
       })
       .catch(err => {
@@ -131,6 +142,7 @@ class ClientProfileEditForm extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="ClientFormMainPage">
         {this.editProfile()}

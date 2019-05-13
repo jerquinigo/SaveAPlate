@@ -13,3 +13,7 @@ a:hover {
 .App {
   text-align: center;
 }
+
+img {
+  object-fit: cover;
+}
