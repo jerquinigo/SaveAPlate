@@ -184,20 +184,18 @@ class VendorProfileThruClient extends Component {
           key={item.food_id}
           className="vendor-profile-container-vendor-version"
         >
-          <div className="display-claimed-items-vendor-version">
-            <div className="claimed-vendor-items-two">
-              <h3>{item.name}</h3>
-              <h5>{item.quantity} pounds</h5>
+          <div className="claimed-vendor-items-two">
+            <h3>{item.name}</h3>
+            <h5>{item.quantity} pounds</h5>
 
-              <h5 className="vendor-page-pickup-time">
-                {converted_time === 0 || converted_time < 13
-                  ? converted_time + "am"
-                  : converted_time - 12 + "pm"}
-              </h5>
-              <Button id={item.food_id} variant="contained" color="secondary">
-                UNAVAILABLE
-              </Button>
-            </div>
+            <h5 className="vendor-page-pickup-time">
+              {converted_time === 0 || converted_time < 13
+                ? converted_time + "am"
+                : converted_time - 12 + "pm"}
+            </h5>
+            <Button id={item.food_id} variant="contained" color="secondary">
+              UNAVAILABLE
+            </Button>
           </div>
         </div>
       );
@@ -221,25 +219,21 @@ class VendorProfileThruClient extends Component {
           key={item.food_id}
           className="vendor-profile-container-vendor-version"
         >
-          <div className="display-claimed-items-vendor-version">
-            <div className="claimed-vendor-items-two">
-              <h3 className="vendor-page-item-name">{item.name}</h3>
-              <h5 className="vendor-page-item-pounds">
-                {item.quantity * 3} pounds
-              </h5>
-              <h5 className="vendor-page-item-quantity">
-                {item.quantity} people{" "}
-              </h5>
+          <div className="claimed-vendor-items-two">
+            <p className="vendor-page-item-name">{item.name}</p>
+            <p className="vendor-page-item-pounds">
+              {item.quantity * 3} pounds
+            </p>
+            <p className="vendor-page-item-quantity">{item.quantity} people </p>
 
-              <h5 className="vendor-page-pickup-time">
-                {converted_time === 0 || converted_time < 13
-                  ? converted_time + "am"
-                  : converted_time - 12 + "pm"}
-              </h5>
-              <Button id={item.food_id} variant="contained" color="secondary">
-                {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-              </Button>
-            </div>
+            <p className="vendor-page-pickup-time">
+              {converted_time === 0 || converted_time < 13
+                ? converted_time + "am"
+                : converted_time - 12 + "pm"}
+            </p>
+            <Button id={item.food_id} variant="contained" color="secondary">
+              {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+            </Button>
           </div>
         </div>
       );
