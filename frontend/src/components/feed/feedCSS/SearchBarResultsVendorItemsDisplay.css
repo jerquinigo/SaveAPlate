@@ -1,4 +1,4 @@
-#vendor-items-header {
+#search-items-header {
   display: flex;
   justify-content: space-around;
   width: 75%;
@@ -8,7 +8,7 @@
   border-right: 1px solid lightgray;
 }
 
-.display-claimed-items-for-client {
+.display-search-items-for-feed {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -22,18 +22,9 @@
   background-color: whitesmoke;
 }
 
-.display-claimed-items-for-client:hover {
-  background-color: lightgray;
-}
-
-#item-name,
-#weight,
-#feeds,
-#pick-up,
-#spacing {
-  width: 20%;
-}
-
-.span-claim-button {
+#search-item-name-container,
+#search-item-weight-container,
+#search-item-feeds-container,
+#search-item-pickup-container {
   width: 20%;
 }
