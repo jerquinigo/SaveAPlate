@@ -54,44 +54,59 @@ class Login extends Component {
         {this.conditionalRouting()}
         <form onSubmit={this.loginUser} id="login-form">
           <h1 id="login-header">Login</h1>
-          <TextField
-            required
-            type="text"
-            id="email-input"
-            label="Email"
-            defaultValue="Hello World"
-            margin="normal"
-            value={this.state.email}
-            name="email"
-            onChange={this.handleChange}
-            placeholder="Email"
-          />
-          <TextField
-            required
-            type="password"
-            id="password-input"
-            label="Password"
-            defaultValue="Hello World"
-            margin="normal"
-            value={this.state.password_digest}
-            name="password_digest"
-            onChange={this.handleChange}
-            placeholder="Password"
-          />
+          <div id="login-email">
+            <img
+              src={require("./icons/email.png")}
+              alt="email"
+              className="icons"
+              id="login-email-icon"
+            />
+            <TextField
+              required
+              type="text"
+              id="email-input"
+              label="Email"
+              defaultValue="Hello World"
+              margin="normal"
+              value={this.state.email}
+              name="email"
+              onChange={this.handleChange}
+              placeholder="Email"
+            />
+          </div>
+          <div id="login-password">
+            <img
+              src={require("./icons/password.png")}
+              alt="password"
+              className="icons"
+              id="login-password-icon"
+            />
+            <TextField
+              required
+              type="password"
+              id="password-input"
+              label="Password"
+              defaultValue="Hello World"
+              margin="normal"
+              value={this.state.password_digest}
+              name="password_digest"
+              onChange={this.handleChange}
+              placeholder="Password"
+            />
+          </div>
           <br />
           <Button
             type="submit"
             variant="contained"
             color="primary"
-            className="login-button"
-          >
+            className="login-button">
             Login
           </Button>
           <div className="notMemberDiv">
-            <p>Need an account?</p>
+            <p>Don't have an account?</p>
             <p>
               <Link to="/user/signup" id="signup-link">
-                Sign up now
+                Sign up
               </Link>
             </p>
           </div>

@@ -29,8 +29,7 @@
 
 #feed {
   color: #272e48;
-  text-decoration: underline;
-  text-underline-position: under;
+  text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-size: 46px;
   font-weight: 900;

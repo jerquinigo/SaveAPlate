@@ -4,12 +4,27 @@ import { Link } from "react-router-dom";
 const SearchBarResultsVendorDisplay = props => {
   return (
     <span>
-      <Link to={"/clientview/" + props.vendorName}>
-        <strong>{props.vendorName}</strong>{" "}
-      </Link>
-      {props.allVendors.map(pic => {
-        if (pic.vendor_name === props.vendorName) {
-          return <img src={pic.profile_picture} alt="" />;
+      {props.allVendors.map(info => {
+        if (info.vendor_name === props.vendorName) {
+          return (
+            <div className="display-vendor-name-feed-search">
+              <Link
+                to={"/clientview/" + props.vendorName}
+                className="display-item-name">
+                {props.vendorName}
+              </Link>
+              <div className="vendor-address-field">
+                <p className="address-text">{info.address_field}</p>
+              </div>
+              <div className="vendor-account-profile-pic">
+                <img
+                  className="feed-profile-pic"
+                  src={info.profile_picture}
+                  alt=""
+                />
+              </div>
+            </div>
+          );
         } else {
           return null;
         }

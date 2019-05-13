@@ -1,0 +1,51 @@
+#search-items-header {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+.display-search-items-for-feed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin: 0 auto;
+  width: 75%;
+  height: 80px;
+  background-color: whitesmoke;
+}
+
+.display-search-items-for-feed:hover {
+  background-color: lightgray;
+}
+
+.display-vendor-name-feed-search {
+  background-color: #272e48;
+  color: white;
+  width: 75%;
+  font-family: "Montserrat", sans-serif;
+  height: 150px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid #272e48;
+  border-left: 1px solid #272e48;
+  border-right: 1px solid #272e48;
+}
+
+#search-item-name-container,
+#search-item-weight-container,
+#search-item-feeds-container,
+#search-item-pickup-container {
+  width: 20%;
+}

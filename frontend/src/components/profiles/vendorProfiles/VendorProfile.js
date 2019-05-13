@@ -39,6 +39,7 @@ class VendorProfile extends Component {
   }
 
   componentDidMount() {
+    debugger;
     this.vendorDonations();
     this.getFeedingCount();
     this.getProfileInfo();
@@ -55,6 +56,7 @@ class VendorProfile extends Component {
   };
 
   getFeedingCount = () => {
+    debugger;
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
         fedCount: +count.data.fedCount[0].sum * 3
@@ -72,7 +74,8 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}>
+          }}
+        >
           <div className="add-item-text"> Add Item</div>
         </Button>
       </MuiThemeProvider>
@@ -116,6 +119,7 @@ class VendorProfile extends Component {
   };
 
   vendorDonations = () => {
+    debugger;
     let tempVar;
     if (this.props.currentUser.type === 2) {
       tempVar = this.props.match.params.vendor;
@@ -155,8 +159,10 @@ class VendorProfile extends Component {
           </div>
           <div id="item-pickup-container">
             <p>
-              {converted_time === 0 || converted_time < 13
+              {converted_time < 13 && converted_time !== 0
                 ? converted_time + "am"
+                : converted_time === 0
+                ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </p>
           </div>
@@ -178,7 +184,8 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}>
+                id={item.food_id}
+              >
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
@@ -227,7 +234,8 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}>
+                id={item.food_id}
+              >
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
@@ -259,10 +267,10 @@ class VendorProfile extends Component {
   foodItemsHeader = () => {
     return (
       <div id="vendor-items-header-vendor">
-        <h4 id="item-name">Food Item: </h4>
-        <h4 id="weight">Weight: </h4>
-        <h4 id="feeds">Feeds: </h4>
-        <h4 id="pick-up">Pick Up Time: </h4>
+        <h4 id="item-name">Food Item </h4>
+        <h4 id="weight">Weight </h4>
+        <h4 id="feeds">Feeds </h4>
+        <h4 id="pick-up">Pick Up Time </h4>
         <div id="spacing" />
       </div>
     );
