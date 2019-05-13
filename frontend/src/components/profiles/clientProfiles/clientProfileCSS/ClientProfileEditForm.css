@@ -1,3 +1,16 @@
-.editFormButtonDiv {
-  margin-top: 14%;
+#display-edit-form-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  padding-bottom: 5%;
+  background-color: whitesmoke;
+}
+
+#edit-profile-icons {
+  padding-top: 25px;
+}
+
+#edit-form-button-container {
+  margin-top: 10%;
 }
