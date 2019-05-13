@@ -124,6 +124,7 @@ class VendorProfileThruClient extends Component {
     });
     let unclaimedList = unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
+      console.log("time", converted_time, "item", item.name);
       return (
         <div
           key={item.food_id}
@@ -139,8 +140,10 @@ class VendorProfileThruClient extends Component {
             </h5>
 
             <h5 className="vendor-page-pickup-time">
-              {converted_time === 0 || converted_time < 13
+              {converted_time < 13 && converted_time !== 0
                 ? converted_time + "am"
+                : converted_time === 0
+                ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </h5>
             <Button

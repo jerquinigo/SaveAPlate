@@ -35,6 +35,7 @@ class AllFeedItems extends Component {
       // eslint-disable-next-line
       this.props.allFoodItems.map((food, i) => {
         converted_time = Number(food.set_time.slice(0, 2));
+        console.log("item", food.name, "time before props", converted_time);
         if (!foodDataObj[food.vendor_name] && food.is_claimed === false) {
           foodDataObj[food.vendor_name] = [food];
         } else if (foodDataObj[food.vendor_name] && food.is_claimed === false) {
@@ -56,7 +57,6 @@ class AllFeedItems extends Component {
             <AllFeedItemsDisplayed
               foodDataObj={foodDataObj}
               claimItem={this.props.claimItem}
-              converted_time={converted_time}
               vendorName={vendorName}
               receivedOpenSnackbar={this.props.receivedOpenSnackbar}
             />
