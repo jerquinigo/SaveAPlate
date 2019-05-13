@@ -54,7 +54,7 @@ export const LoggedInNavBar = props => {
               className="nav-link"
               activeClassName="nav-link--active"
             >
-              Feed
+              Donations
             </NavLink>
             <NavLink
               to={profileLink}

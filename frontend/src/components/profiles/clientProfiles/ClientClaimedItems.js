@@ -16,6 +16,7 @@ const theme = createMuiTheme({
 });
 
 const VendorSection = ({ vendor, userObj, children }) => {
+  console.log("vendor fav", vendor);
   return (
     <div className="display-vendor-name-container">
       <div className="display-vendor-name">
@@ -75,11 +76,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
         </MuiThemeProvider>
         </div>
         <div id="item-claim-container">
-          {/*{item.is_claimed ? (
-            <div id="status-unavailable">Unavailable</div>
-          ) : (
-            <div id="status-available">Available</div>
-          )}*/}
+
         </div>
       </div>
     </>

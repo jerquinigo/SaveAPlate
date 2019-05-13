@@ -118,7 +118,7 @@ export default class Feed extends Component {
     return (
       <div className="feedWrapper">
         <MainSnackbarContainer />
-        <div id="feed">Feed</div>
+        <div id="feed">Donation List</div>
         <SearchBar
           allFoodItems={this.state.allFoodItems}
           userSearchResults={this.state.userSearchResults}
