@@ -158,7 +158,9 @@ class VendorProfileThruClient extends Component {
     });
     return (
       <>
-        <h3> Donation List </h3>
+        <div className="display-donations-list-name">
+          <h3 className="donation-list-text"> Donation List </h3>
+        </div>
         <div className="vendor-items-list-header-vendor-view-through-client">
           <h4 id="item-name">Food Item: </h4>
           <h4 id="weight">Weight: </h4>
