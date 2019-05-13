@@ -6,6 +6,9 @@ import "./feedCSS/SearchBarResultsVendorItemsDisplay.css";
 const SearchBarResultsVendorItemsDisplay = props => {
   return (
     <div className="search-items-wrapper">
+      {/* <span className="address-text">{props.food.address_field}</span> */}
+      <p>hi{props.profilePicture}</p>
+
       <div id="search-items-header">
         <h4 id="item-name">Food Item: </h4>
         <h4 id="weight">Weight: </h4>
@@ -13,8 +16,6 @@ const SearchBarResultsVendorItemsDisplay = props => {
         <h4 id="pick-up">Pick Up Time: </h4>
         <div id="spacing" />
       </div>
-
-      {/* <span className="address-text">{props.food.address_field}</span> */}
 
       <div className="display-search-items-for-feed">
         <div id="search-item-name-container">
