@@ -1,5 +1,6 @@
 #client-container {
   display: flex;
+
   /* flex-direction: column;
   justify-content: center;
   align-content: center; */
@@ -70,5 +71,6 @@
 #favorite-vendor-phone,
 #favorite-spacing {
   width: 25%;
-  text-decoration: underline;
+
+  /* text-decoration: underline; */
 }

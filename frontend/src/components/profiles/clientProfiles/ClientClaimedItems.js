@@ -12,7 +12,8 @@ const VendorSection = ({ vendor, userObj, children }) => {
         <div>
           <Link
             to={"/clientview/" + vendor.vendor_name}
-            className="display-item-name-client">
+            className="display-item-name-client"
+          >
             <span>{vendor.vendor_name}</span>{" "}
           </Link>
         </div>
@@ -46,14 +47,8 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
               : converted_time - 12 + "pm"}
           </p>
         </div>
-        <div id="item-claim-container">
-          {item.is_claimed ? (
-            <div id="status-unavailable">Unavailable</div>
-          ) : (
-            <div id="status-available">Available</div>
-          )}
-        </div>
-        <div id="item-button-container">
+
+        <div id="item-button-wrapper">
           <Button
             id={item.id}
             onClick={e => {
@@ -62,9 +57,17 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
             }}
             variant="contained"
             color="secondary"
-            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
+            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
+          >
             {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
           </Button>
+        </div>
+        <div id="item-claim-container">
+          {/*{item.is_claimed ? (
+            <div id="status-unavailable">Unavailable</div>
+          ) : (
+            <div id="status-available">Available</div>
+          )}*/}
         </div>
       </div>
     </>
@@ -144,10 +147,10 @@ class ClientClaimedItems extends Component {
         <>
           <VendorSection key={i} vendor={items[0]} userObj={currUser}>
             <div id="vendor-items-header-client">
-              <h4 id="item-name">Food Item: </h4>
-              <h4 id="weight">Weight: </h4>
-              <h4 id="feeds">Feeds: </h4>
-              <h4 id="pick-up">Pick Up Time: </h4>
+              <h4 id="item-name">Food Item </h4>
+              <h4 id="weight">Weight </h4>
+              <h4 id="feeds">Feeds </h4>
+              <h4 id="pick-up">Pick Up Time </h4>
               <div id="spacing" />
             </div>
             {items.map(item => {
