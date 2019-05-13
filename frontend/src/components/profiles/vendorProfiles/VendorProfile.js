@@ -159,8 +159,10 @@ class VendorProfile extends Component {
           </div>
           <div id="item-pickup-container">
             <p>
-              {converted_time === 0 || converted_time < 13
+              {converted_time < 13 && converted_time !== 0
                 ? converted_time + "am"
+                : converted_time === 0
+                ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </p>
           </div>

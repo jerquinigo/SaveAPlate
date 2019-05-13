@@ -12,7 +12,8 @@ const AddItemForm = props => {
             props.submitItem(e);
             props.receivedOpenSnackbar();
           }}
-          id="add-items-form">
+          id="add-items-form"
+        >
           <input
             type="text"
             onChange={props.handleChange}
@@ -33,7 +34,8 @@ const AddItemForm = props => {
             <select
               onChange={props.handleChange}
               name="set_time"
-              id="select-pickup-time">
+              id="select-pickup-time"
+            >
               <option value="null"> Select Pick-Up Time </option>
               <option value="12:00"> 12:00 pm </option>
               <option value="13:00"> 1:00 pm </option>
@@ -47,7 +49,7 @@ const AddItemForm = props => {
               <option value="21:00"> 9:00 pm </option>
               <option value="22:00"> 10:00 pm </option>
               <option value="23:00"> 11:00 pm </option>
-              <option value="00:00"> 12:00 am </option>
+              <option value="000"> 12:00 am </option>
               <option value="01:00"> 1:00 am </option>
               <option value="02:00"> 2:00 am </option>
               <option value="03:00"> 3:00 am </option>
@@ -64,7 +66,8 @@ const AddItemForm = props => {
               type="submit"
               variant="contained"
               color="primary"
-              id="add-food-item-button">
+              id="add-food-item-button"
+            >
               <div id="add-item">Add Item</div>
             </Button>
           </div>
