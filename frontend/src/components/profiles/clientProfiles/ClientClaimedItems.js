@@ -15,8 +15,7 @@ const theme = createMuiTheme({
   }
 });
 
-const VendorSection = ({ vendor, userObj, children }) => {
-  console.log("vendor fav", vendor);
+const VendorSection = ({ vendor, userObj, children, getProfilePicture }) => {
   return (
     <div className="display-vendor-name-container">
       <div className="display-vendor-name">
@@ -30,7 +29,7 @@ const VendorSection = ({ vendor, userObj, children }) => {
         </div>
         <div>{vendor.address_field}</div>
         {/* <div>{vendor.telephone_number}</div> */}
-        <div>IMAGE</div>
+        <div>{getProfilePicture}</div>
       </div>
       <div>{children}</div>
     </div>
@@ -108,13 +107,15 @@ class ClientClaimedItems extends Component {
     this.state = {
       claimedFoodItems: [],
       newFoodItemsList: [],
-      axiosCalledSwitch: false
+      axiosCalledSwitch: false,
+      allVendors: []
     };
     window.globalThis = this;
   }
 
   componentDidMount() {
     this.getAllClaimedFoodItem(this.props.match.params.path);
+    this.getAllVendors();
   }
 
   getAllClaimedFoodItem = () => {
@@ -128,6 +129,14 @@ class ClientClaimedItems extends Component {
       .catch(err => {
         console.log(err);
       });
+  };
+
+  getAllVendors = () => {
+    axios.get("/api/users/vendors/").then(foodItems => {
+      this.setState({
+        allVendors: foodItems.data.vendors
+      });
+    });
   };
 
   toReRender = () => {
@@ -150,13 +159,42 @@ class ClientClaimedItems extends Component {
     return claimedList;
   };
 
+  getProfilePicture = vendorName => {
+    let profilePicture = [];
+    if (this.state.allVendors) {
+      this.state.allVendors.forEach((vendor, i) => {
+        vendorName.forEach(name => {
+          if (vendor.vendor_name === name.vendor_name) {
+            profilePicture.push(vendor.profile_picture);
+          }
+        });
+      });
+      return (
+        <div className="client-claimed-items-profile-picture-main-div">
+          <img
+            className="client-claimed-items-profile-pic"
+            src={profilePicture[0]}
+            alt=""
+          />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   render() {
     let currUser = this.props.currentUser;
     const organizedItems = this.organizeFoodItems();
     const vendorArea = _.map(organizedItems, (items, i) => {
       return (
         <>
-          <VendorSection key={i} vendor={items[0]} userObj={currUser}>
+          <VendorSection
+            key={i}
+            vendor={items[0]}
+            userObj={currUser}
+            getProfilePicture={this.getProfilePicture(items)}
+          >
             <div id="vendor-items-header-client">
               <h4 id="item-name">Food Item </h4>
               <h4 id="weight">Weight </h4>
