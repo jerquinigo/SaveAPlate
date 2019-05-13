@@ -33,8 +33,7 @@ class ClientProfileEditForm extends Component {
       <Button
         variant="contained"
         color="primary"
-        onClick={this.toggleEditFormLogic}
-      >
+        onClick={this.toggleEditFormLogic}>
         Edit Profile
       </Button>
     );
