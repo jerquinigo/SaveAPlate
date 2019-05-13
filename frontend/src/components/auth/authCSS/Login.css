@@ -1,7 +1,7 @@
 .loginWrapper {
   display: grid;
   place-items: center center;
-  background-color: ghostwhite;
+  background-color: whitesmoke;
   height: 100vh;
 }
 
