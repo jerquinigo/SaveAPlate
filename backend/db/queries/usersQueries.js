@@ -84,6 +84,8 @@ createUser = (req, res, next) => {
 };
 
 updateUser = (req, res, next) => {
+  console.log("REQ BODY", req.body);
+  console.log("REQ PARAMS", req.params);
   // const hash = authHelpers.createHash(req.body.password_digest);
   let queryStringArray = [];
   let bodyKeys = Object.keys(req.body);
@@ -91,47 +93,40 @@ updateUser = (req, res, next) => {
     queryStringArray.push(key + "=${" + key + "}");
   });
 
-  let queryString = queryStringArray.join(",");
+  let queryString = queryStringArray.join(", ");
 
-  if (req.body.name && req.body.name.toLowerCase() === "null") {
+  if (req.body.name && req.body.name.toLowerCase() === 'null') {
     req.body.name = null;
   }
-  if (req.body.email && req.body.email.toLowerCase() === "null") {
+  if (req.body.email && req.body.email.toLowerCase() === 'null') {
     req.body.email = null;
   }
-  if (
-    req.body.address_field &&
-    req.body.address_field.toLowerCase() === "null"
+  if (req.body.address_field && req.body.address_field.toLowerCase() === 'null'
   ) {
     req.body.address_field = null;
   }
-  if (req.body.body && req.body.body.toLowerCase() === "null") {
+  if (req.body.body && req.body.body.toLowerCase() === 'null') {
     req.body.body = null;
   }
-  if (
-    req.body.telephone_number &&
-    req.body.telephone_number.toLowerCase() === "null"
-  ) {
+  if (req.body.telephone_number && req.body.telephone_number.toLowerCase() === 'null') {
     req.body.telephone_number = null;
   }
-  if (req.body.ein === "null") {
-    req.body.ein = null;
-  }
-  if (
-    req.body.client_certificate &&
-    req.body.client_certificate.toLowerCase() === "null"
-  ) {
+  // if (req.body.ein === 'null') {
+  //   req.body.ein = null;
+  //   console.log('EIN',req.body.ein);
+  // }
+  if (req.body.client_certificate && req.body.client_certificate.toLowerCase() === 'null') {
     req.body.client_certificate = null;
   }
 
   db.none(
-    "UPDATE users SET " + queryString + " WHERE id=" + Number(req.params.id),
+    "UPDATE users SET " + queryString + " WHERE id=" + req.params.id,
     req.body
   )
     .then(() => {
       res.status(200).json({
         status: "success",
-        message: "you have updated your user"
+        message: "User successfully updated"
       });
     })
     .catch(err => {
