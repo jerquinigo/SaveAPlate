@@ -25,26 +25,6 @@
   margin-left: 1%;
 }
 
-.display-donations-list-name {
-  /* background-color: #272e48;
-  color: white;
-  width: 90%;
-  font-family: "Montserrat", sans-serif;
-  margin: 0 auto;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2.5%;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  display: flex;
-  justify-content: center; */
-}
-
 .donation-list-text {
   font-size: 3em;
   padding: 0.7em 0;
@@ -58,9 +38,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 2.5%;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
+  border: 1px solid #272e48;
   display: flex;
   justify-content: center;
 }
