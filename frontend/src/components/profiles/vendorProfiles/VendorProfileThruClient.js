@@ -4,6 +4,20 @@ import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import "./vendorProfilesCSS/VendorProfileThruClient.css";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router-dom";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import green from "@material-ui/core/colors/green";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: {
+      main: "#5cbc5c"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 class VendorProfileThruClient extends Component {
   constructor() {
@@ -13,7 +27,8 @@ class VendorProfileThruClient extends Component {
       foodInfo: [],
       allFavsForVendor: [],
       isFav: [],
-      allVendors: []
+      allVendors: [],
+      fadeTrigger: []
     };
   }
 
@@ -125,10 +140,15 @@ class VendorProfileThruClient extends Component {
     let unclaimedList = unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       console.log("time", converted_time, "item", item.name);
+
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version"
+          className={
+            this.state.fadeTrigger.includes(item.food_id)
+              ? "vendor-profile-container-vendor-version fade-out"
+              : "vendor-profile-container-vendor-version"
+          }
         >
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
@@ -144,17 +164,19 @@ class VendorProfileThruClient extends Component {
                 ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </h5>
-            <Button
-              id={item.food_id}
-              onClick={e => this.claimItem(e, item.is_claimed)}
-              variant="contained"
-              color="secondary"
-              className={
-                item.is_claimed ? "claimed-button" : "unclaimed-button"
-              }
-            >
-              {item.is_claimed ? "UNAVAILABLE" : "AVAILABLE"}
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                id={item.food_id}
+                onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}
+                variant="contained"
+                color="secondary"
+                className={
+                  item.is_claimed ? "claimed-button " : "unclaimed-button "
+                }
+              >
+                {item.is_claimed ? "UNCLAIM" : "CLAIM"}
+              </Button>
+            </MuiThemeProvider>
           </div>
         </div>
       );
@@ -188,41 +210,6 @@ class VendorProfileThruClient extends Component {
           className="vendor-profile-container-vendor-version"
         >
           <div className="claimed-vendor-items-two">
-            <h3>{item.name}</h3>
-            <h5>{item.quantity} pounds</h5>
-
-            <h5 className="vendor-page-pickup-time">
-              {converted_time === 0 || converted_time < 13
-                ? converted_time + "am"
-                : converted_time - 12 + "pm"}
-            </h5>
-            <Button id={item.food_id} variant="contained" color="secondary">
-              UNAVAILABLE
-            </Button>
-          </div>
-        </div>
-      );
-    });
-    return (
-      <>
-        <h3> Claimed Items History </h3>
-        {claimedList}{" "}
-      </>
-    );
-  };
-
-  displayClaimedItems = () => {
-    let claimedItems = this.state.foodInfo.filter(item => {
-      return item.is_claimed === true;
-    });
-    let claimedList = claimedItems.map(item => {
-      let converted_time = Number(item.set_time.slice(0, 2));
-      return (
-        <div
-          key={item.food_id}
-          className="vendor-profile-container-vendor-version"
-        >
-          <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
             <p className="vendor-page-item-pounds">
               {item.quantity * 3} pounds
@@ -234,14 +221,34 @@ class VendorProfileThruClient extends Component {
                 ? converted_time + "am"
                 : converted_time - 12 + "pm"}
             </p>
-            <Button id={item.food_id} variant="contained" color="secondary">
-              {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+
+            <Button
+              id={item.food_id}
+              variant="contained"
+              color="secondary"
+              onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}
+            >
+              {item.is_claimed ? "UNCLAIM" : "CLAIM"}
             </Button>
           </div>
         </div>
       );
     });
-    return <>{claimedList} </>;
+    return (
+      <>
+        <div className="display-donations-list-name">
+          <h3 className="donation-list-text"> Claimed Items </h3>
+        </div>
+        <div className="vendor-items-list-header-vendor-view-through-client">
+          <h4 className="vendor-profile-thru-client-item-name">Food Item </h4>
+          <h4 className="vendor-profile-thru-client-weight">Weight </h4>
+          <h4 className="vendor-profile-thru-client-feeds">Feeds</h4>
+          <h4 className="vendor-profile-thru-client-pick-up">Pick Up Time </h4>
+          <div id="spacing" />
+        </div>
+        {claimedList}{" "}
+      </>
+    );
   };
   displayVendorInfo = () => {
     return this.state.businessHours.map((time, i) => {
@@ -362,24 +369,55 @@ class VendorProfileThruClient extends Component {
     });
   };
 
-  claimItem = (e, isClaimed) => {
-    isClaimed === true
-      ? axios
-          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-            client_id: null,
-            is_claimed: false
-          })
-          .then(() => {
-            this.getfoodItems();
-          })
-      : axios
-          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-            client_id: this.props.currentUser.id,
-            is_claimed: true
-          })
-          .then(() => {
-            this.getfoodItems();
-          });
+  claimItem = (e, isClaimed, food_id) => {
+    let targetId;
+    if (!!e.currentTarget.id) {
+      targetId = e.currentTarget.id;
+    }
+
+    if (isClaimed === true) {
+      axios
+        .patch(`/api/fooditems/claimstatus/${targetId}`, {
+          client_id: null,
+          is_claimed: false
+        })
+        .then(() => {
+          //if we had added the class this find the index of the food item and removes it from the array that would append 'fade out'
+          let index = this.state.fadeTrigger.indexOf(food_id);
+          if (index > -1) {
+            this.setState({
+              fadeTrigger: [this.state.fadeTrigger.splice(index, 1)]
+            });
+          }
+        })
+        .then(() => {
+          this.getfoodItems();
+        });
+    } else {
+      //we grab the id we claim saving it to an array in state => if array includes the id we append the class fade-out...
+      this.setState({
+        fadeTrigger: [...this.state.fadeTrigger, food_id]
+      });
+      //we then want it to be claimed but not have it immediately disappear showing the fadeout effect first and so we add a set timeout that after 1s does an axios call and gets all elements again
+      setTimeout(
+        targetId => {
+          this.fireClaimingItem(targetId);
+        },
+        1000,
+        targetId
+      );
+    }
+  };
+
+  fireClaimingItem = targetId => {
+    axios
+      .patch(`/api/fooditems/claimstatus/${targetId}`, {
+        client_id: this.props.currentUser.id,
+        is_claimed: true
+      })
+      .then(() => {
+        this.getfoodItems();
+      });
   };
 
   render() {
