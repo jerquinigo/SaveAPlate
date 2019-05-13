@@ -53,31 +53,33 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
         </div>
         <div id="item-pickup-container">
           <p>
-            {converted_time === 0 || converted_time < 13
+            {converted_time < 13 && converted_time !== 0
               ? converted_time + "am"
+              : converted_time === 0
+              ? 12 + "am"
               : converted_time - 12 + "pm"}
           </p>
         </div>
 
         <div id="item-button-wrapper">
-        <MuiThemeProvider theme={theme}>
-          <Button
-            id={item.id}
-            onClick={e => {
-              ClaimItem(e, item.is_claimed, userObj, toReRender);
-              receivedOpenSnackbar();
-            }}
-            variant="contained"
-            color="secondary"
-            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-          >
-            {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
-          </Button>
-        </MuiThemeProvider>
+          <MuiThemeProvider theme={theme}>
+            <Button
+              id={item.id}
+              onClick={e => {
+                ClaimItem(e, item.is_claimed, userObj, toReRender);
+                receivedOpenSnackbar();
+              }}
+              variant="contained"
+              color="secondary"
+              className={
+                item.is_claimed ? "claimed-button" : "unclaimed-button"
+              }
+            >
+              {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
+            </Button>
+          </MuiThemeProvider>
         </div>
-        <div id="item-claim-container">
-
-        </div>
+        <div id="item-claim-container" />
       </div>
     </>
   );
