@@ -299,69 +299,72 @@ class VendorProfileThruClient extends Component {
             </Button>
             <h3>Business Hours</h3>
             <div className="inner-business-hours-div">
-              <h5>
-                {" "}
-                <th>Monday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {mon1 === 0 || mon1 < 13 ? mon1 + "am" : mon1 - 12 + "pm"}-
-                  {mon2 === 0 || mon2 < 13 ? mon2 + "am" : mon2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Tuesday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {tue1 === 0 || tue1 < 13 ? tue1 + "am" : tue1 - 12 + "pm"}-
-                  {tue2 === 0 || tue2 < 13 ? tue2 + "am" : tue2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Wednesday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {wed1 === 0 || wed1 < 13 ? wed1 + "am" : wed1 - 12 + "pm"}-
-                  {wed2 === 0 || wed2 < 13 ? wed2 + "am" : wed2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Thursday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {thu1 === 0 || thu1 < 13 ? thu1 + "am" : thu1 - 12 + "pm"}-
-                  {thu2 === 0 || thu2 < 13 ? thu2 + "am" : thu2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Friday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {fri1 === 0 || fri1 < 13 ? fri1 + "am" : fri1 - 12 + "pm"}-
-                  {fri2 === 0 || fri2 < 13 ? fri2 + "am" : fri2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Saturday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {sat1 === 0 || sat1 < 13 ? sat1 + "am" : sat1 - 12 + "pm"}-
-                  {sat2 === 0 || sat2 < 13 ? sat2 + "am" : sat2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
-              <h5>
-                {" "}
-                <th>Sunday: </th>
-                <th className="table-spacer"> </th>
-                <th>
-                  {sun1 === 0 || sun1 < 13 ? sun1 + "am" : sun1 - 12 + "pm"}-
-                  {sun2 === 0 || sun2 < 13 ? sun2 + "am" : sun2 - 12 + "pm"}{" "}
-                </th>
-              </h5>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Days</th>
+                    <th>Hours</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday </td>
+                    <td>
+                      {mon1 === 0 || mon1 < 13 ? mon1 + "am" : mon1 - 12 + "pm"}
+                      -
+                      {mon2 === 0 || mon2 < 13 ? mon2 + "am" : mon2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday </td>
+                    <td>
+                      {tue1 === 0 || tue1 < 13 ? tue1 + "am" : tue1 - 12 + "pm"}
+                      -
+                      {tue2 === 0 || tue2 < 13 ? tue2 + "am" : tue2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday </td>
+                    <td>
+                      {wed1 === 0 || wed1 < 13 ? wed1 + "am" : wed1 - 12 + "pm"}
+                      -
+                      {wed2 === 0 || wed2 < 13 ? wed2 + "am" : wed2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Thursday </td>
+                    <td>
+                      {thu1 === 0 || thu1 < 13 ? thu1 + "am" : thu1 - 12 + "pm"}
+                      -
+                      {thu2 === 0 || thu2 < 13 ? thu2 + "am" : thu2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Friday </td>
+                    <td>
+                      {fri1 === 0 || fri1 < 13 ? fri1 + "am" : fri1 - 12 + "pm"}
+                      -
+                      {fri2 === 0 || fri2 < 13 ? fri2 + "am" : fri2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Saturday </td>
+                    <td>
+                      {sat1 === 0 || sat1 < 13 ? sat1 + "am" : sat1 - 12 + "pm"}
+                      -
+                      {sat2 === 0 || sat2 < 13 ? sat2 + "am" : sat2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sunday </td>
+                    <td>
+                      {sun1 === 0 || sun1 < 13 ? sun1 + "am" : sun1 - 12 + "pm"}
+                      -
+                      {sun2 === 0 || sun2 < 13 ? sun2 + "am" : sun2 - 12 + "pm"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
