@@ -23,16 +23,6 @@ const SearchBarResultsVendorItemsDisplay = props => {
               : props.converted_time - 12 + "pm"}
           </p>
         </div>
-
-        {/* <div className="display-claimed-items">
-          <span className="display-food-name">{props.food.name}</span>
-          <span> Feeds: {props.food.quantity} people</span>
-          <span>({Number(props.food.quantity) * 3} pounds)</span>
-          <span>
-            {props.converted_time === 0 || props.converted_time < 13
-              ? props.converted_time + "am"
-              : props.converted_time - 12 + "pm"}
-          </span> */}
         <span
           className="span-claim-button"
           onClick={e => {
@@ -57,7 +47,6 @@ const SearchBarResultsVendorItemsDisplay = props => {
         </span>
       </div>
     </div>
-    // </div>
   );
 };
 
