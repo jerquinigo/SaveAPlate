@@ -6,17 +6,6 @@ import "./feedCSS/SearchBarResultsVendorItemsDisplay.css";
 const SearchBarResultsVendorItemsDisplay = props => {
   return (
     <div className="search-items-wrapper">
-      {/* <span className="address-text">{props.food.address_field}</span> */}
-      <p>hi{props.profilePicture}</p>
-
-      <div id="search-items-header">
-        <h4 id="item-name">Food Item: </h4>
-        <h4 id="weight">Weight: </h4>
-        <h4 id="feeds">Feeds: </h4>
-        <h4 id="pick-up">Pick Up Time: </h4>
-        <div id="spacing" />
-      </div>
-
       <div className="display-search-items-for-feed">
         <div id="search-item-name-container">
           <p>{props.food.name}</p>
@@ -44,22 +33,28 @@ const SearchBarResultsVendorItemsDisplay = props => {
               ? props.converted_time + "am"
               : props.converted_time - 12 + "pm"}
           </span> */}
-
-        <MuiThemeProvider theme={props.theme}>
-          <Button
-            id={props.food.id}
-            variant="contained"
-            color="secondary"
-            onClick={e => {
-              props.claimItem(e, props.food.is_claimed);
-              props.receivedOpenSnackbar();
-            }}
-            className={
-              props.food.is_claimed ? "claimed-button" : "unclaimed-button"
-            }>
-            {props.food.is_claimed ? "UNCLAIM" : "CLAIM"}
-          </Button>
-        </MuiThemeProvider>
+        <span
+          className="span-claim-button"
+          onClick={e => {
+            props.claimItem(e, props.food.is_claimed);
+            props.receivedOpenSnackbar();
+          }}>
+          <MuiThemeProvider theme={props.theme}>
+            <Button
+              id={props.food.id}
+              variant="contained"
+              color="secondary"
+              onClick={e => {
+                props.claimItem(e, props.food.is_claimed);
+                props.receivedOpenSnackbar();
+              }}
+              className={
+                props.food.is_claimed ? "claimed-button" : "unclaimed-button"
+              }>
+              {props.food.is_claimed ? "UNCLAIM" : "CLAIM"}
+            </Button>
+          </MuiThemeProvider>
+        </span>
       </div>
     </div>
     // </div>

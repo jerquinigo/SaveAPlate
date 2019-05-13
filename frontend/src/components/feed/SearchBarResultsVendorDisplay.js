@@ -8,12 +8,10 @@ const SearchBarResultsVendorDisplay = props => {
         if (info.vendor_name === props.vendorName) {
           return (
             <div className="display-vendor-name-feed-search">
-              {/* <span className="address-text">
-                {info.address_field}
-              </span> */}
-              {/* <img src={info.profile_picture} alt="" /> */}
-              <Link to={"/clientview/" + props.vendorName}>
-                <strong>{props.vendorName}</strong>{" "}
+              <Link
+                to={"/clientview/" + props.vendorName}
+                className="display-item-name">
+                {props.vendorName}
               </Link>
               <div className="vendor-address-field">
                 <p className="address-text">{info.address_field}</p>

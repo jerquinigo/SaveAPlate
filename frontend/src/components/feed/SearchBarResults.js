@@ -45,6 +45,13 @@ export const SearchBarResults = props => {
           />
 
           <div className="vendorItemsWrapper">
+            <div id="search-items-header">
+              <h4 id="item-name">Food Item: </h4>
+              <h4 id="weight">Weight: </h4>
+              <h4 id="feeds">Feeds: </h4>
+              <h4 id="pick-up">Pick Up Time: </h4>
+              <div id="spacing" />
+            </div>
             {searchDataObj[vendorName].map((food, b) => {
               return (
                 <div className="search-results-container" key={b}>
