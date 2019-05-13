@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import "./clientProfileCSS/ClientProfileEditForm.css";
 
 class ClientProfileEditForm extends Component {
   constructor() {
@@ -34,8 +35,7 @@ class ClientProfileEditForm extends Component {
       <Button
         variant="contained"
         color="primary"
-        onClick={this.toggleEditFormLogic}
-      >
+        onClick={this.toggleEditFormLogic}>
         Edit Profile
       </Button>
     );
@@ -43,8 +43,8 @@ class ClientProfileEditForm extends Component {
 
   displayEditForm = () => {
     return (
-      <div className="displayEditFormPage">
-        <form className="displayEditFormPage" noValidate autoComplete="off">
+      <div id="display-edit-form-container">
+        <form id="display-edit-form" noValidate autoComplete="off">
           <TextField
             label="Name"
             margin="normal"
@@ -92,6 +92,8 @@ class ClientProfileEditForm extends Component {
             type="text"
             placeholder="Enter Client Certificate"
           />
+          <br />
+          <br />
           <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
