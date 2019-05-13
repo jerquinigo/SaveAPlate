@@ -137,15 +137,13 @@ class VendorProfileThruClient extends Component {
             </p>
             <p className="vendor-page-item-quantity">{item.quantity} people </p>
 
-
             <h5 className="vendor-page-pickup-time">
               {converted_time < 13 && converted_time !== 0
-
                 ? converted_time + "am"
                 : converted_time === 0
                 ? 12 + "am"
                 : converted_time - 12 + "pm"}
-            </p>
+            </h5>
             <Button
               id={item.food_id}
               onClick={e => this.claimItem(e, item.is_claimed)}
