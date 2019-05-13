@@ -35,6 +35,13 @@
   font-size: 3.5em;
 }
 
+.vendor-profile-thru-client-item-name,
+.vendor-profile-thru-client-weight,
+.vendor-profile-thru-client-feeds,
+.vendor-profile-thru-client-pick-up {
+  width: 40%;
+}
+
 .inner-main-vendor-profile-thru-client-page {
   width: 100%;
   display: flex;
