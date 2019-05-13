@@ -24,12 +24,11 @@
   width: 25%;
 }
 
-.display-item-name:hover,
 .display-item-name:visited,
 .display-item-name:link,
 .display-item-name:active {
   text-decoration: none;
-  color: lightblue;
+  color: lightgray;
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
   font-weight: 900;
@@ -37,7 +36,7 @@
 }
 
 .display-item-name:hover {
-  color: #aebdc7;
+  text-decoration: underline;
 }
 
 .vendor-address-field {
