@@ -42,7 +42,6 @@ class AllFeedItems extends Component {
           foodDataObj[food.vendor_name].push(food);
         }
       });
-      // this.allVendorsMapped(foodDataObj);
 
       let vendorNameArr = Object.keys(foodDataObj);
 
