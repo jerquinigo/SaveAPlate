@@ -3,7 +3,17 @@ import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 import _ from "lodash";
 import Button from "@material-ui/core/Button";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./clientProfileCSS/ClientClaimedItems.css";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { 500: "#272E48" },
+    secondary: {
+      main: "#D35348"
+    }
+  }
+});
 
 const VendorSection = ({ vendor, userObj, children }) => {
   return (
@@ -49,6 +59,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
         </div>
 
         <div id="item-button-wrapper">
+        <MuiThemeProvider theme={theme}>
           <Button
             id={item.id}
             onClick={e => {
@@ -61,6 +72,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
           >
             {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
           </Button>
+        </MuiThemeProvider>
         </div>
         <div id="item-claim-container">
           {/*{item.is_claimed ? (

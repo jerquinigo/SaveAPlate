@@ -1,7 +1,3 @@
-#food-background-container {
-  background-color: whitesmoke;
-}
-
 #sap-logo {
   width: 100vw;
 }
@@ -34,14 +30,15 @@
   width: 100%;
   height: 500px;
   margin: 0 auto;
-  margin: 15px 0 50px 0;
+  margin-top: 0;
+  background-color: whitesmoke;
 }
 
 #login-container {
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  background-color: #aebdc7;
+  background-color: #f9c680;
 }
 
 .login-sub-container-1 {
@@ -75,8 +72,8 @@
 #info-container {
   width: 100%;
   height: 100%;
-  background-color: #f3e4d8;
   padding-bottom: 4%;
+  background-color: #f3e4d8;
 }
 
 #info-container-header {
@@ -88,6 +85,7 @@
   grid-row-end: span 1;
   grid-column-start: 3;
   grid-column-end: span 1;
+  margin-bottom: 15%;
 }
 
 #info-vendor-volunteer-client {
@@ -128,17 +126,23 @@
 #vendor-logo,
 #client-logo,
 #volunteer-logo {
-  width: 25%;
-  height: 25%;
+  width: 150px;
+  height: 150px;
 }
 
 #user-type {
-  font-size: 1.75em;
+  font-size: 2em;
   font-family: "Montserrat", sans-serif;
+  color: #272e48;
   margin: 1.15em 0;
 }
 
 #get-involved-info {
-  width: 40%;
+  width: 75%;
   margin: 0 auto;
+  line-height: 30px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #272e48;
 }

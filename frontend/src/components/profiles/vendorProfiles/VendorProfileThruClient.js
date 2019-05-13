@@ -40,7 +40,13 @@ class VendorProfileThruClient extends Component {
           profilePicture.push(vendor.profile_picture);
         }
       });
-      return <img src={profilePicture[0]} alt="" />;
+      return (
+        <img
+          className="profile-picture-through-client-page"
+          src={profilePicture[0]}
+          alt=""
+        />
+      );
     } else {
       return null;
     }
@@ -121,15 +127,16 @@ class VendorProfileThruClient extends Component {
           key={item.food_id}
           className="vendor-profile-container-vendor-version"
         >
-          <div className="display-claimed-items-vendor-version" />
           <div className="claimed-vendor-items-two">
-            <h2> Food Dish </h2>
-            <h3>{item.name}</h3>
-            <h4> Feeds </h4>
-            <h5>{item.quantity}</h5>
-            <h4> Lastest Pick Up Time </h4>
+            <h3 className="vendor-page-item-name">{item.name}</h3>
+            <h5 className="vendor-page-item-pounds">
+              {item.quantity * 3} pounds
+            </h5>
+            <h5 className="vendor-page-item-quantity">
+              {item.quantity} people{" "}
+            </h5>
 
-            <h5>
+            <h5 className="vendor-page-pickup-time">
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
                 : converted_time - 12 + "pm"}
@@ -152,6 +159,13 @@ class VendorProfileThruClient extends Component {
     return (
       <>
         <h3> Donation List </h3>
+        <div className="vendor-items-list-header-vendor-view-through-client">
+          <h4 id="item-name">Food Item: </h4>
+          <h4 id="weight">Weight: </h4>
+          <h4 id="feeds">Feeds: </h4>
+          <h4 id="pick-up">Pick Up Time: </h4>
+          <div id="spacing" />
+        </div>
         {unclaimedList}{" "}
       </>
     );
@@ -170,13 +184,10 @@ class VendorProfileThruClient extends Component {
         >
           <div className="display-claimed-items-vendor-version">
             <div className="claimed-vendor-items-two">
-              <h2> Food Dish </h2>
               <h3>{item.name}</h3>
-              <h4> Feeds </h4>
-              <h5>{item.quantity}</h5>
-              <h4> Lastest Pick Up Time </h4>
+              <h5>{item.quantity} pounds</h5>
 
-              <h5>
+              <h5 className="vendor-page-pickup-time">
                 {converted_time === 0 || converted_time < 13
                   ? converted_time + "am"
                   : converted_time - 12 + "pm"}
@@ -210,13 +221,15 @@ class VendorProfileThruClient extends Component {
         >
           <div className="display-claimed-items-vendor-version">
             <div className="claimed-vendor-items-two">
-              <h2> Food Dish </h2>
-              <h3>{item.name}</h3>
-              <h4> Feeds </h4>
-              <h5>{item.quantity}</h5>
-              <h4> Lastest Pick Up Time </h4>
+              <h3 className="vendor-page-item-name">{item.name}</h3>
+              <h5 className="vendor-page-item-pounds">
+                {item.quantity * 3} pounds
+              </h5>
+              <h5 className="vendor-page-item-quantity">
+                {item.quantity} people{" "}
+              </h5>
 
-              <h5>
+              <h5 className="vendor-page-pickup-time">
                 {converted_time === 0 || converted_time < 13
                   ? converted_time + "am"
                   : converted_time - 12 + "pm"}
@@ -343,11 +356,17 @@ class VendorProfileThruClient extends Component {
 
   render() {
     return (
-      <>
-        {this.displayVendorInfo()}
-        {this.displayUnclaimedItems()}
-        {this.displayClaimedItems()}
-      </>
+      <div>
+        <div className="vendor-profile-thru-client-main-page">
+          <div className="inner-main-vendor-profile-thru-client-page">
+            {this.displayVendorInfo()}
+            <div className="divide-list-right">
+              {this.displayUnclaimedItems()}
+              {this.displayClaimedItems()}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

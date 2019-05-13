@@ -1,6 +1,8 @@
 .loginWrapper {
   display: grid;
   place-items: center center;
+  background-color: whitesmoke;
+  height: 100vh;
 }
 
 #login-form {
@@ -9,10 +11,9 @@
   align-items: center;
   flex-direction: column;
   background-color: #e6f0f0;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
-  margin-top: 10%;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   border-radius: 5px;
   background-color: white;
 }
@@ -20,6 +21,11 @@
 #email-input,
 #password-input {
   width: 500px;
+}
+
+#login-email-icon,
+#login-password-icon {
+  margin-top: 30px;
 }
 
 #login-header {
@@ -32,6 +38,9 @@
 
 #signup-link {
   margin-top: 2%;
+  text-decoration: none;
+  color: #f9c680;
+  font-size: 18px;
 }
 
 .notMemberDiv {
