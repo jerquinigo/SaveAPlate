@@ -41,67 +41,108 @@ class ClientProfileEditForm extends Component {
 
   displayEditForm = () => {
     return (
-      <div className="displayEditFormPageDiv">
+      <div id="display-edit-form-container">
         <form
-          className="displayEditFormPage"
+          id="display-edit-form"
           autoComplete="off"
-          onSubmit={this.handleSubmit}
-        >
-          <TextField
-            label="Name"
-            margin="normal"
-            onChange={this.handleChange("name")}
-            value={this.state.name}
-            type="text"
-            placeholder="Enter name"
-          />
-          <br />
-          <TextField
-            label="Email"
-            margin="normal"
-            onChange={this.handleChange("email")}
-            value={this.state.email}
-            type="text"
-            placeholder="Enter email"
-          />
-          <br />
-          <TextField
-            label="Address Field"
-            margin="normal"
-            onChange={this.handleChange("address_field")}
-            value={this.state.address_field}
-            type="text"
-            placeholder="Enter address"
-          />
-          <br />
-          <TextField
-            label="Description"
-            margin="normal"
-            onChange={this.handleChange("body")}
-            value={this.state.body}
-            type="text"
-            placeholder="Enter description"
-          />
-          <br />
-          <TextField
-            label="Telephone Number"
-            margin="normal"
-            onChange={this.handleChange("telephone_number")}
-            value={this.state.telephone_number}
-            type="text"
-            placeholder="Enter telephone number"
-          />
-          <br />
-          <TextField
-            label="Client Certificate"
-            margin="normal"
-            onChange={this.handleChange("client_certificate")}
-            value={this.state.client_certificate}
-            type="text"
-            placeholder="Enter Client Certificate"
-          />
-          <br />
-          <div className="editFormButtonDiv">
+          onSubmit={this.handleSubmit}>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/name.png")}
+              alt="name"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Name"
+              margin="normal"
+              onChange={this.handleChange("name")}
+              value={this.state.name}
+              type="text"
+              placeholder="Enter name"
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/email.png")}
+              alt="email"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Email"
+              margin="normal"
+              onChange={this.handleChange("email")}
+              value={this.state.email}
+              type="text"
+              placeholder="Enter email"
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/address.png")}
+              alt="address"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Address Field"
+              margin="normal"
+              onChange={this.handleChange("address_field")}
+              value={this.state.address_field}
+              type="text"
+              placeholder="Enter address"
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/info.png")}
+              alt="info"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Description"
+              margin="normal"
+              onChange={this.handleChange("body")}
+              value={this.state.body}
+              type="text"
+              placeholder="Enter description"
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/phone.png")}
+              alt="phone"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Telephone Number"
+              margin="normal"
+              onChange={this.handleChange("telephone_number")}
+              value={this.state.telephone_number}
+              type="text"
+              placeholder="Enter telephone number"
+            />
+          </div>
+          <div className="icon-input-field">
+            <img
+              src={require("../../auth/icons/certificate.png")}
+              alt="certificate"
+              className="icons"
+              id="edit-profile-icons"
+            />
+            <TextField
+              label="Client Certificate"
+              margin="normal"
+              onChange={this.handleChange("client_certificate")}
+              value={this.state.client_certificate}
+              type="text"
+              placeholder="Enter Client Certificate"
+            />
+          </div>
+          <div id="edit-form-button-container">
             <Button variant="contained" color="primary" type="submit">
               Submit
             </Button>
