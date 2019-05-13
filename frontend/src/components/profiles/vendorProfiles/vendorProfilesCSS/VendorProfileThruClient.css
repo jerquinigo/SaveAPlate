@@ -2,20 +2,6 @@
   width: 100%;
 } */
 
-.test {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin: 0 auto;
-  margin-top: 2%;
-  width: 75%;
-  height: 80px;
-  background-color: #ebf4f4;
-}
-
 .profile-picture-through-client-page {
   width: 200px;
   height: 200px;
@@ -27,6 +13,17 @@
   width: 100%;
   display: flex;
   justify-content: left;
+}
+
+.vendor-items-list-header-vendor-view-through-client {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  /* color: white; */
 }
 
 .claimed-items-list-vendor-version {
@@ -57,6 +54,13 @@
   /* float: right; */
   width: 100%;
   margin-right: 15%;
+}
+
+.vendor-page-item-name,
+.vendor-page-item-pounds,
+.vendor-page-pickup-time,
+.vendor-page-item-quantity {
+  width: 20%;
 }
 
 .divide-list-right {
