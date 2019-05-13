@@ -23,8 +23,7 @@ const VendorSection = ({ vendor, userObj, children }) => {
         <div>
           <Link
             to={"/clientview/" + vendor.vendor_name}
-            className="display-item-name-client"
-          >
+            className="display-item-name-client">
             <span>{vendor.vendor_name}</span>{" "}
           </Link>
         </div>
@@ -60,7 +59,6 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
               : converted_time - 12 + "pm"}
           </p>
         </div>
-
         <div id="item-button-wrapper">
           <MuiThemeProvider theme={theme}>
             <Button
@@ -73,13 +71,11 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
               color="secondary"
               className={
                 item.is_claimed ? "claimed-button" : "unclaimed-button"
-              }
-            >
+              }>
               {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
             </Button>
           </MuiThemeProvider>
         </div>
-        <div id="item-claim-container" />
       </div>
     </>
   );

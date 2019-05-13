@@ -74,8 +74,7 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}
-        >
+          }}>
           <div className="add-item-text"> Add Item</div>
         </Button>
       </MuiThemeProvider>
@@ -166,13 +165,6 @@ class VendorProfile extends Component {
                 : converted_time - 12 + "pm"}
             </p>
           </div>
-          <div id="item-claim-container">
-            {item.is_claimed ? (
-              <div id="status-unavailable">Unavailable</div>
-            ) : (
-              <div id="status-available">Available</div>
-            )}
-          </div>
 
           <div id="item-button-container">
             <MuiThemeProvider theme={theme}>
@@ -184,8 +176,7 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}
-              >
+                id={item.food_id}>
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
@@ -216,13 +207,6 @@ class VendorProfile extends Component {
                 : converted_time - 12 + "pm"}
             </p>
           </div>
-          <div id="item-claim-container">
-            {item.is_claimed ? (
-              <div id="status-unavailable">Unavailable</div>
-            ) : (
-              <div id="status-available">Available</div>
-            )}
-          </div>
 
           <div id="item-button-container">
             <MuiThemeProvider theme={theme}>
@@ -234,8 +218,7 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}
-              >
+                id={item.food_id}>
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
