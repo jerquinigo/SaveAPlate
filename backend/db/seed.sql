@@ -75,7 +75,7 @@ VALUES
         'kingterracee@email.com',
         '$2a$10$gZPgf40pi6UoVX5E4H55lut330s75L8IPGfcTIJ9E2HaeqxNpfkhK',
         1,
-        '815 Kings Hwy, Brooklyn, NY 11223',
+        '815 Kings Hwy Brooklyn, NY 11223',
         'The best catering hall',
         '(347) 492-6826',
         123456789,
@@ -100,7 +100,7 @@ VALUES
         'flushinghousee@email.com',
         '$2a$10$D/8R9jsRunT06bdNzbUuI./5TEdnUS.LDqY.tBztx1byVuUskRNGK',
         1,
-        '3820 Bowne St, Flushing, NY 11354',
+        '3820 Bowne St Flushing, NY 11354',
         'cool place',
         '(718) 762-3198',
         123432135,
@@ -113,7 +113,7 @@ VALUES
         'atlanticdinerr@email.com',
         '$2a$10$MXrGm6UCRQZspAr5wl1VyeSYVRVGqngk5Vb9L2bofqGZ6G4XzStSy',
         1,
-        '111-16 Atlantic Ave, South Richmond Hill, NY 11419',
+        '111-16 Atlantic Ave South Richmond Hill, NY 11419',
         'good food',
         '(718) 849-6673',
         123456787,
@@ -139,7 +139,7 @@ VALUES
         'madforchickenn@hotmail.com',
         '$2a$10$j7eeNV.kKAgY4ViLsMQ.de4IrcfDWf6PvcSOlS7gHkaR.sbhjgNm2',
         1,
-        '157-18 Northern Blvd, Flushing, NY 11354',
+        '157-18 Northern Blvd Flushing, NY 11354',
         'yum chicken',
         '718-321-1234',
         123456785,
@@ -152,7 +152,7 @@ VALUES
         'gyukakuu@aol.com',
         '$2a$10$ArJwEZXauWEhRg4yn3ZmBum5mCajRFJkmjxKSAjPrsU0ER45DOl4C',
         1,
-        '4052 Main St, Flushing, NY 11354',
+        '4052 Main St Flushing, NY 11354',
         'Gyu-Kaku (牛角 gyū kaku, bulls horn) is a chain of Japanese yakiniku restaurants. here are over six hundred Gyu-Kaku locations in Japan,[1] and locations have also been opened in the United States (including New York City, California, Pittsburgh, Chicago, Houston, Hawaii, Philadelphia, Boston, Miami, and Atlanta)[2], Canada, Hong Kong, Taiwan, Cambodia, Thailand, Indonesia, Malaysia, Singapore, Vietnam, Philippines and will open in South Korea.',
         '(347) 542-3653',
         123456784,
@@ -166,7 +166,7 @@ VALUES
         'b&gclubb@gmail.com',
         '$2a$10$helfcWuepNkLUj46s8X0gO62GV/LhDu6pb7As.7n93Y.MARhOft1e',
         2,
-        '733 3rd Ave Fl 2, New York, NY 10017',
+        '733 3rd Ave Fl 2 New York, NY 10017',
         null,
         null,
         null,
@@ -192,7 +192,7 @@ VALUES
         'YMCAA@yahoo.com',
         '$2a$10$uY32J96RBWBp0ykFNzQVseruroRKyHgLnMNUXDqZsNH708Xfc1U9C',
         2,
-        '138-46 Northern Boulevard, Flushing, NY 11354',
+        '138-46 Northern Boulevard Flushing, NY 11354',
         null,
         null,
         null,
@@ -205,7 +205,7 @@ VALUES
         'Liftt@aol.com',
         '$2a$10$vr5QrDvGKTWsgqw06OT4zurU2igUuNwy4ZyMXBSCRIYRkYMwVqr.y',
         2,
-        '349 E 149th Street, The Bronx, NY, 10451',
+        '349 E 149th Street The Bronx, NY 10451',
         null,
         null,
         null,
@@ -218,7 +218,7 @@ VALUES
         'UMEZZ@hotmail.com',
         '$2a$10$i4uyBoQ0WV0ORZZu8QWxpuRHgeKP5Bincp94BV4IDuBl/6ikeL4z.',
         2,
-        '55 W 125th Street, New York, NY, 10027',
+        '55 W 125th Street New York, NY 10027',
         null,
         null,
         null,
@@ -226,25 +226,24 @@ VALUES
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADgCAMAAADCMfHtAAABEVBMVEX7/PwyNGi3Ki////81NjoyNGYAAAAcHloyMzf8//+yExwpKi8vMDT7/P0sLTLMz9f29vcdHyQjJSoAAA0aHCIhIyjeurqXmawcHl4lJ1/Q0tkAAAkbHSOzGyIUFh0AAA+yAA8PElbg4OHr6+w9PEAICxTRlpdGRUh/f4HQz9DY2Nnj4+TGxsdtbW9eXF+6uLpSUVRkYmWWlpiNi42vrq9qb4mop6mbmpsjJWF9e37Bv8IOF1ZLS0+xAAC0FyBiZ4nNgIPVoqNISnbu29qmp7bmysq9P0GIiaLIdHS6wMrCbW/etLNbYIG+V1rFZGa2LjXr09O8S0tTWILz6OfPjZBCRXQAAFCxs7+OkKXWq7B4fZY71FgjAAAf+UlEQVR4nNVdCYObRrKWU1hu0kAAwcaOZOwIWATiFCyKFK2T3c2e2TvZ4+3//yGvqkEzY3uQgNEcqTi2NCNBF13HV0d3Tyb3SIB09To65AfPkxz8CWxYutvgC9W9+ZGfFtG4YV2tXPn4g8hiTGLMp1/sNKZYgD+bOsohhPefxU+CQI1w3LB1nP1x4BAZkmQyT6HXqSJJjo5zySXJivCT6122/CkxCeF04eOIQ5tvbnLI26kChUnSYg3g4b+WixxWlmkpq+jJsygfp0F3JBaAqjtKccXheiEtWg5VixWSHUK0YKiYEyG2KMCaXz9xFsHNCrd5dWASLwECxq85tCRe1fVGn8juQis9M4OteUgZIzVkjB0sRfJD8fGnqpUqSLaZNENcaSh+e/xnsW5NDbiWJHHO36BwLhe8TuwaAr6VlJzU0EAbqxeKthNWJ6qq6InxCBOaO8iZtMiEotVc8hSu19y+MjU6cWia07XQz6q0S9daRFzBZwKZyVLAv5UU37ipY5pWun46LMqg183DRw4lLngNDW0T8CS6YWpQN3mV7fdoQivTjGs7qc3ANbQSaMr5FtCyIruge5qkcabY7hNhEWVuZZjMchsnoGjCtuiWkkSOXWvXpgY5tHShYLDlRpTZaWpulwaypqJNVXZxxiWzBki4ZJdbiWlC4J+AsMaFhTpn5+TVEi1IFKMiJg4KR0OieNKVqZk45BgEh6VmuZHBmLPem2YF4KKrVExTYlyH0JKMDB+bKXGdPlo9Ko80Xk9DqIJ2sYEqCg7QRhwjbAzkinB77YcXkrkP48zFJ6E4E3chsQPKqx0D7E1JMzk3bbQvhULKOAGJOcShZ3hXsOgR+Iu9PVS+d2BCDYktw11pwlzU3NyTC0Sujhza+Ma2ZyEg5wtQEQDUQl4B51Rb7TebWhfTacT4DZ0L0LO0mKY+kqyiTS8WSiDrFYQLnLeJkD47WtsS+gE0NWhjoFpIV6YGDE1Db+HjnDnmgfCM4+IzIckNGD6HRoDRqkogTBVjE7JJ9PAgewSrA+7OUSTuITabkGPfiJCBsxyRpmStoYEzqJn8aGpgtyrLzXa7VCf1Brkv5jn+ZfsyzZvTskDTWTaq2nxfISnO/MXmoRnUS7IvZOIn4kkzRRY2krCXSV68gTOg87y8QjUtNfqLv3MnarXZqbB3tOD4GBLFzBohRRM00RVmCuPT6OZDcoiTQ5zsWhiKBj4TyocWY5eZkr2FnT9fq2fxF/0aovKwuuYQJw2vhNfQSVbRQ645E+xO4odSRzFt63mZGZLV4siSo11stQagdoyFHkW9nzl+RT2+LLm2Ql9hC/1FoTAz3cNIZOHKUPppqJ680GUILahg0b0y7A3mNEKCXZqYjE04FjtDhMgnXaEHYrqAELaba1JBYl9ZklM+wCSCW/irZvQYtUuLxhegcBHgig37rkAESocpmqSIuNi1lWTHrTgwtxBbkrmCB3AcUKANSPWGr53GGhMhkMgaYra5cxALlWTZDkGkCcQ24nerjhbWem0zTk8PVuE9s4iSKEkaOgl6jUGPXTUs5oqBTxjg7vgDHW28bGx0ifbaLGFjBrrHNGFOK8uq73caUXIQQzK7UUa0MIoufpy9KS+Wgzg+J/Q4EgJ5DCPLQtMOaLkwskQMXOj3xGLrkxPF25mSVQuXxo+YRXcv/mQpK6AEOiI3KVAUTye2kWf0SOxeJBX0hhUUUwpfpQXZG/Jb5n0hY4gQjuODQy8rMcUV0J4CLK6waXj5e4J7aGw1iimaF9QQYW9Uj1mr+1ILmJSUk8S4mplLAVotQutu7uzu4ZawsxvJJDE14kxr7A1Cxq1++btd3RVEjk5aiKzxmkwA3lPd6JNLuw26WKpJVtzAfwxVMWKVmL1HcHnvxnumiPtOJgdFYhIG2MSbCsUls6tA7hfRk2Q3fhjDByPZc8VKLneP7puHQdVEn2hjAo53FjOYmPbl7A2UU9KHNUIpUngUU0miREOwv+f5a2/fOEdUQnur7qzW8aMILS51f1gZQtNhg2jqoJOYivzSg6ZtSQkJGCLkEekbfKdIVnaZEUBkM+bpsLEl8sAqianx4NnMg0Z2FJ8zJTW2C4kniSZqHpcgQr1aurIlEyN4hL8YHPrVA3MIEaqgnehNxI3jyal0YF5gGLreoEEJAb+1IfE3tugiHppBMuc79IYSmbq9I7GDSgksvr3zOOQkEGACJVTiFMZjaGFl+qNk3CEzNIkCf3SQkpJB1GQW7njR0lKkZYuXeEU+46Asdo+UpIWlh6E1WQWGMYfHEerc2fUjVtMYD48Ofy+84eZx+Js0uaw1RwZrSnlJzMmECo0fkIgeCs4WcevwDeHwH7WSoJs4jOWWs4PleDQu2FijnQYsqZCiIiB1SD7p4WmPXvKCzEEMh/G2667Jd0wStBBGNO5akWMmGUYv5UKy0GZBaEg8fWwO0ZJmoJtMUkXO1Q0oA63lY4aFmJ4hvLaLyq0QDK5Ahr2fP16V5HpgVDJoinYQckUJMOofKVo7Ax8PM22jSJlkJqoM2X2lD4YRbM2milBbjBc7RejhqFncWhIrtgfLRqSNAuo+bFq9m2DtWVTJWS1Qtva2SVVkWI5iEaEMX8ESmeQYmN1HYD2OwEUnracms2rXpFwVRMk8HsXifsF4ihZ1XedOevGBjifQJ0tPU8wYEJDryN9CYeYgZbwqF4WcaQfRXrd+Ko0DDckHTlmUHTfX691CQ5CjeAPSKRDrLRRCoKS0uO2ehjqSwDULHaqFti0X3M7RFvLc7f/tzDd3LZM3cNvTIliqsERrz7hx2JcamYnegxStEZqtrWLyqqjRnPn9H8+DEXXeIDZF/ghZWoNa4jB+oBysZrAyJCaT+cMkZAYSukNlke9RkbRjlWHSE5DIrsZYkqJ90gyvDNuK4dMjOc2pVcVgmrcWeaPQ6ztSqgzyOCwYiflCeqIMTgSCQ1hiilIN6CtL8fqiSvL1i1BFE2xrSnCvg7wTyXpiSFZJ5gIyBUG42TtWhNJkClWxo5I/4c5diH22EF1my8JA8KxRo8uZ71w5wkKTFALt8NQ84XuE1iYEFSZbQ0GFykqunIvvIFk1hUBhis0LZVzvkcR6hjAwMTYwXdCVc24DTYxmly7VYKnjQ0keorvjjgT6zkJEwyUN9XE/z08rFRQKNfJuhG3at90PT5sgsjn6/S2afytCe3OmQymcUSqScb7VqV/H5smT55CKbixYU4exFpBKnobQUFqSt5I4M5UaDXCi3GP181JEzpsiJ5V5MXlDAPeUbqEjVLwYJ4+ZUgX6E3YU1wSNBYVI6Basy3lnvC+yVyHXjL1eGoj1vJ8Eg+jhGDNq4dUAljtD07p0C6KQYJAbcGsLFFbaTzCiuI1g7/NKdBJHCTWFMmVyu5xCYClJtaZueQq2lsmYwg70IPFBeSCdvOmWStMQFpZCJQ2jQ0ohszEsNK2gDFcKtZKMEVH9sy/O0meCwd98/7MB9P33P5x7rnGO/NnpgVmdkYKE8WQemKZpM2olGZNlhS/+/fI9eoH/tX9eHv9+JSz6t28/HUK/PG3V9eywUDBajCuTQA3cJqUYSBJnq32VKAZXJMUbw+F3r56do1e/pwvLf/tkEP3ldFjk+shfGkNomYhs1Irpt3xehcwzmcYR0ER1ob0ZU+aFX5zn8Kv/0IV/eDuIwdc/nuYQNn4SUW8xYhS9ZmZHFEWNDibjNvIIajicP6TzDD77mmof8s8+HcThp789E9q6EbkBSUvdLcd5WnSlr2FSa8ijuR1nZ+CLl+c5fC6E9NvXwzg8C65UHHyusJ3GcY5WJ4wI6FuOn9FGtSLAd1/1VcPfDWLwk3/0yE7QmjAC1WbpiqD/BI+lzceVVfuo4cs/4pXlC6uhuHlpU6lME/IH6v6ULwC3PIzDa+dl9NmXVB24uBrSoOcSAs266bjZc/90xmYcf/DFi55qCD8OU8O3PSqzkDhBpbY5mLXDxni7s/d4XDWMrqJfdAUBW9xD3PBo3vDI15G9cMXFWvL3f3uJFeL3poY/653oxfiiZAat7mfaTX5gucrTclSh+MZFoq97qqE8VA1/6MchsrfxLI1JmiEdmHGjYkbr4xSFt5tYyGP7b/qr4T8GMfjJ73oymIlyvGLzXYyR0s2yvL5gzER36Yhqr5uN5LCvGg72ht/25LAyqD8m2VOnk67QWs4r3k3mZbXIAEfb1B/bFtRDDb+mtIH823tSQ91fFNVV1v6GXaGFm7QW1WSptODKyLZUWPZVQ/j5u0Ec9lVDsV741rGrBgX+tGacMYXbs3EdRr3U8H/3qIaTzkZMWgQnWcE2USRNK7bxyMYn+F9fb6jfjxqeGFrpowViGNdr5V32bXp+XkbHqeH3d26mk6NtbpgaNflZ6TYaV43po4bPn92nNzzJIrmIHTfImZj+SCH9T6cavjrSV40a/uUWNk6kbfqr4ekBUhluEyxMPrJ9rVsNf/2LI33zR6GGv3z3Eb3uZvH1H+SRNb4rhdPh2oOsq3RsVbRLDV9990EyWNVvoW7B/fT/Bs7hVctavGuaLKCQijXobQvUWEPTqYbPX/aAu/Jvus3r298M4hD0SG3XmlcLs1lPKDEfkek0p8mTx1rSbjV83uOK8KsT5nXQiHTNsbSVaFmjjY6EyukOC4C2UcEAMkTUc2E1bJz8GZL/1Cmlr/80bAolStjb9o76mR2xmB5Cm/ZpSBTaKKYy7ZHrbKBLDRsnf5pUuXsG3w1TQxC4RRRgkr0niV18KlNJYt1jFtBKIntcAxSsu7zhix59qaeCjaFquOVaueK2RvsySc0KkVLDiMrCua1CNVVGrnfrVsN/9RHS70+o4cCB7E3aWytecYPaaimKAIwa6TW+MyzlxsZVwy7cqYb/vbUO9AGH3Rnw138d5itgaYmte9CmlJph+9Tl7sb17mCjq6ftGs+2FHVd+F8dhlQkgM9y2I1oBntD2Wh3MqSSYiwkUhU+cJlt0NjY1rj9UU6oYY9uDvmHbiEdqIY4lHwxPYZ/8s2EjEAcbliP63fuVsM/95nCU6m3oYhN3u/bvY2uwQvIrq62OaixiKZTDT/v4+9/7I75B6rhpJ2r9b7ebOo21IWN6ThsO5yta1K71PDZyy/6zGF3zP/uVyMCC8gOjsmRDIO8O9DyNonZd+nvArdLDV/1GKDsdgvpp38fziEk6PuYomlKs9AndCTNMJoFomMJ/tNRGX31iz5T+Ntuf/96xGA2NkbyQbIqdx6XnHBCW8Dp7krT7tCGCL/vUEOEbOdba+Sfd4dOfz3VknM7qbZkNtkYoB2CikmiLPDt2rjehnMwqfDrLiH9/ecn6T+dMX9Lf/n5rfRjd7eWjC7/6NRl2vd2UjA7XOqRLbZkGLkFWZcaPr9OYNxKX34ngptTianXN+hd8/+7d29PZN/k5UJJjhF9hDZmcmCSvXDwVZDsys0oZYQ/9qiM3kYvqcQn/31YcvETytyc8JKqJdn7xr1nCuObiaIoApUiYtP4OEjTqYbn6IXoB/3VsNTbOZxDWwfYWpGk3DEZW+iTXZF6lmUtDNs0+WJMdCh3quEZevWNUMO/DuTw7WkfKese9WQotLKJmxG0+MZdR2FW1+UYKZU7veEZ+qoBPMMY/NvrMw1g1ExiLag9z2Gb6/w9yOfNcOcVR6shAZ5TSahb6fUPZ6EqqFFWZaF7I4l4pwo3/HekGn5N35YHquHbs6U2AFl+H3hXuWUkd1hDOVoNRdwh/2EQh6//cJZBd02RxDU4gNRAnVRmo5fHdIPScxwKNVQHzeAnf7utrfL98ax8y3IMHhTk/rb1JDMo+cZEVmoch6PV8DOhhoMKUW/PI3HY2Rq5QKYoYmvmCW3XH4UHNnqN02g1/JKeqfz9kHrwpz+er2FAVe6SIg0UTn6e8YknGQBNhmqcwRmrhs/+ObgN8/U/+kT8rf7pWc4UW9tOAkYcUlp4GYX74QZnvBr+V9QUhnRD9++rkePEMU0noc2VcyYpiwVtu2oYtjU8Dh6thi8+G9r/hWCm3xwuN4ptGl7tCpksWlQqiTaFERyOV8OB/V89U6dyllqcsV149BaFZRgLy3Ec28vTdDDyVuGf4xh89uuhFe/XJ5dcXD/ymSImjHMpR4eRTaIwWt5wkQMZRDUcKaSD2zDPg5n2mU/RRWjkMIjs7U3MNsqSjlZDSoarJ6Pf92ewd89JVW83q12S5gF3nHndjlOY17U7Yg5Hq6Fow+zfeHIezFwN6Qapri7e68v9dhegOgaD+2o71fDVl18L+rKDmrVBP/7y7W10i4z2Tit+pG3rzU4yFmZTfxpcXJPd7jxiQx8sQbvuTWi+j2HAMRJoPox/wce5qU9/3pvBbbCq47V6zWfki5qTxm3LsT9sHT5/vc861PCr78YHK+rHQfE/enecwI4jL4adE58NkzMMhnm6qsM1xPbQDvcuNXz+8ovxfT4f56YGtEXR1tEkjwz5XNgHqh+WVegeI6mcDQwx4M9datixjLMPyb/6AI2/HVJEtCRplVNNm2Sz2ZL3Rqx/GMhhpzdskkwj6cPc1Os/9e+KApEuBUAGd7kmtRuctlg8yhJNnGTXn+5FDSeTD2T09aAtruiYMPnYQtPEhOBG1SZhtmEq0kBgCp93eMNeVbUO+jA39fb8kqAbI9o6TgUQUbMQJMqCdniOLOSNivhM0RaHYe2znWr41VC2bl70/96DAcMaaGG93yxlqHw6JCJolI5OY1S4aThSMThdqneVfvsUt7vog9zU73qDmebbzZ6Y2SYEfWorQkht3ys2WaQPB97wWYe//6pPcbtzjO8FxYNbFZqRCV6irNnNXWzEOi4X3KWGTXQ7jt5vkOoPZm671NFLjL4C/LlLSu+wY8j7DVJ9Vq3dI+ldPSb/vIuQ3sxNXaLH+w7UubC5V49JF90MigeBmXsg+LxjDl/eSQ2vhXRoU9vFqVMNv9JhFAkOb+amLr0B0EB7KuuvOtpm//XFZ6NIXPU6NzUIzPThA6JhRyqf2F/gxYvrjT5eijftT65+9OJ6R5AX4uf0R3B41SD1buRqIL3roF2IbGcQi51q2NDzdoKfN/83b58/v/mB59cfxT+iveiGGv5uFH+qnpvs1kwFRCaTBu0CCt+MTEJ1kIhHrhukRoIZHWMm5TYWBYPSIBa7QOlY+jqijfCODVLjwIxKDFLw+/F+X67fZPf7n83Ra3+BAfRcdPldJaH6Z2beG5ToQ5QkTfqIDagdkQov+kfTPXbbGcLgM0oLyMflQZ+OBDP6QRNVw1sW6ggWeTFgu+FvLsngs+ciHpH/3hiat2PXHAo9ZPxWa4os8uL0nlrv0aXVUGTn2iTUwIUyH7DIlY6sL9Sp2t/O9NptZwg13rBNQt0BzECnPxwYRvVZ2DyImrTAncDMGD5OXObS3vDzqwapd702+nhvMOO6Rs/8/sJq+OKzKzUcDGZgOeIwZJic2cv10mr4teg9oSTUcDADyTQNe6w+uvkV2Aezk2Woi6th03syEszoW3uWD5hHgPgwD9jJMlSfbT6GkCh6yz+8pebKEWAG9Fqb9+URIMznSg3V/MQkqj32FxhEouhNSaiRYEZGHnkvHpG/dM5rFVQ4NYkQXVoNRdH729d9+xE+GjbVVyvJOccjQJTOacc9el35Jz54aTX8V9OZ8e5sc+VHpMqq7rruMozjfXVQjMMpEwlRMTOOncMQTbs/e3E1/F+rhsPBDOwUzZg3NHOshXPKQkJqXXdGQzw9sZL+wmrY7MT3s1+OADO6aWtFtt/HYUiNQfrJZ4TTdt26BwU/8cGvm8zD8/fplvcicSF+8ez2zzynHMfXCCVl+dvBYIZIrTwr3/fseIIkaD8DUM7qzlMD4Lt/v7gkNfvSyn8Z4ycaEzMPsl5hAyynTdEU1oWf4Ffr2+ccluPShZ0kCqrumKV4blbRDgqZN/d68Qgrh8xttHL8EmCZzzv2VxyX8T2TDO57SszNcWxm0/nM2q2Rx4B4PP8VOZlKB8X3EefB1jFX8ye9azlsp7XrxonvbAFU5FHp86V4lSbbJXrGw7xwIQ2eMIewntZi1U908Gl7bsh6HcLSSs3GYRn+u57d/UDaeyOo2w0SQC39XB0QJ8oQBb7niZ3q6xN+/7EJVlcSBnWXybj1i3o543vdFutmIX+6R7GgpbgGKEn/ZieIvdkOpXrfuH988TRZRA1czq5WL8s30cq5b6bOXrRsNAd4QHUKvT0eAZ1oX86OsgnuAA5dZ9v0Sr0hS7V2nuRRLIgwSdAKv2iQNmTz/sfAHq2LLE4zy7WneBQLwpfNmwCd2so3a3IUrj1kuT3kzW7XIHzqEzz8kFQog9i20KHFns9XdWkFQyYC1vPtMUicj9vP5Z4JVgigYX2YlTJimYI7vBzYGLs97rzntbMJT+Mo4JZgO6dCJ6i7ee6iiKojzgFop7CciTNIYb1684SEFSo/b9KjUDnmXQ4vxDC/BlWctrso3RHQ/34IYj+wErVhMfLugCtBp3oixOmUoblaskc/WL0hOXJS2M7ydnsdPcEIYeSlILF1DEmmB4LgkWndXnd8cILa06lH1mtTTujchrXJXF8p8/eVNi1C6uKPbB6lY88wvyShyRNWD2LLjI4Gf+SwwGOKv1oKAIcMLkF9AiyqodOmAyHiTny3/lFY8q3b7Pm5NCVKhqlp12FRD0aq53GeCUMKbtC/c+R2Oh5lQjooIJGsJ+7dzxe425gyP0ymaUSHUMp6PhsQFJ64aGQrdQNtZIDwkcNFOBQI1KalWGOrJvPd3Y/ZpEOUlhgslk28wRePBsShOdxvGoO6tXgl3q3unmQhI4M6SCzKKLcH57GSGvJkv63oaM0iQFHKrPkhhLEV/JtEJ0QKAwp7hnY6Gb9/xp0H4k0Nn6MCUtY6nu3CYLob6+nfIz1vPSvZnc2QdM9FCbJpupzsbRtN3Ypl0x2KbO3nlwCSoB/M1gtCNrvaRatHEeSSpK7Q1MmESFcY7C6s1ihcxiSAnjcsQugfGsMF4SpdPWSsgTPYPFvImTqBTWvtLjUCZJGwDJpRTcgrTHZzM8mnyYWuf/b+hBpXflMyShXyg8aFw3KE7+61GYVJ6pfUr/EwGSoUyohgxsFB2AihsxJp6gFZp16kitxia0Yh8ZtU3P4hsuEQpdPptFiCa3s6+gjJFRZAuvzThdJvF5xWfpPhkHUfgxb1fi0OxPM0XtY2Yux4VkCdW35RIZPZyPMNTt1qgxBQpkZqLrXY3kWeIV2Jc8rvi3RDbOe4lvwItnO8n1sfZvN8M2xNYj9Cc1YQoqj91ufjQ92jXlj+5v6SVHjTxowvDXyuyZuY9pVbb737gR0YYaDvh8NxxT4Ulg4512vHuEsuqOtuRCo+z9YvVH4Juifi0/vzxRiPWRPd2RynEPVxP68x4k4QC1/MNzUXB3dz8JIlVPMj2sgtF5bOQb17KHGCVD0Ed161CSDPcCGQRFkyOGBUdUHVALec26uV5ayjN/XVA8WHmc0vb2HeJ3miauXRZ1T4hBs3vDMnrt99lPJQgpUjVZTEdHKQpHbSgNH56eX83vMosJ3RubTqDgHihOVNksPz6NyIS6h/U2Lf+k3lsnyzrP3jJO6EARh3sMGwMSTzMq6CGSLg2rBLXWD8DeLF5twI0MdrJO2xtktXS9AXYlNjlMwMPKuZNVh5DaK6f4KaT2fBHodjppnpb+LSkSaRv2sxXa7UIyMPfZ9MZ0WywAnciCYXVLsY4X5AGg7qXTarHkho6AgoIgZAWarN6Sx3oTQycVwblHRg9CatowE72DdPBOJpnqFIrE0JXIcc/Zp5GEhUs8OaDLb/gJlMlVCMGIUo2iC7Ok/imSvkylu4kDI+RXRFG+D0ONxCrYtDQWl1TaxJQi2MoZyt3dU0cMVMOjizDn/w7AnGM8u28IYgfB5XFmqga+y8AvRZCcsqme5ht2pcyHEz3xuDPL6FtTLbbdNpQb2CFDFAhGhwbQUzVk1aeLgpkvoRqnvJtWuCgsOW016oQebvEc7FzfBlQ2SlMWB2l3EYRksMyptJRbTiTdmGvGlASAkdTwnRTBQFQ/J8O9q544OH8cB043AMWOOklQyt/NRNuApl26YLriUOXKKfb6bTmeFPp22LDxTzMivnBxWDh8YGJ7MleDkCNT3HV7D0n0Dt+fqUzy2OaXWAcJq5yCsc8jZXHhqBpYvIC/T1eu9s9lnTm4OImlpe9zhxm5lAnoKl7dxdrky7EuGoc5FE2mWInj0kycTeCV5dx9uGQj0zJ6PKAqQHUsRoHh+lDfKgmTgHVm9aVQ0YLGe1nmAUL2pBbx4rrfcxoaBVFCgmnip4ja1Emk5TDOY2ziTIkTlxeAaE86vklTprkmXZNCrftFfZvFnDIUD8QKV5kmP7yXS5QDlFM5pLzhqZQF5LRwc3W6VoLjjUOKm66OzAB3E0+IjfWyymo29YikmEDJ1EPV+qENpORimZ6dNpqIM1jtHDYcEOmQMxbcKHHwpwpxu0kZnwa7MrDtf+sdwA+zaiRrGs8OcbSurl053+IBC0N+FQ1BStpu7sEPAce3EmKqVvCwUNisBg1WzdBliye2UpwfXbTOh6RrIuCRRR5nv5QSDoEKI5q6chxnCzVt1gTfExvt36QrHq69VwqtOeFwI6FE3XJEp4TG6x7YccttbuoQiiFeVuF26LVmjME91flZZ4u31zZTogNZqJkwLEB43VKWe6jEL9BNzgCZKFDXSmXhljPADVG9otbaflacvh1QevIkAMazEcI1CaNbw9dhW9D4Eel950GgmjSibUaA5vRd9+DfPcGYkpKiFaFrWYBgmbNiDwJ8DgRGiRu0cHkpo0Xpm1p4GWN87hFelX0FMKSPAhlLQ64LGGO45IXuVlKFomNtN9k82xboYWu6mWTxdhG548CrS+O7Wj1jOBMCF5bzcOCMty/xBC+f+zKJLVwoCzbAAAAABJRU5ErkJggg=='
     ),
     (
-        'clienttester',
+        'Performing Arts Afterschool Center',
         'clientdemo@test.com',
         '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
         2,
-        '47-10 Austell Place Long Island City queens ny ',
-        'I am viewing as an Non-Profit Organization',
+        '47-18 Austell Place Long Island City, NY ',
+        'I am a non-profit organization, whose mission is to have a safe enviornment where our students will succeed in school while cutivating their creativity in the arts. Whether in dance, chorus, theatre, or music.',
         '(347) 492-6843',
         123456789,
         null,
         'https://www.citynmb.com/ImageRepository/Document?documentID=855'
-
     ),
     (
-        'vendortester',
+        'Your Favorite Vendor',
         'vendordemo@test.com',
         '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
         1,
-        '47-10 Austell Place Long Island City queens ny' ,
-        'I am viewing as a Food Industry',
+        '47-10 Austell Place Long Island City, NY' ,
+        'I am a member of the food industry. I am able to add items to donate to my community. I am able to recieve a tax deduction for my donations and gain community exposure for this act of generousity.',
         '(347) 502-6826',
         123456989,
         null,
@@ -256,8 +255,8 @@ VALUES
         'jon@gmail.com',
         '$2a$10$ISjBUvV4FHZ0DVTttNOn1uqbJDmlO9b/btBngzCyZJpZXhsfVS5Cq',
         1,
-        '47-11 Austell Place Long Island City queens ny',
-        'local catering hall',
+        '47-11 Austell Place Long Island City, NY',
+        'Your local catering hall. We specialize in serving the communities for birthday parties, weddings, and community events. We pride ourselves on catering to your every need!',
         '(347) 455-8790',
         987645321,
         null,
@@ -279,10 +278,26 @@ VALUES
         TRUE,
         8,
         1,
+        '16:00'
+    ),
+    (
+        30,
+        'French Fries',
+        FALSE,
+        null,
+        1,
         '18:30'
     ),
     (
-        10,
+        35,
+        'Assorted Muffins',
+        FALSE,
+        null,
+        2,
+        '11:00'
+    ),
+    (
+        20,
         'Neapolitan Pizza',
         TRUE,
         9,
@@ -298,12 +313,28 @@ VALUES
         '18:00'
     ),
     (
+        21,
+        'Chicken Pot Pies',
+        FALSE,
+        null,
+        3,
+        '20:00'
+    ),
+    (
         20,
         'Peking Duck',
         TRUE,
         11,
         4,
         '19:00'
+    ),
+    (
+        50,
+        'Bagels',
+        FALSE,
+        null,
+        4,
+        '10:00'
     ),
     (
         25,
@@ -314,12 +345,28 @@ VALUES
         '17:00'
     ),
     (
+        26,
+        'Chimichanga',
+        FALSE,
+        null,
+        5,
+        '18:30'
+    ),
+    (
         2,
         'Arepas',
         FALSE,
         null,
         6,
         '17:30'
+    ),
+    (
+        40,
+        'Chicken Tenders',
+        FALSE,
+        null,
+        6,
+        '20:00'
     ),
     (
         25,
@@ -330,19 +377,27 @@ VALUES
         '17:00'
     ),
     (
+        41,
+        'Broccoli',
+        FALSE,
+        null,
+        7,
+        '18:30'
+    ),
+    (
         5,
         'Butter Garlic Crab',
         TRUE,
-        13,
-        14,
+        null,
+        15,
         '18:30'
     ),
     (
         10,
         'Fajitas',
         TRUE,
-        13,
-        14,
+        1,
+        15,
         '18:00'
     ),
     (
@@ -350,7 +405,7 @@ VALUES
         'Fish N Chips',
         TRUE,
         13,
-        14,
+        15,
         '18:00'
     ),
     (
@@ -358,7 +413,7 @@ VALUES
         'Chicken Parm',
         TRUE,
         13,
-        14,
+        15,
         '19:00'
     ),
     (
@@ -420,7 +475,7 @@ VALUES
     ),
     (
         9,
-        7
+        15
     );
 
 
