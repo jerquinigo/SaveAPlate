@@ -53,9 +53,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
+  border: 1px solid #272e48;
 }
 
 .display-item-name-client {
@@ -81,6 +79,14 @@
 
 .unclaimed-button {
   background-color: green;
+}
+.client-claimed-items-profile-picture-main-div {
+  display: flex;
+  justify-content: center;
+}
+.client-claimed-items-profile-pic {
+  width: 150px;
+  height: 150px;
 }
 
 #item-button-wrapper {

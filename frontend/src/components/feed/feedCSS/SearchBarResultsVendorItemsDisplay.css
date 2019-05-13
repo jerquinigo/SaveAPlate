@@ -22,6 +22,10 @@
   background-color: whitesmoke;
 }
 
+.display-search-items-for-feed:hover {
+  background-color: lightgray;
+}
+
 .display-vendor-name-feed-search {
   background-color: #272e48;
   color: white;
@@ -34,9 +38,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
+  border: 1px solid #272e48;
 }
 
 #search-item-name-container,

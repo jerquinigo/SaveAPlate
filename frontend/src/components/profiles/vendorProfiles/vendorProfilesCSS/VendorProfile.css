@@ -102,16 +102,12 @@
 #donation-list-vendor {
   width: 90%;
   margin-top: 2.5%;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
+  border: 1px solid #272e48;
 }
 
 #claimed-items-list-vendor {
   margin-top: 2%;
-  border-bottom: 1px solid #272e48;
-  border-left: 1px solid #272e48;
-  border-right: 1px solid #272e48;
+  border: 1px solid #272e48;
   width: 90%;
 }
 
