@@ -18,6 +18,7 @@ const theme = createMuiTheme({
 
 class AllFeedItemsDisplayed extends Component {
   render() {
+    let converted_time;
     return (
       <div className="vendor-items-wrapper">
         <div id="vendor-items-header">
@@ -28,6 +29,7 @@ class AllFeedItemsDisplayed extends Component {
           <div id="spacing" />
         </div>
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
+          converted_time = Number(food.set_time.slice(0, 2));
           return (
             <div className="vendor-items-container" key={b}>
               <div className="display-claimed-items-for-client">
@@ -42,10 +44,11 @@ class AllFeedItemsDisplayed extends Component {
                 </div>
                 <div id="item-pickup-container">
                   <p>
-                    {this.props.converted_time === 0 ||
-                    this.props.converted_time < 13
-                      ? this.props.converted_time + "am"
-                      : this.props.converted_time - 12 + "pm"}
+                    {converted_time < 13 && converted_time !== 0
+                      ? converted_time + "am"
+                      : converted_time === 0
+                      ? 12 + "am"
+                      : converted_time - 12 + "pm"}
                   </p>
                 </div>
                 <span
@@ -54,14 +57,16 @@ class AllFeedItemsDisplayed extends Component {
                   onClick={e => {
                     this.props.claimItem(e, food.is_claimed);
                     this.props.receivedOpenSnackbar();
-                  }}>
+                  }}
+                >
                   <MuiThemeProvider theme={theme}>
                     <Button
                       variant="contained"
                       color="secondary"
                       className={
                         food.is_claimed ? "claimed-button" : "unclaimed-button"
-                      }>
+                      }
+                    >
                       {food.is_claimed ? "Unclaim" : "Claim"}
                     </Button>
                   </MuiThemeProvider>
