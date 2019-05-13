@@ -14,6 +14,7 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
 .table-spacer {
   width: 40%;
 }
@@ -46,7 +47,7 @@
 }
 
 .donation-list-text {
-  font-size: 3em;
+  font-size: 2em;
   padding: 0.7em 0;
   background-color: #272e48;
   color: white;
@@ -86,6 +87,7 @@
   background-color: #aebdc7;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
+
   /* color: white; */
 }
 
@@ -117,6 +119,7 @@
 
   /* float: right; */
   width: 100%;
+
   /* margin-right: 15%; */
 }
 
@@ -140,8 +143,32 @@
 
   width: 90%;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.fade-out {
+  -webkit-animation: fade-out 1s ease-out both;
+  animation: fade-out 1s ease-out both;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
