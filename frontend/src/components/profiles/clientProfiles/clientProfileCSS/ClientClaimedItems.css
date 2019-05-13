@@ -82,6 +82,14 @@
 .unclaimed-button {
   background-color: green;
 }
+.client-claimed-items-profile-picture-main-div {
+  display: flex;
+  justify-content: center;
+}
+.client-claimed-items-profile-pic {
+  width: 150px;
+  height: 150px;
+}
 
 #item-button-wrapper {
   width: 10%;
