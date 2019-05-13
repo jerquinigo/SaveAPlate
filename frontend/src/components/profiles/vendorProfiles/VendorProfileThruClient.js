@@ -41,11 +41,13 @@ class VendorProfileThruClient extends Component {
         }
       });
       return (
-        <img
-          className="profile-picture-through-client-page"
-          src={profilePicture[0]}
-          alt=""
-        />
+        <div className="profile-picture-container-div">
+          <img
+            className="profile-picture-through-client-page"
+            src={profilePicture[0]}
+            alt=""
+          />
+        </div>
       );
     } else {
       return null;
@@ -263,7 +265,10 @@ class VendorProfileThruClient extends Component {
       let sun1 = Number(time.sun_start.slice(0, 2));
       let sun2 = Number(time.sun_end.slice(0, 2));
       return (
-        <div key={i}>
+        <div
+          className="main-div-displaying-detail-vendor-view-through-profile"
+          key={i}
+        >
           <h2 className="vendor-name">{time.name} </h2>
           {this.getProfilePicture()}
           <h5> {time.body} </h5>
@@ -276,6 +281,20 @@ class VendorProfileThruClient extends Component {
           </h4>
 
           <div className="businessHoursDiv" key={i}>
+            <Button
+              onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
+              variant="contained"
+              color="secondary"
+              className={
+                !!this.state.isFav.length
+                  ? "claimed-button"
+                  : "unclaimed-button"
+              }
+            >
+              {!!this.state.isFav.length
+                ? "Remove From Favorites"
+                : "Add To Favorites"}
+            </Button>
             <h3>Business Hours</h3>
             <h5>
               {" "}
@@ -316,20 +335,6 @@ class VendorProfileThruClient extends Component {
               Sunday: {sun1 === 0 || sun1 < 13 ? sun1 + "am" : sun1 - 12 + "pm"}
               -{sun2 === 0 || sun2 < 13 ? sun2 + "am" : sun2 - 12 + "pm"}{" "}
             </h5>
-            <Button
-              onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
-              variant="contained"
-              color="secondary"
-              className={
-                !!this.state.isFav.length
-                  ? "claimed-button"
-                  : "unclaimed-button"
-              }
-            >
-              {!!this.state.isFav.length
-                ? "Remove From Favorites"
-                : "Add To Favorites"}
-            </Button>
           </div>
         </div>
       );
