@@ -182,7 +182,7 @@ class VendorProfileThruClient extends Component {
       );
     });
     return (
-      <>
+      <div className="donationsContainer">
         <div className="display-donations-list-name">
           <h3 className="donation-list-text"> Donation List </h3>
         </div>
@@ -194,7 +194,7 @@ class VendorProfileThruClient extends Component {
           <div id="spacing" />
         </div>
         {unclaimedList}{" "}
-      </>
+      </div>
     );
   };
 
@@ -235,7 +235,7 @@ class VendorProfileThruClient extends Component {
       );
     });
     return (
-      <>
+      <div className="claimedListContainer">
         <div className="display-donations-list-name">
           <h3 className="donation-list-text"> Claimed Items </h3>
         </div>
@@ -247,7 +247,7 @@ class VendorProfileThruClient extends Component {
           <div id="spacing" />
         </div>
         {claimedList}{" "}
-      </>
+      </div>
     );
   };
   displayVendorInfo = () => {
@@ -271,32 +271,33 @@ class VendorProfileThruClient extends Component {
           className="main-div-displaying-detail-vendor-view-through-profile"
           key={i}
         >
-          <h2 className="vendor-name">{time.name} </h2>
           {this.getProfilePicture()}
-          <h5> {time.body} </h5>
-          <br />
-          <h2> Contact Us </h2>
-          <h4 className="vendor-name">
-            {time.address_field} <br />
-            {time.telephone_number} <br />
-            {time.email}
-          </h4>
+          <div className="vendorNameDiv">
+            <h2 className="vendor-name">{time.name} </h2>
+          </div>
+          <Button
+            onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
+            variant="contained"
+            color="secondary"
+            className={
+              !!this.state.isFav.length ? "claimed-button" : "unclaimed-button"
+            }
+          >
+            {!!this.state.isFav.length
+              ? "Remove From Favorites"
+              : "Add To Favorites"}
+          </Button>
+
+          <div className="contactUsDiv">
+            <h3> Contact Us </h3>
+            <p className="vendorDeets">
+              <span className="addressSpan">{time.address_field}</span> <br />
+              <span className="phoneSpan">{time.telephone_number}</span> <br />
+              <span className="emailSpan">{time.email}</span>
+            </p>
+          </div>
 
           <div className="businessHoursDiv" key={i}>
-            <Button
-              onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
-              variant="contained"
-              color="secondary"
-              className={
-                !!this.state.isFav.length
-                  ? "claimed-button"
-                  : "unclaimed-button"
-              }
-            >
-              {!!this.state.isFav.length
-                ? "Remove From Favorites"
-                : "Add To Favorites"}
-            </Button>
             <h3>Business Hours</h3>
             <div className="inner-business-hours-div">
               <table>
@@ -366,6 +367,10 @@ class VendorProfileThruClient extends Component {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className="vendorBioContainer">
+            <h3> Description </h3>
+            <p className="vendorBio"> {time.body} </p>
           </div>
         </div>
       );
