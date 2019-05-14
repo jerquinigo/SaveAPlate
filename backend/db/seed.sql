@@ -259,7 +259,7 @@ VALUES
         '(347) 455-8790',
         987645321,
         null,
-        null
+        'https://falcoscatering.com/wp-content/uploads/2019/05/Renaissance-Updated-1-2-1024x577.jpg'
       );
 INSERT INTO food_items
     (
