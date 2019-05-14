@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS save_a_plate;
-CREATE DATABASE save_a_plate;
-
-\c save_a_plate;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS food_items;
+DROP TABLE IF EXISTS favorites;
+DROP TABLE IF EXISTS business_hours;
 
 CREATE TABLE users
 (
