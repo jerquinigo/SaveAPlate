@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS food_items;
 DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS business_hours;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
