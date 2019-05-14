@@ -11,8 +11,10 @@
   width: 300px;
   height: 300px;
   margin-top: 3%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: scale-down;
+  /* border-radius: 50%; */
+  /* border: 1px solid grey; */
+  /* background: #e6f0f0; */
 }
 
 .table-spacer {
@@ -24,11 +26,16 @@
   flex-direction: column;
   width: 20vw;
   margin-left: 1%;
+
+  /* padding: 1em;
+  border: 1px outset ghostwhite;
+  box-shadow: 10px 10px 10px ghostwhite;
+  margin: 1em; */
 }
 
 .donation-list-text {
   font-size: 2em;
-  padding: 0.7em 0;
+  padding: 0.25em 0;
   background-color: #272e48;
   color: white;
   width: 90%;
@@ -38,7 +45,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2.5%;
+
+  /* margin-top: 2.5%; */
   border: 1px solid #272e48;
   display: flex;
   justify-content: center;
@@ -49,6 +57,7 @@
 .vendor-profile-thru-client-feeds,
 .vendor-profile-thru-client-pick-up {
   width: 40%;
+  margin: 0.5em;
 }
 
 .inner-main-vendor-profile-thru-client-page {
@@ -90,7 +99,7 @@
   border-bottom: 1px solid lightgray;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
-  height: 100px;
+  height: 3.25em;
   width: 90%;
   background-color: #f5f5f5;
   margin: 0;
@@ -166,4 +175,42 @@ td {
 
 tr:hover {
   background-color: #f5f5f5;
+}
+
+.vendorBio {
+  text-align: justify;
+  text-justify: inter-word;
+  width: auto 0;
+}
+
+.vendorBioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vendorDeets {
+  width: max-content;
+  margin-bottom: 0;
+}
+
+.contactUsDiv {
+  text-align: -webkit-center;
+}
+
+.claimedListContainer {
+  margin-top: 2.5%;
+}
+
+.donationsContainer {
+  margin-top: 2.5%;
+}
+
+.vendorNameDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.vendor-name {
+  width: max-content;
 }
