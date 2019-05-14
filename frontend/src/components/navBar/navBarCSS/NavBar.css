@@ -4,12 +4,14 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #e6f0f0;
+  background-color: white;
   height: 95px;
   display: grid;
   grid-template-columns: 50% 50%;
   justify-items: center;
   border-bottom: 2px solid black;
+  border: 1px outset ghostwhite;
+  box-shadow: 10px 2px -1px ghostwhite;
 }
 
 .main-section {
@@ -17,7 +19,7 @@
 }
 
 .nav-link {
-  background-color: #e6f0f0;
+  background-color: white;
   color: black;
   height: 85px;
   display: flex;
@@ -48,6 +50,7 @@
 #nav-title {
   font-weight: bold;
   font-size: 30px;
+
   /* width: 80%; */
   margin-left: 10%;
   margin-right: auto;

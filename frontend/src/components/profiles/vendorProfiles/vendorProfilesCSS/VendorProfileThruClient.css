@@ -1,7 +1,3 @@
-/* .vendor-profile-thru-client-main-page {
-  width: 100%;
-} */
-
 .profile-picture-container-div {
   display: flex;
   justify-content: center;
@@ -11,9 +7,9 @@
   width: 300px;
   height: 300px;
   margin-top: 3%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: scale-down;
 }
+
 .table-spacer {
   width: 40%;
 }
@@ -23,22 +19,35 @@
   flex-direction: column;
   width: 20vw;
   margin-left: 1%;
+  padding: 1em;
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  margin: 1em;
+  background: white;
 }
 
+/* .main-div-displaying-detail-vendor-view-through-profile:hover {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-left: 1%;
+  padding: 1em;
+  margin: 1em;
+  background: white;
+  transition: all 300ms ease-in-out 0s;
+  position: relative;
+  max-width: 100%;
+  box-shadow: rgb(209, 209, 213) 0 5px 15px;
+} */
+
 .donation-list-text {
-  font-size: 3em;
-  padding: 0.7em 0;
+  font-size: 2em;
+  padding: 0.25em 0;
   background-color: #272e48;
   color: white;
-  width: 90%;
+  width: 100%;
   font-family: "Montserrat", sans-serif;
-  margin: 0 auto;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-between;
+  margin: 0;
   align-items: center;
-  margin-top: 2.5%;
-  border: 1px solid #272e48;
   display: flex;
   justify-content: center;
 }
@@ -48,6 +57,7 @@
 .vendor-profile-thru-client-feeds,
 .vendor-profile-thru-client-pick-up {
   width: 40%;
+  margin: 0.5em;
 }
 
 .inner-main-vendor-profile-thru-client-page {
@@ -59,12 +69,9 @@
 .vendor-items-list-header-vendor-view-through-client {
   display: flex;
   justify-content: space-around;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   background-color: #aebdc7;
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  /* color: white; */
 }
 
 .claimed-items-list-vendor-version {
@@ -86,16 +93,14 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  height: 100px;
-  width: 90%;
-  background-color: #f5f5f5;
-  margin: 0;
 
-  /* float: right; */
+  /* border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray; */
+  height: 3.25em;
+  width: 90%;
+  background-color: white;
+  margin: 0;
   width: 100%;
-  /* margin-right: 15%; */
 }
 
 .vendor-page-item-name,
@@ -109,17 +114,99 @@
   width: 80vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .vendor-profile-container-vendor-version {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 218px; */
-
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.fade-out {
+  -webkit-animation: fade-out 1s ease-out both;
+  animation: fade-out 1s ease-out both;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.vendorBio {
+  text-align: justify;
+  text-justify: inter-word;
+  width: auto 0;
+}
+
+.vendorBioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vendorDeets {
+  width: auto;
+  margin-bottom: 0;
+}
+
+.contactUsDiv {
+  text-align: -webkit-center;
+}
+
+.claimedListContainer {
+  margin-top: 2.5%;
+
+  /* border: 1px outset ghostwhite; */
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  width: 95%;
+}
+
+.donationsContainer {
+  margin-top: 1.45%;
+
+  /* border: 1px outset ghostwhite; */
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  width: 95%;
+}
+
+.vendorNameDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.vendor-name {
+  width: max-content;
 }

@@ -23,7 +23,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.use(
   session({
@@ -42,6 +42,10 @@ app.use("/api/fooditems", foodItemRouter);
 app.use("/api/business_hours", business_hoursRouter);
 app.use("/api/favorites", favoriteRouter);
 app.use("/api/sessions", sessionRouter);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

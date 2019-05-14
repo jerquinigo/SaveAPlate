@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS save_a_plate;
-CREATE DATABASE save_a_plate;
-
-\c save_a_plate;
+DROP TABLE IF EXISTS food_items;
+DROP TABLE IF EXISTS favorites;
+DROP TABLE IF EXISTS business_hours;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
@@ -75,7 +75,7 @@ VALUES
         'kingterracee@email.com',
         '$2a$10$gZPgf40pi6UoVX5E4H55lut330s75L8IPGfcTIJ9E2HaeqxNpfkhK',
         1,
-        '815 Kings Hwy,   Brooklyn, NY 11223',
+        '815 Kings Hwy, Brooklyn, NY 11223',
         'Kings Terrace has been around since 1979 serving the community by providing a venue where friends and family can come together and celebrate weddings, birthdays, etc.',
         '(347) 492-6826',
         123456789,
@@ -87,7 +87,7 @@ VALUES
         'mauzonee@email.com',
         '$2a$10$mzTmfF6x2pSnfuOGEYS22OFzBateX99qHLT4SatFE5413WcucKVam',
         1,
-        '3301 20th Ave,   Astoria, NY 11105',
+        '3301 20th Ave, Astoria, NY 11105',
         'Mauzone Catering is located in Astoria and specializes in catering of all types.',
         '(718) 274-1100',
         123456788,
@@ -100,7 +100,7 @@ VALUES
         'flushinghousee@email.com',
         '$2a$10$D/8R9jsRunT06bdNzbUuI./5TEdnUS.LDqY.tBztx1byVuUskRNGK',
         1,
-        '3820 Bowne St,   Flushing, NY 11354',
+        '3820 Bowne St, Flushing, NY 11354',
         'Flushing House is New York Citys Premier Independent Living Community and Retirement Home',
         '(718) 762-3198',
         123432135,
@@ -113,7 +113,7 @@ VALUES
         'atlanticdinerr@email.com',
         '$2a$10$MXrGm6UCRQZspAr5wl1VyeSYVRVGqngk5Vb9L2bofqGZ6G4XzStSy',
         1,
-        '111-16 Atlantic Ave,   South Richmond Hill, NY 11419',
+        '111-16 Atlantic Ave, South Richmond Hill, NY 11419',
         'Atlantic Diner has been serving the community of South Richmond Hill since 1991 and it has become a staple of the community.',
         '(718) 849-6673',
         123456787,
@@ -126,7 +126,7 @@ VALUES
         'courtsquaredinerr@yahoo.com',
         '$2a$10$4ejJwUya5yls/su7lXNW.uNyBRD5kXMQ72VbMWtu2s.o4EcrLuBQK',
         1,
-        '45-30 23rd St,   Long Island City, NY 11101',
+        '45-30 23rd St, Long Island City, NY 11101',
         'In operation since 1946, Court Square Diner stands out among the flashier restaurants and bars that have crowded into Long Island City in recent years. Not much has changed since brothers Steve and Nick Kanellos started running the joint in 1991 — the diner still serves oversized heroes and grilled cheese sandwiches 24/7.',
         '(718) 392-1222',
         123456786,
@@ -139,7 +139,7 @@ VALUES
         'madforchickenn@hotmail.com',
         '$2a$10$j7eeNV.kKAgY4ViLsMQ.de4IrcfDWf6PvcSOlS7gHkaR.sbhjgNm2',
         1,
-        '157-18 Northern Blvd,  Flushing, NY 11354',
+        '157-18 Northern Blvd, Flushing, NY 11354',
         'Mad for Chicken offers a unique food experience. We believe food should be enjoyed in three ways-visual, smell, and taste. We are confident to serve food that will satisfy all three senses.',
         '718-321-1234',
         123456785,
@@ -165,7 +165,7 @@ VALUES
         'b&gclubb@gmail.com',
         '$2a$10$helfcWuepNkLUj46s8X0gO62GV/LhDu6pb7As.7n93Y.MARhOft1e',
         2,
-        '733 3rd Ave Fl 2,  New York, NY 10017',
+        '733 3rd Ave Fl 2, New York, NY 10017',
         'Boys & Girls Clubs of America is a national organization of local chapters which provide after-school programs for young people.',
         null,
         null,
@@ -178,7 +178,7 @@ VALUES
         'sabcc@gmail.com',
         '$2a$10$7UxIPa9aqfhw8tq6QTjR/eQ1mKHHaImV3/dTSgQW5V/6wDL8raSHC',
         2,
-        '196-02 119 Ave,  St. Albans, NY 11412',
+        '196-02 119 Ave, St. Albans, NY 11412',
         'St. Albans Baptist Church is located in St. Albans and has been around since 1956',
         null,
         null,
@@ -237,12 +237,12 @@ VALUES
         'https://www.citynmb.com/ImageRepository/Document?documentID=855'
     ),
     (
-        'Your Favorite Vendor',
+        'Five Star Banquet',
         'vendordemo@test.com',
         '$2a$10$CrYZDCO1mEUu04D12nDFWO7Qm7MZVj4hkxK74j8jWDA/jdXTgsCC6',
         1,
-        '47-10 Austell Place, Long Island City, NY 11101' ,
-        'I am a member of the food industry. I am able to add items to donate to my community. I am able to recieve a tax deduction for my donations and gain community exposure for this act of generousity.',
+        '13-05 43rd Ave, Long Island City, NY 11101' ,
+        'A high-end, newly-renovated venue defined by white marble and authentic cuisine. We are located in the heart of Long Island City off 21st Street and 43rd Ave. We have new state of the art facilities. We specialize in all sizes and sorts of events and functions from wedding receptions to sweet sixteen events. We promise to make your special day an unique one with our professional service and management skills.',
         '(347) 502-6826',
         123456989,
         null,
@@ -259,7 +259,7 @@ VALUES
         '(347) 455-8790',
         987645321,
         null,
-        null
+        'https://falcoscatering.com/wp-content/uploads/2019/05/Renaissance-Updated-1-2-1024x577.jpg'
       );
 INSERT INTO food_items
     (

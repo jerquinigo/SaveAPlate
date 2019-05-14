@@ -4,8 +4,9 @@
   "description": "---",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently --kill-others \"cd frontend && npm start\" \"cd backend && npm start\""
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "cd backend && npm start",
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install --only=prod && npm run build"
   },
   "repository": {
     "type": "git",
