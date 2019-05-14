@@ -20,10 +20,24 @@
   width: 20vw;
   margin-left: 1%;
   padding: 1em;
-  border: 1px outset ghostwhite;
-  box-shadow: 10px 10px 10px darkgrey;
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
   margin: 1em;
+  background: white;
 }
+
+/* .main-div-displaying-detail-vendor-view-through-profile:hover {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-left: 1%;
+  padding: 1em;
+  margin: 1em;
+  background: white;
+  transition: all 300ms ease-in-out 0s;
+  position: relative;
+  max-width: 100%;
+  box-shadow: rgb(209, 209, 213) 0 5px 15px;
+} */
 
 .donation-list-text {
   font-size: 2em;
@@ -84,7 +98,7 @@
   border-right: 1px solid lightgray; */
   height: 3.25em;
   width: 90%;
-  background-color: #f5f5f5;
+  background-color: white;
   margin: 0;
   width: 100%;
 }
@@ -164,7 +178,7 @@ tr:hover {
 }
 
 .vendorDeets {
-  width: max-content;
+  width: auto;
   margin-bottom: 0;
 }
 
@@ -174,15 +188,17 @@ tr:hover {
 
 .claimedListContainer {
   margin-top: 2.5%;
-  border: 1px outset ghostwhite;
-  box-shadow: 10px 10px 10px darkgrey;
+
+  /* border: 1px outset ghostwhite; */
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
   width: 95%;
 }
 
 .donationsContainer {
   margin-top: 1.45%;
-  border: 1px outset ghostwhite;
-  box-shadow: 10px 10px 10px darkgrey;
+
+  /* border: 1px outset ghostwhite; */
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
   width: 95%;
 }
 
