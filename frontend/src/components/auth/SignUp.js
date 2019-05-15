@@ -11,6 +11,32 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import "./authCSS/SignUp.css";
 import Typography from "@material-ui/core/Typography";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const orange = createMuiTheme({
+  palette: {
+    primary: { 500: "#FFA500" },
+    secondary: {
+      main: "#D35348"
+    }
+  },
+  typography: {
+    useNextVariants: true,
+    primary: {}
+  }
+});
+
+const blue = createMuiTheme({
+  palette: {
+    primary: { 500: "#FF0000" },
+    secondary: {
+      main: "#FF0000"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 class SignUp extends Component {
   state = {
@@ -122,8 +148,7 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="vendor-signup-form"
-        >
+          id="vendor-signup-form">
           <h1 className="signup-form-header">Food Vendor</h1>
           <div className="icon-input-field">
             <img
@@ -272,24 +297,26 @@ class SignUp extends Component {
             />
           </div>
           <div className="signup-demo-buttons">
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              className="signup-button"
-            >
-              Sign Up
-            </Button>
+            <MuiThemeProvider theme={orange}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className="signup-button">
+                Sign Up
+              </Button>
+            </MuiThemeProvider>
             <br />
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              className="signup-button"
-              onClick={this.vendorDemoLogin}
-            >
-              Vendor Demo
-            </Button>
+            <MuiThemeProvider theme={blue}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="secondary"
+                className="signup-button"
+                onClick={this.vendorDemoLogin}>
+                Vendor Demo
+              </Button>
+            </MuiThemeProvider>
           </div>
         </form>
       );
@@ -298,8 +325,7 @@ class SignUp extends Component {
         <form
           onSubmit={this.registerUser}
           className="signup-form"
-          id="client-signup-form"
-        >
+          id="client-signup-form">
           <h1 className="signup-form-header">Non-Profit Org</h1>
           <div className="icon-input-field">
             <img
@@ -416,24 +442,26 @@ class SignUp extends Component {
             />
           </div>
           <div className="signup-demo-buttons">
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              className="signup-button"
-            >
-              Sign Up
-            </Button>
+            <MuiThemeProvider theme={orange}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className="signup-button">
+                Sign Up
+              </Button>
+            </MuiThemeProvider>
             <br />
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              className="signup-button"
-              onClick={this.clientDemoLogin}
-            >
-              Non-Profit Demo
-            </Button>
+            <MuiThemeProvider theme={blue}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="secondary"
+                className="signup-button"
+                onClick={this.clientDemoLogin}>
+                Non-Profit Demo
+              </Button>
+            </MuiThemeProvider>
           </div>
         </form>
       );
@@ -503,8 +531,7 @@ class SignUp extends Component {
               name="type"
               value={this.state.value}
               onClick={this.handleChange}
-              className="radioGroupContainer"
-            >
+              className="radioGroupContainer">
               <FormControlLabel
                 value="1"
                 control={<Radio />}

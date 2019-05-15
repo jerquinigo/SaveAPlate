@@ -1,11 +1,22 @@
 #vendor-container {
+  width: 100%;
   display: flex;
+  justify-content: left;
 }
 
 #vendor-profile-container {
-  width: 20vw;
+  /* width: 20vw;
   margin-left: 1%;
   height: 100%;
+   */
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-left: 1%;
+  padding: 1em;
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  margin: 1em;
+  background: white;
 }
 
 #vendor-info-container {
@@ -39,12 +50,14 @@
   font-family: "Montserrat", sans-serif;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 #vendor-people-fed-count {
   font-family: "Montserrat", sans-serif;
-  font-size: 64px;
+  font-size: 60px;
   color: #272e48;
   margin-bottom: 1%;
 }
@@ -70,8 +83,9 @@
 }
 
 .add-item-button:hover {
-  border: 5px solid white;
-  background-color: blue;
+  border: 2px solid white;
+
+  /* background-color: blue; */
 }
 
 /* #donation-list,
@@ -177,4 +191,16 @@
   background-color: #aebdc7;
   border-left: 1px solid #aebdc7;
   border-right: 1px solid #aebdc7;
+}
+
+.donationsListVendorContainer {
+  margin-top: 1.45%;
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  width: 95%;
+}
+
+.claimedListVendorContainer {
+  margin-top: 2.5%;
+  box-shadow: rgb(209, 209, 213) 0 0 4px;
+  width: 95%;
 }

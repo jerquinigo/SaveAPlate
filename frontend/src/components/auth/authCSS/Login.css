@@ -12,8 +12,11 @@
   width: 50%;
   margin: 0 auto;
   padding-bottom: 1%;
-  border: 2px solid black;
-  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#login-form:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #email-input,
