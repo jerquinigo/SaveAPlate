@@ -11,6 +11,9 @@ const theme = createMuiTheme({
     secondary: {
       main: "#D35348"
     }
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
@@ -79,7 +82,8 @@ class DisplayClientFavorites extends Component {
                 }}
                 variant="contained"
                 color="secondary"
-                className="unclaimed-button">
+                className="unclaimed-button"
+              >
                 Unfavorite
               </Button>
             </MuiThemeProvider>
