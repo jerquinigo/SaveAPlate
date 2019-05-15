@@ -9,9 +9,9 @@ import green from "@material-ui/core/colors/green";
 
 const theme = createMuiTheme({
   palette: {
-    primary: green,
+    primary: { 500: "#D35348" },
     secondary: {
-      main: "#5cbc5c"
+      main: "#008000"
     }
   },
   typography: {
@@ -221,15 +221,16 @@ class VendorProfileThruClient extends Component {
                 ? converted_time + "am"
                 : converted_time - 12 + "pm"}
             </p>
-
-            <Button
-              id={item.food_id}
-              variant="contained"
-              color="secondary"
-              onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}
-            >
-              {item.is_claimed ? "UNCLAIM" : "CLAIM"}
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                id={item.food_id}
+                variant="contained"
+                color="primary"
+                onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}
+              >
+                {item.is_claimed ? "UNCLAIM" : "CLAIM"}
+              </Button>
+            </MuiThemeProvider>
           </div>
         </div>
       );
@@ -275,18 +276,22 @@ class VendorProfileThruClient extends Component {
           <div className="vendorNameDiv">
             <h2 className="vendor-name">{time.name} </h2>
           </div>
-          <Button
-            onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
-            variant="contained"
-            color="secondary"
-            className={
-              !!this.state.isFav.length ? "claimed-button" : "unclaimed-button"
-            }
-          >
-            {!!this.state.isFav.length
-              ? "Remove From Favorites"
-              : "Add To Favorites"}
-          </Button>
+          <MuiThemeProvider theme={theme}>
+            <Button
+              onClick={!!this.state.isFav.length ? this.deleteFav : this.addFav}
+              variant="contained"
+              color="secondary"
+              className={
+                !!this.state.isFav.length
+                  ? "claimed-button"
+                  : "unclaimed-button"
+              }
+            >
+              {!!this.state.isFav.length
+                ? "Remove From Favorites"
+                : "Add To Favorites"}
+            </Button>
+          </MuiThemeProvider>
 
           <div className="contactUsDiv">
             <h3> Contact Us </h3>

@@ -1,6 +1,19 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import "./vendorProfilesCSS/AddItemsForm.css";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { 500: "#008000" },
+    secondary: {
+      main: "#D35348"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 const AddItemForm = props => {
   return (
@@ -62,14 +75,16 @@ const AddItemForm = props => {
               <option value="10:00"> 10:00 am </option>
               <option value="11:00"> 11:00 am </option>
             </select>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              id="add-food-item-button"
-            >
-              <div id="add-item">Add Item</div>
-            </Button>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                id="add-food-item-button"
+              >
+                <div id="add-item">Submit</div>
+              </Button>
+            </MuiThemeProvider>
           </div>
         </form>
       </div>
