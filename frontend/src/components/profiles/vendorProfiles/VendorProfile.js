@@ -74,8 +74,7 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}
-        >
+          }}>
           <div className="add-item-text"> Add Item</div>
         </Button>
       </MuiThemeProvider>
@@ -148,8 +147,7 @@ class VendorProfile extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version"
-        >
+          className="vendor-profile-container-vendor-version">
           <div class="claimed-vendor-items-two">
             <p class="vendor-page-item-name">{item.name}</p>
             <p class="vendor-page-item-pounds">{item.quantity * 3} pounds</p>
@@ -170,8 +168,7 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}
-              >
+                id={item.food_id}>
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
@@ -187,8 +184,7 @@ class VendorProfile extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version"
-        >
+          className="vendor-profile-container-vendor-version">
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
 
@@ -212,8 +208,7 @@ class VendorProfile extends Component {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                id={item.food_id}
-              >
+                id={item.food_id}>
                 <DeleteIcon id={item.food_id} />
               </Button>
             </MuiThemeProvider>
