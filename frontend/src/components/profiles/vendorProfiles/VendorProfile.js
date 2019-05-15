@@ -3,7 +3,6 @@ import axios from "axios";
 import { getFoodItemsByVendor } from "../../../utils/UtilFoodItems.js";
 import Button from "@material-ui/core/Button";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-// import blue from "@material-ui/core/colors/blue";
 import DeleteIcon from "@material-ui/icons/Delete";
 import CountUp from "react-countup";
 import MainSnackbarContainer from "../../../containers/MainSnackbarContainer.js";
@@ -12,7 +11,7 @@ import "./vendorProfilesCSS/VendorProfile.css";
 
 const theme = createMuiTheme({
   palette: {
-    primary: { 500: "#272E48" },
+    primary: { 500: "#008000" },
     secondary: {
       main: "#D35348"
     }
@@ -39,7 +38,6 @@ class VendorProfile extends Component {
   }
 
   componentDidMount() {
-    debugger;
     this.vendorDonations();
     this.getFeedingCount();
     this.getProfileInfo();
@@ -56,7 +54,6 @@ class VendorProfile extends Component {
   };
 
   getFeedingCount = () => {
-    debugger;
     axios.get("/api/fooditems/feedingcount").then(count => {
       this.setState({
         fedCount: +count.data.fedCount[0].sum * 3
@@ -119,7 +116,6 @@ class VendorProfile extends Component {
   };
 
   vendorDonations = () => {
-    debugger;
     let tempVar;
     if (this.props.currentUser.type === 2) {
       tempVar = this.props.match.params.vendor;
@@ -147,34 +143,21 @@ class VendorProfile extends Component {
     return this.state.unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
-        <div key={item.food_id} id="display-unclaimed-items">
-          <div id="item-name-container">
-            <p>{item.name}</p>
-          </div>
-          <div id="item-weight-container">
-            <p>{item.quantity * 3} pounds</p>
-          </div>
-          <div id="item-feeds-container">
-            <p>{item.quantity} people</p>
-          </div>
-          <div id="item-pickup-container">
-            <p>
+        <div
+          key={item.food_id}
+          className="vendor-profile-container-vendor-version"
+        >
+          <div class="claimed-vendor-items-two">
+            <p class="vendor-page-item-name">{item.name}</p>
+            <p class="vendor-page-item-pounds">{item.quantity * 3} pounds</p>
+            <p class="vendor-page-item-quantity">{item.quantity} people</p>
+            <p class="vendor-page-pickup-time">
               {converted_time < 13 && converted_time !== 0
                 ? converted_time + "am"
                 : converted_time === 0
                 ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </p>
-          </div>
-          <div id="item-claim-container">
-            {item.is_claimed ? (
-              <div id="status-unavailable">Unavailable</div>
-            ) : (
-              <div id="status-available">Available</div>
-            )}
-          </div>
-
-          <div id="item-button-container">
             <MuiThemeProvider theme={theme}>
               <Button
                 onClick={e => {
@@ -199,32 +182,24 @@ class VendorProfile extends Component {
     return this.state.claimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
       return (
-        <div key={item.food_id} id="display-unclaimed-items">
-          <div id="item-name-container">
-            <p>{item.name}</p>
-          </div>
-          <div id="item-weight-container">
-            <p>{item.quantity * 3} pounds</p>
-          </div>
-          <div id="item-feeds-container">
-            <p>{item.quantity} people</p>
-          </div>
-          <div id="item-pickup-container">
-            <p>
+        <div
+          key={item.food_id}
+          className="vendor-profile-container-vendor-version"
+        >
+          <div className="claimed-vendor-items-two">
+            <p className="vendor-page-item-name">{item.name}</p>
+
+            <p className="vendor-page-item-pounds">
+              {item.quantity * 3} pounds
+            </p>
+
+            <p className="vendor-page-item-quantity">{item.quantity} people</p>
+
+            <p className="vendor-page-pickup-time">
               {converted_time === 0 || converted_time < 13
                 ? converted_time + "am"
                 : converted_time - 12 + "pm"}
             </p>
-          </div>
-          <div id="item-claim-container">
-            {item.is_claimed ? (
-              <div id="status-unavailable">Unavailable</div>
-            ) : (
-              <div id="status-available">Available</div>
-            )}
-          </div>
-
-          <div id="item-button-container">
             <MuiThemeProvider theme={theme}>
               <Button
                 onClick={e => {
@@ -266,11 +241,11 @@ class VendorProfile extends Component {
 
   foodItemsHeader = () => {
     return (
-      <div id="vendor-items-header-vendor">
-        <h4 id="item-name">Food Item </h4>
-        <h4 id="weight">Weight </h4>
-        <h4 id="feeds">Feeds </h4>
-        <h4 id="pick-up">Pick Up Time </h4>
+      <div class="vendor-items-list-header-vendor-view-through-client">
+        <h4 className="vendor-profile-thru-client-item-name">Food Item </h4>
+        <h4 className="vendor-profile-thru-client-weight">Weight </h4>
+        <h4 className="vendor-profile-thru-client-feeds">Feeds </h4>
+        <h4 className="vendor-profile-thru-client-pick-up">Pick Up Time </h4>
         <div id="spacing" />
       </div>
     );
@@ -284,24 +259,18 @@ class VendorProfile extends Component {
     return (
       <div id="vendor-container">
         <MainSnackbarContainer />
-        <div id="vendor-profile-container">
-          <div>
+        <div className="main-div-displaying-detail-vendor-view-through-profile">
+          <div className="profile-picture-container-div">
             <img
-              id="profile-picture"
+              className="profile-picture-through-client-page"
               alt="profile pic"
               src={this.state.profilePic}
             />
           </div>
-          <h1 id="vendor-name">
-            {!vendorUser ? this.props.currentUser.name : vendorUser}
-          </h1>
-          <div className="vendor-info-display">
-            <p>
-              {!vendorUser ? this.props.currentUser.address_field : vendorUser}
-            </p>
-            <p> {!vendorUser ? this.props.currentUser.email : vendorUser} </p>
-            <p>{this.state.phoneNumber}</p>
-            <p>{this.state.body}</p>
+          <div className="vendorNameDiv">
+            <h2 className="vendor-name">
+              {!vendorUser ? this.props.currentUser.name : vendorUser}{" "}
+            </h2>
           </div>
           <h3 id="vendor-people-fed">
             <div id="vendor-people-fed-count">
@@ -309,30 +278,53 @@ class VendorProfile extends Component {
             </div>
             pounds of food donated
           </h3>
-          {this.state.toAddItem ? (
-            <SimpleModal
-              handleClose={this.handleClose}
-              handleOpen={this.handleOpen}
-              open={this.state.open}
-              handleChange={this.handleChange}
-              submitItem={this.submitItem}
-              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-            />
-          ) : (
-            this.addItemButton()
-          )}
-          <br />
+          <div className="modalContainer">
+            {this.state.toAddItem ? (
+              <SimpleModal
+                handleClose={this.handleClose}
+                handleOpen={this.handleOpen}
+                open={this.state.open}
+                handleChange={this.handleChange}
+                submitItem={this.submitItem}
+                receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+              />
+            ) : (
+              this.addItemButton()
+            )}
+          </div>
+          <div className="contactUsDiv">
+            <h3> Contact Us </h3>
+            <p className="vendorDeets">
+              <span className="addressSpan">
+                {!vendorUser
+                  ? this.props.currentUser.address_field
+                  : vendorUser}
+              </span>{" "}
+              <br />
+              <span className="emailSpan">
+                {!vendorUser ? this.props.currentUser.email : vendorUser}{" "}
+              </span>{" "}
+              <br />
+              <span className="phoneSpan">{this.state.phoneNumber}</span> <br />
+            </p>
+          </div>
+          <div className="vendorBioContainer">
+            <h3> Description </h3>
+            <p className="vendorBio"> {this.state.body}</p>
+          </div>
         </div>
         <div id="vendor-info-container">
-          <div>
-            <h1 id="donation-list-vendor">Donation List</h1>
-            <div id="display-unclaimed-items-container">
-              {this.foodItemsHeader()}
-              {this.displayUnclaimedItems()}
+          <div className="donationsContainer">
+            <div className="display-donations-list-name">
+              <h3 class="donation-list-text"> Donation List </h3>
             </div>
+            {this.foodItemsHeader()}
+            {this.displayUnclaimedItems()}
           </div>
-          <div>
-            <h1 id="claimed-items-list-vendor">Claimed Items</h1>
+          <div className="claimedListContainer">
+            <div className="display-donations-list-name">
+              <h3 className="donation-list-text"> Claimed Items </h3>
+            </div>
             {this.foodItemsHeader()}
             {this.displayClaimedItems()}
           </div>
