@@ -65,7 +65,8 @@ class AllFeedItemsDisplayVendorName extends Component {
         <span className="vendor-span-container">
           <Link
             to={"/clientview/" + this.props.vendorName}
-            className="display-item-name">
+            className="display-item-name"
+          >
             {this.props.vendorName}
           </Link>
           {this.getAllAddress(this.props.foodDataObj, this.props.vendorName)}
