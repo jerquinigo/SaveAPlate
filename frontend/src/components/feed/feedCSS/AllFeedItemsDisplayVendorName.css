@@ -1,13 +1,15 @@
 .feed-profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 98px;
 }
 
 .vendor-account-container {
   display: flex;
   width: 100%;
 }
-
+/* .display-vendor-name-feed {
+  height: 6em;
+} */
 .vendor-span-container {
   width: 100%;
   display: flex;
@@ -28,7 +30,7 @@
 .display-item-name:link,
 .display-item-name:active {
   text-decoration: none;
-  color: lightgray;
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
   font-weight: 900;

@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS business_hours;
 DROP TABLE IF EXISTS users;
 
+
 CREATE TABLE users
 (
     id SERIAL PRIMARY KEY,

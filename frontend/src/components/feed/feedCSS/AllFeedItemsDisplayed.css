@@ -18,20 +18,21 @@
   border-bottom: 1px solid lightgray;
   margin: 0 auto;
   width: 75%;
-  height: 80px;
-  background-color: whitesmoke;
+  height: 3.2em;
+  background-color: #ffffff;
 }
 
 .display-claimed-items-for-client:hover {
   background-color: lightgray;
 }
 
-#item-name,
-#weight,
-#feeds,
-#pick-up,
-#spacing {
+.vendor-item-name,
+.vendor-weight,
+.vendor-feeds,
+.vendor-pick-up,
+.vendor-spacing {
   width: 20%;
+  margin: 0.5em;
 }
 
 .span-claim-button {

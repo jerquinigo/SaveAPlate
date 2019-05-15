@@ -22,11 +22,11 @@ class AllFeedItemsDisplayed extends Component {
     return (
       <div className="vendor-items-wrapper">
         <div id="vendor-items-header">
-          <h4 id="item-name">Food Item: </h4>
-          <h4 id="weight">Weight: </h4>
-          <h4 id="feeds">Feeds: </h4>
-          <h4 id="pick-up">Pick Up Time: </h4>
-          <div id="spacing" />
+          <h4 className="vendor-item-name">Food Item </h4>
+          <h4 className="vendor-weight">Weight </h4>
+          <h4 className="vendor-feeds">Feeds </h4>
+          <h4 className="vendor-pick-up">Pick Up Time </h4>
+          <div className="vendor-spacing" />
         </div>
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
           converted_time = Number(food.set_time.slice(0, 2));
