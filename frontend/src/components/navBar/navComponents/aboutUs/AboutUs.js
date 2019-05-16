@@ -7,7 +7,7 @@ export default function About() {
       <div id="about-sub-container">
         <h1 id="meet-our-team">Meet Our Team</h1>
         <div id="about-us-container">
-          <div>
+          <div id="wynter">
             <img
               src="https://avatars3.githubusercontent.com/u/43793502?s=400&v=4https://avatars3.githubusercontent.com/u/43793502?s=400&v=4"
               width="100"
@@ -20,8 +20,7 @@ export default function About() {
               href="https://github.com/wynterreid"
               className="team-github-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -32,8 +31,7 @@ export default function About() {
               href="https://www.linkedin.com/in/wynter-reid-2608b9174/"
               className="team-linkedin-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -42,7 +40,7 @@ export default function About() {
             </a>
           </div>
 
-          <div>
+          <div id="jon">
             <img
               src="https://avatars2.githubusercontent.com/u/43793569?s=460&v=4https://avatars2.githubusercontent.com/u/43793569?s=460&v=4"
               width="100"
@@ -55,8 +53,7 @@ export default function About() {
               href="https://github.com/jerquinigo"
               className="team-github-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -67,8 +64,7 @@ export default function About() {
               href="https://www.linkedin.com/in/jonathan-erquinigo-8072b881/"
               className="team-linkedin-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -77,7 +73,7 @@ export default function About() {
             </a>
           </div>
 
-          <div>
+          <div id="deyvi">
             <img
               src="https://avatars1.githubusercontent.com/u/41707636?s=460&v=4https://avatars1.githubusercontent.com/u/41707636?s=460&v=4"
               width="100"
@@ -90,8 +86,7 @@ export default function About() {
               href="https://github.com/SurgamSurgam"
               className="team-github-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -102,8 +97,7 @@ export default function About() {
               href="https://www.linkedin.com/in/deyvio"
               className="team-linkedin-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -112,7 +106,7 @@ export default function About() {
             </a>
           </div>
 
-          <div>
+          <div id="andrew">
             <img
               src="https://avatars1.githubusercontent.com/u/22200791?s=460&v=4https://avatars1.githubusercontent.com/u/22200791?s=460&v=4"
               width="100"
@@ -125,8 +119,7 @@ export default function About() {
               href="https://github.com/Andrew-Kil"
               className="team-github-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./github.png")}
                 alt="github"
@@ -137,8 +130,7 @@ export default function About() {
               href="https://www.linkedin.com/in/andrew-kil/"
               className="team-linkedin-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 src={require("./linkedin.png")}
                 alt="linked"
@@ -155,8 +147,7 @@ export default function About() {
               href="https://github.com/jerquinigo/SaveAPlate"
               id="save-a-plate"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               Save a Plate
             </a>{" "}
             was built in 2019 by four Full Stack Web Developers from
@@ -164,8 +155,7 @@ export default function About() {
               href="https://www.pursuit.org/"
               id="pursuit-link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               {" "}
               Pursuit
             </a>{" "}
