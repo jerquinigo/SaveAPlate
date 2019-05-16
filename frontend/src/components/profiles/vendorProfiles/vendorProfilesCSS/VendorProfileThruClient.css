@@ -26,20 +26,6 @@
   height: fit-content;
 }
 
-/* .main-div-displaying-detail-vendor-view-through-profile:hover {
-  display: flex;
-  flex-direction: column;
-  width: 20vw;
-  margin-left: 1%;
-  padding: 1em;
-  margin: 1em;
-  background: white;
-  transition: all 300ms ease-in-out 0s;
-  position: relative;
-  max-width: 100%;
-  box-shadow: rgb(209, 209, 213) 0 5px 15px;
-} */
-
 .donation-list-text {
   font-size: 2em;
   padding: 0.25em 0;
@@ -59,6 +45,7 @@
 .vendor-profile-thru-client-pick-up {
   width: 11%;
   margin: 0.5em -0.25em;
+
 }
 
 .inner-main-vendor-profile-thru-client-page {
@@ -86,6 +73,7 @@
   width: 100%;
   height: 80px;
   background-color: #ebf4f4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .claimed-vendor-items-two {
@@ -94,9 +82,6 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid lightgray;
-
-  /* border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray; */
   height: 3.25em;
   width: 90%;
   background-color: white;
@@ -104,10 +89,15 @@
   width: 100%;
 }
 
+.claimed-vendor-items-two:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .vendor-page-item-name,
 .vendor-page-item-pounds,
 .vendor-page-pickup-time,
-.vendor-page-item-quantity {
+.vendor-page-item-quantity,
+.vendor-page-delete-icon {
   width: 20%;
 }
 
@@ -189,16 +179,12 @@ tr:hover {
 
 .claimedListContainer {
   margin-top: 2.5%;
-
-  /* border: 1px outset ghostwhite; */
   box-shadow: rgb(209, 209, 213) 0 0 4px;
   width: 95%;
 }
 
 .donationsContainer {
   margin-top: 1.45%;
-
-  /* border: 1px outset ghostwhite; */
   box-shadow: rgb(209, 209, 213) 0 0 4px;
   width: 95%;
 }

@@ -15,8 +15,7 @@ export default () => (
     transitionTime={500}
     centerMode
     centerSlidePercentage={65}
-    emulateTouch
-  >
+    emulateTouch>
     <div>
       <img
         src={require("./images/carousel-1-cropped-v1.jpg")}

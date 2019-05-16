@@ -39,8 +39,13 @@
 
 #signup-link {
   margin-top: 2%;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-position: under;
   color: blue;
+}
+
+#signup-link:hover {
+  border-top: 1px solid blue;
 }
 
 .notMemberDiv {

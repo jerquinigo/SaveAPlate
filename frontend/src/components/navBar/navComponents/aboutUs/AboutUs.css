@@ -22,7 +22,7 @@
 }
 
 #about-us-container {
-  width: 75%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
@@ -42,14 +42,14 @@
 }
 
 .github-icon {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   padding-right: 10px;
 }
 
 .linkedin-icon {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
 }
 
 .github-icon:hover,
@@ -62,13 +62,8 @@
 #save-a-plate,
 #pursuit-link {
   text-decoration: none;
-  color: #d35348;
   font-weight: 800;
   font-size: 18px;
-}
-
-#save-a-plate,
-#pursuit-link {
   text-decoration: underline;
   text-underline-position: under;
 }
@@ -79,4 +74,36 @@
 
 #pursuit-link {
   color: #4142ea;
+}
+
+#save-a-plate:hover {
+  border-top: 1px solid #d35348;
+}
+
+#pursuit-link:hover {
+  border-top: 1px solid #4142ea;
+}
+
+#wynter,
+#jon,
+#deyvi,
+#andrew {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  width: 20%;
+}
+
+#wynter:hover,
+#jon:hover,
+#deyvi:hover,
+#andrew:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.05);
 }

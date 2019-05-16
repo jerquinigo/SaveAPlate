@@ -20,10 +20,11 @@
   width: 75%;
   height: 3.2em;
   background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .display-search-items-for-feed:hover {
-  background-color: lightgray;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .display-vendor-name-feed-search {
@@ -45,5 +46,5 @@
 #search-item-weight-container,
 #search-item-feeds-container,
 #search-item-pickup-container {
-  width: 20%;
+  width: 30%;
 }

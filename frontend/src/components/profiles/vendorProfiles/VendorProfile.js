@@ -148,30 +148,34 @@ class VendorProfile extends Component {
         <div
           key={item.food_id}
           className="vendor-profile-container-vendor-version">
-          <div class="claimed-vendor-items-two">
-            <p class="vendor-page-item-name">{item.name}</p>
-            <p class="vendor-page-item-pounds">{item.quantity * 3} pounds</p>
-            <p class="vendor-page-item-quantity">{item.quantity} people</p>
-            <p class="vendor-page-pickup-time">
+          <div className="claimed-vendor-items-two">
+            <p className="vendor-page-item-name">{item.name}</p>
+            <p className="vendor-page-item-pounds">
+              {item.quantity * 3} pounds
+            </p>
+            <p className="vendor-page-item-quantity">{item.quantity} people</p>
+            <p className="vendor-page-pickup-time">
               {converted_time < 13 && converted_time !== 0
                 ? converted_time + "am"
                 : converted_time === 0
                 ? 12 + "am"
                 : converted_time - 12 + "pm"}
             </p>
-            <MuiThemeProvider theme={theme}>
-              <Button
-                onClick={e => {
-                  this.deleteItem(e);
-                  this.props.receivedOpenSnackbar();
-                }}
-                type="submit"
-                variant="contained"
-                color="secondary"
-                id={item.food_id}>
-                <DeleteIcon id={item.food_id} />
-              </Button>
-            </MuiThemeProvider>
+            <div className="vendor-page-delete-icon">
+              <MuiThemeProvider theme={theme}>
+                <Button
+                  onClick={e => {
+                    this.deleteItem(e);
+                    this.props.receivedOpenSnackbar();
+                  }}
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
+                  id={item.food_id}>
+                  <DeleteIcon id={item.food_id} />
+                </Button>
+              </MuiThemeProvider>
+            </div>
           </div>
         </div>
       );
@@ -199,19 +203,21 @@ class VendorProfile extends Component {
                 ? converted_time + "am"
                 : converted_time - 12 + "pm"}
             </p>
-            <MuiThemeProvider theme={theme}>
-              <Button
-                onClick={e => {
-                  this.deleteItem(e);
-                  this.props.receivedOpenSnackbar();
-                }}
-                type="submit"
-                variant="contained"
-                color="secondary"
-                id={item.food_id}>
-                <DeleteIcon id={item.food_id} />
-              </Button>
-            </MuiThemeProvider>
+            <div className="vendor-page-delete-icon">
+              <MuiThemeProvider theme={theme}>
+                <Button
+                  onClick={e => {
+                    this.deleteItem(e);
+                    this.props.receivedOpenSnackbar();
+                  }}
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
+                  id={item.food_id}>
+                  <DeleteIcon id={item.food_id} />
+                </Button>
+              </MuiThemeProvider>
+            </div>
           </div>
         </div>
       );
