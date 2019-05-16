@@ -11,10 +11,15 @@
   background-color: whitesmoke;
   padding: 50px 50px 50px 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
 }
 
 #mission-statement-container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.05);
 }
 
 #mission-statement {
@@ -45,8 +50,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   height: 2px;
   width: 140px;
-  margin: 64px auto;
-  margin-bottom: 5%;
+  margin: 50px auto;
 }
 
 #landing-container {
@@ -148,13 +152,18 @@
   margin: 0 auto;
   padding-bottom: 25px;
   background-color: whitesmoke;
+  transition: transform 0.5s;
 }
 
 #info-vendor:hover,
 #info-volunteer:hover,
 #info-client:hover {
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.1); */
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.05);
 }
 
 #vendor-logo,
