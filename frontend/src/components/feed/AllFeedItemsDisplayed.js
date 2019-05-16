@@ -21,7 +21,7 @@ class AllFeedItemsDisplayed extends Component {
     let converted_time;
     return (
       <div className="vendor-items-wrapper">
-        <div id="vendor-items-header">
+        <div className="search-items-results-header">
           <h4 className="vendor-item-name">Food Item </h4>
           <h4 className="vendor-weight">Weight </h4>
           <h4 className="vendor-feeds">Feeds </h4>
