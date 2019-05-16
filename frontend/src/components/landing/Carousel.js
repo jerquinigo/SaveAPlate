@@ -15,20 +15,21 @@ export default () => (
     transitionTime={500}
     centerMode
     centerSlidePercentage={65}
-    emulateTouch>
-    <div>
+    emulateTouch
+  >
+    {/*<div>
       <img
         src={require("./images/carousel-1-cropped-v1.jpg")}
         alt="carousel-1"
         className="carousel-image"
       />
-    </div>
-    <div>
+    </div>*/}
+    {/*<div>
       <img
         src={require("./images/carousel-2-cropped-v1.jpg")}
         alt="carousel-1"
       />
-    </div>
+    </div>*/}
     <div>
       <img
         src={require("./images/carousel-3-cropped-v1.jpg")}
