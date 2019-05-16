@@ -29,7 +29,7 @@ const VendorSection = ({ vendor, userObj, children, getProfilePicture }) => {
           <span>{vendor.vendor_name}</span>{" "}
         </Link>
         <div>{vendor.address_field}</div>
-        <div>{getProfilePicture}</div>
+        <div className="clientImageWrapper">{getProfilePicture}</div>
       </div>
 
       <div>{children}</div>
