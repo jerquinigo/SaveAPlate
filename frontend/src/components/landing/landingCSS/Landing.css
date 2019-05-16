@@ -39,6 +39,8 @@
 
 #resources-link {
   color: #272e48;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 #resources-link:hover {
