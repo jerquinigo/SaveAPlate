@@ -8,9 +8,9 @@ import "./landingCSS/Landing.css";
 
 const buttonColor = createMuiTheme({
   palette: {
-    primary: { 500: "#FF4500" },
+    primary: { 500: "#D35348" },
     secondary: {
-      main: "#3b5998"
+      main: "#272E48"
     }
   },
   typography: {
@@ -24,13 +24,13 @@ export default function Landing() {
       <div className="carousel-wrapper">
         <Carousel />
       </div>
-      <div id="line" />
+      <div id="line1" />
       <div id="food-background-container" />
       <div id="landing-container">
+        <div>
+          <h1 id="mission-statement">Mission Statement</h1>
+        </div>
         <div id="mission-statement-container">
-          <div>
-            <h1 id="mission-statement">Our Mission</h1>
-          </div>
           <p id="mission-statement-text">
             At Save a Plate, our mission is to reduce food waste and hunger in
             New York City. We do this is by creating a platform where vendors
@@ -45,7 +45,7 @@ export default function Landing() {
           </p>
         </div>
       </div>
-      <div id="line" />
+      <div id="line2" />
       <div id="info-container">
         <div id="info-vendor-volunteer-client">
           <h1 id="info-container-header">Get Involved</h1>
@@ -106,7 +106,8 @@ export default function Landing() {
                 color="primary"
                 disableunderline="true"
                 type="submit"
-                id="signup-button">
+                id="signup-button"
+              >
                 Get Started
               </Button>
             </MuiThemeProvider>
@@ -120,7 +121,8 @@ export default function Landing() {
                 color="secondary"
                 disableunderline="true"
                 type="submit"
-                id="login-button">
+                id="login-button"
+              >
                 Log In
               </Button>
             </MuiThemeProvider>
