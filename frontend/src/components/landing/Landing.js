@@ -2,8 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Carousel from "./Carousel.js";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./landingCSS/Landing.css";
+
+const buttonColor = createMuiTheme({
+  palette: {
+    primary: { 500: "#FF4500" },
+    secondary: {
+      main: "#3b5998"
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export default function Landing() {
   return (
@@ -14,16 +27,24 @@ export default function Landing() {
       <div id="food-background-container" />
       <div id="landing-container">
         <div id="mission-statement-container">
-          <h1 id="mission-statement">Mission Statement</h1>
+          <div>
+            <h1 id="mission-statement">Our Mission</h1>
+          </div>
+          <p id="mission-statement-text">
+            At Save a Plate, our mission is to reduce food waste and hunger in
+            New York City. We do this is by creating a platform where vendors
+            can sign up and donate food while clients can claim those food items
+            and add their favorite vendors to their favorites. Check out our{" "}
+            {""}
+            <NavLink to="/resources" id="resources-link">
+              resources
+            </NavLink>{" "}
+            to find information about SNAP, nearby food pantries & soup kitchens
+            and how you can help.
+          </p>
         </div>
-        <p id="mission-statement-text">
-          At Save a Plate, our mission is to reduce food waste in New York City.
-          We do this is by creating a platform where vendors can sign-up and
-          donate food while clients can claim those food items and favorite
-          vendors. We also provide resources about SNAP, nearby food pantries &
-          soup kitchens and how you can help.
-        </p>
       </div>
+      <div id="line" />
       <div id="info-container">
         <div id="info-vendor-volunteer-client">
           <h1 id="info-container-header">Get Involved</h1>
@@ -74,29 +95,34 @@ export default function Landing() {
           </div>
         </div>
       </div>
+      <div id="line" />
       <div id="login-container">
         <div className="login-sub-container-1">
           <NavLink to="/user/signup" id="nav-link">
-            <Button
-              variant="contained"
-              color="primary"
-              disableunderline="true"
-              type="submit"
-              id="signup-button">
-              Get Started
-            </Button>
+            <MuiThemeProvider theme={buttonColor}>
+              <Button
+                variant="contained"
+                color="primary"
+                disableunderline="true"
+                type="submit"
+                id="signup-button">
+                Get Started
+              </Button>
+            </MuiThemeProvider>
           </NavLink>
         </div>
         <div className="login-sub-container-2">
           <NavLink to="/user/login" id="nav-link">
-            <Button
-              variant="contained"
-              color="secondary"
-              disableunderline="true"
-              type="submit"
-              id="login-button">
-              Log In
-            </Button>
+            <MuiThemeProvider theme={buttonColor}>
+              <Button
+                variant="contained"
+                color="secondary"
+                disableunderline="true"
+                type="submit"
+                id="login-button">
+                Log In
+              </Button>
+            </MuiThemeProvider>
           </NavLink>
         </div>
       </div>
