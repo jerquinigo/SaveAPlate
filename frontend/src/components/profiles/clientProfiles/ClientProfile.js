@@ -51,56 +51,56 @@ class ClientProfile extends Component {
     return (
       <div id="client-container">
         <MainSnackbarContainer />
-        <div id="client-profile-container">
-          <div>
+        <div className="main-div-displaying-detail-vendor-view-through-profile">
+          <div className="profile-picture-container-div">
             <img
-              id="profile-picture"
+              className="profile-picture-through-client-page"
               alt="profile pic"
               src={this.state.profilePic}
             />
           </div>
-          <h1 id="client-name">{this.props.currentUser.name}</h1>
-          <div id="vendor-info">
-            <p>{this.props.currentUser.address_field}</p>
-            <p>{this.props.currentUser.email}</p>
+          <div className="vendorNameDiv">
+            <h2 className="vendor-name">{this.props.currentUser.name}</h2>
+          </div>
+          <div className="contactUsDiv">
+            <h3> Contact Us </h3>
+            <p className="vendorDeets">
+              <span className="addressSpan">
+                {this.props.currentUser.address_field}
+              </span>
+              <br />
+              <span className="emailSpan">{this.props.currentUser.email}</span>
+              <br />
+            </p>
           </div>
           <br />
           <ClientProfileEditForm id={this.props.currentUser.id} />
+          <br />
         </div>
 
-        <div id="client-info-fav-container">
-          <div id="client-info-container">
-            <div>
-              <h1 id="claimed-items-list-client">Claimed Items</h1>
-              <div id="display-claimed-items-container">
-                <ClientClaimedItemsContainer
-                  receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-                />
-              </div>
-            </div>
-          </div>
+        <div id="client-info-container">
+          <h1 id="claimed-items-list-client">Claimed Items</h1>
 
-          <div>
-            <h1 id="favorite-vendors-list-client"> Favorite Vendors </h1>
-            <div id="favorite-vendors-client">
-              <h4 id="favorite-vendor-name">Name </h4>
-              <h4 id="favorite-vendor-address">Address </h4>
-              <h4 id="favorite-vendor-phone">Phone Number </h4>
-              <div id="favorite-spacing" />
-            </div>
-            <DisplayClientFavorites
-              currentUserName={this.props.currentUser.name}
-              receivedOpenSnackbar={this.props.receivedOpenSnackbar}
-            />
-          </div>
-        </div>
-        {/* <div className="mapDiv" style={{ height: "100vh", width: "100%" }}>
-          <DisplayMap
-            latitude={this.state.latitude}
-            longitude={this.state.longitude}
-            zoom={this.state.zoom}
+          <ClientClaimedItemsContainer
+            receivedOpenSnackbar={this.props.receivedOpenSnackbar}
           />
-        </div> */}
+          <div id="favorites-wrapper">
+            <h1 id="favorite-vendors-list-client"> Favorite Vendors </h1>
+
+            <div id="favorites-container">
+              <div id="favorite-vendors-client">
+                <h4 id="favorite-vendor-name">Name </h4>
+                <h4 id="favorite-vendor-address">Address </h4>
+                <h4 id="favorite-vendor-phone">Phone Number </h4>
+                <div id="favorite-spacing" />
+              </div>
+              <DisplayClientFavorites
+                currentUserName={this.props.currentUser.name}
+                receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
