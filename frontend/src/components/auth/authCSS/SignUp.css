@@ -90,7 +90,7 @@
 .signup-demo-buttons {
   display: flex;
   justify-content: space-evenly;
-  width: 40%;
+  width: 50%;
   margin-top: 1.5em;
 }
 
