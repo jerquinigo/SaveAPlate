@@ -6,6 +6,7 @@
   background-color: #aebdc7;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .display-claimed-items-for-client {
@@ -20,10 +21,11 @@
   width: 75%;
   height: 3.2em;
   background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .display-claimed-items-for-client:hover {
-  background-color: lightgray;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .vendor-item-name,
@@ -37,4 +39,15 @@
 
 .span-claim-button {
   width: 20%;
+}
+
+.search-items-results-header {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
+  background-color: #aebdc7;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
