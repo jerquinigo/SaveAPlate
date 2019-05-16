@@ -24,6 +24,7 @@ export default function Landing() {
       <div className="carousel-wrapper">
         <Carousel />
       </div>
+      <div id="line" />
       <div id="food-background-container" />
       <div id="landing-container">
         <div id="mission-statement-container">
