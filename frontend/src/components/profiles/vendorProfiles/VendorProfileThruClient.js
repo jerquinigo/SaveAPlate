@@ -186,10 +186,16 @@ class VendorProfileThruClient extends Component {
           <h3 className="donation-list-text"> Donation List </h3>
         </div>
         <div className="vendor-items-list-header-vendor-view-through-client">
-          <h4 className="vendor-profile-thru-client-item-name">Food Item </h4>
-          <h4 className="vendor-profile-thru-client-weight">Weight </h4>
-          <h4 className="vendor-profile-thru-client-feeds">Feeds</h4>
-          <h4 className="vendor-profile-thru-client-pick-up">Pick Up Time </h4>
+          <p className="vendor-profile-thru-client-item-name-for-client">
+            Food Item{" "}
+          </p>
+          <p className="vendor-profile-thru-client-weight-for-client">
+            Weight{" "}
+          </p>
+          <p className="vendor-profile-thru-client-feeds-for-client">Feeds</p>
+          <p className="vendor-profile-thru-client-pick-up-for-client">
+            Pick Up Time{" "}
+          </p>
           <div id="spacing" />
         </div>
         {unclaimedList}{" "}

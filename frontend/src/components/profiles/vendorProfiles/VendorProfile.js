@@ -74,7 +74,8 @@ class VendorProfile extends Component {
           onClick={() => {
             this.toAddItem();
             this.handleOpen();
-          }}>
+          }}
+        >
           <div className="add-item-text"> Add Item</div>
         </Button>
       </MuiThemeProvider>
@@ -147,7 +148,8 @@ class VendorProfile extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
             <p className="vendor-page-item-pounds">
@@ -171,7 +173,8 @@ class VendorProfile extends Component {
                   type="submit"
                   variant="contained"
                   color="secondary"
-                  id={item.food_id}>
+                  id={item.food_id}
+                >
                   <DeleteIcon id={item.food_id} />
                 </Button>
               </MuiThemeProvider>
@@ -188,7 +191,8 @@ class VendorProfile extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
 
@@ -213,7 +217,8 @@ class VendorProfile extends Component {
                   type="submit"
                   variant="contained"
                   color="secondary"
-                  id={item.food_id}>
+                  id={item.food_id}
+                >
                   <DeleteIcon id={item.food_id} />
                 </Button>
               </MuiThemeProvider>
@@ -246,11 +251,15 @@ class VendorProfile extends Component {
   foodItemsHeader = () => {
     return (
       <div class="vendor-items-list-header-vendor-view-through-client">
-        <h4 className="vendor-profile-thru-client-item-name">Food Item </h4>
-        <h4 className="vendor-profile-thru-client-weight">Weight </h4>
-        <h4 className="vendor-profile-thru-client-feeds">Feeds </h4>
-        <h4 className="vendor-profile-thru-client-pick-up">Pick Up Time </h4>
-        <div id="spacing" />
+        <p className="vendor-profile-thru-client-item-name-for-client">
+          Food Item{" "}
+        </p>
+        <p className="vendor-profile-thru-client-weight-for-client">Weight </p>
+        <p className="vendor-profile-thru-client-feeds-for-client">Feeds </p>
+        <p className="vendor-profile-thru-client-pick-up-for-client">
+          Pick Up Time{" "}
+        </p>
+        <div className="vendor-profile-thru-spacing" />
       </div>
     );
   };
