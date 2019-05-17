@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import "./feedCSS/SearchBarResultsVendorItemsDisplay.css";
 
 const SearchBarResultsVendorItemsDisplay = props => {
+  let converted_time = Number(props.food.set_time.slice(0, 2));
   return (
     <div className="search-items-wrapper">
       <div className="display-search-items-for-feed">
@@ -18,9 +19,9 @@ const SearchBarResultsVendorItemsDisplay = props => {
         </div>
         <div id="search-item-pickup-container">
           <p>
-            {props.converted_time === 0 || props.converted_time < 13
-              ? props.converted_time + "am"
-              : props.converted_time - 12 + "pm"}
+            {converted_time === 0 || converted_time < 13
+              ? converted_time + "am"
+              : converted_time - 12 + "pm"}
           </p>
         </div>
         <span

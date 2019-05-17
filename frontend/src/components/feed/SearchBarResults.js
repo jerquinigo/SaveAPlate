@@ -19,7 +19,7 @@ const theme = createMuiTheme({
 // will need to apply the search object filter here just like all the others to get it to work to group
 export const SearchBarResults = props => {
   let searchDataObj = {};
-  let converted_time;
+
   if (props.userSearchResults.length > 0) {
     let searchResults = props.userSearchResults.filter(result => {
       return result.is_claimed !== true;
@@ -31,7 +31,6 @@ export const SearchBarResults = props => {
       } else if (searchDataObj[results.vendor_name]) {
         searchDataObj[results.vendor_name].push(results);
       }
-      converted_time = Number(results.set_time.slice(0, 2));
     });
     let vendorNameArr = Object.keys(searchDataObj);
 
@@ -58,7 +57,6 @@ export const SearchBarResults = props => {
                     food={food}
                     claimItem={props.claimItem}
                     receivedOpenSnackbar={props.receivedOpenSnackbar}
-                    converted_time={converted_time}
                     theme={theme}
                   />
                 </div>
