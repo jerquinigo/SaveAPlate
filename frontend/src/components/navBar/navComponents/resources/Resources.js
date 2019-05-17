@@ -10,6 +10,7 @@ export default function Resources() {
           <a
             className="hungry-one"
             target="_blank"
+            rel="noopener noreferrer"
             href="http://foodhelp.nyc/snapfood-benefits-en/"
           >
             <img
@@ -23,6 +24,7 @@ export default function Resources() {
           <a
             className="hungry-two"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www1.nyc.gov/apps/311utils/providerInformation.htm?serviceId=1083"
           >
             <img
@@ -36,6 +38,7 @@ export default function Resources() {
           <a
             className="hungry-three"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.amny.com/news/nyc-food-donation-1.14906516"
           >
             <img
@@ -49,6 +52,7 @@ export default function Resources() {
           <a
             className="hungry-four"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.foodwastefair.nyc/"
           >
             <img

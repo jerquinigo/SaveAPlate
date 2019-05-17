@@ -13,6 +13,7 @@ class AllFeedItemsDisplayVendorName extends Component {
               className="feed-profile-pic"
               src={this.props.profilePicture[data]}
               alt=""
+              key={i}
             />
           );
         }

@@ -138,7 +138,6 @@ class VendorProfileThruClient extends Component {
     });
     let unclaimedList = unclaimedItems.map(item => {
       let converted_time = Number(item.set_time.slice(0, 2));
-      console.log("time", converted_time, "item", item.name);
 
       return (
         <div

@@ -84,8 +84,6 @@ createUser = (req, res, next) => {
 };
 
 updateUser = (req, res, next) => {
-  console.log("REQ BODY", req.body);
-  console.log("REQ PARAMS", req.params);
   // const hash = authHelpers.createHash(req.body.password_digest);
   let queryStringArray = [];
   let bodyKeys = Object.keys(req.body);
@@ -95,27 +93,31 @@ updateUser = (req, res, next) => {
 
   let queryString = queryStringArray.join(", ");
 
-  if (req.body.name && req.body.name.toLowerCase() === 'null') {
+  if (req.body.name && req.body.name.toLowerCase() === "null") {
     req.body.name = null;
   }
-  if (req.body.email && req.body.email.toLowerCase() === 'null') {
+  if (req.body.email && req.body.email.toLowerCase() === "null") {
     req.body.email = null;
   }
-  if (req.body.address_field && req.body.address_field.toLowerCase() === 'null'
+  if (
+    req.body.address_field &&
+    req.body.address_field.toLowerCase() === "null"
   ) {
     req.body.address_field = null;
   }
-  if (req.body.body && req.body.body.toLowerCase() === 'null') {
+  if (req.body.body && req.body.body.toLowerCase() === "null") {
     req.body.body = null;
   }
-  if (req.body.telephone_number && req.body.telephone_number.toLowerCase() === 'null') {
+  if (
+    req.body.telephone_number &&
+    req.body.telephone_number.toLowerCase() === "null"
+  ) {
     req.body.telephone_number = null;
   }
-  // if (req.body.ein === 'null') {
-  //   req.body.ein = null;
-  //   console.log('EIN',req.body.ein);
-  // }
-  if (req.body.client_certificate && req.body.client_certificate.toLowerCase() === 'null') {
+  if (
+    req.body.client_certificate &&
+    req.body.client_certificate.toLowerCase() === "null"
+  ) {
     req.body.client_certificate = null;
   }
 
