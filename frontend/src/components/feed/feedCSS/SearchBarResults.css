@@ -7,10 +7,9 @@
   font-weight: 900;
 }
 
-.search-results-item-name,
+.search-results-item-name-results,
 .search-results-weight,
 .search-results-feeds,
 .search-results-pick-up {
   margin: 0.5em;
-  width: 60%;
 }

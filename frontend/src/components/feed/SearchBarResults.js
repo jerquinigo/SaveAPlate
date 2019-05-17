@@ -46,7 +46,7 @@ export const SearchBarResults = props => {
 
           <div className="vendorItemsWrapper">
             <div id="search-items-header">
-              <h4 className="search-results-item-name">Food Item </h4>
+              <h4 className="search-results-item-name-results">Food Item </h4>
               <h4 className="search-results-weight">Weight </h4>
               <h4 className="search-results-feeds">Feeds </h4>
               <h4 className="search-results-pick-up">Pick Up Time </h4>
