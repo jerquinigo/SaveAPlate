@@ -37,7 +37,7 @@ export const SearchBarResults = props => {
 
     let vendorName = vendorNameArr.map((vendorName, a) => {
       return (
-        <div key="a">
+        <div key={a}>
           <SearchBarResultsVendorDisplay
             vendorName={vendorName}
             allVendors={props.allVendors}
