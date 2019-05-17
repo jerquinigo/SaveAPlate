@@ -39,19 +39,25 @@
   justify-content: center;
 }
 
-.vendor-profile-thru-client-item-name,
-.vendor-profile-thru-client-weight,
-.vendor-profile-thru-client-feeds,
-.vendor-profile-thru-client-pick-up {
-  width: 11%;
+.vendor-profile-thru-client-item-name-for-client,
+.vendor-profile-thru-client-weight-for-client,
+.vendor-profile-thru-client-feeds-for-client,
+.vendor-profile-thru-client-pick-up-for-client {
+  /* width: 11%; */
+  /* display: flex;
+  justify-content: space-around; */
+  margin: 0.5em;
   margin: 0.5em -0.25em;
-
 }
 
 .inner-main-vendor-profile-thru-client-page {
   width: 100%;
   display: flex;
   justify-content: left;
+}
+
+.vendor-profile-thru-spacing {
+  width: 4%;
 }
 
 .vendor-items-list-header-vendor-view-through-client {
