@@ -147,7 +147,8 @@ class VendorProfileThruClient extends Component {
             this.state.fadeTrigger.includes(item.food_id)
               ? "vendor-profile-container-vendor-version fade-out"
               : "vendor-profile-container-vendor-version"
-          }>
+          }
+        >
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
             <p className="vendor-page-item-pounds">
@@ -170,7 +171,8 @@ class VendorProfileThruClient extends Component {
                 color="secondary"
                 className={
                   item.is_claimed ? "claimed-button " : "unclaimed-button "
-                }>
+                }
+              >
                 {item.is_claimed ? "UNCLAIM" : "CLAIM"}
               </Button>
             </MuiThemeProvider>
@@ -204,7 +206,8 @@ class VendorProfileThruClient extends Component {
       return (
         <div
           key={item.food_id}
-          className="vendor-profile-container-vendor-version">
+          className="vendor-profile-container-vendor-version"
+        >
           <div className="claimed-vendor-items-two">
             <p className="vendor-page-item-name">{item.name}</p>
             <p className="vendor-page-item-pounds">
@@ -222,7 +225,8 @@ class VendorProfileThruClient extends Component {
                 id={item.food_id}
                 variant="contained"
                 color="primary"
-                onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}>
+                onClick={e => this.claimItem(e, item.is_claimed, item.food_id)}
+              >
                 {item.is_claimed ? "UNCLAIM" : "CLAIM"}
               </Button>
             </MuiThemeProvider>
@@ -265,7 +269,8 @@ class VendorProfileThruClient extends Component {
       return (
         <div
           className="main-div-displaying-detail-vendor-view-through-profile"
-          key={i}>
+          key={i}
+        >
           {this.getProfilePicture()}
           <div className="vendorNameDiv">
             <h2 className="vendor-name">{time.name} </h2>
@@ -279,7 +284,8 @@ class VendorProfileThruClient extends Component {
                 !!this.state.isFav.length
                   ? "claimed-button"
                   : "unclaimed-button"
-              }>
+              }
+            >
               {!!this.state.isFav.length
                 ? "Remove From Favorites"
                 : "Add To Favorites"}

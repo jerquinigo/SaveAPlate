@@ -58,6 +58,7 @@ class AllFeedItems extends Component {
               claimItem={this.props.claimItem}
               vendorName={vendorName}
               receivedOpenSnackbar={this.props.receivedOpenSnackbar}
+              fadeTrigger={this.props.fadeTrigger}
             />
           </div>
         );

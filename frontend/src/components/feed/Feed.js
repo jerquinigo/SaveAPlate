@@ -12,7 +12,8 @@ export default class Feed extends Component {
     allFoodItems: [],
     textInput: "",
     searchText: "",
-    allVendors: []
+    allVendors: [],
+    fadeTrigger: []
   };
 
   componentDidMount() {
@@ -41,24 +42,45 @@ export default class Feed extends Component {
     });
   };
 
-  claimItem = (e, isClaimed) => {
-    isClaimed === false
-      ? axios
-          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-            client_id: this.props.currentUser.id,
-            is_claimed: true
-          })
-          .then(() => {
-            this.getAllFoodItems();
-          })
-      : axios
-          .patch(`/api/fooditems/claimstatus/${e.currentTarget.id}`, {
-            client_id: null,
-            is_claimed: false
-          })
-          .then(() => {
-            this.getAllFoodItems();
-          });
+  claimItem = (e, isClaimed, food_id) => {
+    let targetId;
+    if (!!e.currentTarget.id) {
+      targetId = e.currentTarget.id;
+    }
+    if (isClaimed === false) {
+      //we grab the id we claim saving it to an array in state => if array includes the id we append the class fade-out...
+      this.setState({
+        fadeTrigger: [...this.state.fadeTrigger, food_id]
+      });
+      //we then want it to be claimed but not have it immediately disappear showing the fadeout effect first and so we add a set timeout that after 1s does an axios call and gets all elements again
+      setTimeout(
+        targetId => {
+          this.fireClaimingItem(targetId);
+        },
+        1100,
+        targetId
+      );
+    } else {
+      axios
+        .patch(`/api/fooditems/claimstatus/${targetId}`, {
+          client_id: null,
+          is_claimed: false
+        })
+        .then(() => {
+          this.getAllFoodItems();
+        });
+    }
+  };
+
+  fireClaimingItem = targetId => {
+    axios
+      .patch(`/api/fooditems/claimstatus/${targetId}`, {
+        client_id: this.props.currentUser.id,
+        is_claimed: true
+      })
+      .then(() => {
+        this.getAllFoodItems();
+      });
   };
 
   handleSubmit = async e => {
@@ -144,6 +166,7 @@ export default class Feed extends Component {
             userSearchResults={this.state.userSearchResults}
             receivedOpenSnackbar={this.props.receivedOpenSnackbar}
             allVendors={this.state.allVendors}
+            fadeTrigger={this.state.fadeTrigger}
           />
         )}
       </div>
