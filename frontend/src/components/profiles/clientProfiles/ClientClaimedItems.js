@@ -24,12 +24,13 @@ const VendorSection = ({ vendor, userObj, children, getProfilePicture }) => {
       <div className="display-vendor-name">
         <Link
           to={"/clientview/" + vendor.vendor_name}
-          className="display-item-name-client"
-        >
+          className="display-item-name-client">
           <span>{vendor.vendor_name}</span>{" "}
         </Link>
         <div>{vendor.address_field}</div>
-        <div className="clientImageWrapper">{getProfilePicture}</div>
+        <div className="clientImageWrapperForClientDisplay">
+          {getProfilePicture}
+        </div>
       </div>
 
       <div>{children}</div>
@@ -69,8 +70,7 @@ const VendorItem = ({ item, userObj, toReRender, receivedOpenSnackbar }) => {
             }}
             variant="contained"
             color="secondary"
-            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}
-          >
+            className={item.is_claimed ? "claimed-button" : "unclaimed-button"}>
             {item.is_claimed ? "UNCLAIM" : "TO CLAIM"}
           </Button>
         </MuiThemeProvider>
@@ -187,8 +187,7 @@ class ClientClaimedItems extends Component {
           key={i}
           vendor={items[0]}
           userObj={currUser}
-          getProfilePicture={this.getProfilePicture(items)}
-        >
+          getProfilePicture={this.getProfilePicture(items)}>
           <div id="vendor-items-header-client">
             <h4 id="item-name">Food Item </h4>
             <h4 id="weight">Weight </h4>
