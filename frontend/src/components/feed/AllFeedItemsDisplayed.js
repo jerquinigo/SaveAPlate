@@ -31,7 +31,14 @@ class AllFeedItemsDisplayed extends Component {
         {this.props.foodDataObj[this.props.vendorName].map((food, b) => {
           converted_time = Number(food.set_time.slice(0, 2));
           return (
-            <div className="vendor-items-container" key={b}>
+            <div
+              className={
+                this.props.fadeTrigger.includes(food.id)
+                  ? "vendor-items-container fade-out"
+                  : "vendor-profile-container-vendor-version"
+              }
+              key={b}
+            >
               <div className="display-claimed-items-for-client">
                 <div id="item-name-container">
                   <p>{food.name}</p>
@@ -55,7 +62,7 @@ class AllFeedItemsDisplayed extends Component {
                   id={food.id}
                   className="span-claim-button"
                   onClick={e => {
-                    this.props.claimItem(e, food.is_claimed);
+                    this.props.claimItem(e, food.is_claimed, food.id);
                     this.props.receivedOpenSnackbar();
                   }}
                 >
