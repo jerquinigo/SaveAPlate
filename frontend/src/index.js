@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 import Store from "./store/Store.js";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import App from './containers/AppContainer.js'
+import App from "./containers/AppContainer.js";
 
-window.store = Store;
+// window.store = Store;
 ReactDOM.render(
   <Provider store={Store}>
     <BrowserRouter>

@@ -33,7 +33,8 @@ class ClientProfileEditForm extends Component {
       <Button
         variant="contained"
         color="primary"
-        onClick={this.toggleEditFormLogic}>
+        onClick={this.toggleEditFormLogic}
+      >
         Edit Profile
       </Button>
     );
@@ -45,7 +46,8 @@ class ClientProfileEditForm extends Component {
         <form
           id="display-edit-form"
           autoComplete="off"
-          onSubmit={this.handleSubmit}>
+          onSubmit={this.handleSubmit}
+        >
           <div className="icon-input-field">
             <img
               src={require("../../auth/icons/name.png")}
@@ -183,7 +185,6 @@ class ClientProfileEditForm extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="ClientFormMainPage">
         {this.editProfile()}

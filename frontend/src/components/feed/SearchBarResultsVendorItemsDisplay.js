@@ -28,7 +28,8 @@ const SearchBarResultsVendorItemsDisplay = props => {
           onClick={e => {
             props.claimItem(e, props.food.is_claimed);
             props.receivedOpenSnackbar();
-          }}>
+          }}
+        >
           <MuiThemeProvider theme={props.theme}>
             <Button
               id={props.food.id}
@@ -40,7 +41,8 @@ const SearchBarResultsVendorItemsDisplay = props => {
               }}
               className={
                 props.food.is_claimed ? "claimed-button" : "unclaimed-button"
-              }>
+              }
+            >
               {props.food.is_claimed ? "UNCLAIM" : "CLAIM"}
             </Button>
           </MuiThemeProvider>

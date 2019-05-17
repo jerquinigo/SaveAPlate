@@ -2,7 +2,6 @@ import React from "react";
 import SearchBarResultsVendorDisplay from "./SearchBarResultsVendorDisplay.js";
 import SearchBarResultsVendorItemsDisplay from "./SearchBarResultsVendorItemsDisplay.js";
 import { createMuiTheme } from "@material-ui/core/styles";
-import green from "@material-ui/core/colors/green";
 import "./feedCSS/SearchBarResults.css";
 
 const theme = createMuiTheme({
