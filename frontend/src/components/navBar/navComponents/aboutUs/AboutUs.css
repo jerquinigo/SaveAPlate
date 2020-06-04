@@ -1,62 +1,12 @@
-#meet-our-team {
-  padding-top: 2.5%;
+#about-container {
+  color: #272e48;
   font-family: "Montserrat", sans-serif;
-  font-size: 46px;
-  font-weight: bold;
-}
-
-#meet-our-team,
-#our-mission {
-  color: #272e48;
-  text-underline-position: under;
-}
-
-#our-mission-text {
-  color: #272e48;
-  padding-top: 2.5%;
-}
-
-.about-text {
-  width: 56%;
-  margin: 0 auto;
-}
-
-#about-us-container {
+  text-align: center;
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 5%;
-}
-
-.team-member-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.team-member-name {
-  color: #272e48;
-  font-family: "Montserrat", sans-serif;
-  font-size: 26px;
-}
-
-.github-icon {
-  width: 35px;
-  height: 35px;
-  padding-right: 10px;
-}
-
-.linkedin-icon {
-  width: 35px;
-  height: 35px;
-}
-
-.github-icon:hover,
-.linkedin-icon:hover {
-  -webkit-transform: scale(1.5) 3s;
-  -ms-transform: scale(1.5) 3s;
-  transform: scale(1.5);
 }
 
 #save-a-plate,
@@ -84,26 +34,42 @@
   border-top: 1px solid #4142ea;
 }
 
-#wynter,
-#jon,
-#deyvi,
-#andrew {
-  margin: 0 auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-  width: 20%;
+#meet-our-team {
+  margin-top: 2.5%;
+  font-size: 46px;
 }
 
-#wynter:hover,
-#jon:hover,
-#deyvi:hover,
-#andrew:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.05);
-  background-color: white;
+#our-mission-text {
+  font-size: 20px;
+}
+
+.about-text {
+  width: 56%;
+  margin: 0 auto;
+}
+
+.about-text h3 {
+  color: #24226c;
+  border-bottom: 1px solid #24226c;
+  display: inline-block;
+  padding: 0 10px 5px;
+}
+
+.about-text p,
+.about-text span {
+  line-height: 30px;
+  margin-top: 0;
+}
+
+#imgs-container {
+  width: 60%;
+  margin: 10px auto 30px;
+  border-spacing: 10px;
+  box-shadow: 0 5px 50px -30px;
+  max-width: 500px;
+}
+
+#imgs-container img {
+  width: 100%;
+  display: block;
 }
